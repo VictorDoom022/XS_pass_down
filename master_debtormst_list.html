@@ -1,0 +1,582 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="GENERATOR" content="CodeCharge Studio 3.0.1.6">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<title>debtormst_list</title>
+<meta name="GENERATOR" content="CodeCharge Studio 3.0.2.2">
+<!-- <link rel="stylesheet" type="text/css" href="Themes/BlueNote/Style.css"> -->
+<link rel="stylesheet" href="lib/bootstrap_v4.5/css/bootstrap.css">
+<link rel="stylesheet" href="Themes/Custom/themes.css">
+<script language="javascript" src="common/jsrs/jsrsClient.js"></script>
+<script language="javascript" src="common/jsrs/nll_global_jsrs.js"></script>
+<script language="javascript" src="common/jsrs/jsrs_writeDynamic.js"></script>
+<script language="javascript" src="javascript/validatePageSize.js"></script>
+<script language="javascript" src="common/entry_rule_inventory.js"></script>
+<!-- 20190625 Ben #37830 -->
+<script language="javascript" src="common/nll_common_function.js"></script>
+<!-- end #37830 -->
+<script>
+var showADV = false;
+
+</script>
+<script>
+
+</script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+
+//Include JSFunctions @1-252A7665
+</script>
+<script language="JavaScript" type="text/javascript" charset="utf-8" src="Functions.js"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include JSFunctions
+
+//page_OnLoad @1-D0F4E1D3
+function page_OnLoad()
+{
+    var result;
+//End page_OnLoad
+
+//Custom Code @579-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    /*
+          arrayHiddenID = new Array();
+                arrayHiddenID.push('searchStatus');
+                arrayHiddenID.push('searchSource');
+                arrayHiddenID.push('searchJob');
+                arrayHiddenID.push('searchTask');      
+                arrayHiddenID.push('searchNotes');
+                arrayHiddenID.push('searchSelected');
+                        
+
+        if(document.getElementById('show_flag').value==''){
+                        var ccount=arrayHiddenID.length-1;
+                        while (ccount>=0){
+                                document.getElementById(arrayHiddenID[ccount]).style.display = 'none';
+                                ccount--;
+                        }
+        }
+        else
+        showADV = true; 
+        */ 
+        showAdvance_v2_start();
+    // -------------------------
+//End Custom Code
+
+//Close page_OnLoad @1-BC33A33A
+    return result;
+}
+//End Close page_OnLoad
+
+//bind_events @1-B716D3FC
+function bind_events() {
+    page_OnLoad();
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+
+//End CCS script
+isBootstrap = true;
+</script>
+<style>
+  .BlueNoteSorterLink{
+    color: white;
+    text-decoration: underline;
+  }
+  
+  a:hover{
+    color: #FFA558;
+  }
+  </style>
+</head>
+<body id="blueNote" class="container-fluid" alink="#000000" link="#000000" bgcolor="#ffffff" text="#000000" vlink="#000000">
+<!-- BEGIN Record debtormstSearch -->
+<br>
+<div class="card-header pb-1 bg-primary text-white setColor">{stxtSearchDebtors}</div> 
+<form method="post" name="debtormstSearch" action="{Action}">
+  <div class="card border-danger setBorder">
+      <div class="card-body">
+        <!-- BEGIN Error -->
+					<p class="text-danger">{Error}</p>
+        <!-- END Error -->
+        
+        <div class="col-md-12 px-1">
+          <div class="row">
+            <div class="col-md-6 px-1">
+              <select class="form-control form-control-sm"  name="searchTypeListbox" id="searchTypeListbox" onChange="showAdvance_v2_add(this.value);"></select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 px-1">
+              {stxtCode}
+              <input class="form-control form-control-sm" value="{s_dbtr_code}" maxlength="15" size="15" name="s_dbtr_code">
+            </div>
+            <div class="col-md-4 px-1">
+              {stxtName1}
+              <input class="form-control form-control-sm" value="{s_dbtr_name1}" style="{stxtStyleMasterName1}" {stxtMasterName1HTMLProperties} size="50" name="s_dbtr_name1">
+            </div>
+            <div class="col-md-4 px-1" {nllauthACC_ROW_GST}>
+              {nllauthACC_ROW_GSTresetstart}{nllauthACC_ROW_GSTresetend}{stxtDebtorTaxGroup}&nbsp;{req_tag} <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a>
+              <select class="form-control form-control-sm" id="s_dbtr_vat_group"onkeydown="linkSearchBox(this, 0, event)" name="{s_dbtr_vat_group_Name}">
+                <option value="" selected>Select Value</option>
+                {s_dbtr_vat_group_Options} 
+              </select>
+            </div>
+          
+            <div class="col-md-4 px-1" id="searchUserdefine1">
+              <div>
+                <img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('textbox','s_dbtr_userdefine1');">{stxtUserdefine1}
+                <input class="form-control form-control-sm" value="{s_dbtr_userdefine1}" maxlength="50" size="50" name="s_dbtr_userdefine1">
+              </div>
+            </div>
+            <div class="col-md-4 px-1" id="searchCurrency" nllact="MultiCurr">
+              <div>
+                <img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('listbox','s_currency');">{stxtCurrency}
+                <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" border="0" src="image/search.gif"></a>
+                <select onkeydown="linkSearchBox(this, 0, event)" class="form-control form-control-sm" name="{s_currency_Name}">
+                  <option selected value="">Select Value</option>
+                  {s_currency_Options}
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4 px-1" id="searchSalesman">
+              <div>
+                <img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('listbox','s_dbtr_salesman_no');">{stxtSalesman}
+                <a onclick="showSearchBox(this,1);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" border="0" src="image/search.gif"></a>
+                <span style="OVERFLOW: hidden;">
+                  <select onkeydown="linkSearchBox(this, 1, event)" class="form-control form-control-sm" name="{s_dbtr_salesman_no_Name}">
+                    <option selected value="">Select Value</option>
+                    {s_dbtr_salesman_no_Options}
+                  </select>
+                </span>
+                
+              </div>
+            </div>
+          
+            <div class="col-md-4 px-1" id="searchBusiness" {nllauthACC_ROW_BUSINESS_NATURE}>
+              <div>
+                <img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('listbox','s_dbtr_business');" >{stxtBusinessNature}
+                <a onclick="showSearchBox(this,1);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img src="image/search.gif" tabindex="-1" border="0"></a>
+                <span style="OVERFLOW: hidden;">
+                  <select name="{s_dbtr_business_Name}" class="form-control form-control-sm" onkeydown="linkSearchBox(this, 1, event)">
+                   <option value="">Select Value</option>
+                   {s_dbtr_business_Options}
+                 </select>
+                </span>
+              </div>
+            </div>
+            <div class="col-md-4 px-1" id="searchArea">
+              <div>
+                <img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('listbox','s_dbtr_area_no');">{stxtArea}
+                <a onclick="showSearchBox(this,1);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" border="0" src="image/search.gif"></a>
+                <span style="OVERFLOW: hidden;">
+                  <select onkeydown="linkSearchBox(this, 1, event)" class="form-control form-control-sm" name="{s_dbtr_area_no_Name}">
+                    <option selected value="">Select Value</option>
+                    {s_dbtr_area_no_Options}
+                  </select>
+                </span>
+              </div>
+            </div>
+            <div class="col-md-4 px-1" id="searchApprovalStatus" {nllauthMASTER_ROW_APPROVAL_STATUS}>
+              <div>
+                <img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('listbox','approval_status');">{nllauthMASTER_ROW_APPROVAL_STATUSresetstart}{nllauthMASTER_ROW_APPROVAL_STATUSresetend}{stxtApprovalStatus}
+                <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" border="0" src="image/search.gif"></a>
+                <select class="form-control form-control-sm" onkeydown="linkSearchBox(this, 0, event)" name="approval_status">
+                  <option selected value="">Select Value</option>
+                  {approval_status_Options}
+                </select>
+              </div>
+            </div>
+          
+            <div class="col-md-4 px-1" id="searchRecord(s)InRow ">
+              <div>
+                <img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('textbox','pageSize');">{stxtPageSize}
+                <img class="" style="CURSOR: pointer;visibility:hidden" id="Advance" title="Show/Hide Advance Criteria" onclick="showadvanced(this)" align="right" src="image/more_open.gif"><input type="text" name="{pageSize_Name}" value="{pageSize}" class="form-control form-control-sm" onblur="(isNumber(this))" style="TEXT-ALIGN: right" class="form-control" maxlength="3" size="3" ><input style="WIDTH: 72px; HEIGHT: 22px" id="show_flag" value="{show_flag}" size="10" type="hidden" name="{show_flag_Name}">
+              </div>
+            </div>
+            <div class="col-md-4 px-1" id="searchStatus">
+              <div>
+                <img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('listbox','s_status');">{stxtDebtorActive}
+                <select class="form-control form-control-sm" name="{s_status_Name}">
+                  {s_status_Options}
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4 px-1" id="searchSource" {nllauthdbtr_source}>
+              <div>
+                <img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('listbox','s_source');">{stxtSource}
+                <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" border="0" src="image/search.gif"></a>
+                <select onkeydown="linkSearchBox(this, 0, event)" class="form-control form-control-sm" name="{s_source_Name}">
+                  <option selected value="">Select Value</option>
+                  {s_source_Options}
+                </select>    
+              </div>
+            </div>
+          
+            <div class="col-md-4 px-1" id="searchJob" {nllauthdbtr_job}>
+              <div>
+                <img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('listbox','s_job');">{stxtJob}
+                <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" border="0" src="image/search.gif"></a>
+                <select onkeydown="linkSearchBox(this, 0, event)" class="form-control form-control-sm" name="{s_job_Name}">
+                  <option selected value="">Select Value</option>
+                  {s_job_Options}
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4 px-1" id="searchTask" {nllauthdbtr_task}>
+              <div>
+                <img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('listbox','s_task');">{stxtTask}
+                <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" border="0" src="image/search.gif"></a>
+                <select onkeydown="linkSearchBox(this, 0, event)" class="form-control form-control-sm" name="{s_task_Name}">
+                  <option selected value="">Select Value</option>
+                  {s_task_Options}
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4 px-1" id="searchAccStatus" {nllauthINV_ROW_MASTER_DBTR_ACCOUNT_ACTIVE}>
+              <div>
+                <img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('listbox','s_acc_status');">{stxtDebtorAccountActive}
+                <select class="form-control form-control-sm" name="{s_acc_status_Name}">
+                  {s_acc_status_Options} 
+                </select>
+              </div>
+            </div>
+         
+            <div class="col-md-4 px-1" id="searchSelected">
+              <div>
+                <img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('checkbox','onlySelected');">{stxtOnlySelected}
+                <input value="1" type="checkbox" name="{onlySelected_Name}" {onlySelected}>
+                {stxtClearSelected}
+                <input id="clear_selection" value="1" type="checkbox" name="{clearSelection_Name}" {clearSelection}>
+              </div>
+            </div>
+            <div class="col-md-4 px-1" id="searchNotes" {nllauthMASTER_ROW_NoteSearch}>
+              <div>
+                <img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('textbox','notes_search');">{stxtSearchNotes}
+                <a tabindex="-1" onclick="window.open('modules/notes/notes_search_popup.php?notes_no=2','_blank','WIDTH=560,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes');return false;" href="#"><img border="0" src="image/addlist.gif" width="20"></a>{nllauthADDLIST_NOTEresetstart}{nllauthADDLIST_NOTEresetend}
+                <input class="form-control form-control-sm" value="{notes_search_display}" readonly name="{notes_search_display_Name}"><input value="{notes_search}" type="hidden" name="{notes_search_Name}">&nbsp;
+              </div>
+            </div>
+            <div class="col-md-4 px-1" id="searchReportInExcel" {nllauthPRINTTOEXCEL}>
+              <div>
+                <img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('checkboxt','printToExcel');">{stxtReportInExcel}
+                <input value="1" type="checkbox" name="printToExcel">
+              </div>
+            </div>
+          </div>
+        </div>
+        &nbsp;
+        <div class="text-right">
+          <!-- BEGIN Button Main --><input class="btn btn-primary btn-sm" value="Main" type="submit" name="Main"><!-- END Button Main -->
+          <input id="Reset" class="btn btn-primary btn-sm" value="Reset" type="reset" name="Reset">
+          <!-- BEGIN Button DoSearch --><input class="btn btn-primary btn-sm" onclick="if(document.getElementById('clear_selection').checked){if(confirm('Confirm clear all selected?')){jsrsWriteDynamic('checkboxMultiSelectMaster','checkbox_Debtormst','00000','false')}};" value="Search" type="submit" name="DoSearch"><!-- END Button DoSearch -->
+        </div>
+      </div>
+  </div>  
+  <!-- <font class="BlueNoteFormHeaderFont">{stxtSearchDebtors}</font>&nbsp;&nbsp;<select class="BlueNoteSelect"  name="searchTypeListbox" id="searchTypeListbox" onChange="showAdvance_v2_add(this.value);"></select> -->
+  <table id="searchTable" style="display:none" class="BlueNoteFormTABLE" cellpadding="4">
+    <!-- BEGIN Error -->
+    <tr>
+      <td class="BlueNoteErrorDataTD" colspan="6">{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td class="BlueNoteFieldCaptionTD" nowrap>{stxtCode}</td> 
+      <td class="BlueNoteDataTD" colspan="5" nowrap></td>
+    </tr>
+ 
+    <tr>
+      <td class="BlueNoteFieldCaptionTD" nowrap>{stxtName1}</td> 
+      <td class="BlueNoteDataTD" colspan="5" nowrap></td>
+    </tr>
+
+	<tr {nllauthACC_ROW_GST}>
+  <td class="BlueNoteFieldCaptionTD" nowrap>{nllauthACC_ROW_GSTresetstart}{nllauthACC_ROW_GSTresetend}{stxtDebtorTaxGroup}&nbsp;{req_tag}</td> 
+  <td class="BlueNoteDataTD" nowrap colspan="5">
+ </td> 
+</tr>
+
+ 
+    <tr id="searchUserdefine1">
+      <td class="BlueNoteFieldCaptionTD" nowrap>{stxtUserdefine1}</td> 
+      <td class="BlueNoteDataTD" colspan="5" nowrap></td>
+    </tr>
+ 
+    <tr id="searchCurrency" nllact="MultiCurr">
+      <td class="BlueNoteFieldCaptionTD" nowrap>{stxtCurrency}</td> 
+      <td class="BlueNoteDataTD" colspan="5" nowrap>
+      </td>
+    </tr>
+ 
+    <tr id="searchSalesman">
+      <td class="BlueNoteFieldCaptionTD" nowrap>{stxtSalesman}</td> 
+      <td class="BlueNoteDataTD" colspan="5" nowrap>
+      </td>
+    </tr>
+ <tr id="searchBusiness" {nllauthACC_ROW_BUSINESS_NATURE}>
+ <td class="BlueNoteFieldCaptionTD" nowrap>{stxtBusinessNature}</td>
+ <td class="BlueNoteDataTD" colspan="5" nowrap>
+
+ </td>
+ </tr>
+    <tr id="searchArea">
+      <td class="BlueNoteFieldCaptionTD" nowrap>{stxtArea}</td> 
+      <td class="BlueNoteDataTD" colspan="5" nowrap></td>
+    </tr>
+ 
+    <tr id="searchApprovalStatus" {nllauthMASTER_ROW_APPROVAL_STATUS}>
+      <td class="BlueNoteFieldCaptionTD">{nllauthMASTER_ROW_APPROVAL_STATUSresetstart}{nllauthMASTER_ROW_APPROVAL_STATUSresetend}{stxtApprovalStatus}&nbsp;</td> 
+      <td class="BlueNoteDataTD" colspan="5">
+      </td>
+    </tr>
+ 
+    <tr id="searchRecord(s)InRow ">
+      <td class="BlueNoteFieldCaptionTD" nowrap>{stxtPageSize}&nbsp;</td> 
+      <td class="BlueNoteDataTD" colspan="5" nowrap></td> 
+    </tr>
+ 
+    <tr id="searchStatus">
+      <td class="BlueNoteFieldCaptionTD" nowrap>{stxtDebtorActive}</td> 
+      <td class="BlueNoteDataTD" colspan="5" nowrap>
+ </td>
+    </tr>
+ 
+    <tr id="searchSource" {nllauthdbtr_source}>
+      <td class="BlueNoteFieldCaptionTD" nowrap>{stxtSource}</td> 
+      <td class="BlueNoteDataTD" colspan="5" nowrap>
+      </td>
+    </tr>
+ 
+    <tr id="searchJob" {nllauthdbtr_job}>
+      <td class="BlueNoteFieldCaptionTD" nowrap>{stxtJob}</td> 
+      <td class="BlueNoteDataTD" colspan="5" nowrap>
+      </td>
+    </tr>
+ 
+    <tr id="searchTask" {nllauthdbtr_task}>
+      <td class="BlueNoteFieldCaptionTD" nowrap>{stxtTask}</td> 
+      <td class="BlueNoteDataTD" colspan="5" nowrap>
+      </td>
+    </tr>
+ 	
+	<tr id="searchAccStatus" {nllauthINV_ROW_MASTER_DBTR_ACCOUNT_ACTIVE}>
+	  <td class="BlueNoteFieldCaptionTD" nowrap>{stxtDebtorAccountActive}</td> 
+	  <td class="BlueNoteDataTD" colspan="5" nowrap>
+	 </td> 
+	</tr>
+
+
+    <tr id="searchSelected">
+      <td class="BlueNoteFieldCaptionTD" nowrap>{stxtOnlySelected}&nbsp;</td> 
+      <td class="BlueNoteDataTD" nowrap></td>  
+      <td class="BlueNoteFieldCaptionTD" nowrap>{stxtClearSelected}</td> 
+      <td class="BlueNoteDataTD" colspan="3" nowrap></td>
+    </tr>		
+	
+    <tr id="searchNotes" class="BlueNoteFieldCaptionTD" {nllauthMASTER_ROW_NoteSearch}>
+      <td class="BlueNoteFieldCaptionTD" nowrap>{stxtSearchNotes}&nbsp;</td> 
+      <td class="BlueNoteDataTD" colspan="5">{nllauthADDLIST_NOTEresetend}</td>
+    </tr>
+ 
+    <tr id="searchReportInExcel" {nllauthPRINTTOEXCEL}>
+      <td class="BlueNoteFieldCaptionTD" nowrap>{stxtReportInExcel}</td> 
+      <td class="BlueNoteDataTD" colspan="5" nowrap></td>
+    </tr>
+ 
+    <tr>
+      <td style="DISPLAY: none" class="BlueNoteFooterTD" nowrap>
+       </td> 
+      <td class="BlueNoteFooterTD" nowrap></td> 
+      <td class="BlueNoteFooterTD" colspan="5" nowrap align="right">
+      </td>
+    </tr>
+  </table>
+</form>
+<!-- END Record debtormstSearch -->
+<!-- BEGIN Grid debtormst --><div class="card-header pb-1 bg-danger text-white setColor"><font class="BlueNoteFormHeaderFont">{stxtListOfDebtors}</font></div>
+<div class="">
+  <table class="table-sm table-bordered" cellpadding="4">
+    <tr>
+      <td></td> 
+      <td class="BlueNoteFooterTDNav" colspan="2" nowrap>{nllauthADDMASTERLINKresetstart}<a class="BlueNoteNavigatorLink" href="{debtormst_Insert_Src}">{stxtAddNew}</a>{nllauthADDMASTERLINKresetend}
+        {nllauthUPDATEresetstart}<a class="BlueNoteNavigatorLink" onclick="return confirm('Confirm to Update All Records Above?')" href="{Link1_Src}">{stxtUpdateSelection}</a>{nllauthUPDATEresetend}&nbsp;<a class="BlueNoteNavigatorLink" href="report/master_label_debtormst_qr1.php">{stxtPrintLabel}</a> 
+        <!-- BEGIN Navigator Navigator -->
+        <!-- BEGIN First_On --><a class="BlueNoteNavigatorLink" href="{First_URL}">|&lt;</a><!-- END First_On -->
+        <!-- BEGIN Prev_On --><a class="BlueNoteNavigatorLink" href="{Prev_URL}">&lt;&lt;</a><!-- END Prev_On -->&nbsp;{Page_Number}
+        of {Total_Pages}&nbsp; 
+        <!-- BEGIN Next_On --><a class="BlueNoteNavigatorLink" href="{Next_URL}">&gt;&gt;</a><!-- END Next_On -->
+        <!-- BEGIN Last_On --><a class="BlueNoteNavigatorLink" href="{Last_URL}">&gt;|</a><!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;</td> 
+      <td class="BlueNoteFooterTDNav" colspan="23">
+          <a class="BlueNoteNavigatorLink" href="{stxtMenuList_Src}">{stxtMenuList}</a>&nbsp;
+          <a class="BlueNoteNavigatorLink" href="report/master_label_debtormst_qr1.php">{stxtMenuLabel}</a>&nbsp;
+          <a href="{stxtResetDebtorRating_Src}" {nllauthMASTER_HYPERLINK_DBCR_RATE} class="BlueNoteNavigatorLink">{stxtResetDebtorRating}</a>
+          &nbsp;<a href="{middleware_import_data_Src}" class="BlueNoteNavigatorLink" {nllauthHYPERLINK_IMPORT_DATA}>{stxtXsretailDataImport}</a> {nllauthHYPERLINK_IMPORT_DATAresetstart}{nllauthHYPERLINK_IMPORT_DATAresetend}
+      </td>
+    </tr>
+   
+    <tr class="bg-danger text-white setColor">
+      <td class="BlueNoteColumnTD" nowrap>&nbsp;</td> 
+      <td class="BlueNoteColumnTD" nowrap>
+        <!-- BEGIN Sorter Sorter_dbtr_code --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtCode}</a> 
+        <!-- BEGIN Asc_On --><img border="0" src="Themes/BlueNote/AscOn.gif"><!-- END Asc_On -->
+        <!-- BEGIN Desc_On --><img border="0" src="Themes/BlueNote/DescOn.gif"><!-- END Desc_On --><!-- END Sorter Sorter_dbtr_code -->&nbsp;</td> 
+      <td class="BlueNoteColumnTD" nowrap>
+        <!-- BEGIN Sorter Sorter_dbtr_name1 --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtName1}</a> 
+        <!-- BEGIN Asc_On --><img border="0" src="Themes/BlueNote/AscOn.gif"><!-- END Asc_On -->
+        <!-- BEGIN Desc_On --><img border="0" src="Themes/BlueNote/DescOn.gif"><!-- END Desc_On --><!-- END Sorter Sorter_dbtr_name1 -->&nbsp;</td> 
+      <td class="BlueNoteColumnTD" nowrap>
+        <!-- BEGIN Sorter Sorter1_ctrl_acc --><a href="{Sort_URL}" class="BlueNoteSorterLink">{nllauthCOLLIST_MST_CONTROLACresetstart}{nllauthCOLLIST_MST_CONTROLAC}{stxtControlAC}</a>{nllauthCOLLIST_MST_CONTROLACresetend}
+        <!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+        <!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter1_ctrl_acc --></td> 
+      <td class="BlueNoteColumnTD" nowrap nllact="MultiCurr">
+        <!-- BEGIN Sorter Sorter1 --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtCurrency}</a> 
+        <!-- BEGIN Asc_On --><font color="#0000ff"><img border="0" src="Themes/BlueNote/AscOn.gif"></font><!-- END Asc_On -->
+        <!-- BEGIN Desc_On --><font color="#0000ff"><img border="0" src="Themes/BlueNote/DescOn.gif"></font><!-- END Desc_On --><!-- END Sorter Sorter1 --></td> 
+      <td class="BlueNoteColumnTD" nowrap>
+        <!-- BEGIN Sorter Sorter_credit_limit --><a class="BlueNoteSorterLink" href="{Sort_URL}">{nllauthCOLLIST_MST_CREDITLIMITresetstart}{nllauthCOLLIST_MST_CREDITLIMIT}{stxtDebtorLimit}</a>{nllauthCOLLIST_MST_CREDITLIMITresetend} 
+        <!-- BEGIN Asc_On --><font color="#0000ff"><img border="0" src="Themes/BlueNote/AscOn.gif"></font><!-- END Asc_On -->
+        <!-- BEGIN Desc_On --><font color="#0000ff"><img border="0" src="Themes/BlueNote/DescOn.gif"></font><!-- END Desc_On --><!-- END Sorter Sorter_credit_limit --></td> 
+      <td class="BlueNoteColumnTD" nowrap>
+        <!-- BEGIN Sorter Sorter_dbtr_term --><a class="BlueNoteSorterLink" href="{Sort_URL}">{nllauthCOLLIST_MST_TERMresetstart}{nllauthCOLLIST_MST_TERM}{stxtTerm}</a>{nllauthCOLLIST_MST_TERMresetend} 
+        <!-- BEGIN Asc_On --><font color="#0000ff"><img border="0" src="Themes/BlueNote/AscOn.gif"></font><!-- END Asc_On -->
+        <!-- BEGIN Desc_On --><font color="#0000ff"><img border="0" src="Themes/BlueNote/DescOn.gif"></font><!-- END Desc_On --><!-- END Sorter Sorter_dbtr_term --></td> 
+      <td class="BlueNoteColumnTD" nowrap>&nbsp; 
+        <!-- BEGIN Sorter Sorter_dbtr_salesman_no --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtSalesman}{nllauthCOLLIST_SalesmanView}</a> 
+        <!-- BEGIN Asc_On --><img border="0" src="Themes/BlueNote/AscOn.gif"><!-- END Asc_On -->
+        <!-- BEGIN Desc_On --><img border="0" src="Themes/BlueNote/DescOn.gif"><!-- END Desc_On --><!-- END Sorter Sorter_dbtr_salesman_no --></td> 
+      <td class="BlueNoteColumnTD" nowrap>
+        <!-- BEGIN Sorter Sorter_dbtr_business --><a href="{Sort_URL}" class="BlueNoteSorterLink">{nllauthACC_COLLIST_BUSINESS_NATUREresetstart}{nllauthACC_COLLIST_BUSINESS_NATURE}{nllauthACC_COLLIST_BUSINESS_NATUREresetend}{stxtBusinessNature}</a>
+        <!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+        <!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_dbtr_business --></td>
+    <td class="BlueNoteColumnTD" nowrap {nllauthACC_MST_COLLIST_CTC_PERSON} >{nllauthACC_MST_COLLIST_CTC_PERSONresetstart} {nllauthACC_MST_COLLIST_CTC_PERSONresetend} {stxtContactPerson}</td>
+    <td class="BlueNoteColumnTD" nowrap>{nllauthCOLLIST_DebtorMst_Area} 
+        <!-- BEGIN Sorter Sorter_dbtr_area_no --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtArea}</a> 
+        <!-- BEGIN Asc_On --><img border="0" src="Themes/BlueNote/AscOn.gif"><!-- END Asc_On -->
+        <!-- BEGIN Desc_On --><img border="0" src="Themes/BlueNote/DescOn.gif"><!-- END Desc_On --><!-- END Sorter Sorter_dbtr_area_no -->&nbsp;</td> 
+      <td class="BlueNoteColumnTD" nowrap>
+        <!-- BEGIN Sorter Sorter_dbtr_statement_group --><a href="{Sort_URL}" class="BlueNoteSorterLink">{nllauthACC_COLLIST_DBTR_STATEMENT_GROUPresetstart}{nllauthACC_COLLIST_DBTR_STATEMENT_GROUP}{stxtDebtorStatementGroup}</a>{nllauthACC_COLLIST_DBTR_STATEMENT_GROUPresetend}
+        <!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+        <!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_dbtr_statement_group -->&nbsp;</td> 
+      <td class="BlueNoteColumnTD" nowrap>{nllauthCOLLIST_DebtorMst_State} 
+        <!-- BEGIN Sorter Sorter_dbtr_state_no --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtState}</a> 
+        <!-- BEGIN Asc_On --><img border="0" src="Themes/BlueNote/AscOn.gif"><!-- END Asc_On -->
+        <!-- BEGIN Desc_On --><img border="0" src="Themes/BlueNote/DescOn.gif"><!-- END Desc_On --><!-- END Sorter Sorter_dbtr_state_no -->&nbsp;</td> 
+      <td class="BlueNoteColumnTD" nowrap>{nllauthCOLLIST_DebtorMst_Postcode} 
+        <!-- BEGIN Sorter Sorter_dbtr_postcode_no --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtPostcode}</a> 
+        <!-- BEGIN Asc_On --><img border="0" src="Themes/BlueNote/AscOn.gif"><!-- END Asc_On -->
+        <!-- BEGIN Desc_On --><img border="0" src="Themes/BlueNote/DescOn.gif"><!-- END Desc_On --><!-- END Sorter Sorter_dbtr_postcode_no -->&nbsp;</td> 
+      <td class="BlueNoteColumnTD" nowrap {nllauthMASTER_COLLIST_TAX_GROUP}>
+    <!-- BEGIN Sorter Sorter_crdt_vat_group --><a class="BlueNoteSorterLink" href="{Sort_URL}">{nllauthMASTER_COLLIST_TAX_GROUPresetstart}
+    {nllauthMASTER_COLLIST_TAX_GROUPresetend}{stxtDebtorTaxGroup}</a> 
+    <!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+    <!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_crdt_vat_group -->&nbsp;</td>
+    
+    
+    
+    <td class="BlueNoteColumnTD" nowrap>{nllauthCOLLIST_DebtorMst_Status} 
+        <!-- BEGIN Sorter Sorter_dbtr_status --><a class="BlueNoteSorterLink" href="{Sort_URL}">{nllauthCOLLIST_DebtorMst_Statusresetstart}{nllauthCOLLIST_DebtorMst_Status}{stxtStatus}</a>{nllauthCOLLIST_DebtorMst_Statusresetend} 
+        <!-- BEGIN Asc_On --><img border="0" src="Themes/BlueNote/AscOn.gif"><!-- END Asc_On -->
+        <!-- BEGIN Desc_On --><img border="0" src="Themes/BlueNote/DescOn.gif"><!-- END Desc_On --><!-- END Sorter Sorter_dbtr_status -->&nbsp;</td> 
+      <td class="BlueNoteColumnTD" nowrap>
+        <!-- BEGIN Sorter Sorter_dbtr_flag --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtActive}</a> 
+        <!-- BEGIN Asc_On --><img border="0" src="Themes/BlueNote/AscOn.gif"><!-- END Asc_On -->
+        <!-- BEGIN Desc_On --><img border="0" src="Themes/BlueNote/DescOn.gif"><!-- END Desc_On --><!-- END Sorter Sorter_dbtr_flag --></td> 
+      <td class="BlueNoteColumnTD" nowrap>{nllauthMASTER_COLLIST_APPROVAL_STATUS}{nllauthMASTER_COLLIST_APPROVAL_STATUSresetstart}{nllauthMASTER_COLLIST_APPROVAL_STATUSresetEnd}{stxtApprovalStatus}&nbsp;</td> 
+      <td class="BlueNoteColumnTD" nowrap>{nllauthINV_COLLIST_CUST_PREPLAN_MST_LAST_MOD_USER}{nllauthINV_COLLIST_CUST_PREPLAN_MST_LAST_MOD_USERresetstart}{nllauthINV_COLLIST_CUST_PREPLAN_MST_LAST_MOD_USERresetEnd}{stxtSysLastModUser}&nbsp;</td>
+    <td class="BlueNoteColumnTD" nowrap>{nllauthCOLLIST_DebtorMst_Userdefine1} 
+        <!-- BEGIN Sorter Sorter_dbtr_userdefine1 --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtUserdefine1}&nbsp;</a> 
+        <!-- BEGIN Asc_On --><img border="0" src="Themes/BlueNote/AscOn.gif"><!-- END Asc_On -->
+        <!-- BEGIN Desc_On --><img border="0" src="Themes/BlueNote/DescOn.gif"><!-- END Desc_On --><!-- END Sorter Sorter_dbtr_userdefine1 -->&nbsp;</td> 
+      <td class="BlueNoteColumnTD" nowrap>{notes_header}{nllauthCOLLIST_NotesView}</td> 
+      <td class="BlueNoteColumnTD" nowrap>{nllauthCOLLIST_DebtorMst_Sorting}
+        <!-- BEGIN Sorter Sorter_dbtr_sorting --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtSorting}</a> 
+        <!-- BEGIN Asc_On --><img border="0" src="Themes/BlueNote/AscOn.gif"><!-- END Asc_On -->
+        <!-- BEGIN Desc_On --><img border="0" src="Themes/BlueNote/DescOn.gif"><!-- END Desc_On --><!-- END Sorter Sorter_dbtr_sorting -->&nbsp;</td> 
+      <td class="BlueNoteColumnTD" nowrap>&nbsp;</td> 
+      <td class="BlueNoteColumnTD" nowrap>{stxtCopy}</td> 
+      <td class="BlueNoteColumnTD" colspan="2" nowrap>{stxtNotes}&nbsp;{nllauthCOLLIST_Notes}</td> 
+      <td class="BlueNoteColumnTD" nowrap>{stxtSelected}</td>
+    </tr>
+   
+    <!-- BEGIN Row -->
+    <tr>
+      <td class="BlueNoteDataTD" nowrap>{nllauthDELETEMASTERLINKresetstart}<a onclick="return jsrsChkActiveCode('debtormst'+'|'+'{hid_dbtr_no}', event)" href="{ImageLink1}&ccsForm=debtormst&Delete=Delete"><img border="0" src="image/trash.gif"></a>{nllauthDELETEMASTERLINKresetend}</td> 
+      <td class="BlueNoteDataTD" nowrap><a class="BlueNoteDataLink" href="{dbtr_code_Src}">{dbtr_code}</a></td> 
+      <td class="BlueNoteDataTD" nowrap>
+        <div style="DISPLAY: none">
+        </div>
+        {dbtr_name1}<input value="{hid_dbtr_no}" type="hidden" name="{hid_dbtr_no_Name}"></td> 
+      <td class="BlueNoteDataTD" nowrap>{nllauthCOLLIST_MST_CONTROLACresetstart}{nllauthCOLLIST_MST_CONTROLAC}{dbtr_group}{nllauthCOLLIST_MST_CONTROLACresetend}</td> 
+      <td class="BlueNoteDataTD" nowrap nllact="MultiCurr">{dbtr_currency}</td> 
+      <td class="BlueNoteDataTD" nowrap>{nllauthCOLLIST_MST_CREDITLIMITresetstart}{nllauthCOLLIST_MST_CREDITLIMIT} 
+        <div align="right">
+          {dbtr_credit_limit} 
+        </div>
+        {nllauthCOLLIST_MST_CREDITLIMITresetend} </td> 
+      <td class="BlueNoteDataTD" nowrap>{nllauthCOLLIST_MST_TERMresetstart}{nllauthCOLLIST_MST_TERM}{dbtr_term}{nllauthCOLLIST_MST_TERMresetend}</td> 
+      <td class="BlueNoteDataTD" nowrap>{dbtr_salesman_no}
+        {nllauthCOLLIST_SalesmanView}</td> 
+    <td class="BlueNoteDataTD" nowrap {nllauthACC_COLLIST_BUSINESS_NATURE}>
+    {dbtr_business}</td>
+    <td class="BlueNoteDataTD" nowrap {nllauthACC_MST_COLLIST_CTC_PERSON}>{dbtr_contact_person}</td>
+      <td class="BlueNoteDataTD" nowrap>{dbtr_area_no}&nbsp;{nllauthCOLLIST_DebtorMst_Area}</td>
+      <td class="BlueNoteDataTD" nowrap {nllauthACC_COLLIST_DBTR_STATEMENT_GROUP}>{dbtr_statement_group}&nbsp;{nllauthACC_COLLIST_DBTR_STATEMENT_GROUPresetstart}
+    {nllauthACC_COLLIST_DBTR_STATEMENT_GROUPresetend}</td> 
+      <td class="BlueNoteDataTD" nowrap>{dbtr_state_no}&nbsp;{nllauthCOLLIST_DebtorMst_State}</td> 
+      <td class="BlueNoteDataTD" nowrap>{dbtr_postcode_no}&nbsp;{nllauthCOLLIST_DebtorMst_Postcode}</td> 
+  
+    <td class="BlueNoteDataTD" nowrap {nllauthMASTER_COLLIST_TAX_GROUP}>{dbtr_vat_group}&nbsp;{nllauthMASTER_COLLIST_TAX_GROUPresetstart}
+    {nllauthMASTER_COLLIST_TAX_GROUPresetend}</td>
+  
+      <td class="BlueNoteDataTD" nowrap>{nllauthCOLLIST_DebtorMst_Statusresetstart}{nllauthCOLLIST_DebtorMst_Status}{dbtr_status}&nbsp;{nllauthCOLLIST_DebtorMst_Statusresetend}</td> 
+      <td class="BlueNoteDataTD" nowrap><input class="BlueNoteInput" disabled value="1" type="checkbox" name="dbtr_flag" {dbtr_flag}>&nbsp;</td> 
+      <td class="BlueNoteDataTD" nowrap>{nllauthMASTER_COLLIST_APPROVAL_STATUS}{approval_status}</td> 
+      <td class="BlueNoteDataTD" nowrap>{nllauthINV_COLLIST_CUST_PREPLAN_MST_LAST_MOD_USER}{dbtr_sys_last_mod_user}</td>
+      <td class="BlueNoteDataTD" nowrap>{dbtr_userdefine1}&nbsp;{nllauthCOLLIST_DebtorMst_Userdefine1}</td> 
+      <td class="BlueNoteDataTD" nowrap>{notes_label}{nllauthCOLLIST_NotesView}</td> 
+      <td class="BlueNoteDataTD" nowrap>&nbsp;{dbtr_sorting}&nbsp;{nllauthCOLLIST_DebtorMst_Sorting}</td> 
+      <td class="BlueNoteDataTD" nowrap>&nbsp;<a title="print label" onclick="popToNewTabConditionally(this, PRINTER_ICON_REDIRECTION_BEHAVIOR, event);" href="report/master_label_debtormst_qr1.php?debtor_from={hid_dbtr_no}&debtor_to={hid_dbtr_no}"><img src="image/printsmall.gif" border="0"></a>&nbsp;<a onclick="window.open('modules/audit_log/rpt_audit_master.php?s_module=ACCT-MST&s_refno1=dbtr_no+%3D+%27{hid_dbtr_no}%27','_blank','WIDTH=1000,HEIGHT=650,LEFT=200,scrollbars=yes,resizable=yes');return false;" tabindex="-1" href="" {nllauthMASTER_HYPERLINK_AUDIT}>{nllauthMASTER_HYPERLINK_AUDITresetstart}{nllauthMASTER_HYPERLINK_AUDITresetend}<img src="image/audit_trail.jpg" border="0" alt="{stxtAuditLog}"></a></td> 
+      <td class="BlueNoteDataTD" nowrap><a class="BlueNoteDataLink" href="{ImageLink2}"><img class="BlueNoteInput" src="image/copy.gif" width="18" border="0"></a></td> 
+      <td class="BlueNoteDataTD" nowrap align="center" colspan="2"><a class="BlueNoteDataLink" href="{Link3_Src}"><img title="Notes" tabindex="-1" height="20" src="image/list1.jpg" width="18" border="0"></a>{nllauthCOLLIST_Notes}</td> 
+      <td class="BlueNoteDataTD" nowrap><input class="BlueNoteInput" type="checkbox" value="1" name="{CheckBox1_Name}" {CheckBox1} onclick="jsrsWriteDynamic('checkboxMultiSelectMaster','checkbox_Debtormst','{hid_dbtr_no},'+this.checked);"></td>
+    </tr>
+   <!-- END Row -->
+    <!-- BEGIN NoRecords -->
+    <tr>
+      <td class="BlueNoteDataTD" nowrap></td> 
+      <td class="BlueNoteDataTD" colspan="25" nowrap>{stxtNorecords}&nbsp;</td>
+    </tr>
+    <!-- END NoRecords -->
+    <tr class="bg-danger text-white setColor">
+      <td colspan="25">&nbsp;</td>
+    </tr>
+    <tr>
+      <td></td> 
+      <td class="BlueNoteFooterTDNav" colspan="2" nowrap>{nllauthADDMASTERLINKresetstart}<a class="BlueNoteNavigatorLink" href="{debtormst_Insert_Src}">{stxtAddNew}</a>{nllauthADDMASTERLINKresetend}
+        {nllauthUPDATEresetstart}<a class="BlueNoteNavigatorLink" onclick="return confirm('Confirm to Update All Records Above?')" href="{Link1_Src}">{stxtUpdateSelection}</a>{nllauthUPDATEresetend}&nbsp;<a class="BlueNoteNavigatorLink" href="report/master_label_debtormst_qr1.php">{stxtPrintLabel}</a> 
+        <!-- BEGIN Navigator Navigator -->
+        <!-- BEGIN First_On --><a class="BlueNoteNavigatorLink" href="{First_URL}">|&lt;</a><!-- END First_On -->
+        <!-- BEGIN Prev_On --><a class="BlueNoteNavigatorLink" href="{Prev_URL}">&lt;&lt;</a><!-- END Prev_On -->&nbsp;{Page_Number}
+        of {Total_Pages}&nbsp; 
+        <!-- BEGIN Next_On --><a class="BlueNoteNavigatorLink" href="{Next_URL}">&gt;&gt;</a><!-- END Next_On -->
+        <!-- BEGIN Last_On --><a class="BlueNoteNavigatorLink" href="{Last_URL}">&gt;|</a><!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;</td> 
+      <td class="BlueNoteFooterTDNav" colspan="23">
+          <a class="BlueNoteNavigatorLink" href="report/master_list_debtormst_qr1.php">{stxtMenuList}</a>&nbsp;
+          <a class="BlueNoteNavigatorLink" href="report/master_label_debtormst_qr1.php">{stxtMenuLabel}</a>&nbsp;
+          <a href="{reset_debtor_rating_Src}" {nllauthMASTER_HYPERLINK_DBCR_RATE} class="BlueNoteNavigatorLink">{stxtResetDebtorRating}</a>&nbsp;
+      <a href="{middleware_import_data1_Src}" class="BlueNoteNavigatorLink" {nllauthHYPERLINK_IMPORT_DATA}>{stxtXsretailDataImport}</a> {nllauthHYPERLINK_IMPORT_DATAresetstart}{nllauthHYPERLINK_IMPORT_DATAresetend}
+      </td> 
+  
+    </tr>
+  </table>
+</div>
+
+<!-- END Grid debtormst -->
+</body>
+</html>

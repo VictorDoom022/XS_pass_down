@@ -1,0 +1,976 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="GENERATOR" content="CodeCharge Studio 3.0.1.6">
+<title>debtormst_maint</title>
+<!-- <link href="Themes/BlueNote/Style.css" type="text/css" rel="stylesheet"> -->
+<link rel="stylesheet" href="lib/bootstrap_v4.5/css/bootstrap.css">
+<link rel="stylesheet" href="Themes/Custom/themes.css">
+<link href="Themes/BlueNote/tabsstyle2.css" type="text/css" rel="stylesheet">
+<script language="javascript" src="common/entry_rule_inventory.js"></script>
+<script language="javascript" src="common/jsrs/jsrsClient.js"></script>
+<script language="javascript" src="common/jsrs/jsrs_master.js"></script>
+<script src="common/utils.js" type="text/javascript"></script>
+<script src="common/viewport.js" type="text/javascript"></script>
+<script src="common/global.js" type="text/javascript"></script>
+<script src="common/cookie.js" type="text/javascript"></script>
+<script src="common/tabs.js" type="text/javascript"></script>
+<script language="JavaScript" src="common/OptionTransfer.js"></script>
+<script language="javascript" src="common/nll_global_functions.js"></script>
+<script language="javascript" src="common/jsrs/filterProduct.js"></script>
+<script src="common/filterlist.js" type="text/javascript"></script>
+<script src="common/nll_common_search.js" type="text/javascript"></script>
+<script src="javascript/overlib.js" type="text/javascript"></script>
+<script language="JavaScript" src="Functions.js" type="text/javascript" charset="utf-8"></script>
+<script language="javascript" src="common/inv_debtormst.js"></script>
+<script language="Javascript" src="common/nll_accounting.js" type="text/javascript"></script>
+<script language="Javascript" src="common/form_validation.js" type="text/javascript"></script>
+<script language="javascript" src="common/curr_validate.js" type="text/javascript"></script>
+<script language="JavaScript" type="text/javascript">
+
+//bind_events @1-253F04A6
+function bind_events() {  
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//20171116 May #32974
+function func_show_code_name() {
+		var dbtr_code = document.getElementById("code").value;
+		var dbtr_name = document.getElementById("crdt_dbtr_name1").value;
+		if(dbtr_code!=''){
+			var dbtr_code_name = " - "+dbtr_code+": "+dbtr_name;
+			document.getElementById("show_code_name").innerHTML = dbtr_code_name;
+		}
+}
+
+//End CCS script
+isBootstrap = true;
+
+ </script></head>
+<body id="blueNote" class="BlueNotePageBODY" text="#000000" vlink="#000000" alink="#000000" link="#000000" bgcolor="#ffffff" onload="tabInit();func_onload();assigndefault('dbtr_currency');opt1.init(document.forms[0]);initValue('dbtr_doc_type','dbtr_doc_type_2','dbtr_doc_type_from','dbtr_doc_type_to');opt4.init(document.forms[0]);initValue('dbtr_bill_type','dbtr_bill_type_2','dbtr_bill_type_from','dbtr_bill_type_to');opt5.init(document.forms[0]);initValue('dbtr_ord_type','dbtr_ord_type_2','dbtr_ord_type_from','dbtr_ord_type_to');hideArea();hidebusiness();hidesource();hidejob();hidetask();bypass(document.getElementById('dbtr_no').value);opt2.init(document.forms[0]);initValue('mul_salesman','mul_salesman1','multi_salesman_1[]','mul_salesman_2[]');opt3.init(document.forms[0]);{nllauthACC_STORE_CONCEPT_DEFAULT};initValue('dbtr_st_concept','dbtr_st_concept_1','dbtr_st_concept_from','dbtr_st_concept_to');opt7.init(document.forms[0]);initValue('mul_bn','mul_bn1','multi_bn_1[]','mul_bn_2[]');follow_acc_Onclick();{nllauthMASTER_FUNC_ACTIVE_FLAG_DEFAULT};mouseover_onload();func_show_code_name();">
+<div class="container-fluid">
+  <br>
+  <div class="card-header pb-1 bg-secondary text-white setColor"><font class="BlueNoteFormHeaderFont">{stxtAddEditDebtor} <span id="show_code_name"></span></font> </div>
+<div id="tabs">
+  <span class="tab tabActive" id="tab1">[General]</span>
+	<span class="tab" id="tab2" {nllauthMASTER_TAB_ADVANCE}>[Advance]{nllauthMASTER_TAB_ADVANCEresetstart}{nllauthMASTER_TAB_ADVANCEresetend}</span>
+	<span class="tab" id="tab3" {nllauthMASTER_TAB_USERDEFINE}>[User Definition]{nllauthMASTER_TAB_USERDEFINEresetstart}{nllauthMASTER_TAB_USERDEFINEresetend}</span>
+	<span class="tab" id="tab4" {nllauthMASTER_TAB_DOC_SETTING}>[Document Setting]{nllauthMASTER_TAB_DOC_SETTINGresetstart}{nllauthMASTER_TAB_DOC_SETTINGresetend}</span>
+	<span class="tab" id="tab5" {HideTabOnNew}>[{stxtDebtorContact}]</span>
+	<span class="tab" id="tab6" {nllauthACC_TAB_DEBTOR_DELTO} {HideTabOnNew}>[Debtor Deliver to]{nllauthACC_TAB_DEBTOR_DELTOresetstart}{nllauthACC_TAB_DEBTOR_DELTOresetend}</span>
+	<span class="tab" id="tab8" {nllauthACC_TAB_DEBTOR_TAX_EXEMPTION} {HideTabOnNew}>[Debtor Tax Exemption]{nllauthACC_TAB_DEBTOR_TAX_EXEMPTIONresetstart}{nllauthACC_TAB_DEBTOR_TAX_EXEMPTIONresetend}</span>
+	<span class="tab" id="tab7" {nllauthMASTER_TAB_NOTES}>[Notes]{nllauthMASTER_TAB_NOTESresetstart}{nllauthMASTER_TAB_NOTESresetend}</span> 
+</div>
+<!-- BEGIN Record debtormst --><br>
+<br>
+<form name="debtormst" action="{Action}" method="post">
+  <div class="" id="content1">
+    <div class="card bg-light setBorder">
+        <div class="card-body">
+          <!-- BEGIN Error -->
+          <p class="text-danger" >{Error}</p>
+          <!-- END Error -->
+
+          <div class="col-md-12 px-1">
+            <div class=row>
+              <div class="col-md-3 px-1">
+                {stxtDebtorCode}<font color="red">*</font><a {nllauthACC_TEXTLINK_GENERATE_CODE} onclick="generate_code('Debtor');" tabindex="-1" href="#"><font color="0000FF">{nllauthACC_TEXTLINK_GENERATE_CODEresetstart}{nllauthACC_TEXTLINK_GENERATE_CODEresetend}{stxtGenerateCode}</font></a>	
+                <input class="form-control form-control-sm" id="code" onblur="master_code(this.value, 'debtormst','dbtr_code','code','dbtr_no',document.getElementById('dbtr_no').value);" ondblclick="if(!this.readOnly){incrementOneA(this);}" onchange="func_show_code_name();" maxlength="{stxtMasterCodeMaxLength}" size="15" value="{dbtr_code}" name="dbtr_code" {nllauthMASTER_TEXTBOX_CODE} tabindex="1">{nllauthMASTER_TEXTBOX_CODEresetstart}{nllauthMASTER_TEXTBOX_CODEresetend}
+                {lblActive}<input id="dbtr_no" style="WIDTH: 124px; HEIGHT: 22px" type="hidden" size="16" value="{dbtr_no}" name="{dbtr_no_Name}"><input type="hidden" name="{dbtr_sys_last_mod_user_Name}" value="{dbtr_sys_last_mod_user}">
+              </div> 
+              <div class="col-md-3 px-1">
+                <div {nllauthINV_ROW_MASTER_ACTIVE}>
+                  {nllauthINV_ROW_MASTER_ACTIVEresetstart}{nllauthINV_ROW_MASTER_ACTIVEresetend}{stxtDebtorActive}
+                </div>
+                <div {nllauthINV_ROW_MASTER_ACTIVE}>
+                  {nllauthMASTER_FUNC_ACTIVE_FLAG_DEFAULTresetstart}{nllauthMASTER_FUNC_ACTIVE_FLAG_DEFAULTresetend}
+                  <input type="checkbox" id="active_flag" name="{dbtr_flag_Name}" value="1" {dbtr_flag} tabindex="2">
+                </div>
+              </div>
+              <div class="col-md-3 px-1">
+                {stxtDebtorName1}<font color="red">*</font>
+                <input class="form-control form-control-sm" style="stxtStyleMasterName1: " size="50" value="{dbtr_name1}" name="dbtr_name1" id="crdt_dbtr_name1" maxlength="{stxtMasterName1MaxLength}" tabindex="3" onchange="func_show_code_name();">
+              </div>
+              <div class="col-md-3 px-1">
+                {stxtDebtorCompanyRegistrationNo}<font color="red">{stxtRequiredRegistration}</font>
+                <input {nllauthMASTER_TEXTBOX_REGISTRATION} class="form-control form-control-sm" id="dbtr_co_reg_no" value="{dbtr_co_reg_no}" name="{dbtr_co_reg_no_Name}" v_errmsg="{stxtDebtorCompanyRegistrationNo}" tabindex="4"> {nllauthMASTER_TEXTBOX_REGISTRATIONresetstart}{nllauthMASTER_TEXTBOX_REGISTRATIONresetend}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-3 px-1">
+                {stxtDebtorName2}
+                <textarea class="form-control form-control-sm" name="{dbtr_name2_Name}" rows="3" cols="50" tabindex="-1">{dbtr_name2}</textarea>
+              </div>
+              <div class="col-md-3 px-1">
+                {stxtDebtorEmail}
+                <textarea {nllauthMASTER_TEXTAREA_EMAIL} class="form-control form-control-sm" name="{dbtr_email_Name}" cols="50" rows="3" v_errmsg="{stxtDebtorEmail}" tabindex="-1">{dbtr_email}</textarea>{nllauthMASTER_TEXTAREA_EMAILresetstart}{nllauthMASTER_TEXTAREA_EMAILresetend}
+              </div>
+
+              <div class="col-md-3 px-1">
+                <div {nllauthMASTER_ROW_EMAIL_CC}>{nllauthMASTER_ROW_EMAIL_CCresetstart}{nllauthMASTER_ROW_EMAIL_CCresetend}{stxtDebtorEmailCC}</div>
+                <div {nllauthMASTER_ROW_EMAIL_CC}><textarea class="form-control form-control-sm" name="{dbtr_email_cc_Name}" cols="50" rows="3" v_errmsg="{stxtDebtorEmailCC}" tabindex="-1">{dbtr_email_cc}</textarea></div>
+              </div>
+              <div class="col-md-3 px-1">
+                <div  {nllauthMASTER_ROW_EMAIL_BCC}>{nllauthMASTER_ROW_EMAIL_BCCresetstart}{nllauthMASTER_ROW_EMAIL_BCCresetend}{stxtDebtorEmailBCC}</div>
+                <div  {nllauthMASTER_ROW_EMAIL_BCC}><textarea class="form-control form-control-sm" name="{dbtr_email_bcc_Name}" cols="50" rows="3" v_errmsg="{stxtDebtorEmailBCC}" tabindex="-1">{dbtr_email_bcc}</textarea></div>
+              </div>
+
+              <div class="col-md-3 px-1">
+                {stxtDebtorAddress1}
+                <input {nllauthMASTER_TEXTBOX_ADD1} class="form-control form-control-sm" maxlength="{stxtMaxlengthDebtorAddress1}" size="50" value="{dbtr_address1}" name="dbtr_address1" v_errmsg="{stxtDebtorAddress1}" tabindex="7">{nllauthMASTER_TEXTBOX_ADD1resetstart}{nllauthMASTER_TEXTBOX_ADD1resetend}
+              </div>
+              <div class="col-md-3 px-1">
+                {stxtDebtorOffTel}
+                <input {nllauthMASTER_TEXTBOX_OFF_TEL} class="form-control form-control-sm" maxlength="50" size="50" value="{dbtr_off_tel}" name="dbtr_off_tel" v_errmsg="{stxtDebtorOffTel}" tabindex="11">{nllauthMASTER_TEXTBOX_OFF_TELresetstart}{nllauthMASTER_TEXTBOX_OFF_TELresetend}
+              </div>
+              <div class="col-md-3 px-1">
+                {stxtDebtorAddress2}
+                <input {nllauthMASTER_TEXTBOX_ADD2} class="form-control form-control-sm" maxlength="{stxtMaxlengthDebtorAddress2}" size="50" value="{dbtr_address2}" name="dbtr_address2" v_errmsg="{stxtDebtorAddress2}" tabindex="8">{nllauthMASTER_TEXTBOX_ADD2resetstart}{nllauthMASTER_TEXTBOX_ADD2resetend}
+              </div>
+              <div class="col-md-3 px-1">
+                {stxtDebtorFax}
+                <input {nllauthMASTER_TEXTBOX_FAX} class="form-control form-control-sm" maxlength="50" size="50" value="{dbtr_fax}" name="dbtr_fax" v_errmsg="{stxtDebtorFax}" tabindex="12">{nllauthMASTER_TEXTBOX_FAXresetstart}{nllauthMASTER_TEXTBOX_FAXresetend}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-3 px-1">
+                {stxtDebtorAddress3}
+                <input {nllauthMASTER_TEXTBOX_ADD3} class="form-control form-control-sm" maxlength="{stxtMaxlengthDebtorAddress3}" size="50" value="{dbtr_address3}" name="dbtr_address3" v_errmsg="{stxtDebtorAddress3}" tabindex="9">{nllauthMASTER_TEXTBOX_ADD3resetstart}{nllauthMASTER_TEXTBOX_ADD3resetend}
+              </div>
+              <div class="col-md-3 px-1">
+                {stxtDebtorWebsite}
+                <input {nllauthACC_TEXTBOX_DBTR_WEBSITE} class="form-control form-control-sm" maxlength="50" size="50" value="{dbtr_website}" name="{dbtr_website_Name}" tabindex="13">{nllauthACC_TEXTBOX_DBTR_WEBSITEresetstart}{nllauthACC_TEXTBOX_DBTR_WEBSITEresetend}
+              </div>
+              <div class="col-md-3 px-1">
+                {stxtDebtorAddress4}
+                <input {nllauthMASTER_TEXTBOX_ADD4} class="form-control form-control-sm" maxlength="{stxtMaxlengthDebtorAddress4}" size="50" value="{dbtr_address4}" name="dbtr_address4" v_errmsg="{stxtDebtorAddress4}" tabindex="10">{nllauthMASTER_TEXTBOX_ADD4resetstart}{nllauthMASTER_TEXTBOX_ADD4resetend}
+              </div>
+              <div class="col-md-3 px-1">
+                {stxtPrintStatement}
+                <input class="" id="with_statement_type" onclick="chkDisable()" type="checkbox" value="1" name="{with_statement_type_Name}" {with_statement_type} tabindex="14">
+              </div>
+            
+              <div class="col-md-3 px-1">
+                {stxtDebtorAreaNo} <a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> {nllauthADDLIST_AREAresetstart}<a onclick="window.open('master_areamst_maint.php?addlistflag=true&addlistform=debtormst&addlistelement=dbtr_area_no','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1"><img src="image/addlist.gif" width="20" border="0"></a>{nllauthADDLIST_AREAresetend}&nbsp;{nllauthDBTR_AREA_NOresetstart}{nllauthDBTR_AREA_NOresetend}
+                <select class="form-control form-control-sm" {nllauthDBTR_AREA_NO} onkeydown="linkSearchBox(this)" name="dbtr_area_no" id="dbtr_area_no" v_errmsg="{stxtDebtorAreaNo}">
+                  <option value="" selected>Select Value</option>
+                  {dbtr_area_no_Options}
+                </select>
+              </div>
+              <div class="col-md-3 px-1">
+                <div {TR_TO_ADD}>{stxtDebtorToAddress}</div>
+                <div {TR_TO_ADD}>
+                  <select class="BlueNoteSelect" onkeydown="linkSearchBox(this)" style="WIDTH: 250px" name="dbtr_to_address">
+                    <option value="" selected>Select Value</option>
+                    {dbtr_to_address_Options}
+                  </select>
+                  <a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> {nllauthADDLIST_ADDRESSresetstart}<a onclick="window.open('master_deltoadressmst_maint.php?addlistflag=true&addlistform=debtormst&addlistelement=dbtr_to_address&dlto_debtor_no='+document.getElementById('dbtr_no').value,'_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1"><img src="image/addlist.gif" width="20" border="0"></a>{nllauthADDLIST_ADDRESSresetend}
+                </div>
+              </div>
+              <div class="col-md-3 px-1">
+                {stxtDebtorContactPerson}<font color="red">{stxtRequiredContact}</font>
+                <input {nllauthMASTER_TEXTBOX_CONTACT} class="form-control form-control-sm" maxlength="50" size="50" value="{dbtr_contact_person}" name="dbtr_contact_person" v_errmsg="{stxtDebtorContactPerson}">{nllauthMASTER_TEXTBOX_CONTACTresetstart}{nllauthMASTER_TEXTBOX_CONTACTresetend}
+              </div>
+              <div class="col-md-3 px-1">
+                {stxtDebtorAttention}
+                <input {nllauthMASTER_TEXTBOX_ATTENTION} class="form-control form-control-sm" maxlength="50" size="50" value="{dbtr_attention}" name="dbtr_attention" v_errmsg="{stxtDebtorAttention}">{nllauthMASTER_TEXTBOX_ATTENTIONresetstart}{nllauthMASTER_TEXTBOX_ATTENTIONresetend}
+              </div>
+            
+              <div class="col-md-3 px-1" {nllauthACC_ROW_DBTR_BALANCE}>
+                {nllauthACC_ROW_DBTR_BALANCEresetstart}{nllauthACC_ROW_DBTR_BALANCEresetend}{stxtDebtorBalance}
+                <input class="form-control form-control-sm" maxlength="12" size="12" value="{dbtr_balance}" name="dbtr_balance" {nllauthACC_TEXTBOX_DBTR_BALANCE}>{nllauthACC_TEXTBOX_DBTR_BALANCEresetstart}{nllauthACC_TEXTBOX_DBTR_BALANCEresetend}
+              </div>
+      
+              <div class="col-md-3 px-1" {nllauthACC_ROW_GST}>
+                {nllauthACC_ROW_GSTresetstart}{nllauthACC_ROW_GSTresetend}{stxtGSTNumber}<a onclick="get_kastam_portal(document.getElementById('dbtr_co_reg_no').value,1);" tabindex="-1" ><img id="gst_verify" src="image/gst_verify.png" width="20" border="0"></a>
+                <input {nllauthMASTER_TEXTBOX_GST_NO} class="form-control form-control-sm" size="18" type="text" id="dbtr_gst_no" name="{dbtr_gst_no_Name}" value="{dbtr_gst_no}" class="BlueNoteInput" v_errmsg="{stxtGSTNumber}">{nllauthMASTER_TEXTBOX_GST_NOresetstart}{nllauthMASTER_TEXTBOX_GST_NOresetend}
+              </div>
+              <div class="col-md-3 px-1" {nllauthACC_ROW_GST}>
+                {stxtDateofGST}<a onclick="window.dateField=document.debtormst.dbtr_date_of_status_verified;Calender=window.open('common/getdate.php','Calendar','WIDTH=230,HEIGHT=280,TOP=220,LEFT=400')" tabindex="-1" href="#"><img src="image/getdate.gif" border="0">
+                  <a {nllauthMENU_VERIFY_GST_ID_LINK} onclick="window.open('https://gst.customs.gov.my/TAP/_/#1');document.getElementById('date_verified').value=today_date;" href="#"><img src="image/icon_register.gif" width="20" border="0"></a>
+                <input class="form-control form-control-sm" onkeypress="blockdatechar(this,event)" maxlength="10" onchange="DateFormat.dateCheck(this);" size="10" value="{dbtr_date_of_status_verified}" id="date_verified" name="dbtr_date_of_status_verified">
+              </div>
+
+              <div class="col-md-3 px-1" {nllauthACC_ROW_GST}>
+                {nllauthACC_ROW_GSTresetstart}{nllauthACC_ROW_GSTresetend}{stxtDebtorTaxGroup}&nbsp;{req_tag} 
+                <a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> 
+                {nllauthdbtr_vat_grouplistbox}
+                  <select class="form-control form-control-sm" onkeydown="linkSearchBox(this)" name="{dbtr_vat_group_Name}" v_errmsg="{stxtDebtorTaxGroup}" {nllauthdbtr_vat_group}>
+                    <option value="" selected>Select Value</option>
+                    {dbtr_vat_group_Options} 
+                  </select>{nllauthdbtr_vat_groupresetstart}{nllauthdbtr_vat_groupresetend}
+                
+              </div>
+              <div class="col-md-3 px-1" {nllauthACC_ROW_GST}>
+                {stxtCustomApprovalDate}<a href="#" onclick="window.dateField=document.debtormst.dbtr_custom_approval_date;Calender=window.open('common/getdate.php','Calendar','WIDTH=230,HEIGHT=280,TOP=220,LEFT=400')" tabindex="-1"><img src="image/getdate.gif" border="0"></a>
+                <input type="text" onkeypress="blockdatechar(this,event)" maxlength="10" onchange="DateFormat.dateCheck(this);" size="10" id="dbtr_custom_approval_date" name="{dbtr_custom_approval_date_Name}" value="{dbtr_custom_approval_date}" class="form-control form-control-sm">
+              </div>
+            
+              <div class="col-md-3 px-1">
+                {stxtDebtorTerm}<font color="red">*</font>
+                <a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"{nllauthdbtr_term}></a> {nllauthADDLIST_TERMresetstart}<a onclick="window.open('master_termmst_maint.php?addlistflag=true&addlistform=debtormst&addlistelement=dbtr_term','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" ><img src="image/addlist.gif" width="20" border="0"{nllauthdbtr_term}></a>{nllauthADDLIST_TERMresetend}
+                {nllauthdbtr_termlistbox}
+                  <select class="form-control form-control-sm" onkeydown="linkSearchBox(this)" name="dbtr_term" {nllauthdbtr_term}>
+                    <option value="" selected>Select Value</option>
+                    {dbtr_term_Options}
+                  </select>{nllauthdbtr_termresetstart}{nllauthdbtr_termresetend}
+              </div>
+              <div class="col-md-3 px-1">
+                {stxtDebtorLimit}
+                <input class="form-control form-control-sm" style="TEXT-ALIGN: right" maxlength="12" onchange="this.value=toFixed2Value(this.value)" size="12" value="{dbtr_limit}" name="dbtr_limit" {nllauthMASTER_TEXTBOX_LIMIT}>{nllauthMASTER_TEXTBOX_LIMITresetstart}{nllauthMASTER_TEXTBOX_LIMITresetend}
+              </div>
+            
+              <div class="col-md-3 px-1">
+                {stxtDebtorSalesmanNo}
+                <a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a>{nllauthdbtr_salesman_noresetstart}{nllauthdbtr_salesman_noresetend}{nllauthADDLIST_SALESMANresetstart}<a onclick="window.open('master_salemanmst_maint.php?addlistflag=true&addlistform=debtormst&addlistelement=dbtr_salesman_no','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1"><img src="image/addlist.gif" width="20" border="0">{nllauthADDLIST_SALESMANresetend}</a>
+                {nllauthdbtr_salesman_nolistbox} 
+                  <select class="form-control form-control-sm" id="dbtr_salesman_no" onkeydown="linkSearchBox(this)" name="dbtr_salesman_no" v_errmsg="{stxtDebtorSalesmanNo}" {nllauthdbtr_salesman_no}>
+                    <option value="" selected>Select Value</option>
+                    {dbtr_salesman_no_Options}
+                  </select>
+              </div>
+              <div class="col-md-3 px-1">
+                <div {nllauthACC_MASTER_ROW_BUSINESS_NATURE}{nllauthdbtr_business}>{nllauthACC_MASTER_ROW_BUSINESS_NATUREresetstart}{nllauthACC_MASTER_ROW_BUSINESS_NATUREresetend}{stxtDebtorBusiness}&nbsp;<font color="red">{stxtRequiredBusinessNature}</font>
+                  <a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> {nllauthADDLIST_BUSINESSresetstart}<a onclick="window.open('master_bussnaturemst_maint.php?addlistflag=true&addlistform=debtormst&addlistelement=dbtr_business','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1"><img src="image/addlist.gif" width="20" border="0"></a>{nllauthADDLIST_BUSINESSresetend}{nllauthdbtr_businessresetstart}{nllauthdbtr_businessresetend}
+                  {nllauthdbtr_businessresetstart}{nllauthdbtr_businessresetend}{nllauthdbtr_businesslistbox} 
+                  <select class="form-control form-control-sm" id="dbtr_business" onkeydown="linkSearchBox(this)" name="dbtr_business" onchange="acc_get_business_nature_info(this.value,'debtor_master');" v_errmsg="{stxtDebtorBusiness}" {nllauthdbtr_business}>
+                    <option value="" selected>Select Value</option>
+                    {dbtr_business_Options}
+                  </select>
+                </div>
+              </div>
+            </div>
+            
+            <div class="row" {mulSalesman}>
+              <div class="col-md-6 px-1">
+                {stxtDebtorSalesmanNo}<input id="mul_salesman" type="hidden" value="{mul_salesman}" name="{mul_salesman_Name}"><input id="mul_salesman1" type="hidden" value="{mul_salesman1}" name="{mul_salesman1_Name}">
+                <a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a>
+                <select class="form-control form-control-sm" id="multi_salesman_1[]" onkeydown="linkSearchBox(this, 0, event);" multiple size="5" name="{multi_salesman_1_Name}">
+                  {multi_salesman_1_Options}
+                </select>
+              </div>
+              <div class="col-md-3">
+                <input class="form-control form-control-sm" id="Button1" title="move to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt2.transferRight()" type="button" size="50" value="&gt;" name="right"><br>
+                <input class="form-control form-control-sm" id="Button2" title="move all to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt2.transferAllRight()" type="button" value=" &gt;&gt;" name="right"><br>
+                <input class="form-control form-control-sm" id="Button3" title="move to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt2.transferLeft()" type="button" value="&lt;" name="left"><br>
+                <input class="form-control form-control-sm" id="Button4" title="move all to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt2.transferAllLeft()" type="button" value="&lt;&lt;" name="left">
+              </div>
+              <div class="col-md-3">
+                <select class="form-control form-control-sm" id="mul_salesman_2[]" style="WIDTH: 250px" multiple size="5" name="{mul_salesman_2_Name}">
+                  {mul_salesman_2_Options}
+                </select> 
+              </div>
+            </div>
+
+            <div class="col-md-12 px-1" {nllauthACC_MASTER_ROW_BUSINESS_NATURE_MULTI}> 
+                <div class="table-responsive">
+                  <table class="table-sm">
+                    <tr>
+                      <td>{nllauthACC_MASTER_ROW_BUSINESS_NATURE_MULTIresetstart}{nllauthACC_MASTER_ROW_BUSINESS_NATURE_MULTIresetend}{stxtDebtorBusiness}&nbsp;<input type="hidden" name="{mul_bn_Name}" value="{mul_bn}" id="mul_bn"><input type="hidden" name="{mul_bn1_Name}" value="{mul_bn1}" id="mul_bn1">
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <select name="{multi_bn_1_Name}" class="" multiple id="multi_bn_1[]" size="5" onkeydown="linkSearchBox(this, 0, event);">
+                          {multi_bn_1_Options}</select>
+                          <a  class="BlueNoteDataLink" onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img src="image/search.gif" border="0" tabindex="-1"></a>
+                      </td>
+                      <td>
+                        <!-- BEGIN Button Button1 --><input name="right" type="button" value="&gt;" id="Button1" size="50" style="WIDTH: 39px; HEIGHT: 22px" title="move to right" onclick="opt7.transferRight()"><!-- END Button Button1 --><br>
+                        <!-- BEGIN Button Button2 --><input name="right" type="button" value="&gt;&gt;" id="Button2" style="WIDTH: 39px; HEIGHT: 22px" title="move to right" onclick="opt7.transferAllRight()"><!-- END Button Button2 --><br>
+                        <!-- BEGIN Button Button3 --><input name="left" type="button" value="&lt;" id="Button3" style="WIDTH: 39px; HEIGHT: 22px" title="move to left" onclick="opt7.transferLeft()"><!-- END Button Button3 --><br>
+                        <!-- BEGIN Button Button4 --><input name="left" type="button" value="&lt;&lt;" id="Button4" style="WIDTH: 39px; HEIGHT: 22px" title="move all to left" onclick="opt7.transferAllLeft()"><!-- END Button Button4 -->
+                      </td>
+                      <td>
+                        <select name="{mul_bn_2_Name}" class="" id="mul_bn_2[]" size="5" multiple style="WIDTH: 250px">
+                          {mul_bn_2_Options}</select>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-3 px-1">
+                {stxtDebtorControlAC}<font color="red">*</font>
+                <a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a>
+                <select class="form-control form-control-sm" onkeydown="linkSearchBox(this)" name="dbtr_group">
+                  <option value="" selected>Select Value</option>
+                  {dbtr_group_Options}
+                </select>
+              </div>
+              <div class="col-md-3 px-1">
+                {stxtDebtorSource}<font color="red">{stxtRequiredDebtorSource}</font>
+                <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> {nllauthADDLIST_SOURCEresetstart}<a onclick="window.open('master_sourcemst_maint.php?addlistflag=true&addlistform=debtormst&addlistelement=dbtr_source','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a>{nllauthADDLIST_SOURCEresetend}
+                {nllauthdbtr_sourceresetstart}{nllauthdbtr_sourceresetend}{nllauthdbtr_tasklistbox}
+                <select class="form-control form-control-sm" id="dbtr_source" onkeydown="linkSearchBox(this, 0, event)" name="dbtr_source" v_errmsg="{stxtDebtorSource}" {nllauthdbtr_source}>
+                  <option value="" selected>Select Value</option>
+                  {dbtr_source_Options}
+                </select>
+              </div>
+
+              <div class="col-md-3 px-1">
+                {stxtDebtorInvoiceAC}<font color="red">*</font>
+                <a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> 
+                <select class="form-control form-control-sm" onkeydown="linkSearchBox(this)" name="dbtr_acno" type_flag="al_3">
+                  <option value="" selected>Select Value</option>
+                  {dbtr_acno_Options}
+                </select>
+              </div>
+              <div class="col-md-3 px-1">
+                {stxtDebtorJob}<font color="red">{stxtRequiredDebtorJob}</font>
+                <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> {nllauthADDLIST_JOBresetstart}<a onclick="window.open('master_jobmst_maint.php?addlistflag=true&addlistform=debtormst&addlistelement=dbtr_job','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1"><img src="image/addlist.gif" width="20" border="0"></a>{nllauthADDLIST_JOBresetend}
+                {nllauthdbtr_jobresetstart}{nllauthdbtr_jobresetend}{nllauthdbtr_joblistbox}
+                <select class="form-control form-control-sm" id="dbtr_job" onkeydown="linkSearchBox(this, 0, event)" name="dbtr_job" v_errmsg="{stxtDebtorJob}" {nllauthdbtr_job}>
+                  <option value="" selected>Select Value</option>
+                  {dbtr_job_Options}
+                  </select>
+              </div>
+
+              <div class="col-md-3 px-1">
+                {stxtDebtorReturnAC}<font color="red">*</font>
+                <a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a>
+                <select class="form-control form-control-sm" onkeydown="linkSearchBox(this)" name="{dbtr_acno_cn_Name}" type_flag="al_3">
+                  <option value="" selected>Select Value</option>
+                  {dbtr_acno_cn_Options}
+                </select>
+              </div>
+              <div class="col-md-3 px-1">
+                {stxtDebtorTask}<font color="red">{stxtRequiredDebtorTask}</font>
+                {nllauthdbtr_taskresetstart}{nllauthdbtr_taskresetend}{nllauthdbtr_tasklistbox}
+                <select class="form-control form-control-sm" id="dbtr_task" onkeydown="linkSearchBox(this, 0, event)" name="dbtr_task" v_errmsg="{stxtDebtorTask}" {nllauthdbtr_task}>
+                  <option value="" selected>Select Value</option>
+                  {dbtr_task_Options}
+                </select>
+              </div>
+
+              <div class="col-md-3 px-1">
+                {stxtDebtorBankAC}
+                <a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a>
+                <select class="form-control form-control-sm" onkeydown="linkSearchBox(this)" name="{dbtr_bank_acno_Name}">
+                  <option value="" selected>Select Value</option>
+                  {dbtr_bank_acno_Options}
+                </select>
+              </div>
+              <div class="col-md-3 px-1">
+                <div {nllauthMASTER_ROW_APPROVAL_STATUS}>{nllauthMASTER_ROW_APPROVAL_STATUSresetstart}{nllauthMASTER_ROW_APPROVAL_STATUSresetend}{stxtApprovalStatus}
+                  <a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a>
+                  {nllauthapproval_statuslistbox} 
+                  <select class="form-control form-control-sm" id="approval_status" onkeydown="linkSearchBox(this)" name="approval_status">
+                    {approval_status_Options}
+                  </select>
+                </div>
+              </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 px-1">
+                <div {nllauthACC_ROW_TERM_GRACE}>{nllauthACC_ROW_TERM_GRACEresetstart}{stxtDebtorTermGrace}</div>
+                <input class="form-control form-control-sm" style="TEXT-ALIGN: right" maxlength="12" size="12" onkeypress="blockchar(this,event);" value="{dbtr_term_grace}" name="dbtr_term_grace">{nllauthACC_ROW_TERM_GRACEresetend}
+              </div>
+              <div class="col-md-6 px-1">
+                <div {nllauthMASTER_ROW_DEBTOR_LIMIT_ACTION}>{stxtDebtorLimitAction}
+                  <a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a><a onclick="window.open('master_system_actionmst_maint.php?act_module=INV&act_type=ar_over_limit&addlistflag=true&addlistform=debtormst&addlistelement=dbtr_limit_action','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1"><img src="image/addlist.gif" width="20" border="0"></a>
+                  <select name="{dbtr_limit_action_Name}" class="form-control form-control-sm" onkeydown="linkSearchBox(this)">
+                    <option value="">Select Value</option>
+                    {dbtr_limit_action_Options}
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 px-1">
+                <div {nllauthMASTER_ROW_FINANCE_CHARGES}>{nllauthMASTER_ROW_FINANCE_CHARGESresetstart}{nllauthMASTER_ROW_FINANCE_CHARGESresetend}{stxtDebtorFinanceCharges}</div>
+                <div {nllauthMASTER_ROW_FINANCE_CHARGES}><input class="form-control form-control-sm" onkeypress="blockchar(this,event);" onblur="if(this.value!=''){this.value=decimal.convert(this.value);}" style="TEXT-ALIGN: right" maxlength="12" size="12" value="{dbtr_finance_charges}" name="dbtr_finance_charges" id="dbtr_finance_charges"></div>
+              </div>
+              <div class="col-md-6 px-1">
+                <div {nllauthACC_MASTER_ROW_CN_LIMIT_AMT}>{stxtCreditNoteLimit}&nbsp;{nllauthACC_MASTER_ROW_CN_LIMIT_AMTresetstart}{nllauthACC_MASTER_ROW_CN_LIMIT_AMTresetend}</div>
+                <div {nllauthACC_MASTER_ROW_CN_LIMIT_AMT}><input class="form-control form-control-sm" style="TEXT-ALIGN: right" maxlength="12" onchange="this.value=toFixed2Value(this.value)" size="12" value="{dbtr_cn_limit_amt}" name="{dbtr_cn_limit_amt_Name}"></div>
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="col-md-6 px-1">
+                {stxtDebtorCurrency}<font color="red">*</font><input type="hidden" value="{active}" id="active" name="{active_Name}">
+                <a onclick="if(getactive()){showSearchBox(this);}" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> {nllauthADDLIST_CURRENCYresetstart}<a onclick="addnew('currency', 'AR');" tabindex="-1"><img src="image/addlist.gif" width="20" border="0"></a>{nllauthADDLIST_CURRENCYresetend}
+                <select class="form-control form-control-sm" onkeydown="if(getactive()){linkSearchBox(this)};" onfocus="currency_on_focus(this);" onchange="currency_on_change('AR')" name="dbtr_currency" id="dbtr_currency">
+                  <option value="" selected>Select Value</option>
+                    {dbtr_currency_Options}
+                  </select>
+              </div>
+              <div class="col-md-6 px-1">
+                <div {stxtDebtorPriceCategory}>{stxtDebtorPriceCategory}</div>
+                <div {TR_PRICE}><select class="form-control form-control-sm" name="dbtr_price_category">
+                  <option value="" selected>Select Value</option>
+                  {dbtr_price_category_Options}
+                </select></div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 px-1" nllact="TAX_ON">
+                {stxtDebtorValueAddedTax}
+                <input class="" type="checkbox" value="1" name="dbtr_vat_flag" {dbtr_vat_flag}>
+              </div>
+              <div class="col-md-6 px-1">
+                {stxtDebtorWithholdingTax}
+                <input class="" type="checkbox" value="1" name="dbtr_wt_flag" {dbtr_wt_flag}>
+              </div>
+            </div>
+
+            <div class="row" id="TR_SHP_CMPY">
+              <div class="col-md-6 px-1">
+                {stxtDebtorShipmentCompany}
+                <a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> {nllauthADDLIST_SHIPMENTCOMPANYresetstart}<a onclick="window.open('master_shipCompanymst_maint.php?addlistflag=true&addlistform=debtormst&addlistelement=dbtr_shipment','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1"><img src="image/addlist.gif" width="20" border="0"></a>{nllauthADDLIST_SHIPMENTCOMPANYresetend} 
+                <select class="form-control form-control-sm" onkeydown="linkSearchBox(this)" name="{dbtr_shipment_Name}">
+                  <option value="" selected>Select Value</option>
+                  {dbtr_shipment_Options}
+                </select>
+              </div>
+            </div>
+          
+            <div class="row"> 
+              <div class="col-md-6 px-1">
+                {stxtDebtorRemark}
+                <input class="form-control form-control-sm" size="50" value="{dbtr_remark}" name="{dbtr_remark_Name}">
+              </div>
+              <div class="col-md-6 px-1">
+                <div {nllauthMASTER_ROW_DBCR_SUP}>{nllauthMASTER_ROW_DBCR_SUPresetstart}{nllauthMASTER_ROW_DBCR_SUPresetend}{stxtDebtorShortCode}</div> 
+                <div {nllauthMASTER_ROW_DBCR_SUP}><input class="form-control form-control-sm" size="50" value="{dbtr_short_code}" name="{dbtr_short_code_Name}"></div>
+              </div>
+            </div>
+
+            <br>
+            <div class="text-right">
+              <!-- BEGIN Button Insert --><input class="btn btn-primary btn-sm" onclick="return (validate_form(0) && checkMasterSubmit());" type="submit" value="Add" name="Insert" {nllauthADDMASTER}><!-- END Button Insert -->{nllauthADDMASTERresetend}
+              {nllauthUPDATEresetstart} 
+              <!-- BEGIN Button Update --><input class="btn btn-primary btn-sm" onclick="return (validate_form(0) && checkMasterSubmit());" type="submit" value="Submit" name="Update" {nllauthUPDATE}><!-- END Button Update -->{nllauthUPDATEresetend}
+              {nllauthDELETEMASTERresetstart}
+              <!-- BEGIN Button Delete --><input name="Delete" type="submit" value="Delete" class="btn btn-primary btn-sm" onclick="return confirm('Delete Record?')" {nllauthDELETEMASTER}><!-- END Button Delete -->{nllauthDELETEMASTERresetend}
+              <!-- BEGIN Button Cancel --><input name="Cancel" type="submit" value="Cancel" class="btn btn-primary btn-sm" onclick="return confirm('Are you sure to cancel?')"><!-- END Button Cancel -->
+            </div>
+          </div>  
+        </div>    
+      <br>
+        </div>
+    </div>
+  </div>
+  <div class="content" id="content2" {nllauthMASTER_TAB_ADVANCE}>
+    <fieldset>
+    <br>
+    <table class="BlueNoteFormTABLE" cellpadding="4">
+      <!-- BEGIN Error -->
+      <tr>
+        <td class="BlueNoteErrorDataTD" colspan="6">{Error}</td>
+      </tr>
+      <!-- END Error -->
+      <tr>
+			  <td class="BlueNoteFieldCaptionTD" {nllauthINV_ROW_MASTER_DBTR_ACCOUNT_ACTIVE}>{nllauthINV_ROW_MASTER_DBTR_ACCOUNT_ACTIVEresetstart}{nllauthINV_ROW_MASTER_DBTR_ACCOUNT_ACTIVEresetend}{stxtDebtorAccountActive}</td> 
+        <td class="BlueNoteDataTD" nowrap colspan="5" {nllauthINV_ROW_MASTER_DBTR_ACCOUNT_ACTIVE}><input class="BlueNoteInput" type="checkbox" value="1" name="{dbtr_acc_active_Name}" {dbtr_acc_active}>&nbsp;</td>
+      </tr>
+ 
+      <tr>
+        <td class="BlueNoteFieldCaptionTD" nowrap>{stxtDebtorStateNo}&nbsp;</td> 
+        <td class="BlueNoteDataTD" nowrap colspan="2">
+          <select class="BlueNoteSelect" onkeydown="linkSearchBox(this)" style="WIDTH: 250px" id="dbtr_state_no" name="dbtr_state_no" {nllauthdbtr_state_no}>
+            <option value="" selected>Select Value</option>
+            {dbtr_state_no_Options}
+          </select>{nllauthdbtr_state_noresetstart}{nllauthdbtr_state_noresetend}
+					<a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0" ></a> <a onclick="window.open('master_statemst_maint.php?addlistflag=true&addlistform=debtormst&addlistelement=dbtr_state_no','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" ><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;
+					</td>
+				<td class="BlueNoteFieldCaptionTD">{stxtPostByStatementGroup}&nbsp;</td> 
+        <td class="BlueNoteDataTD" nowrap colspan="2"><input class="BlueNoteInput" type="checkbox" value="1" name="{dbtr_post_use_statement_Name}" {dbtr_post_use_statement}></td>
+      </tr>
+ 
+      <tr>
+				<td class="BlueNoteFieldCaptionTD" nowrap>{stxtDebtorPostcodeNo}&nbsp;</td> 
+        <td class="BlueNoteDataTD" nowrap colspan="2">
+          <select class="BlueNoteSelect" onkeydown="linkSearchBox(this)" style="WIDTH: 250px" name="dbtr_postcode_no">
+            <option value="" selected>Select Value</option>
+            {dbtr_postcode_no_Options}
+          </select>
+					<a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_postmst_maint.php?addlistflag=true&addlistform=debtormst&addlistelement=dbtr_postcode_no','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" ><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;</td>
+				<td class="BlueNoteFieldCaptionTD">{stxtDebtorStatementGroup}&nbsp;</td> 
+        <td class="BlueNoteDataTD" nowrap colspan="2">
+          <select class="BlueNoteSelect" onkeydown="linkSearchBox(this)" style="WIDTH: 250px" name="{dbtr_statement_group_Name}" type_flag="d">
+            <option value="" selected>Select Value</option>
+            {dbtr_statement_group_Options}
+          </select>
+					<a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> &nbsp;</td>	
+      </tr>
+ 
+	<tr>	 
+		<td class="BlueNoteFieldCaptionTD" nowrap>{stxtDebtorCountryNo}&nbsp;</td> 
+    <td class="BlueNoteDataTD" nowrap colspan="2">
+          <select class="BlueNoteSelect" onkeydown="linkSearchBox(this)" style="WIDTH: 250px" name="dbtr_country_no">
+            <option value="" selected>Select Value</option>
+            {dbtr_country_no_Options}
+          </select>
+					<a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_countrymst_maint.php?addlistflag=true&addlistform=debtormst&addlistelement=dbtr_country_no','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" ><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;</td>
+		<td class="BlueNoteFieldCaptionTD" {nllauthACC_ROW_STATEMENT_CYCLE}>{nllauthACC_ROW_STATEMENT_CYCLEresetstart}{nllauthACC_ROW_STATEMENT_CYCLEresetend}{stxtDebtorStatementCycle}&nbsp;</td> 
+		<td class="BlueNoteDataTD" colspan="2" {nllauthACC_ROW_STATEMENT_CYCLE}>
+			<select class="BlueNoteSelect" onkeydown="linkSearchBox(this)" style="WIDTH: 250px" name="dbtr_statementcycle_no">
+				<option value="" selected>Select Value</option>
+ 				{dbtr_statementcycle_no_Options} 
+			</select>
+ 			<a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_statement_cyclemst_maint.php?addlistflag=true&addlistform=debtormst&addlistelement=dbtr_statementcycle_no','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" ><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;</td> 			
+  </tr>
+ 
+      <tr>
+				<td class="BlueNoteFieldCaptionTD">{stxtDebtorClassification}&nbsp;<font color="red">{stxtRequiredClassification}</font></td> 
+				<td class="BlueNoteDataTD" colspan="2">
+          <select class="BlueNoteSelect" onkeydown="linkSearchBox(this)" style="WIDTH: 250px" name="dbtr_class" v_errmsg="{stxtDebtorClassification}" {nllauthCRDTDBTR_CLASS}>
+            <option value="" selected>Select Value</option>
+            {dbtr_class_Options}
+          </select>
+				{nllauthCRDTDBTR_CLASSresetstart}
+				{nllauthCRDTDBTR_CLASSresetend}
+				<a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_classmst_maint.php?addlistflag=true&addlistform=debtormst&addlistelement=dbtr_class','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" ><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;</td>
+				<td class="BlueNoteFieldCaptionTD" nowrap>{stxtDebtorSupport}&nbsp;</td> 
+        <td class="BlueNoteDataTD" nowrap colspan="2">{nllauthdbcr_supportlistbox}
+          <select class="BlueNoteSelect" onkeydown="linkSearchBox(this)" style="WIDTH: 250px" name="dbcr_support" {nllauthdbcr_support} v_errmsg="{stxtDebtorSupport}">
+            <option value="" selected>Select Value</option>
+            {dbcr_support_Options}
+          </select>{nllauthdbcr_supportresetstart}{nllauthdbcr_supportresetend}
+				<a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0" {nllauthdbcr_support}></a> <a onclick="window.open('master_supportmst_maint.php?addlistflag=true&addlistform=debtormst&addlistelement=dbcr_support','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" ><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;</td>
+      </tr>
+ 
+			<tr>	
+				<td class="BlueNoteFieldCaptionTD" nowrap {nllauthMST_ROW_BUSINESS_ANALYSIS_CODE}>{nllauthMST_ROW_BUSINESS_ANALYSIS_CODEresetstart}{nllauthMST_ROW_BUSINESS_ANALYSIS_CODEresetend}{stxtDebtorBusinessAnalysisCode}&nbsp;</td> 
+				<td class="BlueNoteDataTD" nowrap colspan="2" {nllauthMST_ROW_BUSINESS_ANALYSIS_CODE}>
+					<select class="BlueNoteSelect" onkeydown="linkSearchBox(this)" style="WIDTH: 250px" name="dbtr_business_analysis_code">
+					<option value="" selected>Select Value</option>
+					{dbtr_business_analysis_code_Options} 
+					</select>
+					<a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('buss_anal_code_reg1.php?addlistflag=true&addlistform=debtormst&addlistelement=dbtr_business_analysis_code','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" ><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;</td>	
+				<td class="BlueNoteFieldCaptionTD" nowrap>{stxtDebtorAgent}</td> 
+        <td class="BlueNoteDataTD" nowrap colspan="2" >
+          <select class="BlueNoteSelect" onkeydown="linkSearchBox(this)" style="WIDTH: 250px" id="dbtr_agent" name="dbtr_agent" {nllauthdbtr_agent}>
+            <option value=""  selected>Select Value</option>
+            {dbtr_agent_Options}
+          </select>{nllauthdbtr_agentresetstart}{nllauthdbtr_agentresetend}
+				<a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_agentmst_maint.php?addlistflag=true&addlistform=debtormst&addlistelement=dbtr_agent','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" ><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;</td>
+			</tr>
+ 
+      <tr>
+        <td class="BlueNoteFieldCaptionTD" nowrap>{stxtDebtorDealer}</td> 
+        <td class="BlueNoteDataTD" nowrap colspan="2">
+          <select class="BlueNoteSelect" onkeydown="linkSearchBox(this)" style="WIDTH: 250px" name="{dbtr_dealer_Name}">
+            <option value="" selected>Select Value</option>
+            {dbtr_dealer_Options}
+          </select>
+					<a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_dealermst_maint.php?addlistflag=true&addlistform=debtormst&addlistelement=dbtr_dealer','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" ><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;</td>
+				<td class="BlueNoteFieldCaptionTD" nowrap>{stxtDebtorStatus}&nbsp;</td> 
+				<td class="BlueNoteDataTD" nowrap colspan="2">
+					<select class="BlueNoteSelect" onkeydown="linkSearchBox(this)" style="WIDTH: 250px" name="dbtr_status">
+          <option value="" selected>Select Value</option>
+            {dbtr_status_Options}
+					</select>
+					<a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_statusmst_maint.php?addlistflag=true&addlistform=debtormst&addlistelement=dbtr_status','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" ><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;</td>
+      </tr>
+ 
+      <tr>
+        <td class="BlueNoteFieldCaptionTD" nowrap>{stxtDebtorCollectionType}</td> 
+        <td class="BlueNoteDataTD" nowrap colspan="2">
+          <select class="BlueNoteSelect" onkeydown="linkSearchBox(this)" style="WIDTH: 250px" name="dbtr_collect_type">
+            <option value="" selected>Select Value</option>
+            {dbtr_collect_type_Options}
+          </select>
+					<a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_collectionmst_maint.php?addlistflag=true&addlistform=debtormst&addlistelement=dbtr_collect_type','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" ><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;</td>
+        <td class="BlueNoteFieldCaptionTD" nowrap>{stxtDebtorAlertMessage}&nbsp;</td> 
+        <td class="BlueNoteDataTD" nowrap colspan="2">
+          <select class="BlueNoteSelect" onkeydown="linkSearchBox(this)" style="WIDTH: 250px" name="dbtr_alert_services">
+            <option value="" selected>Select Value</option>
+            {dbtr_alert_services_Options}
+          </select>
+				<a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> 
+				<a onclick="window.open('master_accountalertmsgmst_maint.php?addlistflag=true&addlistform=debtormst&addlistelement=dbtr_alert_services','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" ><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;</td>
+      </tr>
+ 
+      <tr>
+        <td class="BlueNoteFieldCaptionTD" nowrap>{stxtDebtorRecommend}&nbsp;</td> 
+        <td class="BlueNoteDataTD" nowrap colspan="2">
+          <select class="BlueNoteSelect" onkeydown="linkSearchBox(this)" style="WIDTH: 250px" name="dbtr_recommend">
+            <option value="" selected>Select Value</option>
+            {dbtr_recommend_Options}
+          </select>
+					<a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_recommandmst_maint.php?addlistflag=true&addlistform=debtormst&addlistelement=dbtr_recommend','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" ><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;</td>
+				<td class="BlueNoteFieldCaptionTD">{stxtDebtorDeposit}&nbsp;</td> 
+				<td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" maxlength="12" size="12" value="{dbtr_deposit}" name="dbtr_deposit" style ="TEXT-ALIGN: RIGHT" onchange="this.value=toFixed2Value(this.value)" >&nbsp;</td>
+     </tr>
+
+	  <tr>
+			<td class="BlueNoteFieldCaptionTD">{stxtDebtorRating}&nbsp;</td>
+			<td class="BlueNoteDataTD" colspan="2">
+				<select name="{dbtr_rating_Name}" class="BlueNoteSelect" onkeydown="linkSearchBox(this)" style="WIDTH: 250px">
+				<option value="">Select Value</option>
+				{dbtr_rating_Options}
+				</select>
+				<a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a></td>  
+			<td class="BlueNoteFieldCaptionTD" nowrap>{stxtDebtorCharges}&nbsp;</td> 
+      <td class="BlueNoteDataTD" nowrap colspan="2"><input class="BlueNoteInput" maxlength="12" size="12" value="{dbtr_charges}" name="dbtr_charges" style= "TEXT-ALIGN: RIGHT" onchange="this.value=toFixed2Value(this.value)"  >&nbsp;</td>
+    </tr>
+ 
+      <tr>
+				<td class="BlueNoteFieldCaptionTD" nowrap>{stxtDebtorTargetSales}&nbsp;</td> 
+        <td class="BlueNoteDataTD" nowrap colspan="2">
+          <select class="BlueNoteSelect" onkeydown="linkSearchBox(this)" style="WIDTH: 250px" name="dbtr_target_sales">
+            <option value="" selected>Select Value</option>
+            {dbtr_target_sales_Options}
+          </select>
+					<a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_targetsalesmst_maint.php?addlistflag=true&addlistform=debtormst&addlistelement=dbtr_target_sales','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" ><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;
+				</td>
+				<td class="BlueNoteFieldCaptionTD" nowrap>{stxtDebtorFees}&nbsp;</td> 
+				<td class="BlueNoteDataTD" nowrap colspan="2"><input class="BlueNoteInput" onchange="this.value=toFixed2Value(this.value)" maxlength="12" size="12" value="{dbtr_fees}" name="dbtr_fees" style= "TEXT-ALIGN: RIGHT">&nbsp;</td>
+      </tr>
+ 
+      <tr>
+				<td class="BlueNoteFieldCaptionTD">{stxtDebtorPaymentMethod}&nbsp;</td> 
+        <td class="BlueNoteDataTD" colspan="2">
+          <select class="BlueNoteSelect" onkeydown="linkSearchBox(this)" style="WIDTH: 250px" name="dbtr_payment_mode_no">
+            <option value="" selected>Select Value</option>
+            {dbtr_payment_mode_no_Options}
+          </select>
+					<a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_typeofpaymentmst_maint.php?addlistflag=true&addlistform=debtormst&addlistelement=dbtr_payment_mode_no','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" ><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;</td>
+				<td class="BlueNoteFieldCaptionTD" nowrap>{stxtDebtorMinimumBillAmount}&nbsp;</td>
+				<td class="BlueNoteDataTD" nowrap colspan="2"><input type="text" maxlength="12" size="12" name="{dbtr_minimum_bill_amount_Name}" onchange="this.value=toFixed2Value(this.value)" value="{dbtr_minimum_bill_amount}" class="BlueNoteInput" style="TEXT-ALIGN: RIGHT"></td>
+			</tr>
+ 
+      <tr>
+				<td class="BlueNoteFieldCaptionTD" nowrap>{stxtDebtorPoQuotationPurging}&nbsp;</td> 
+        <td class="BlueNoteDataTD" nowrap colspan="2"><input class="BlueNoteInput" maxlength="3" size="3" value="{dbtr_po_quotation_purging}" name="dbtr_po_quotation_purging">&nbsp;</td>
+				<td class="BlueNoteFieldCaptionTD" nowrap>{stxtDebtorProspect}&nbsp;</td> 
+				<td class="BlueNoteDataTD" nowrap colspan="2"><input class="BlueNoteInput" maxlength="12" size="12" value="{dbtr_prospect}" name="dbtr_prospect">&nbsp;</td>
+      </tr>
+ 
+      <tr>
+				<td class="BlueNoteFieldCaptionTD" nowrap>{stxtDebtorTaxPrompt}&nbsp;</td> 
+        <td class="BlueNoteDataTD" nowrap colspan="2"><input class="BlueNoteInput" type="checkbox" value="1" name="dbtr_tax_prompt" {dbtr_tax_prompt}></td>
+        <td class="BlueNoteFieldCaptionTD" nowrap>{stxtDebtorVendorSince}&nbsp;</td> 
+        <td class="BlueNoteDataTD" nowrap colspan="2"><input class="BlueNoteInput" onkeypress="blockdatechar(this,event)" maxlength="10" onchange="DateFormat.dateCheck(this);" size="10" value="{dbtr_vendor_since}" name="dbtr_vendor_since">&nbsp; <a onclick="window.dateField=document.debtormst.dbtr_vendor_since ;Calender=window.open('common/getdate.php','Calendar','WIDTH=230,HEIGHT=280,TOP=220,LEFT=400')" tabindex="-1" ><img src="image/getdate.gif" align="absMiddle" border="0"></a> <input class="BlueNoteInput" id="s_module" style="WIDTH: 60px; HEIGHT: 20px" type="hidden" size="6" value="{hd_doc}" name="hd_doc"></td>
+      </tr>
+ 
+      <tr>
+			  <td class="BlueNoteFieldCaptionTD" nowrap>{stxtDebtorTax}&nbsp;</td> 
+				<td class="BlueNoteDataTD" nowrap colspan="2"><input type="text" name="{dbtr_tax_Name}" value="{dbtr_tax}" class="BlueNoteInput" onkeypress="blockchar(this,event);"></td>
+				<td class="BlueNoteFieldCaptionTD" nowrap>{stxtDebtorDesignationPost}&nbsp;</td> 
+        <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" maxlength="20" value="{dbtr_designation_post}" name="dbtr_designation_post">&nbsp;</td>
+			</tr>
+
+			<tr>
+			  <td class="BlueNoteFieldCaptionTD">{stxtDebtorSSTCategory}&nbsp;</td> 
+			  <td class="BlueNoteDataTD" colspan="5">
+			    <select class="BlueNoteSelect" name="dbtr_sst_category">
+			      <option value="0" selected>Select Value</option>
+			 {dbtr_sst_category_Options} 
+			    </select><a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a></td> 
+			</tr>
+
+ 
+      <tr>
+        <td class="BlueNoteFieldCaptionTD">{stxtDebtorDiscount1}</td> 
+        <td class="BlueNoteDataTD" nowrap colspan="2"><input class="BlueNoteInput" onchange="Check_Disc(this)" value="{dbtr_disc1}" name="{dbtr_disc1_Name}"></td>
+				<td class="BlueNoteFieldCaptionTD">{stxtDebtorMapCode}</td> 
+        <td class="BlueNoteDataTD" nowrap colspan="2"><input class="BlueNoteInput" value="{dbtr_map_code}" name="dbtr_map_code"></td>
+      </tr>
+			
+			<tr>
+			  <td class="BlueNoteFieldCaptionTD">{stxtDebtorDiscount2}</td> 
+        <td class="BlueNoteDataTD" nowrap colspan="2"><input class="BlueNoteInput" onchange="Check_Disc(this)" value="{dbtr_disc2}" name="{dbtr_disc2_Name}"></td>
+				<td class="BlueNoteFieldCaptionTD">{stxtDebtorSorting}&nbsp;</td> 
+        <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" maxlength="5" size="5" value="{dbtr_sorting}" name="dbtr_sorting">&nbsp;</td>
+			</tr>
+ 
+      <tr>
+        <td class="BlueNoteFieldCaptionTD">{stxtDebtorDiscount3}</td> 
+        <td class="BlueNoteDataTD" nowrap colspan="2"><input class="BlueNoteInput" onchange="Check_Disc(this)" value="{dbtr_disc3}" name="{dbtr_disc3_Name}"></td>
+				<td class="BlueNoteFieldCaptionTD">{stxtDebtorLeadDays}&nbsp;</td> 
+				<td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" maxlength="5" size="5" value="{dbtr_leaddays}" name="dbtr_leaddays">&nbsp;</td>
+      </tr>
+			
+			<tr>
+			  <td class="BlueNoteFieldCaptionTD">{stxtDebtorDiscount4}</td> 
+        <td class="BlueNoteDataTD" nowrap colspan="2"><input class="BlueNoteInput" onchange="Check_Disc(this)" value="{dbtr_disc4}" name="{dbtr_disc4_Name}"></td>
+				<td class="BlueNoteFieldCaptionTD" {nllauthMASTER_ROW_AR_DISCOUNT_DAY}>{nllauthMASTER_ROW_AR_DISCOUNT_DAYresetstart}{nllauthMASTER_ROW_AR_DISCOUNT_DAYresetend}{stxtDebtorDiscDay}&nbsp;</td> 
+				<td class="BlueNoteDataTD" nowrap colspan="2" {nllauthMASTER_ROW_AR_DISCOUNT_DAY}><input class="BlueNoteInput" size="50" value="{dbtr_disc}" name="dbtr_disc" id="dbtr_disc">&nbsp;&nbsp;<a onmouseover="return overlib(discountday);" onmouseout="return nd();"><img height="16" src="image/help3.gif" width="16" border="0"></a></td>
+			</tr>
+
+      <tr>
+        <td class="BlueNoteFieldCaptionTD" {nllauthINV_ROW_BILL_BASED_MARGIN_CHECK_BY_DEBTOR}>{nllauthINV_ROW_BILL_BASED_MARGIN_CHECK_BY_DEBTORresetstart}{nllauthINV_ROW_BILL_BASED_MARGIN_CHECK_BY_DEBTORresetend}{stxtDebtorBillBasedMargin}</td> 
+        <td class="BlueNoteDataTD" nowrap colspan="2" {nllauthINV_ROW_BILL_BASED_MARGIN_CHECK_BY_DEBTOR}><input type="checkbox" name="{dbtr_bill_based_margin_Name}" value="1" {dbtr_bill_based_margin} class="BlueNoteInput"></td>
+				<td class="BlueNoteFieldCaptionTD">{stxtDebtorContract}</td> 
+				<td class="BlueNoteDataTD" nowrap colspan="2"><input class="BlueNoteInput" type="checkbox" value="1" name="dbtr_contractual_debtor" {dbtr_contractual_debtor}>&nbsp;</td>
+      </tr>
+			
+			<tr>
+        <td class="BlueNoteFieldCaptionTD" nowrap>{stxtDebtorRefNo}&nbsp;</td> 
+        <td class="BlueNoteDataTD" colspan="2"><textarea class="BlueNoteTextarea" name="dbtr_ref_no" rows="3" cols="50">{dbtr_ref_no}</textarea>&nbsp;</td>
+				<td class="BlueNoteFieldCaptionTD" nowrap>{stxtDebtorTaxRef}&nbsp;</td> 
+        <td class="BlueNoteDataTD" nowrap colspan="2"><textarea class="BlueNoteTextarea" name="dbtr_tax_ref" rows="3" cols="50">{dbtr_tax_ref}</textarea>&nbsp;</td>
+      </tr>
+		
+			
+			<tr {nllauthMASTER_ROW_DEBTOR_STORE_CONCEPT}>
+				<td class="BlueNoteFieldCaptionTD" nowrap>{nllauthMASTER_ROW_DEBTOR_STORE_CONCEPTresetstart}{nllauthMASTER_ROW_DEBTOR_STORE_CONCEPTresetend}{stxtDebtorStoreConcept}&nbsp;<input style="WIDTH: 112px; HEIGHT: 24px" type="hidden" size="13" value="{dbtr_st_concept}" name="{dbtr_st_concept_Name}" id="dbtr_st_concept"><input style="WIDTH: 144px; HEIGHT: 24px" type="hidden" size="18" value="{dbtr_st_concept_1}" name="{dbtr_st_concept_1_Name}" id="dbtr_st_concept_1"></td>
+				<td class="BlueNoteDataTD" colspan="2" nowrap>
+				<select class="BlueNoteSelect" id="dbtr_st_concept_from" style="WIDTH: 250px" multiple size="6" name="{dbtr_st_concept_from_Name}">
+					{dbtr_st_concept_from_Options} 
+				</select>
+				</td>
+				<td class="BlueNoteDataTD" align="center" nowrap>
+					<input class="BlueNoteButton" title="move to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt3.transferRight()" type="button" size="50" value="&gt;" name="right"><br>
+					<input class="BlueNoteButton" title="move all to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt3.transferAllRight()" type="button" value=" &gt;&gt;" name="right"><br>
+					<input class="BlueNoteButton" title="move to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt3.transferLeft()" type="button" value="&lt;" name="left"><br>
+					<input class="BlueNoteButton" title="move all to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt3.transferAllLeft()" type="button" value="&lt;&lt;" name="left">
+				</td>
+				<td class="BlueNoteDataTD" colspan='2' nowrap>
+					<select class="BlueNoteSelect" id="dbtr_st_concept_to" style="WIDTH: 250px" multiple size="6" name="{dbtr_st_concept_to_Name}">
+					{dbtr_st_concept_to_Options} 
+					</select>	
+				</td>  
+			</tr>
+			
+			<tr {nllauthACC_ROW_PAYMENT_MODE}>
+        <td class="BlueNoteFieldCaptionTD">{nllauthACC_ROW_PAYMENT_MODEresetstart}{nllauthACC_ROW_PAYMENT_MODEresetend}{stxtDebtorReceiptMode}&nbsp;</td> 
+        <td class="BlueNoteDataTD" colspan="5">
+          <select class="BlueNoteSelect" name="dbtr_mode">
+            {dbtr_mode_Options}
+          </select>
+					&nbsp;</td>
+      </tr>
+ 
+      <tr {nllauthACC_ROW_STATEMENT_TYPE}>
+        <td class="BlueNoteFieldCaptionTD" nowrap>{nllauthACC_ROW_STATEMENT_TYPEresetstart}{nllauthACC_ROW_STATEMENT_TYPEresetend}{stxtDebtorStatementType}&nbsp;</td> 
+        <td class="BlueNoteDataTD" colspan="5">
+          <select class="BlueNoteSelect" id="dbtr_type" name="dbtr_type">
+            {dbtr_type_Options}
+          </select>
+				</td>
+			</tr>
+			
+			<tr {stock_posting_act}>
+				<td class="BlueNoteFieldCaptionTD">{stxtDebtorCOGS}&nbsp;<font color="red">*</font></td> 
+				<td class="BlueNoteDataTD" nowrap colspan="5">
+					<select onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" name="dbtr_cogs_acno" type_flag="al_3" {required} v_errmsg="{stxtGroupCOGS}">
+					<option value="" selected>Select Value</option>
+					{dbtr_cogs_acno_Options} 
+					</select>
+					<a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> </td>
+			</tr>
+
+			
+      <tr>
+        <td class="BlueNoteFooterTD" nowrap align="right" colspan="6"><a onclick="this.disabled=true" href="{wf_choice1_Src}">{wf_choice1}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice2_Src}">{wf_choice2}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice3_Src}">{wf_choice3}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice4_Src}">{wf_choice4}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice5_Src}">{wf_choice5}</a><input class="BlueNotebutton" id="Reset" onclick="resetOptions();" type="reset" value="Reset" name="Reset" {wf_reset_hide_show}>{nllauthADDMASTERresetstart} 
+          <!-- BEGIN Button Insert1 --><input class="BlueNoteButton" onclick="return (validate_form(0) && checkMasterSubmit());" type="submit" value="Add" name="Insert1" {nllauthADDMASTER}><!-- END Button Insert1 -->{nllauthADDMASTERresetend}
+          {nllauthUPDATEresetstart} 
+          <!-- BEGIN Button Update1 --><input class="BlueNoteButton" onclick="return (validate_form(0) && checkMasterSubmit());" type="submit" value="Submit" name="Update1" {nllauthUPDATE}><!-- END Button Update1 -->{nllauthUPDATEresetend}
+          {nllauthDELETEMASTERresetstart}
+		  <!-- BEGIN Button Delete1 --><input name="Delete1" type="submit" value="Delete" class="BlueNoteButton" onclick="return confirm('Delete Record?')" {nllauthDELETEMASTER}><!-- END Button Delete1 -->{nllauthDELETEMASTERresetend}
+		  <!-- BEGIN Button Cancel1 --><input name="Cancel1" type="submit" value="Cancel" class="BlueNoteButton"><!-- END Button Cancel1 --></td>
+      </tr>
+    </table>
+    </fieldset> 
+  </div>
+  <div class="content" id="content3" {nllauthMASTER_TAB_USERDEFINE}>
+    <fieldset>
+    <br>
+    <table class="BlueNoteFormTABLE" cellpadding="4">
+      <!-- BEGIN Error -->
+      <tr>
+        <td class="BlueNoteErrorDataTD" colspan="2">{Error}</td>
+      </tr>
+      <!-- END Error -->
+      <tr>
+        <td class="BlueNoteFieldCaptionTD">{stxtDebtorUserdefine1}&nbsp;</td> 
+        <td class="BlueNoteDataTD"><textarea class="BlueNoteTextarea" name="{dbtr_userdefine1_Name}" rows="3" cols="50">{dbtr_userdefine1}</textarea>&nbsp;</td>
+      </tr>
+ 
+      <tr>
+        <td class="BlueNoteFieldCaptionTD">{stxtDebtorUserdefine2}&nbsp;</td> 
+        <td class="BlueNoteDataTD"><textarea class="BlueNoteTextarea" name="{dbtr_userdefine2_Name}" rows="3" cols="50">{dbtr_userdefine2}</textarea>&nbsp;</td>
+      </tr>
+ 
+      <tr>
+        <td class="BlueNoteFieldCaptionTD">{stxtDebtorUserdefine3}&nbsp;</td> 
+        <td class="BlueNoteDataTD"><textarea class="BlueNoteTextarea" name="dbtr_userdefine3" rows="3" cols="50">{dbtr_userdefine3}</textarea>&nbsp;</td>
+      </tr>
+ 
+      <tr>
+        <td class="BlueNoteFieldCaptionTD">{stxtDebtorUserdefine4}&nbsp;</td> 
+        <td class="BlueNoteDataTD"><input class="BlueNoteinput" type="checkbox" value="1" name="dbtr_userdefine4" {dbtr_userdefine4}>&nbsp;</td>
+      </tr>
+ 
+      <tr>
+        <td class="BlueNoteFieldCaptionTD">{stxtDebtorUserdefine5}&nbsp;</td> 
+        <td class="BlueNoteDataTD"><input class="BlueNoteInput" maxlength="12" size="12" value="{dbtr_userdefine5}" name="dbtr_userdefine5" onkeypress="blockchar(this,event);" onblur="blockpastechar(this)">&nbsp;</td>
+      </tr>
+ 
+      <tr>
+        <td class="BlueNoteFieldCaptionTD">{stxtDebtorUserdefine6}&nbsp;</td> 
+        <td class="BlueNoteDataTD"><input class="BlueNoteInput" maxlength="12" size="12" value="{dbtr_userdefine6}" name="dbtr_userdefine6" onkeypress="blockchar(this,event);" onblur="blockpastechar(this)">&nbsp;</td>
+      </tr>
+ 
+      <tr>
+        <td class="BlueNoteFieldCaptionTD">{stxtDebtorUserdefine7}&nbsp;</td> 
+        <td class="BlueNoteDataTD"><input class="BlueNoteInput" maxlength="10" size="10" value="{dbtr_userdefine7}" name="dbtr_userdefine7" onkeypress="blockchar(this,event);" onblur="blockpastechar(this)">&nbsp;</td>
+      </tr>
+ 
+      <tr>
+        <td class="BlueNoteFieldCaptionTD">{stxtDebtorUserdefine8}&nbsp;</td> 
+        <td class="BlueNoteDataTD"><input class="BlueNoteInput" maxlength="10" size="10" value="{dbtr_userdefine8}" name="dbtr_userdefine8" onkeypress="blockchar(this,event);" onblur="blockpastechar(this)">&nbsp;</td>
+      </tr>
+ 
+      <tr>
+        <td class="BlueNoteFieldCaptionTD">{stxtDebtorUserdefine9}&nbsp;</td> 
+        <td class="BlueNoteDataTD"><input class="BlueNoteInput" onkeypress="blockdatechar(this,event)" maxlength="10" onchange="DateFormat.dateCheck(this);" size="10" value="{dbtr_userdefine9}" name="dbtr_userdefine9">&nbsp;<a onclick="window.dateField=document.debtormst.dbtr_userdefine9 ;Calender=window.open('common/getdate.php','Calendar','WIDTH=230,HEIGHT=280,TOP=220,LEFT=400')" tabindex="-1" ><img src="image/getdate.gif" border="0"></a></td>
+      </tr>
+ 
+      <tr>
+        <td class="BlueNoteFieldCaptionTD" nowrap>{stxtDebtorUserdefine10}&nbsp;</td> 
+        <td class="BlueNoteDataTD"><input class="BlueNoteInput" onkeypress="blockdatechar(this,event)" maxlength="10" onchange="DateFormat.dateCheck(this);" size="10" value="{dbtr_userdefine10}" name="dbtr_userdefine10">&nbsp;<a onclick="window.dateField=document.debtormst.dbtr_userdefine10 ;Calender=window.open('common/getdate.php','Calendar','WIDTH=230,HEIGHT=280,TOP=220,LEFT=400')" tabindex="-1" ><img src="image/getdate.gif" border="0"></a></td>
+      </tr>
+ 
+      <tr>
+        <td class="BlueNoteFooterTD" nowrap align="right" colspan="2"><a onclick="this.disabled=true" href="{wf_choice1_Src}">{wf_choice1}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice2_Src}">{wf_choice2}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice3_Src}">{wf_choice3}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice4_Src}">{wf_choice4}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice5_Src}">{wf_choice5}</a><input class="BlueNotebutton" id="Reset" type="reset" value="Reset" name="Reset" {wf_reset_hide_show}>{nllauthADDMASTERresetstart} 
+          <!-- BEGIN Button Insert2 --><input class="BlueNoteButton" onclick="return (validate_form(0) && checkMasterSubmit());" type="submit" value="Add" name="Insert2" {nllauthADDMASTER}><!-- END Button Insert2 -->{nllauthADDMASTERresetend}
+          {nllauthUPDATEresetstart} 
+          <!-- BEGIN Button Update2 --><input class="BlueNoteButton" onclick="return (validate_form(0) && checkMasterSubmit());" type="submit" value="Submit" name="Update2" {nllauthUPDATE}><!-- END Button Update2 -->{nllauthUPDATEresetend}
+          {nllauthDELETEMASTERresetstart}
+		  <!-- BEGIN Button Delete2 --><input name="Delete2" type="submit" value="Delete" class="BlueNoteButton" onclick="return confirm('Delete Record?')" {nllauthDELETEMASTER}><!-- END Button Delete2 -->{nllauthDELETEMASTERresetend}
+		  <!-- BEGIN Button Cancel2 --><input name="Cancel2" type="submit" value="Cancel" class="BlueNoteButton" onclick="return confirm('Are you sure to cancel?')"><!-- END Button Cancel2 --></td>
+      </tr>
+    </table>
+    </fieldset> 
+  </div>
+  <div class="content" id="content4" {nllauthMASTER_TAB_DOC_SETTING} style="height:500px">
+    <div class="card bg-light border-dark">
+      <div class="card-body">
+        <!-- BEGIN Error -->
+        <p class="text-danger" >{Error}</p>
+        <!-- END Error -->
+        <br>
+        <div class="table-responsive">
+          <table class="table-sm">
+            <tr>
+              <td></td>
+              <td>{stxtAccessible}</td>
+              <td></td>
+              <td>{stxtNotAccessible}</td>
+            </tr>
+          
+            <tr>
+              <td>{stxtDebtorDocType}<input id="dbtr_doc_type" style="WIDTH: 100px; HEIGHT: 24px" type="hidden" size="10" value="{dbtr_doc_type}" name="{dbtr_doc_type_Name}"><input id="dbtr_doc_type_2" style="WIDTH: 116px; HEIGHT: 24px" type="hidden" size="14" value="{dbtr_doc_type_2}" name="{dbtr_doc_type_2_Name}"></td>
+              <td><select class="form-control form-control-sm" id="dbtr_doc_type_from" style="WIDTH: 250px" multiple size="6" name="{ListBox1_Name}">
+                {ListBox1_Options}
+              </select></td>
+              <td>
+                <input title="move to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt1.transferRight()" type="button" size="50" value="&gt;" name="right"><br>
+                <input title="move all to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt1.transferAllRight()" type="button" value=" &gt;&gt;" name="right"><br>
+                <input title="move to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt1.transferLeft()" type="button" value="&lt;" name="left"><br>
+                <input title="move all to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt1.transferAllLeft()" type="button" value="&lt;&lt;" name="left">
+              </td>
+              <td>
+                <select class="form-control form-control-sm" id="dbtr_doc_type_to" style="WIDTH: 250px" multiple size="6" name="{dbtr_doc_type_list_Name}">
+                  {dbtr_doc_type_list_Options}
+                </select>
+              </td>
+            </tr>
+
+            <tr>
+              <td>{stxtDebtorFollowAcc}</td>
+              <td><input type="checkbox" name="{dbtr_follow_acc_Name}" value="1" {dbtr_follow_acc} id="follow_acc" onclick="follow_acc_Onclick();" ></td>
+            </tr>
+
+            <tr id="bill_setting">
+              <td {stxtDebtorBillType}><input id="dbtr_bill_type" style="WIDTH: 100px; HEIGHT: 24px" type="hidden" size="10" value="{dbtr_bill_type}" name="{dbtr_bill_type_Name}"><input id="dbtr_bill_type_2" style="WIDTH: 116px; HEIGHT: 24px" type="hidden" size="14" value="{dbtr_bill_type_2}" name="{dbtr_bill_type_2_Name}"></td>
+              <td><select class="form-control form-control-sm" id="dbtr_bill_type_from" style="WIDTH: 250px" multiple size="6" name="{ListBox2_Name}">
+                {ListBox2_Options} </select></td>
+              <td>
+                <input class="BlueNoteButton" title="move to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt4.transferRight()" type="button" size="50" value="&gt;" name="right"><br>
+                <input class="BlueNoteButton" title="move all to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt4.transferAllRight()" type="button" value=" &gt;&gt;" name="right"><br>
+                <input class="BlueNoteButton" title="move to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt4.transferLeft()" type="button" value="&lt;" name="left"><br>
+                <input class="BlueNoteButton" title="move all to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt4.transferAllLeft()" type="button" value="&lt;&lt;" name="left">         
+              </td>  
+              <td>
+                <select class="form-control form-control-sm" id="dbtr_bill_type_to" style="WIDTH: 250px" multiple size="6" name="{dbtr_bill_type_list_Name}">
+                  {dbtr_bill_type_list_Options} </select>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                {stxtDebtorOrdType}<input id="dbtr_ord_type" style="WIDTH: 100px; HEIGHT: 24px" type="hidden" size="10" value="{dbtr_ord_type}" name="{dbtr_ord_type_Name}"><input id="dbtr_ord_type_2" style="WIDTH: 116px; HEIGHT: 24px" type="hidden" size="14" value="{dbtr_ord_type_2}" name="{dbtr_ord_type_2_Name}">
+              </td>
+              <td>
+                <select class="form-control form-control-sm" id="dbtr_ord_type_from" style="WIDTH: 250px" multiple size="6" name="{ListBox3_Name}">
+                  {ListBox3_Options} 
+              </select>
+              </td>
+              <td>
+                <input class="BlueNoteButton" title="move to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt5.transferRight()" type="button" size="50" value="&gt;" name="right"><br>
+                <input class="BlueNoteButton" title="move all to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt5.transferAllRight()" type="button" value=" &gt;&gt;" name="right"><br>
+                <input class="BlueNoteButton" title="move to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt5.transferLeft()" type="button" value="&lt;" name="left"><br>
+                <input class="BlueNoteButton" title="move all to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt5.transferAllLeft()" type="button" value="&lt;&lt;" name="left">
+              </td>
+              <td>
+                <select class="form-control form-control-sm" id="dbtr_ord_type_to" style="WIDTH: 250px" multiple size="6" name="{dbtr_ord_type_list_Name}">
+                  {dbtr_ord_type_list_Options} </select>
+              </td>
+            </tr>
+
+          </table>
+         </div> 
+      </div>
+
+      <div class="card-footer">
+        <a onclick="this.disabled=true" href="{wf_choice1_Src}">{wf_choice1}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice2_Src}">{wf_choice2}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice3_Src}">{wf_choice3}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice4_Src}">{wf_choice4}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice5_Src}">{wf_choice5}</a><input class="btn btn-primary" id="Reset" onclick="resetOptions();" type="reset" value="Reset" name="Reset" {wf_reset_hide_show}>{nllauthADDMASTERresetstart} 
+        <!-- BEGIN Button Insert3 --><input class="btn btn-primary" onclick="return (validate_form(0) && checkMasterSubmit());" type="submit" value="Add" name="Insert3" {nllauthADDMASTER}><!-- END Button Insert3 -->{nllauthADDMASTERresetend}
+        {nllauthUPDATEresetstart} 
+        <!-- BEGIN Button Update3 --><input class="btn btn-primary" onclick="return (validate_form(0) && checkMasterSubmit());" type="submit" value="Submit" name="Update3" {nllauthUPDATE}><!-- END Button Update3 -->{nllauthUPDATEresetend}
+        {nllauthDELETEMASTERresetstart}
+        <!-- BEGIN Button Delete3 --><input name="Delete3" type="submit" value="Delete" class="btn btn-primary" onclick="return confirm('Delete Record?')" {nllauthDELETEMASTER}><!-- END Button Delete3 -->{nllauthDELETEMASTERresetend}
+        <!-- BEGIN Button Cancel3 --><input name="Cancel3" type="submit" value="Cancel" class="btn btn-primary" onclick="return confirm('Are you sure to cancel?')"><!-- END Button Cancel3 -->
+      </div>
+    </div>
+	</div>
+	<div class="content" id="content5" {HideTabOnNew}>
+    <fieldset>
+    <br>
+    <iframe src="master_debtorcontactmst_list.php?dbtr_no={dbtr_no}&grid=debtormst" frameborder="0" width="100%" height="600"></iframe>
+    </fieldset> 
+  </div>
+  <div class="content" id="content6" {nllauthACC_TAB_DEBTOR_DELTO} {HideTabOnNew}>
+    <fieldset>
+    <br>
+    <iframe src="master_deltoadressmst_list.php?s_dlto_debtor={dbtr_no}&dlto_debtor={dbtr_no}&grid=debtormst" frameborder="0" width="100%" height="600"></iframe>
+    </fieldset> 
+  </div>
+	<div class="content" id="content8" {nllauthACC_TAB_DEBTOR_TAX_EXEMPTION} {HideTabOnNew}>
+    <fieldset>
+    <br>
+    <iframe src="master_dbtr_tax_exemption_list.php?s_taxexempt_debtor={dbtr_no}&taxexempt_debtor={dbtr_no}&grid=debtormst" frameborder="0" width="100%" height="600"></iframe>
+    </fieldset> 
+  </div>
+	  <div class="content" id="content7" {nllauthMASTER_TAB_NOTES}>
+    <fieldset>
+    <br>
+    <iframe src="./modules/notes/master_notes_value.php?notes_link_no={dbtr_no}&notes_no=2&lastpage=self&AdvanceMode=1" frameborder="0" width="100%" height="600"></iframe>
+		</fieldset> 
+  </div>
+</form>
+<!-- END Record debtormst -->
+<script language="Javascript" src="common/check_changes.js" type="text/javascript"></script>
+<script>
+        // 20090625 modify so that we do not straight assign in php but assign here
+  {onload_dbtr_value};
+</script>
+</div>  
+</body>
+</html>

@@ -1,0 +1,1842 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="GENERATOR" content="CodeCharge Studio 3.0.1.6">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>productmst_maint</title>
+<meta content="CodeCharge Studio 3.0.1.5" name="GENERATOR">
+<link rel="stylesheet" href="lib/bootstrap_v4.5/css/bootstrap.css">
+<link href="Themes/BlueNote/tabsstyle2.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" href="Themes/Custom/themes.css">
+<script language="javascript" src="common/jsrs/jsrsClient.js"></script>
+<script language="javascript" src="common/jsrs/filterProduct.js"></script>
+<script language="javascript" src="common/jsrs/jsrs_inventory.js"></script>
+<script language="javascript" src="common/jsrs/jsrs_master.js"></script>
+<script language="javascript" src="common/jsrs/jsrs_loadVATRate.js"></script>
+<script language="JavaScript" src="common/OptionTransfer.js"></script>
+<script language="javascript" src="common/entry_validate.js"></script>
+<script language="javascript" src="common/inv_productmst.js"></script>
+<script src="common/utils.js" type="text/javascript"></script>
+<script src="common/viewport.js" type="text/javascript"></script>
+<script src="common/global.js" type="text/javascript"></script>
+<script src="common/cookie.js" type="text/javascript"></script>
+<script src="common/tabs.js" type="text/javascript"></script>
+<script src="common/nll_date_validation.js" type="text/javascript"></script>
+<script language="javascript" src="common/nll_global_functions.js"></script>
+<script language="JavaScript" src="Functions.js" type="text/javascript" charset="utf-8"></script>
+<script language="javascript" src="common/entry_validate.js"></script>
+<script src="javascript/overlib.js" type="text/javascript"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include JSFunctions
+var opt4 = new OptionTransfer("color_listbox[]","color_listbox1[]");
+opt4.setAutoSort(true);
+opt4.setDelimiter(",");
+opt4.saveRemovedLeftOptions("removedLeft");
+opt4.saveRemovedRightOptions("removedRight");
+opt4.saveAddedLeftOptions("addedLeft");
+opt4.saveAddedRightOptions("addedRight");
+opt4.saveNewLeftOptions("newLeft");
+opt4.saveNewRightOptions("color_list");
+
+var opt5 = new OptionTransfer("size_listbox[]","size_listbox1[]");
+opt5.setAutoSort(true);
+opt5.setDelimiter(",");
+opt5.saveRemovedLeftOptions("removedLeft");
+opt5.saveRemovedRightOptions("removedRight");
+opt5.saveAddedLeftOptions("addedLeft");
+opt5.saveAddedRightOptions("addedRight");
+opt5.saveNewLeftOptions("newLeft");
+opt5.saveNewRightOptions("size_list");
+//page_productmst_prdt_cost_OnChange @27-ABDD9FB2
+function page_productmst_prdt_cost_OnChange()
+{
+    var result;
+//End page_productmst_prdt_cost_OnChange
+
+//Custom Code @219-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+    // -------------------------
+//End Custom Code
+
+//Close page_productmst_prdt_cost_OnChange @27-BC33A33A
+    return result;
+}
+//End Close page_productmst_prdt_cost_OnChange
+
+//page_productmst_Delete_OnClick @5-4D14248F
+function page_productmst_Delete_OnClick()
+{
+    disableValidation = true;
+}
+//End page_productmst_Delete_OnClick
+
+//page_productmst_Cancel_OnClick @79-69BEA771
+function page_productmst_Cancel_OnClick()
+{
+    disableValidation = true;
+}
+//End page_productmst_Cancel_OnClick
+
+//page_productmst_Delete1_OnClick @123-49A8322F
+function page_productmst_Delete1_OnClick()
+{
+    disableValidation = true;
+}
+//End page_productmst_Delete1_OnClick
+
+//page_productmst_Cancel1_OnClick @124-138947B7
+function page_productmst_Cancel1_OnClick()
+{
+    disableValidation = true;
+}
+//End page_productmst_Cancel1_OnClick
+
+//page_productmst_Delete3_OnClick @208-B8389D44
+function page_productmst_Delete3_OnClick()
+{
+    disableValidation = true;
+}
+//End page_productmst_Delete3_OnClick
+
+//page_productmst_Cancel3_OnClick @209-E219E8DC
+function page_productmst_Cancel3_OnClick()
+{
+    disableValidation = true;
+}
+//End page_productmst_Cancel3_OnClick
+
+//page_productmst_Delete2_OnClick @127-2D4849D1
+function page_productmst_Delete2_OnClick()
+{
+    disableValidation = true;
+}
+//End page_productmst_Delete2_OnClick
+
+//page_productmst_Cancel2_OnClick @128-77693C49
+function page_productmst_Cancel2_OnClick()
+{
+    disableValidation = true;
+}
+//End page_productmst_Cancel2_OnClick
+
+//page_productmst_Delete4_OnClick @239-E488BE2D
+function page_productmst_Delete4_OnClick()
+{
+    disableValidation = true;
+}
+//End page_productmst_Delete4_OnClick
+
+//page_productmst_Cancel4_OnClick @240-BEA9CBB5
+function page_productmst_Cancel4_OnClick()
+{
+    disableValidation = true;
+}
+//End page_productmst_Cancel4_OnClick
+
+//End CCS script
+</script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include JSFunctions @1-252A7665
+</script>
+<script language="JavaScript" type="text/javascript">
+//End Include JSFunctions
+
+//page_productmst_prdt_cost_OnChange @27-ABDD9FB2
+function page_productmst_prdt_cost_OnChange()
+{
+  var result;
+//End page_productmst_prdt_cost_OnChange
+
+//Custom Code @219-2A29BDB7
+  // -------------------------
+  // Write your own code here.
+  // -------------------------
+//End Custom Code
+
+//Close page_productmst_prdt_cost_OnChange @27-BC33A33A
+  return result;
+}
+//End Close page_productmst_prdt_cost_OnChange
+
+//page_productmst_prdt_margin_OnChange @1037-427FD1EF
+function page_productmst_prdt_margin_OnChange()
+{
+  var result;
+//End page_productmst_prdt_margin_OnChange
+
+//Custom Code @1039-2A29BDB7
+  // -------------------------
+  // Write your own code here.
+  // -------------------------
+//End Custom Code
+
+//Close page_productmst_prdt_margin_OnChange @1037-BC33A33A
+  return result;
+}
+//End Close page_productmst_prdt_margin_OnChange
+
+//page_productmst_Delete_OnClick @5-4D14248F
+function page_productmst_Delete_OnClick()
+{
+  disableValidation = true;
+}
+//End page_productmst_Delete_OnClick
+
+//page_productmst_Cancel_OnClick @79-69BEA771
+function page_productmst_Cancel_OnClick()
+{
+  disableValidation = true;
+}
+//End page_productmst_Cancel_OnClick
+
+//page_productmst_Delete1_OnClick @123-49A8322F
+function page_productmst_Delete1_OnClick()
+{
+  disableValidation = true;
+}
+//End page_productmst_Delete1_OnClick
+
+//page_productmst_Cancel1_OnClick @124-138947B7
+function page_productmst_Cancel1_OnClick()
+{
+  disableValidation = true;
+}
+//End page_productmst_Cancel1_OnClick
+
+//page_productmst_Delete3_OnClick @208-B8389D44
+function page_productmst_Delete3_OnClick()
+{
+  disableValidation = true;
+}
+//End page_productmst_Delete3_OnClick
+
+//page_productmst_Cancel3_OnClick @209-E219E8DC
+function page_productmst_Cancel3_OnClick()
+{
+  disableValidation = true;
+}
+//End page_productmst_Cancel3_OnClick
+
+//page_productmst_Delete5_OnClick @1080-71F86AB8
+function page_productmst_Delete5_OnClick()
+{
+  disableValidation = true;
+}
+//End page_productmst_Delete5_OnClick
+
+//page_productmst_Cancel5_OnClick @1081-2BD91F20
+function page_productmst_Cancel5_OnClick()
+{
+  disableValidation = true;
+}
+//End page_productmst_Cancel5_OnClick
+
+//page_productmst_Delete2_OnClick @127-2D4849D1
+function page_productmst_Delete2_OnClick()
+{
+  disableValidation = true;
+}
+//End page_productmst_Delete2_OnClick
+
+//page_productmst_Cancel2_OnClick @128-77693C49
+function page_productmst_Cancel2_OnClick()
+{
+  disableValidation = true;
+}
+//End page_productmst_Cancel2_OnClick
+
+//page_productmst_Delete4_OnClick @239-E488BE2D
+function page_productmst_Delete4_OnClick()
+{
+  disableValidation = true;
+}
+//End page_productmst_Delete4_OnClick
+
+//page_productmst_Cancel4_OnClick @240-BEA9CBB5
+function page_productmst_Cancel4_OnClick()
+{
+  disableValidation = true;
+}
+//End page_productmst_Cancel4_OnClick
+
+//bind_events @1-AB0F20A3
+function bind_events() {
+  if (document.forms["productmst"]) check_and_bind('document.forms["productmst"].prdt_margin','onchange',page_productmst_prdt_margin_OnChange);
+  if (document.forms["productmst"]) check_and_bind('document.forms["productmst"].prdt_cost','onchange',page_productmst_prdt_cost_OnChange);
+  if (document.forms["productmst"]) check_and_bind('document.forms["productmst"].Delete','onclick',page_productmst_Delete_OnClick);
+  if (document.forms["productmst"]) check_and_bind('document.forms["productmst"].Cancel','onclick',page_productmst_Cancel_OnClick);
+  if (document.forms["productmst"]) check_and_bind('document.forms["productmst"].Delete1','onclick',page_productmst_Delete1_OnClick);
+  if (document.forms["productmst"]) check_and_bind('document.forms["productmst"].Cancel1','onclick',page_productmst_Cancel1_OnClick);
+  if (document.forms["productmst"]) check_and_bind('document.forms["productmst"].Delete3','onclick',page_productmst_Delete3_OnClick);
+  if (document.forms["productmst"]) check_and_bind('document.forms["productmst"].Cancel3','onclick',page_productmst_Cancel3_OnClick);
+  if (document.forms["productmst"]) check_and_bind('document.forms["productmst"].Delete5','onclick',page_productmst_Delete5_OnClick);
+  if (document.forms["productmst"]) check_and_bind('document.forms["productmst"].Cancel5','onclick',page_productmst_Cancel5_OnClick);
+  if (document.forms["productmst"]) check_and_bind('document.forms["productmst"].Delete2','onclick',page_productmst_Delete2_OnClick);
+  if (document.forms["productmst"]) check_and_bind('document.forms["productmst"].Cancel2','onclick',page_productmst_Cancel2_OnClick);
+  if (document.forms["productmst"]) check_and_bind('document.forms["productmst"].Delete4','onclick',page_productmst_Delete4_OnClick);
+  if (document.forms["productmst"]) check_and_bind('document.forms["productmst"].Cancel4','onclick',page_productmst_Cancel4_OnClick);
+  forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+</script>
+<script language="JavaScript" type="text/javascript">
+function mouseover_onload(){
+		prdt_allow_auto_sum_guide="For POS need to set pos global setting for auto sum setting<br>For Inventory need to set bill setup for auto sum setting<br>";
+		prdt_min_allow_qty_guide="<b>**Only for webPOS usage</b><br>Enter value to control the minimum qty allow for this product<br>";
+		prdt_max_allow_qty_guide="<b>**Only for webPOS usage</b><br>Enter value to control the maximum qty allow for this product<br>";
+}
+
+//20171116 May #32974
+function func_show_code_name() {
+		var prdt_code = document.getElementById("code").value;
+		var prdt_name = document.getElementById("name1").value;
+		if(prdt_code!=''){
+			var prdt_code_name = " - "+prdt_code+": "+prdt_name;
+			document.getElementById("show_code_name").innerHTML = prdt_code_name;
+		}
+}
+
+//20190129 May #36001
+function func_button_update_onclick(){
+	document.getElementById('prdt_item_serial_no').disabled = false;
+	return (validate_form(0) && checkMasterSubmit() && checkUpdateSubProducts());
+}
+
+//20181010 soonhuat #35487
+function setTwoNumberDecimal(el) {
+	//if empty show 0
+   	if(el.value==''){
+      el.value = 0;
+	}
+	// handle decimals place
+    el.value = parseFloat(el.value).toFixed(2);
+};
+function func_prdt_active_onclick(obj)
+{
+  hideInactiveDate(obj);
+  var empty=document.getElementById("InactiveDate").value;
+  var text = window.location.search.substring(1);
+  if(obj.checked==false&&empty==''&&text!='')
+  {
+    var today = new Date();
+    var date = ("0" + today.getDate()).slice(-2)+'/'+("0" + (today.getMonth() + 1)).slice(-2)+'/'+today.getFullYear();
+    document.getElementById("InactiveDate").value=date;
+  }
+}
+
+isBootstrap = true;
+</script>
+</head>
+<body id="blueNote" class="BlueNotePageBODY" text="#000000" vlink="#000000" alink="#000000" link="#000000" bgcolor="#ffffff" onload="bodyOnLoad();func_onload();bypass(document.getElementById('prdt_no').value);hideInactiveDate(document.getElementById('active_flag'));{nllauthMASTER_FUNC_ACTIVE_FLAG_DEFAULT};{nllauthMASTER_FUNC_NON_WEIGHTING_FLAG_DEFAULT};cal_margin();mouseover_onload();opt3.init(document.forms[0]);initValue('supplier_list','supplier_list1','supplier','supplier1');func_show_code_name();">
+<!-- BEGIN Record productmst --><br><br>
+<div class="container-fluid">
+  <form name="productmst" action="{Action}" method="post" enctype="multipart/form-data">
+    <div class="card-header bg-danger pb-1 text-white setColor">
+      <font class="BlueNoteFormHeaderFont">{stxtAddEditProduct} <span id="show_code_name"></span></font>
+    </div>
+    <div id="tabs">
+      <span class="tab tabActive" id="tab1">[General]</span>
+      <span class="tab" id="tab2" {nllauthMASTER_TAB_ADVANCE}>[Advance]{nllauthMASTER_TAB_ADVANCEresetstart}{nllauthMASTER_TAB_ADVANCEresetend}</span>
+      <span class="tab" id="tab3" {hide_before_show}>[Price Category]</span>
+      <span class="tab" id="tab4" {nllauthMASTER_TAB_MANUFAC}>[Manufacturing]{nllauthMASTER_TAB_MANUFACresetstart}{nllauthMASTER_TAB_MANUFACresetend}</span> 
+      <span class="tab" id="tab5" {nllauthMASTER_TAB_ECOMMERCE}>[Ecommerce]{nllauthMASTER_TAB_ECOMMERCEresetstart}{nllauthMASTER_TAB_ECOMMERCEresetend}</span> 
+      <span class="tab" id="tab6" {nllauthMASTER_TAB_USERDEFINE}>[User Definition]{nllauthMASTER_TAB_USERDEFINEresetstart}{nllauthMASTER_TAB_USERDEFINEresetend}</span>
+      <span class="tab" id="tab7" {nllauthMASTER_TAB_FNB}>[FnB]{nllauthMASTER_TAB_FNBresetstart}{nllauthMASTER_TAB_FNBresetend}</span>
+      <span class="tab" id="tab8" {nllauthMASTER_TAB_NOTES}>[Notes]{nllauthMASTER_TAB_NOTESresetstart}{nllauthMASTER_TAB_NOTESresetend}</span> 
+    </div>
+    
+    <br>
+    <div class="" id="content1">
+      <div class="card bg-light text-dark border-danger setBorder">
+        
+        <div class="card-body">
+            <!-- BEGIN Error -->
+							<p class="text-danger">{Error}</p>
+            <!-- END Error -->
+            
+            <div class="col-md-12 px-1">
+              <div class=row>
+                <div class="col-md-6 px-1">
+                  {stxtProductGroup}<font color="red">*</font>
+                  <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> {nllauthADDLIST_GROUPresetstart}<a onclick="window.open('master_groupinvmst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=prdt_group','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a>{nllauthADDLIST_GROUPresetend}&nbsp;<input type="hidden" value="{prdt_group_hidden}" name="{prdt_group_hidden_Name}">
+                  <select class="form-control form-control-sm" onkeydown="linkSearchBox(this, 0, event)" onchange="if(CODE_BY_GRP==1 && document.getElementById('prdt_no').value == ''){getCodeGroup(this.value);};getCategoryPriceAutoCalculate(this.value);if(INV_PRDT_GROUP_PROMPT_AUTO_UPDATE!=0){jsrsProductGroupUpdate(this.value);};" name="prdt_group" type_flag="p_group">
+                    <option value="" selected>Select Value</option>
+                    {prdt_group_Options}
+                  </select>
+                </div>
+                <div class="col-md-3 px-1">{nllauthINV_ROW_MASTER_ACTIVEresetstart}
+                  {nllauthINV_ROW_MASTER_ACTIVEresetend}{stxtProductActive}
+                  {nllauthMASTER_FUNC_ACTIVE_FLAG_DEFAULTresetstart}{nllauthMASTER_FUNC_ACTIVE_FLAG_DEFAULTresetend}<input id="active_flag" onclick="func_prdt_active_onclick(this);" type="checkbox" value="1" name="prdt_active" {prdt_active}>&nbsp;
+                </div>
+                <div class="col-md-3 px-1">
+                  <span id ="inactive_date" colspan="2" {nllauthINV_PRDT_INACTIVE_DATE}>{nllauthINV_PRDT_INACTIVE_DATEresetstart}{nllauthINV_PRDT_INACTIVE_DATEresetend}{stxtInactiveDate} <input class="form-control form-control-sm" onkeypress="blockdatechar(this,event);" onblur="if(this.value){DateFormat.dateCheck(this);}" value="{InactiveDate}" name="{InactiveDate_Name}" id="InactiveDate" size="10"><a onkeypress="blockdatechar(this,event);" onclick="window.dateField=document.productmst.InactiveDate ;Calender=window.open('common/getdate.php','Calendar','WIDTH=260,HEIGHT=300,TOP=220,LEFT=400')" tabindex="-1" href="#" onchange="DateFormat.dateCheck(this);DateFormat.chk_to_date(this, document.forms.creditormstSearch.from_date);"><img src="image/getdate.gif" align="absMiddle" border="0"></a>
+                  </span>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 px-1">
+                  {stxtProductCode}<font color="red">*</font><input class="" {chkgen_code} onclick="set_disable_field(this,'code')" type="checkbox" value="1" name="{chkgen_code_Name}" {nllauthMASTER_CHECKBOX_Custom_AutoGenerate}><label for="chkbox" {nllauthMASTER_CHECKBOX_Custom_AutoGenerate}>{stxtAutoGenerate}</label>{nllauthMASTER_CHECKBOX_Custom_AutoGenerateresetstart}{nllauthMASTER_CHECKBOX_Custom_AutoGenerateresetend}
+                  <input class="form-control form-control-sm" id="code" ondblclick="code_OnDblClick(this);" maxlength="{stxtMasterCodeMaxLength}" onchange="code_OnChange(this);func_show_code_name();" size="30" value="{prdt_code}" name="prdt_code" {nllauthMASTER_TEXTBOX_CODE} {prdtCodeReadOnly}>{nllauthMASTER_TEXTBOX_CODEresetstart}{nllauthMASTER_TEXTBOX_CODEresetend}&nbsp;{lblActive}<input id="prdt_no" style="WIDTH: 124px; HEIGHT: 22px" type="hidden" size="16" value="{prdt_no}" name="{prdt_no_Name}">
+                </div>
+                <div class="col-md-6 px-1">
+                  {stxtProductUnit}
+                  <input class="form-control form-control-sm" {nllauthINV_TEXTBOX_PRDT_UNIT} maxlength="10" size="10" value="{prdt_unit}" name="prdt_unit">&nbsp;<input type="hidden" value="{ori_unit}" name="{ori_unit_Name}">{nllauthINV_TEXTBOX_PRDT_UNITresetstart}{nllauthINV_TEXTBOX_PRDT_UNITresetend}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 px-1">
+                  {stxtProductName1}<font color="red">*</font> <input class="" onclick="set_disable_field(this,'name1')" {chkgen_name1} type="checkbox" value="1" name="{chkgen_name1_Name}" {nllauthMASTER_CHECKBOX_Custom_AutoGenerate}><label for="chkbox" {nllauthMASTER_CHECKBOX_Custom_AutoGenerate}>{stxtAutoGenerate}</label>{nllauthMASTER_CHECKBOX_Custom_AutoGenerateresetstart}{nllauthMASTER_CHECKBOX_Custom_AutoGenerateresetend}
+                  <input class="form-control form-control-sm" id="name1" maxlength="{stxtMasterName1MaxLength}" size="50" value="{prdt_name1}" name="prdt_name1" {prdtName1ReadOnly} onchange="func_show_code_name();">&nbsp;
+                </div>
+                <div class="col-md-6 px-1">
+                  {stxtProductBarcode} {nllauthINV_TEXTBOX_MST_BARCODEresetstart}{nllauthINV_TEXTBOX_MST_BARCODEresetend} <input class="" {chkgen_barcode} onclick="set_disable_field(this,'pbarcode')" type="checkbox" value="1" name="{chkgen_barcode_Name}" {nllauthMASTER_CHECKBOX_Custom_AutoGenerate}><label for="chkbox" {nllauthMASTER_CHECKBOX_Custom_AutoGenerate}>{stxtAutoGenerate}</label>{nllauthMASTER_CHECKBOX_Custom_AutoGenerateresetstart}{nllauthMASTER_CHECKBOX_Custom_AutoGenerateresetend}
+                  <input class="form-control form-control-sm" id="pbarcode" maxlength="20" value="{prdt_barcode}" name="prdt_barcode" {nllauthINV_TEXTBOX_MST_BARCODE} v_errmsg="Invalid Barcode">&nbsp;
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 px-1">
+                  {stxtProductName2} <input class="" onclick="set_disable_field(this,'name2')" {chkgen_name2} type="checkbox" value="1" name="{chkgen_name2_Name}" {nllauthMASTER_CHECKBOX_Custom_AutoGenerate}> <label for="chkbox" {nllauthMASTER_CHECKBOX_Custom_AutoGenerate}>{stxtAutoGenerate}</label>{nllauthMASTER_CHECKBOX_Custom_AutoGenerateresetstart}{nllauthMASTER_CHECKBOX_Custom_AutoGenerateresetend}&nbsp;&nbsp;&nbsp;&nbsp;
+                  <textarea class="form-control form-control-sm w-366 h-52" {nllauthINV_TEXTBOX_PRDT_NAME2} id="name2" name="{prdt_name2_Name}" rows="3" cols="48">{prdt_name2}</textarea>{nllauthINV_TEXTBOX_PRDT_NAME2resetstart}{nllauthINV_TEXTBOX_PRDT_NAME2resetend}
+                </div>
+                <div class="col-md-6 px-1">
+                  {stxtProductPicture}
+                  <p>{prdt_picture}&nbsp;<img class="" id="Advance" title="Take Pic with WebCam" style="CURSOR: pointer" onclick=" if(confirm('Taking picture using webcam will refresh the page. Data will not be saved. You will need to re-enter the details. Press OK to continue. If you do not wish to lose the details entered, click Cancel and select browse to upload picture from computer.')){window.open('common/takeNotesPic.php?key_no='+document.getElementById('prdt_no').value+'&key_table=productmst','takeNotePic','height=400,width=500');}; window.close()" src="image/camera_icon.gif"><input class="btn btn-sm text-white" size="35" id="pic" type="file" name="pic">&nbsp;<input class="BlueNoteInput" id="chk_delete1" type="checkbox" value="1" name="{chk_delete1_Name}" {chk_delete1}>&nbsp;{stxtDelete}</p>
+                </div>
+              </div>
+
+              <div class="row" {nllauthINV_ROW_COLOR_SIZE_SELECTION} {hide_color_size}>
+                <div class="col-md-6 px-1" >
+                  {stxtProductColorSize}
+                  <input class="" type="checkbox" value="1" id="color_size_chk" name="{color_size_chk_Name}" {color_size_chk} onclick="show_color_size()">{nllauthINV_ROW_COLOR_SIZE_SELECTIONresetstart}{nllauthINV_ROW_COLOR_SIZE_SELECTIONresetend}
+                </div>
+              </div>
+
+              <div class="row" {nllauthINV_ROW_COLOR_SIZE_SELECTION} {hide_color_size}>
+                <div class="table-responsive">
+                  <table class="table-sm" id="mul_color_row" {nllauthINV_ROW_COLOR_SIZE_SELECTION} {hide_color_size}>
+                    <tr>
+                      <td>{stxtProductColor}
+                        <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> 
+                        <input type="hidden" name="{color_list_Name}" value="{color_list}" id="color_list"><input type="hidden" name="{color_list1_Name}" value="{color_list1}" id="color_list1">
+                      </td>
+                    </tr>
+                    <tr >
+                      <td>
+                        <select class="" style="WIDTH: 250px" multiple size="5" name="{color_listbox_Name}" id="color_listbox" onkeydown="linkSearchBox(this, 0, event)">
+                          {color_listbox_Options}
+                        </select>
+                      </td>
+                      <td>
+                        <input class="BlueNoteButton" title="move to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt4.transferRight()" type="button" size="50" value="&gt;" name="right"><br>
+                        <input class="BlueNoteButton" title="move all to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt4.transferAllRight()" type="button" value=" &gt;&gt;" name="right"><br>
+                        <input class="BlueNoteButton" title="move to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt4.transferLeft()" type="button" value="&lt;" name="left"><br>
+                        <input class="BlueNoteButton" title="move all to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt4.transferAllLeft()" type="button" value="&lt;&lt;" name="left">
+                      </td>
+                      <td>
+                        <select class="" style="WIDTH: 250px" multiple size="5" name="{color_listbox1_Name}" id="color_listbox1">
+                        {color_listbox1_Options} 
+                        </select>
+                      </td>
+                    </tr>
+                  </table>  
+                </div>
+              </div>
+
+              <div class="row" id="mul_size_row" {nllauthINV_ROW_COLOR_SIZE_SELECTION} {hide_color_size}>
+                <div class="table-responsive">
+                  <table class="table-sm">
+                    <tr>
+                      <td>
+                        {stxtProductSize}
+                        <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> 
+                        <input type="hidden" name="{size_list_Name}" value="{size_list}" id="size_list"><input type="hidden" name="{size_list1_Name}" value="{size_list1}" id="size_list1">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <select class="form-control form-control-sm" style="WIDTH: 250px" multiple size="5" name="{size_listbox_Name}" id="size_listbox" onkeydown="linkSearchBox(this, 0, event)">
+                          {size_listbox_Options} 
+                          </select>
+                      </td>
+                      <td>
+                        <input class="BlueNoteButton" title="move to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt5.transferRight()" type="button" size="50" value="&gt;" name="right"><br>
+                        <input class="BlueNoteButton" title="move all to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt5.transferAllRight()" type="button" value=" &gt;&gt;" name="right"><br>
+                        <input class="BlueNoteButton" title="move to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt5.transferLeft()" type="button" value="&lt;" name="left"><br>
+                        <input class="BlueNoteButton" title="move all to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt5.transferAllLeft()" type="button" value="&lt;&lt;" name="left">
+                      </td>
+                      <td>
+                        <select class="form-control form-control-sm" style="WIDTH: 250px" multiple size="5" name="{size_listbox1_Name}" id="size_listbox1">
+                          {size_listbox1_Options} 
+                        </select>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 px-1" {nllauthINV_ROW_PRD_MASTER_VAT_SALES}>
+                    {stxtProductVAT_AR}
+                    <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> 
+                    <a onclick="window.open('master_vatmst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=prdt_VAT_AR','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;&nbsp; 
+                    <a class="BlueNoteDataLink" onclick="window.open('http://gst.customs.gov.my/en/rg/SiteAssets/gst_order/pua_20141013_P.U.%20(A)%20272%20-%20Perintah%20CBP%20(Pembekalan%20Berkadar%20Sifar)%202014.pdf','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" {nllauthMASTER_IMGLINK_ZERO_EXEMPT_CUSTOM}>{nllauthMASTER_IMGLINK_ZERO_EXEMPT_CUSTOMresetstart}<img title="Zero rated item" src="image/zero.jpg" width="30" border="0"></a><a class="BlueNoteDataLink" onclick="window.open('http://gst.customs.gov.my/en/rg/SiteAssets/gst_order/pua_20141013_P.U.%20(A)%20271-perintah%20cukai%20barang%20dan%20perkhidmatan%20(pembekalan%20dikecualikan)%202014.pdf','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');"><img title="Exempted rated item" src="image/exempt.jpg" width="30" border="0">{nllauthMASTER_IMGLINK_ZERO_EXEMPT_CUSTOMresetend}</a> 
+                    {nllauthPRDT_CATEGORY_COMPULSARYlistbox}
+                    {nllauthPRODUCTMST_VAT_COMPULSARYlistbox}
+                    <select class="form-control form-control-sm" id="prdt_VAT_AR" onkeydown="linkSearchBox(this, 0, event)" onchange="jsrsLoadVATRateAR(this);" name="{prdt_VAT_AR_Name}" v_errmsg="The value in Product VAT Type - Sales is required" {nllauthPRODUCTMST_VAT_COMPULSARY}>
+                      <option value="" selected>Follow Product Group</option>
+                      {prdt_VAT_AR_Options}
+                    </select>{nllauthPRODUCTMST_VAT_COMPULSARYresetstart}{nllauthPRODUCTMST_VAT_COMPULSARYresetend} 
+                </div>
+            
+                <div class="col-md-6 px-1">
+                  {stxtProductCategory}<a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_categorymst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=prdt_category','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a>
+                  {nllauthPRDT_CATEGORY_COMPULSARYlistbox}
+                    <select class="form-control form-control-sm" id="prdt_category" onkeydown="linkSearchBox(this, 0, event)" name="prdt_category" v_errmsg="The value in Product Category is required" {nllauthPRDT_CATEGORY_COMPULSARY}>
+                      <option value="" selected>Select Value</option>
+                      {prdt_category_Options}
+                    </select>{nllauthPRDT_CATEGORY_COMPULSARYresetstart}{nllauthPRDT_CATEGORY_COMPULSARYresetend}
+                </div>
+              </div>
+
+              <div class="row">
+                
+                <div class="col-md-3 px-1" {nllauthINV_ROW_PRD_MASTER_VAT_SALES} {beforeafterVAT_hide}>
+                  {stxtBeforeVAT}:&nbsp;&nbsp;<input class="form-control form-control-sm" maxlength="12" onchange="recalculateAR_beforeToAfter()" size="12" value="{amtBeforeVAT_AR}" name="{amtBeforeVAT_AR_Name}">&nbsp;
+                  
+                </div>
+                <div class="col-md-3 px-1" {nllauthINV_ROW_PRD_MASTER_VAT_SALES} {beforeafterVAT_hide}>
+                  {stxtAfterVAT}: <input class="form-control form-control-sm" id="amtAfterVat_AR" maxlength="12" onchange="recalculateAR_afterToBefore()" size="12" value="{amtAfterVat_AR}" name="{amtAfterVat_AR_Name}"><input type="hidden" value="{vatRate_AR}" name="{vatRate_AR_Name}">
+                </div>
+                <div class="col-md-3 px-1"></div>
+                <div class="col-md-3 px-1"></div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 px-1" {nllauthINV_ROW_PRD_MASTER_VAT_PURCHASE}>
+                  {stxtProductVAT_AP}
+                  <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_vatmst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=prdt_VAT_AP','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a>
+                    {nllauthPRODUCTMST_VAT_COMPULSARYlistbox}
+                    <select class="form-control form-control-sm" id="prdt_VAT_AP" onkeydown="linkSearchBox(this, 0, event)" onchange="jsrsLoadVATRateAP(this);" name="{prdt_VAT_AP_Name}" v_errmsg="The value in Product VAT Type - Purchase is required" {nllauthPRODUCTMST_VAT_COMPULSARY}>
+                      <option value="" selected>Follow Product Group</option>
+                      {prdt_VAT_AP_Options}
+                    </select>{nllauthPRODUCTMST_VAT_COMPULSARYresetstart}{nllauthPRODUCTMST_VAT_COMPULSARYresetend}
+                 
+                </div>
+                <div class="col-md-6 px-1">
+                  {stxtProductModel}<a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_modelmst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=prdt_model','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a>
+                  {nllauthPRDT_MODEL_COMPULSARYlistbox}
+                    <select class="form-control form-control-sm" id="prdt_model" onkeydown="linkSearchBox(this, 0, event)" name="prdt_model" v_errmsg="The value in Product Model is required." {nllauthPRDT_MODEL_COMPULSARY}>
+                      <option value="" selected>Select Value</option>
+                      {prdt_model_Options}
+                    </select>{nllauthPRDT_MODEL_COMPULSARYresetstart}{nllauthPRDT_MODEL_COMPULSARYresetend} 
+                </div>
+              </div>
+
+              <div class="row" {beforeafterVAT_hide} {nllauthINV_ROW_PRD_MASTER_VAT_PURCHASE}>
+                <div class="col-md-3 px-1">
+                  {stxtBeforeVAT}:&nbsp;&nbsp;<input class="form-control form-control-sm" maxlength="12" onchange="recalculateAP_beforeToAfter()" size="12" value="{amtBeforeVAT_AP}" name="{amtBeforeVAT_AP_Name}">&nbsp;
+                </div>
+                <div class="col-md-3 px-1">
+                  {stxtAfterVAT}: <input class="form-control form-control-sm" id="amtAfterVat_AP" maxlength="12" onchange="recalculateAP_afterToBefore()" size="12" value="{amtAfterVat_AP}" name="{amtAfterVat_AP_Name}"><input type="hidden" value="{vatRate_AP}" name="{vatRate_AP_Name}">&nbsp;
+                </div>
+                <div class="col-md-3 px-1"></div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 px-1" {nllauthMASTER_ROW_MSIC}>
+                  {nllauthMASTER_ROW_MSICresetstart}{nllauthMASTER_ROW_MSICresetend}{stxtMSIC}
+                    <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0" {nllauthprdt_msic}></a> <a onclick="window.open('master_msicitmmst_maint.php?addlistflag=true&addlistform=msicitemmst&addlistelement=prdt_msic','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0" {nllauthprdt_msic}></a>
+                    {nllauthprdt_msiclistbox}
+                    <select class="form-control form-control-sm" name="{prdt_msic_Name}" v_errmsg="The value in {stxtMSIC} is required" {nllauthprdt_msic}>
+                      <option value="" selected>Follow Product Group</option>
+                      {prdt_msic_Options}
+                    </select>{nllauthprdt_msicresetstart}{nllauthprdt_msicresetend}
+                </div>
+                <div class="col-md-6 px-1">
+                  {stxtProductBrand}
+                    <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_brandmst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=prdt_brand','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a>
+                  {nllauthPRDT_BRAND_COMPULSARYlistbox}
+                    <select class="form-control form-control-sm" id="prdt_brand" onkeydown="linkSearchBox(this, 0, event)" name="prdt_brand" v_errmsg="The value in Product Brand is required." {nllauthPRDT_BRAND_COMPULSARY}>
+                      <option value="" selected>Select Value</option>
+                      {prdt_brand_Options}
+                    </select>{nllauthPRDT_BRAND_COMPULSARYresetstart}{nllauthPRDT_BRAND_COMPULSARYresetend}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 px-1">
+                  <div {sinSupplier}>{stxtSupplier}
+                    <a  {sinSupplier} onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> {nllauthADDLIST_CREDITORresetstart}<a  {sinSupplier} onclick="window.open('master_creditormst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=prdt_supplier_no','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a>{nllauthADDLIST_CREDITORresetend} 
+                    {nllauthPRODUCTMST_SUPPLIER_COMPULSARYresetstart}{nllauthPRODUCTMST_SUPPLIER_COMPULSARYresetend} 
+                    <select class="form-control form-control-sm" {nllauthprdt_supplier_no} id="prdt_supplier_no" onkeydown="linkSearchBox(this, 0, event)" name="{prdt_supplier_no_Name}" type_flag="c" v_errmsg="The value in Supplier is required">
+                      <option value="" selected>Select Value</option>
+                      {prdt_supplier_no_Options}
+                    </select>{nllauthprdt_supplier_noresetstart}{nllauthprdt_supplier_noresetend}
+                  </div>
+                </div>
+                <div class="col-md-6 px-1">
+                  <div {nllauthMASTER_ROW_PRD_TARIFF}>
+                    {nllauthMASTER_ROW_PRD_TARIFFresetstart}{nllauthMASTER_ROW_PRD_TARIFFresetend}{stxtTariffCode}&nbsp;
+                    <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a>
+                    <select class="form-control form-control-sm" onkeydown="linkSearchBox(this, 0, event)" name="prdt_tariff">
+                      <option value="" selected>{stxtFollowProductGroup}</option>
+                      {prdt_tariff_Options} 
+                    </select>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row" {nllauthINV_ROW_ITEM_TAXABLE}>
+                <div class="col-md-6 px-1">
+                  {nllauthINV_ROW_ITEM_TAXABLEresetstart}{nllauthINV_ROW_ITEM_TAXABLEresetend}{stxtARProductTax}
+                  <select class="form-control form-control-sm" name="{prdt_taxable_Name}">
+                    <option value="" selected>{stxtFollowProductGroup}</option>
+                      {prdt_taxable_Options} 
+                  </select>
+                </div>
+                <div class="col-md-6 px-1">
+                  {stxtAPProductTax}
+                  <select class="form-control form-control-sm" name="{prdt_ap_taxable_Name}">
+                    <option value="" selected>{stxtFollowProductGroup}</option>
+                      {prdt_ap_taxable_Options} 
+                  </select>
+                </div>
+              </div>
+
+              <div class="row" {nllauthINV_ROW_ITEM_TAXABLE_RATE}>
+                <div class="col-md-6 px-1">
+                  {nllauthINV_ROW_ITEM_TAXABLE_RATEresetstart}{nllauthINV_ROW_ITEM_TAXABLE_RATEresetend}{stxtARTaxRateInPercent}
+                  <input class="form-control form-control-sm" onkeypress="blockchar(this,event)" onblur="if(this.value!=''){this.value=parseFloat(this.value).toFixed(2);}else{this.value=parseFloat(0).toFixed(2);}" style="TEXT-ALIGN: right" maxlength="12" size="12" value="{prdt_ar_tax_rate}" name="prdt_ar_tax_rate">
+                </div>
+                <div class="col-md-6 px-1">
+                  {stxtAPTaxRateInPercent}
+                  <input class="form-control form-control-sm" onkeypress="blockchar(this,event)" onblur="if(this.value!=''){this.value=parseFloat(this.value).toFixed(2);}else{this.value=parseFloat(0).toFixed(2);}" style="TEXT-ALIGN: right" maxlength="12" size="12" value="{prdt_ap_tax_rate}" name="prdt_ap_tax_rate">
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6 px-1">
+                  <div {nllauthHIDE_COST} {nllauthPRODUCT_COST}>{stxtProductCost}</div>
+                  <div {nllauthHIDE_COST} {nllauthPRODUCT_COST}>
+                    <input class="form-control form-control-sm" {nllauthINV_TEXTBOX_PRDT_COST} onkeypress="blockchar(this,event);" id="prdt_cost" onblur="if(this.value!=''){this.value=decimal.cost(this.value);}else{this.value=decimal.cost(0);}document.getElementById('amtAfterVat_AP').value=this.value;recalculateAP_afterToBefore();recalculate_cat_price(this);cal_margin();" style="TEXT-ALIGN: right" maxlength="12" onchange="changeprice(document.productmst.{CalculatePrice_Name});markup_price(document.getElementById('prdt_markup_percent').value+'|'+this.value+'|'+'productmst');cal_margin();" size="12" value="{prdt_cost}" name="prdt_cost">
+                    <input type="hidden" name="{cost_orig_Name}" value="{cost_orig}">{nllauthINV_TEXTBOX_PRDT_COSTresetstart}{nllauthINV_TEXTBOX_PRDT_COSTresetend}
+                    <a onclick="window.open('report/rpt_cost_history.php?prdt_no={prdt_no}','_blank','WIDTH=1000,HEIGHT=650,LEFT=200,scrollbars=yes,resizable=yes');return false;" tabindex="-1" href="#" {nllauthINV_HYPERLINK_PRDT_COST_HISTORY} {display_history}>{nllauthINV_HYPERLINK_PRDT_COST_HISTORYresetstart}{nllauthINV_HYPERLINK_PRDT_COST_HISTORYresetend}<img src="image/audit_price.png" border="0" height="19" width="20" alt="{stxtCostHistory}"></a>
+                  </div>
+                </div>
+                <div class="col-md-6 px-1">
+                  <div {nllauthINV_ROW_ITEM_VATABLE}>{nllauthINV_ROW_ITEM_VATABLEresetstart}{nllauthINV_ROW_ITEM_VATABLEresetend}{stxtProductVATAble}</div>
+                  <div {nllauthINV_ROW_ITEM_VATABLE}>
+                    <select class="form-control form-control-sm" name="{prdt_vatable_Name}">
+                      <option value="" selected>{stxtFollowProductGroup}</option>
+                      {prdt_vatable_Options}
+                    </select>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6 px-1">
+                  {stxtProductOrderCost}
+                  <input class="form-control form-control-sm" onkeypress="blockchar(this,event);" onblur="if(this.value!=''){this.value=decimal.price(this.value);}else{this.value=decimal.price(0);}" style="TEXT-ALIGN: right" size="12" value="{prdt_order_cost}" name="prdt_order_cost">
+                </div>
+                <div class="col-md-6 px-1">
+                  <div {nllauthINV_ROW_ITEM_DISCOUNTABLE}>{nllauthINV_ROW_ITEM_DISCOUNTABLEresetstart}{nllauthINV_ROW_ITEM_DISCOUNTABLEresetend}{stxtProductDiscountable}</div>
+                  <div {nllauthINV_ROW_ITEM_DISCOUNTABLE}>
+                    <select class="form-control form-control-sm" name="{prdt_discountable_Name}">
+                      <option value="" selected>{stxtFollowProductGroup}</option>
+                      {prdt_discountable_Options}
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 px-1">
+                  <div {hidefPrice} {nllauthPRODUCT_PRICE} {nllauthHIDE_PRICE}>{stxtProductPrice}</div>
+                  <div {hidefPrice} {nllauthPRODUCT_PRICE} {nllauthHIDE_PRICE}>
+                    <input class="form-control form-control-sm" {nllauthINV_TEXTBOX_PRDT_PRICE} onkeypress="blockchar(this,event);" id="prdt_price" onblur="if(this.value!=''){this.value=decimal.price(this.value);}else{this.value=decimal.price(0);}document.getElementById('amtAfterVat_AR').value=this.value;recalculateAR_afterToBefore();recalculate_cat_price(this);cal_margin();" style="TEXT-ALIGN: right" maxlength="12" size="12" value="{prdt_price}" name="prdt_price">
+                    <input type="hidden" name="{price_orig_Name}" value="{price_orig}">{nllauthINV_TEXTBOX_PRDT_PRICEresetstart}{nllauthINV_TEXTBOX_PRDT_PRICEresetend}
+                    <a tabindex="-1" onclick="window.open('report/rpt_price_history.php?prdt_no={prdt_no}','_blank','WIDTH=1000,HEIGHT=650,LEFT=200,scrollbars=yes,resizable=yes');return false;" href="#" {nllauthINV_HYPERLINK_PRDT_PRICE_HISTORY} {display_history}>{nllauthINV_HYPERLINK_PRDT_PRICE_HISTORYresetstart}{nllauthINV_HYPERLINK_PRDT_PRICE_HISTORYresetend}<img src="image/audit_price_fresh.png" border="0" height="19" width="20" alt="{stxtPriceHistory}"></a>
+                  </div>
+                </div>
+                <div class="col-md-6 px-1">
+                  {stxtProductSource}
+                  <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> {nllauthADDLIST_SOURCEresetstart}<a onclick="window.open('master_sourcemst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=source','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a>{nllauthADDLIST_SOURCEresetend}
+                  <select class="form-control form-control-sm" onkeydown="linkSearchBox(this, 0, event)"name="{source_Name}">
+                    <option value="" selected>Select Value</option>
+                    {source_Options}
+                  </select>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 px-1">
+                  <div {hidefPriceA}  {nllauthHIDE_PRICE_A} {nllauthINV_MST_ROW_PRDT_PRICE_A}>{nllauthHIDE_PRICE_Aresetstart}{nllauthHIDE_PRICE_Aresetend}{nllauthINV_MST_ROW_PRDT_PRICE_Aresetstart}{nllauthINV_MST_ROW_PRDT_PRICE_Aresetend}{stxtProductPriceA}</div>
+                  <div {hidefPriceA}  {nllauthHIDE_PRICE_A} {nllauthINV_MST_ROW_PRDT_PRICE_A}>
+                    <input class="form-control form-control-sm" onkeypress="blockchar(this,event);" onblur="if(this.value!=''){this.value=decimal.price(this.value);}else{this.value=decimal.price(0);}" style="TEXT-ALIGN: right" maxlength="12" size="12" value="{prdt_price_A}" name="prdt_price_A" v_errMsg="PriceA is Compulsory!" v_ptrn=1 {nllauthINV_TEXTBOX_PRICE_A}>{nllauthINV_TEXTBOX_PRICE_Aresetstart}{nllauthINV_TEXTBOX_PRICE_Aresetend}
+                    <input type="hidden" name="{priceA_orig_Name}" value="{priceA_orig}"></td>
+                  </div>
+                </div>
+                <div class="col-md-6 px-1">
+                  <div nllact="promotion">{stxtPromotionItem}</div>
+                  <div nllact="promotion">
+                    <input type="checkbox" value="1" name="{promotion_item_Name}" {promotion_item}>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 px-1">
+                  <div {hidefPriceB}  {nllauthINV_MST_ROW_PRDT_PRICE_B}>{nllauthINV_MST_ROW_PRDT_PRICE_Bresetstart}{nllauthINV_MST_ROW_PRDT_PRICE_Bresetend}{stxtProductPriceB}</div>
+                  <div {hidefPriceB}  {nllauthINV_MST_ROW_PRDT_PRICE_B}>
+                    <input class="form-control form-control-sm" onkeypress="blockchar(this,event);" onblur="this.value=decimal.price(this.value)" style="TEXT-ALIGN: right" maxlength="12" size="12" value="{prdt_price_B}" name="prdt_price_B" v_errMsg="PriceB is Compulsory!" v_ptrn=1 {nllauthINV_TEXTBOX_PRICE_B}>{nllauthINV_TEXTBOX_PRICE_Bresetstart}{nllauthINV_TEXTBOX_PRICE_Bresetend}
+                    <input type="hidden" name="{priceB_orig_Name}" value="{priceB_orig}">
+                  </div>
+                </div>
+                <div class="col-md-6 px-1">
+                  <div {nllauthINV_ROW_PRDT_ITEM_SERIAL_NO}>{nllauthINV_ROW_PRDT_ITEM_SERIAL_NOresetstart}{nllauthINV_ROW_PRDT_ITEM_SERIAL_NOresetend}{stxtProductItemSerialNo}</div>
+                  <div {nllauthINV_ROW_PRDT_ITEM_SERIAL_NO}>
+                    <input type="checkbox" value="1" id="prdt_item_serial_no" name="prdt_item_serial_no" {prdt_item_serial_no} {chkItemSerial}>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 px-1">
+                  <div {hidefPriceC}  {nllauthINV_MST_ROW_PRDT_PRICE_C}>{nllauthINV_MST_ROW_PRDT_PRICE_Cresetstart}{nllauthINV_MST_ROW_PRDT_PRICE_Cresetend}{stxtProductPriceC}</div>
+                  <div {hidefPriceC}  {nllauthINV_MST_ROW_PRDT_PRICE_C}>
+                    <input class="form-control form-control-sm" onkeypress="blockchar(this,event);" onblur="if(this.value!=''){this.value=decimal.price(this.value);}else{this.value=decimal.price(0);}" style="TEXT-ALIGN: right" maxlength="12" size="12" value="{prdt_price_C}" name="prdt_price_C" v_errMsg="PriceC is Compulsory!" v_ptrn=1 {nllauthINV_TEXTBOX_PRICE_C}>{nllauthINV_TEXTBOX_PRICE_Cresetstart}{nllauthINV_TEXTBOX_PRICE_Cresetend}
+                    <input type="hidden" name="{priceC_orig_Name}" value="{priceC_orig}">
+                  </div>
+                </div>
+                <div class="col-md-6 px-1">
+                    <div {nllauthINV_ROW_PRDT_MARKUP_PERCENT}>{stxtProductMarkupPercent}</div>
+                    <div {nllauthINV_ROW_PRDT_MARKUP_PERCENT}><input class="form-control form-control-sm" id="prdt_markup_percent" style="TEXT-ALIGN: right" maxlength="3" onchange="markup_price(this.value+'|'+document.getElementById('prdt_cost').value+'|'+'productmst')" size="12" value="{prdt_markup_percent}" name="{prdt_markup_percent_Name}"><input id="prdt_max_markup_price" type="hidden" value="{prdt_max_markup_price}" name="{prdt_max_markup_price_Name}">{nllauthINV_ROW_PRDT_MARKUP_PERCENTresetstart}{nllauthINV_ROW_PRDT_MARKUP_PERCENTresetend}</div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 px-1">
+                  <div {hidefPriceD}  {nllauthINV_MST_ROW_PRDT_PRICE_D}>{nllauthINV_MST_ROW_PRDT_PRICE_Dresetstart}{nllauthINV_MST_ROW_PRDT_PRICE_Dresetend}{stxtProductPriceD}</div>
+                  <div {hidefPriceD}  {nllauthINV_MST_ROW_PRDT_PRICE_D}>
+                    <input class="form-control form-control-sm" onkeypress="blockchar(this,event);" onblur="if(this.value!=''){this.value=decimal.price(this.value);}else{this.value=decimal.price(0);}" style="TEXT-ALIGN: right" maxlength="12" size="12" value="{prdt_price_D}" name="prdt_price_D" v_errMsg="PriceD is Compulsory!" v_ptrn=1 {nllauthINV_TEXTBOX_PRICE_D}>{nllauthINV_TEXTBOX_PRICE_Dresetstart}{nllauthINV_TEXTBOX_PRICE_Dresetend}
+                    <input type="hidden" name="{priceD_orig_Name}" value="{priceD_orig}">
+                  </div>
+                </div>
+                <div class="col-md-6 px-1">
+                  {stxtProductReorderLevel}
+                  <input class="form-control form-control-sm" {nllauthINV_TEXTBOX_PRDT_REOR_LEVEL} onkeypress="blockchar(this,event);" onblur="if(this.value!=''){this.value=decimal.quantity(this.value);}else{this.value=decimal.quantity(0);}" style="TEXT-ALIGN: right" maxlength="12" size="12" value="{prdt_reor_level}" name="prdt_reor_level">{nllauthINV_TEXTBOX_PRDT_REOR_LEVELresetstart}{nllauthINV_TEXTBOX_PRDT_REOR_LEVELresetend}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 px-1">
+                  <div {hidefPriceE}  {nllauthINV_MST_ROW_PRDT_PRICE_E}>{nllauthINV_MST_ROW_PRDT_PRICE_Eresetstart}{nllauthINV_MST_ROW_PRDT_PRICE_Eresetend}{stxtProductPriceE}</div>
+                  <div {hidefPriceE}  {nllauthINV_MST_ROW_PRDT_PRICE_E}>
+                  <input class="form-control form-control-sm" onkeypress="blockchar(this,event);" onblur="if(this.value!=''){this.value=decimal.price(this.value);}else{this.value=decimal.price(0);}" style="TEXT-ALIGN: right" maxlength="12" size="12" value="{prdt_price_E}" name="prdt_price_E" v_errMsg="PriceE is Compulsory!" v_ptrn=1 {nllauthINV_TEXTBOX_PRICE_E}>{nllauthINV_TEXTBOX_PRICE_Eresetstart}{nllauthINV_TEXTBOX_PRICE_Eresetend}&nbsp;<a {nlldisplay} onclick="window.open('master_product_price_categorymst_list.php?s_ppc_product_no={prdt_no}','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');return false;" tabindex="-1" href="#"><font color="#0000ff">{nllauthACC_HYPERLINK_PRODUCTMST_ADD_PRICE_CATEGORYresetstart}{stxtAddPrice}{nllauthACC_HYPERLINK_PRODUCTMST_ADD_PRICE_CATEGORYresetend}</font></a>
+                  <input type="hidden" name="{priceE_orig_Name}" value="{priceE_orig}">
+                  </div>
+                </div>
+                <div class="col-md-6 px-1">
+                  {stxtProductMinLevel}
+                  <input class="form-control form-control-sm" {nllauthINV_TEXTBOX_PRDT_MIN_LEVEL} onkeypress="blockchar(this,event);" onblur="if(this.value!=''){this.value=decimal.quantity(this.value);}else{this.value=decimal.quantity(0);}" style="TEXT-ALIGN: right" maxlength="12" size="12" value="{prdt_min_level}" name="prdt_min_level">{nllauthINV_TEXTBOX_PRDT_MIN_LEVELresetstart}{nllauthINV_TEXTBOX_PRDT_MIN_LEVELresetend}
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6 px-1">
+                  <div {hidefPriceF}  {nllauthINV_MST_ROW_PRDT_PRICE_F}>{nllauthINV_MST_ROW_PRDT_PRICE_Fresetstart}{nllauthINV_MST_ROW_PRDT_PRICE_Fresetend}{stxtProductPriceF}</div>
+                  <div {hidefPriceF}  {nllauthINV_MST_ROW_PRDT_PRICE_F}>
+                    <input class="form-control form-control-sm" onkeypress="blockchar(this,event);" onblur="if(this.value!=''){this.value=decimal.price(this.value);}else{this.value=decimal.price(0);}" style="TEXT-ALIGN: right" maxlength="12" size="12" value="{prdt_price_F}" name="prdt_price_F" v_errMsg="PriceF is Compulsory!" v_ptrn=1 {nllauthINV_TEXTBOX_PRICE_F}>{nllauthINV_TEXTBOX_PRICE_Fresetstart}{nllauthINV_TEXTBOX_PRICE_Fresetend}
+                    <input type="hidden" name="{priceF_orig_Name}" value="{priceF_orig}">
+                  </div>
+                </div>
+                <div class="col-md-6 px-1">
+                  {stxtProductMaxLevel}
+                  <input class="form-control form-control-sm" {nllauthINV_TEXTBOX_PRDT_MAX_LEVEL} onkeypress="blockchar(this,event);" onblur="if(this.value!=''){this.value=decimal.quantity(this.value);}else{this.value=decimal.quantity(0);}" style="TEXT-ALIGN: right" maxlength="12" size="12" value="{prdt_max_level}" name="prdt_max_level">{nllauthINV_TEXTBOX_PRDT_MAX_LEVELresetstart}{nllauthINV_TEXTBOX_PRDT_MAX_LEVELresetend}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 px-1">
+                  {stxtProductRecommendedPrice}
+                  <input class="form-control form-control-sm" onkeypress="blockchar(this,event);" onblur="if(this.value!=''){this.value=decimal.price(this.value);}else{this.value=decimal.price(0);}" style="TEXT-ALIGN: right" maxlength="12" size="12" value="{prdt_recommended_price}" name="prdt_recommended_price">
+                </div>
+                <div class="col-md-6 px-1">
+                  {stxtProductRegisterDate}
+                  <a onclick="window.dateField=document.productmst.prdt_reg_date ;Calender=window.open('common/getdate.php','Calendar','WIDTH=230,HEIGHT=280,TOP=220,LEFT=400')" tabindex="-1" href="#"><img src="image/getdate.gif" border="0"></a>
+                  <input class="form-control form-control-sm" {nllauthINV_TEXTBOX_PRDT_REG_DATE} onkeypress="blockdatechar(this,event)" onblur="if(this.value){DateFormat.dateCheck(this);}" maxlength="10" size="10" value="{prdt_reg_date}" name="prdt_reg_date" v_errmsg="The value in {stxtProductRegisterDate} is required">{nllauthINV_TEXTBOX_PRDT_REG_DATEresetstart}{nllauthINV_TEXTBOX_PRDT_REG_DATEresetend}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 px-1">
+                  <div {nllauthINV_ROW_PRDTMST_MARGIN}>{nllauthINV_ROW_PRDTMST_MARGINresetstart}{nllauthINV_ROW_PRDTMST_MARGINresetend}{stxtProductMargin}</div>
+                  <div {nllauthINV_ROW_PRDTMST_MARGIN}>
+                    <input class="form-control form-control-sm" onkeypress="blockchar(this,event);" style="TEXT-ALIGN: right" readonly maxlength="12" size="12" value="{prdt_margin}" name="prdt_margin">
+                  </div>
+                </div>
+                <div class="col-md-6 px-1">
+                  <div {nllauthMASTER_ROW_APPROVAL_STATUS}>{nllauthMASTER_ROW_APPROVAL_STATUSresetstart}{nllauthMASTER_ROW_APPROVAL_STATUSresetend}{stxtDebtor}
+                    {stxtApprovalStatus}
+                    <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a>
+                    {nllauthapproval_statuslistbox} 
+                      <select class="form-control form-control-sm" id="approval_status" onkeydown="linkSearchBox(this)" name="approval_status">
+                        {approval_status_Options}
+                      </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row" style="DISPLAY: none">
+                <div class="col-md-6 px-1">
+                  {stxtProductReorderQty}
+                  <input class="form-control form-control-sm" onkeypress="blockchar(this,event);" onblur="if(this.value!=''){this.value=decimal.quantity(this.value);}else{this.value=decimal.quantity(0);}" maxlength="12" size="12" value="{prdt_reord_qty}" name="prdt_reord_qty">
+                </div>
+              </div>
+
+              <div class="row" id="Tr_Prdt_Bal">
+                <div class="col-md-6 px-1">
+                  {stxtProductBalance}
+                  {prdt_bal}
+                </div>
+              </div>
+
+              <div class="row" {mulSupplier}>
+                <div class="table-responsive">
+                  <table class="table-sm">
+                    <tr>
+                      <td>
+                        {stxtSupplier}
+                        <input id="supplier_list" type="hidden" value="{supplier_list}" name="{supplier_list_Name}"><input id="supplier_list1" type="hidden" value="{supplier_list1}" name="{supplier_list1_Name}">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <select class="form-control form-control-sm" id="supplier" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" multiple size="5" name="{supplier_Name}" type_flag="c">
+                          {supplier_Options}
+                        </select>
+                      </td>
+                      <td>
+                        <input class="BlueNoteButton" title="move to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt3.transferRight()" type="button" size="50" value="&gt;" name="right"><br>
+                        <input class="BlueNoteButton" title="move all to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt3.transferAllRight()" type="button" value=" &gt;&gt;" name="right"><br>
+                        <input class="BlueNoteButton" title="move to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt3.transferLeft()" type="button" value="&lt;" name="left"><br>
+                        <input class="BlueNoteButton" title="move all to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt3.transferAllLeft()" type="button" value="&lt;&lt;" name="left">
+                      </td>
+                      <td>
+                        <select class="form-control form-control-sm" style="WIDTH: 250px" id="supplier1" multiple size="5" name="{supplier1_Name}">
+                          {supplier1_Options}
+                        </select>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <input id="prdt_sys_add_user" type="hidden" value="{prdt_sys_add_user}" name="{prdt_sys_add_user_Name}"><input id="prdt_sys_add_date" type="hidden" value="{prdt_sys_add_date}" name="{prdt_sys_add_date_Name}"><input id="prdt_sys_last_mod_user" type="hidden" value="{prdt_sys_last_mod_user}" name="{prdt_sys_last_mod_user_Name}">
+
+            </div> 
+               
+            <div class="text-right"><a onclick="this.disabled=true" href="{wf_choice1_Src}">{wf_choice1}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice2_Src}">{wf_choice2}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice3_Src}">{wf_choice3}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice4_Src}">{wf_choice4}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice5_Src}">{wf_choice5}</a><input class="btn btn-primary btn-sm" id="Reset" type="reset" value="Reset" name="Reset" {wf_reset_hide_show}>{nllauthADDMASTERresetstart} 
+              <!-- BEGIN Button Insert --><input class="btn btn-primary btn-sm" onclick="return (validate_form(0)&& checkMasterSubmit());" type="submit" value="Add" name="Insert" {nllauthADDMASTER}><!-- END Button Insert -->{nllauthADDMASTERresetend}
+              {nllauthUPDATEresetstart} 
+              <!-- BEGIN Button Update --><input class="btn btn-primary btn-sm" onclick="return func_button_update_onclick();" type="submit" value="Submit" name="Update" {nllauthUPDATE}><!-- END Button Update -->{nllauthUPDATEresetend}
+              {nllauthDELETEMASTERresetstart} 
+              <!-- BEGIN Button Delete --><input class="btn btn-primary btn-sm" onclick="return  confirm('Delete Record?')" type="submit" value="Delete" name="Delete" {nllauthDELETEMASTER}><!-- END Button Delete -->{nllauthDELETEMASTERresetend} 
+              <!-- BEGIN Button Cancel --><input class="btn btn-primary btn-sm" onclick="return  confirm('Are you sure to cancel?')" type="submit" value="Cancel" name="Cancel"><!-- END Button Cancel -->
+            </div>
+        </div>
+      </div>  
+    </div>
+
+    <div class="content" id="content2" {nllauthMASTER_TAB_ADVANCE}>
+      <fieldset>
+      <br>
+      <table class="BlueNoteFormTABLE" cellpadding="4">
+        <!-- BEGIN Error -->
+        <tr>
+          <td class="BlueNoteErrorDataTD" colspan="6">{Error}</td>
+        </tr>
+        <!-- END Error -->
+
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductConsolidation}</td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2">
+            <select class="BlueNoteSelect" style="WIDTH: 250px" name="{prdt_consolidation_Name}">
+              <option value="" selected>Select Value</option>
+              {prdt_consolidation_Options}
+            </select>
+            <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> {nllauthADDLIST_CONSOLIDATIONresetstart}<a onclick="window.open('master_prdtconsolidatemst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=prdt_consolidation','_blank','WIDTH=560,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a>{nllauthADDLIST_CONSOLIDATIONresetend}</td>
+          <td class="BlueNoteFieldCaptionTD" nowrap>{stxtProductHoldingCostInPercent}</td> 
+          <td class="BlueNoteDataTD" colspan="2" nowrap><input class="BlueNoteInput" id="prdt_holding_cost" style="TEXT-ALIGN: right" onchange="changeprice(document.productmst.{CalculatePrice_Name});" size="12" value="{prdt_holding_cost}" name="prdt_holding_cost">&nbsp;<input class="BlueNoteInput" id="checkbox" onclick="changeprice(document.productmst.{CalculatePrice_Name});" type="checkbox" value="1" name="{CalculatePrice_Name}" {nllauthINV_CHECKBOX_CALCULATEPRICE}>&nbsp;<label for="price" {nllauthINV_CHECKBOX_CALCULATEPRICE}>{stxtCalPrice}{stxtPrdtPriceFormula}</label>{nllauthINV_CHECKBOX_CALCULATEPRICEresetstart}{nllauthINV_CHECKBOX_CALCULATEPRICEresetend}</td>
+        </tr>
+        
+        <tr>
+          <td class="BlueNoteFieldCaptionTD" {nllauthINV_ROW_MST_PRDTCYCLE}>{nllauthINV_ROW_MST_PRDTCYCLEresetstart}{nllauthINV_ROW_MST_PRDTCYCLEresetend}{stxtCycleCount}</td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2" {nllauthINV_ROW_MST_PRDTCYCLE}>
+            <select class="BlueNoteSelect" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" name="prdt_cycle_no">
+              <option value="" selected>Select Value</option>
+              {prdt_cycle_no_Options}
+            </select>
+            <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a>{nllauthADDLIST_CYCLECOUNTresetstart} <a onclick="window.open('master_cyclecountmst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=prdt_cycle_no','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" {nllauthADDLIST_CYCLECOUNT} width="20" border="0"></a>{nllauthADDLIST_CYCLECOUNTresetend}&nbsp;<input type="hidden" value="{prdt_cycle_no_hidden}" name="{prdt_cycle_no_hidden_Name}"></td>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductPoint}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" onkeypress="blockchar(this,event);" id="prdt_points" onblur="if(this.value!=''){this.value=decimal.price(this.value);}else{this.value=decimal.price(0);}" style="TEXT-ALIGN: right" size="12" value="{prdt_points}" name="{prdt_points_Name}"></td>			
+        </tr>
+              
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductJob}</td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2">
+            <select class="BlueNoteSelect" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" name="{Job_Name}">
+              <option value="" selected>Select Value</option>
+              {Job_Options}
+            </select>
+            <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> {nllauthADDLIST_JOBresetstart}<a onclick="window.open('master_jobmst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=Job','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a>{nllauthADDLIST_JOBresetend}&nbsp;</td>
+          <td class="BlueNoteFieldCaptionTD" nowrap {nllauthINV_ROW_PRDT_MIN_ORD_QTY}>{nllauthINV_ROW_PRDT_MIN_ORD_QTYresetstart}{nllauthINV_ROW_PRDT_MIN_ORD_QTYresetend}{stxtProductMinimumOrderQuantity}</td> 
+          <td class="BlueNoteDataTD" colspan="2" {nllauthINV_ROW_PRDT_MIN_ORD_QTY}><input class="BlueNoteInput" onblur="if(this.value!=''){this.value=decimal.quantity(this.value);}else{this.value=decimal.quantity(0);}" style="TEXT-ALIGN: right" maxlength="12" size="12" value="{prdt_ap_min_ord_qty}" name="{prdt_ap_min_ord_qty_Name}" {nllauthINV_TEXTBOX_PRDT_MIN_ORD_QTY}>{nllauthINV_TEXTBOX_PRDT_MIN_ORD_QTYresetstart}{nllauthINV_TEXTBOX_PRDT_MIN_ORD_QTYresetend}</td>
+        </tr>
+          
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductTask}</td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2">
+            <select class="BlueNoteSelect" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" name="{task_Name}">
+              <option value="" selected>Select Value</option>
+              {task_Options}
+            </select>
+            <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> {nllauthADDLIST_TASKresetstart}<a onclick="window.open('master_taskmst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=task','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a>{nllauthADDLIST_TASKresetend}&nbsp;</td>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductMinimumPrice}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" onkeypress="blockchar(this,event);" onblur="if(this.value!=''){this.value=decimal.price(this.value);}else{this.value=decimal.price(0);}" style="TEXT-ALIGN: right" maxlength="12" size="12" value="{prdt_min_price}" name="prdt_min_price">&nbsp;</td>
+        </tr>
+            
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductAlertMessage}</td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2">
+            <select class="BlueNoteSelect" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" name="prdt_alert_services">
+              <option value="" selected>Select Value</option>
+              {prdt_alert_services_Options}
+            </select>
+            <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a>{nllauthADDLIST_ALERTresetstart} <a onclick="window.open('master_productalertmsgmst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=prdt_alert_services','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a>{nllauthADDLIST_ALERTresetend}&nbsp;</td>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductMaximumPrice}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" onkeypress="blockchar(this,event);" onblur="if(this.value!=''){this.value=decimal.price(this.value);}else{this.value=decimal.price(0);}" style="TEXT-ALIGN: right" maxlength="12" size="12" value="{prdt_max_price}" name="prdt_max_price">&nbsp;</td>
+      </tr>
+        
+        <tr>
+          <td class="BlueNoteFieldCaptionTD" nowrap>{stxtProductHierarchyCode}</td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2">
+            <select class="BlueNoteSelect" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" name="{lstHier_Name}">
+              <option value="" selected>Select Value</option>
+              {lstHier_Options}
+            </select>
+            <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> </td>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductFOCPrice}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" onblur="this.value=decimal.price(this.value)" style="TEXT-ALIGN: right" maxlength="12" size="12" value="{prdt_foc_price}" name="prdt_foc_price">&nbsp;</td>
+        </tr>
+        
+        <tr>
+          <td class="BlueNoteFieldCaptionTD" {nllauthINV_ROW_ProductSeason}>{nllauthINV_ROW_ProductSeasonresetstart}{nllauthINV_ROW_ProductSeasonresetend}{stxtProductSeason}</td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2" {nllauthINV_ROW_ProductSeason}>{nllauthseasonlistbox}
+            <select class="BlueNoteSelect" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" name="{season_Name}" {nllauthseason}>
+              <option value="" selected>Select Value</option>
+              {season_Options}
+            </select>{nllauthseasonresetstart}{nllauthseasonresetend}
+          </td>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductPointPerUnit}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" onkeypress="blockchar(this,event);" style="TEXT-ALIGN: right" maxlength="12" size="12" value="{prdt_point_per_unit}" name="prdt_point_per_unit">&nbsp;</td>
+        </tr>
+        
+        <tr>
+          <td class="BlueNoteFieldCaptionTD" nowrap {nllauthINV_ROW_ProductSensitiveness}>{nllauthINV_ROW_ProductSensitivenessresetstart}{nllauthINV_ROW_ProductSensitivenessresetend}{stxtProductSensitiveness}</td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2" {nllauthINV_ROW_ProductSensitiveness}>{nllauthsensitivenesslistbox}
+            <select class="BlueNoteSelect" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" name="{sensitiveness_Name}"  {nllauthsensitiveness}>
+              <option value="" selected>Select Value</option>
+              {sensitiveness_Options}
+            </select>{nllauthsensitivenessresetstart}{nllauthsensitivenessresetend}
+          </td>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductInventory}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" {nllauthINV_TEXTBOX_PRDT_INV} maxlength="12" size="12" value="{prdt_inventory}" name="prdt_inventory">{nllauthINV_TEXTBOX_PRDT_INVresetstart}{nllauthINV_TEXTBOX_PRDT_INVresetend}&nbsp;</td>
+        </tr>
+  
+        <tr style="DISPLAY: none">
+          <td class="BlueNoteFieldCaptionTD">{stxtProductItem}</td> 
+          <td class="BlueNoteDataTD" colspan="5"><input class="BlueNoteInput" maxlength="10" size="10" value="{prdt_item}" name="prdt_item">&nbsp;</td>
+        </tr>
+  
+        <tr style="DISPLAY: none">
+          <td class="BlueNoteFieldCaptionTD">{stxtProductPacking}</td> 
+          <td class="BlueNoteDataTD" colspan="5"><input class="BlueNoteInput" maxlength="50" size="50" value="{prdt_packing}" name="prdt_packing">&nbsp;</td>
+        </tr>
+  
+        <tr style="DISPLAY: none">
+          <td class="BlueNoteFieldCaptionTD">{stxtProductOnOrder}</td> 
+          <td class="BlueNoteDataTD" colspan="5"><input class="BlueNoteInput" maxlength="12" size="12" value="{prdt_onorder}" name="prdt_onorder">&nbsp;</td>
+        </tr>
+  
+        <tr style="DISPLAY: none">
+          <td class="BlueNoteFieldCaptionTD">{stxtProductOnDelivery}</td> 
+          <td class="BlueNoteDataTD" colspan="5"><input class="BlueNoteInput" maxlength="12" size="12" value="{prdt_on_dlv}" name="prdt_on_dlv">&nbsp;</td>
+        </tr>
+
+        <tr style="DISPLAY: none">
+          <td class="BlueNoteFieldCaptionTD">{stxtProductPurchaseDate}</td> 
+          <td class="BlueNoteDataTD" colspan="5"><input class="BlueNoteInput" onkeypress="blockdatechar(this,event)" onblur="if(this.value){DateFormat.dateCheck(this);}" maxlength="10" size="10" value="{prdt_pur_date}" name="prdt_pur_date">&nbsp;<a onclick="window.dateField=document.productmst.prdt_pur_date ;Calender=window.open('common/getdate.php','Calendar','WIDTH=230,HEIGHT=280,TOP=220,LEFT=400')" tabindex="-1" href="#"><img src="image/getdate.gif" border="0"></a></td>
+        </tr>
+  
+        <tr style="DISPLAY: none">
+          <td class="BlueNoteFieldCaptionTD">{stxtProductPurhaseCost}</td> 
+          <td class="BlueNoteDataTD" colspan="5"><input class="BlueNoteInput" maxlength="12" size="12" value="{prdt_pur_cost}" name="prdt_pur_cost">&nbsp;</td>
+        </tr>
+  
+        <tr style="DISPLAY: none">
+          <td class="BlueNoteFieldCaptionTD">{stxtProductChangeDate}</td> 
+          <td class="BlueNoteDataTD" colspan="5"><input class="BlueNoteInput" readonly maxlength="10" size="10" value="{prdt_chg_date}" name="prdt_chg_date">&nbsp;<a onclick="window.dateField=document.productmst.prdt_chg_date ;Calender=window.open('common/getdate.php','Calendar','WIDTH=230,HEIGHT=280,TOP=220,LEFT=400')" tabindex="-1" href="#"><img src="image/getdate.gif" border="0"></a></td>
+        </tr>
+  
+        <tr style="DISPLAY: none">
+          <td class="BlueNoteFieldCaptionTD">{stxtProductChangeCost}</td> 
+          <td class="BlueNoteDataTD" colspan="5"><input class="BlueNoteInput" maxlength="12" size="12" value="{prdt_chg_price}" name="prdt_chg_price">&nbsp;</td>
+        </tr>
+  
+        <tr style="DISPLAY: none">
+          <td class="BlueNoteFieldCaptionTD">{stxtProductStkDate}</td> 
+          <td class="BlueNoteDataTD" colspan="5"><input class="BlueNoteInput" readonly maxlength="10" size="10" value="{prdt_stk_date}" name="prdt_stk_date">&nbsp;<a onclick="window.dateField=document.productmst.prdt_stk_date ;Calender=window.open('common/getdate.php','Calendar','WIDTH=230,HEIGHT=280,TOP=220,LEFT=400')" tabindex="-1" href="#"><img src="image/getdate.gif" border="0"></a></td>
+        </tr>
+  
+        <tr style="DISPLAY: none">
+          <td class="BlueNoteFieldCaptionTD">{stxtProductStkCost}</td> 
+          <td class="BlueNoteDataTD" colspan="5"><input class="BlueNoteInput" maxlength="12" size="12" value="{prdt_stk_cost}" name="prdt_stk_cost">&nbsp;</td>
+        </tr>
+  
+        <tr style="DISPLAY: none">
+          <td class="BlueNoteFieldCaptionTD">{stxtProductItemSold}</td> 
+          <td class="BlueNoteDataTD" colspan="5"><input class="BlueNoteinput" type="checkbox" value="1" name="prdt_item_sold" {prdt_item_sold}>&nbsp;</td>
+        </tr>
+  
+        <tr style="DISPLAY: none">
+          <td class="BlueNoteFieldCaptionTD">{stxtProductItemPurchased}</td> 
+          <td class="BlueNoteDataTD" colspan="5"><input class="BlueNoteinput" type="checkbox" value="1" name="prdt_item_purchased" {prdt_item_purchased}>&nbsp;</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD" {nllauthINV_ROW_Product_Line}>{nllauthINV_ROW_Product_Lineresetstart}{nllauthINV_ROW_Product_Lineresetend}{stxtProductLine}</td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2" {nllauthINV_ROW_Product_Line}>{nllauthprdt_linelistbox}
+            <select class="BlueNoteSelect" id="prdt_line" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" name="{prdt_line_Name}"  {nllauthprdt_line}>
+              <option value="" selected>Select Value</option>
+              {prdt_line_Options}
+            </select>{nllauthprdt_lineresetstart}{nllauthprdt_lineresetend}
+            <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_productlinemst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=prdt_line','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;</td>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductFixedAssetItem}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteinput" type="checkbox" value="1" name="prdt_fixed_asset_item" {prdt_fixed_asset_item}>&nbsp;</td>
+        </tr>
+        
+        <tr {nllauthINV_MST_COL_PRDT_NATURE}> 
+          <!--  
+            please remove this comment & auth control on tr if got add on new column (component) in this row. 
+            put here because currently only one component and prevent the gap show in UI 
+          -->
+          <td class="BlueNoteFieldCaptionTD" {nllauthINV_MST_COL_PRDT_NATURE}>
+            {nllauthINV_MST_COL_PRDT_NATUREresetstart}{nllauthINV_MST_COL_PRDT_NATUREresetend}
+            {stxtProductNature}
+          </td>
+          <td class="BlueNoteDataTD" nowrap colspan="2"  {nllauthINV_MST_COL_PRDT_NATURE}>
+            <select name="{prdt_nature_no_Name}" class="BlueNoteSelect" onkeydown="linkSearchBox(this, 0, event);" style="WIDTH: 250px">
+              <option value="">Select Value</option>
+              {prdt_nature_no_Options}
+            </select>
+            <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction">
+              <img tabindex="-1" src="image/search.gif" border="0">
+            </a>
+          </td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductColor}</td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2">{nllauthprdt_colorlistbox}
+            <select class="BlueNoteSelect" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" name="prdt_color" v_errmsg="The value in {stxtProductColor} is required" {nllauthprdt_color}>
+              <option value="" selected>Select Value</option>
+              {prdt_color_Options}
+            </select>{nllauthprdt_colorresetstart}{nllauthprdt_colorresetend}
+          <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0" {nllauthprdt_color}></a> <a onclick="window.open('master_colormst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=prdt_color','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0" {nllauthprdt_color}></a>&nbsp;</td>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductPackingCase}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" style="WIDTH: 60px; HEIGHT: 20px" size="7" value="{prdt_packing_case}" name="{prdt_packing_case_Name}">&nbsp;Box(es)</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductSize}</td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2">{nllauthprdt_sizelistbox}
+            <select class="BlueNoteSelect" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" name="prdt_size" {nllauthprdt_size}>
+              <option value="" selected>Select Value</option>
+              {prdt_size_Options}
+            </select>{nllauthprdt_sizeresetstart}{nllauthprdt_sizeresetend}
+            <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_sizemst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=prdt_size','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;</td>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductBom}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" maxlength="20" value="{prdt_bom}" name="prdt_bom">&nbsp;</td>	
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductWeightUom}</td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2">
+            <select class="BlueNoteSelect" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" name="prdt_weight">
+              <option value="" selected>Select Value</option>
+              {prdt_weight_Options}
+            </select>
+            <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_weightmst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=prdt_weight','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;</td>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductWeight}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" maxlength="20" value="{prdt_weight_uom}" name="prdt_weight_uom">&nbsp;</td>
+      </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductGrossWeightUom}</td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2">
+            <select class="BlueNoteSelect" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" name="prdt_gross_weight_uom">
+              <option value="" selected>Select Value</option>
+              {prdt_gross_weight_uom_Options}
+            </select>
+            <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_weightmst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=prdt_gross_weight_uom','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a> </td>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductGrossWeight}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" {nllauthINV_TEXTBOX_PRDT_GROSS_WEIGHT} value="{prdt_gross_weight}" name="{prdt_gross_weight_Name}">{nllauthINV_TEXTBOX_PRDT_GROSS_WEIGHTresetstart}{nllauthINV_TEXTBOX_PRDT_GROSS_WEIGHTresetend}</td>
+      </tr>
+
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductLengthUom}</td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2">
+            <select class="BlueNoteSelect" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" name="prdt_length">
+              <option value="" selected>Select Value</option>
+              {prdt_length_Options}
+            </select>
+            <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_lengthmst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=prdt_length','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;</td>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductLength}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" maxlength="20" value="{prdt_length_uom}" name="prdt_length_uom">&nbsp;</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductThicknessUom}</td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2">
+            <select class="BlueNoteSelect" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" name="prdt_thickness">
+              <option value="" selected>Select Value</option>
+              {prdt_thickness_Options}
+            </select>
+            <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_thicknessmst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=prdt_thickness','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;</td>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductThickness}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" maxlength="20" value="{prdt_thickness_uom}" name="prdt_thickness_uom">&nbsp;</td>
+      </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductWidthUom}</td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2">
+            <select class="BlueNoteSelect" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" name="prdt_width">
+              <option value="" selected>Select Value</option>
+              {prdt_width_Options}
+            </select>
+          <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_widthmst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=prdt_width','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;</td>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductWidth}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" maxlength="20" value="{prdt_width_uom}" name="prdt_width_uom">&nbsp;</td>
+        </tr>
+
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductCumulativeUom}</td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2">
+            <select class="BlueNoteSelect" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" name="prdt_cumulative">
+              <option value="" selected>Select Value</option>
+              {prdt_cumulative_Options}
+            </select>
+            <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_cumulativemst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=prdt_cumulative','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a> </td>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductCumulative}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" value="{prdt_cum}" name="{prdt_cum_Name}"></td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD" {nllauthINV_ROW_PRDT_MEASUREMENT1_UOM_LISTBOX}>{nllauthINV_ROW_PRDT_MEASUREMENT1_UOM_LISTBOXresetstart}{nllauthINV_ROW_PRDT_MEASUREMENT1_UOM_LISTBOXresetend}{stxtProductMeasurement1Uom}</td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2" {nllauthINV_ROW_PRDT_MEASUREMENT1_UOM_LISTBOX}>
+            <select class="BlueNoteSelect" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" name="prdt_measurement1_uom_no">
+              <option value="" selected>Select Value</option>
+              {prdt_measurement1_uom_no_Options}
+            </select>
+            <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_uommst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=prdt_measurement1_uom_no','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;</td>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductMeasurement1}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" maxlength="12" size="12" value="{prdt_measurement1}" name="prdt_measurement1">&nbsp;</td>
+      </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD" {nllauthINV_ROW_PRDT_MEASUREMENT1_UOM}>{nllauthINV_ROW_PRDT_MEASUREMENT1_UOMresetstart}{nllauthINV_ROW_PRDT_MEASUREMENT1_UOMresetend}{stxtProductMeasurement1Uom}</td> 
+          <td class="BlueNoteDataTD" colspan="2" {nllauthINV_ROW_PRDT_MEASUREMENT1_UOM}><input class="BlueNoteInput" {nllauthINV_TEXTBOX_PRDT_MEASUREMENT1_UOM} maxlength="20" value="{prdt_measurement1_uom}" name="prdt_measurement1_uom" v_errmsg="The value in {stxtProductMeasurement1Uom} is required">{nllauthINV_TEXTBOX_PRDT_MEASUREMENT1_UOMresetstart}{nllauthINV_TEXTBOX_PRDT_MEASUREMENT1_UOMresetend}&nbsp;</td>
+          <td class="BlueNoteFieldCaptionTD" colspan="3"></td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductMeasurement2Uom}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" maxlength="20" value="{prdt_measurement2_uom}" name="prdt_measurement2_uom">&nbsp;</td>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductMeasurement2}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" maxlength="12" size="12" value="{prdt_measurement2}" name="prdt_measurement2" {nllauthINV_TEXTBOX_PRODUCT_MEASUREMENT2} v_errmsg="Product Measurement 2">{nllauthINV_TEXTBOX_PRODUCT_MEASUREMENT2resetstart}
+            {nllauthINV_TEXTBOX_PRODUCT_MEASUREMENT2resetend} </td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductTaxPromptInPercent}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteinput" type="checkbox" value="1" name="prdt_tax_flag" {prdt_tax_flag}></td>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductARDiscountValue}</td> 
+          <td class="BlueNoteDataTD"><input class="BlueNoteInput" id="prdt_ar_discount_value" style="TEXT-ALIGN: right" maxlength="12" onchange="cal_ar_discount_value(this.value);" size="12" value="{prdt_ar_discount_value}" name="{prdt_ar_discount_value_Name}"></td> 
+          <td class="BlueNoteDataTD" nowrap {nllauthINV_APAR_LABEL_DESC}>Amount
+            After Discount:<input class="BlueNoteInput" id="ar_label" style="BORDER-RIGHT: #000000 0px solid; BORDER-TOP: #000000 0px solid; BORDER-LEFT: #000000 0px solid; BORDER-BOTTOM: #000000 0px solid" readonly value="{ar_label}" name="{ar_label_Name}">{nllauthINV_APAR_LABEL_DESCresetstart}{nllauthINV_APAR_LABEL_DESCresetend}</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductTaxPromptValue}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" style="TEXT-ALIGN: right" maxlength="12" size="12" value="{prdt_tax_prompt_value}" name="prdt_tax_prompt_value">&nbsp;</td>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductAPDiscountValue}</td> 
+          <td class="BlueNoteDataTD"><input class="BlueNoteInput" id="prdt_ap_discount_value" style="TEXT-ALIGN: right" maxlength="12" onchange="cal_ap_discount_value(this.value);" size="12" value="{prdt_ap_discount_value}" name="prdt_ap_discount_value"></td> 
+          <td class="BlueNoteDataTD" nowrap {nllauthINV_APAR_LABEL_DESC}>Amount
+            After Discount:<input class="BlueNoteInput" id="ap_label" style="BORDER-RIGHT: #000000 0px solid; BORDER-TOP: #000000 0px solid; BORDER-LEFT: #000000 0px solid; BORDER-BOTTOM: #000000 0px solid" readonly value="{ap_label}" name="{ap_label_Name}">{nllauthINV_APAR_LABEL_DESCresetstart}{nllauthINV_APAR_LABEL_DESCresetend}</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD" nowrap>{stxtProductMarkUpDownInPercent}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteinput" type="checkbox" value="1" name="prdt_mark_up_down_flag" {prdt_mark_up_down_flag}>&nbsp;</td>
+          <td class="BlueNoteFieldCaptionTD" nowrap>{stxtProductAlternativeProductcode}&nbsp;</td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2">
+            <select class="BlueNoteSelect" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" onchange="if(this.value!=''){checksameprouduct(this)}" name="{prdt_alternative_productcode_Name}" type_flag="p">
+              <option value="" selected>Select Value</option>
+              {prdt_alternative_productcode_Options}
+            </select>
+            <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a>&nbsp;&nbsp;</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD" nowrap>{stxtProductMarkUpDownValue}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" style="TEXT-ALIGN: right" maxlength="12" size="12" value="{prdt_mark_up_down_value}" name="prdt_mark_up_down_value">&nbsp;</td>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductStore}</td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2">
+            <select class="BlueNoteSelect" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" name="prdt_store">
+              <option value="" selected>Select Value</option>
+              {prdt_store_Options}
+            </select>
+            <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_storemst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=prdt_store','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductDiscountInPercent}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteinput" id="prdt_discount_flag" type="checkbox" value="1" name="prdt_discount_flag" {prdt_discount_flag}>&nbsp;</td>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductShelf}</td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2">
+            <select class="BlueNoteSelect" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" name="prdt_shelf">
+              <option value="" selected>Select Value</option>
+              {prdt_shelf_Options}
+            </select>
+            <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_shelfmst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=prdt_shelf','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;</td>
+        </tr>
+  
+        <tr style="DISPLAY: none">
+          <td class="BlueNoteFieldCaptionTD">{stxtProductSetting}</td> 
+          <td class="BlueNoteDataTD" colspan="5"><input class="BlueNoteInput" maxlength="20" value="{prdt_setting}" name="prdt_setting">&nbsp;</td>
+        </tr>
+  
+        <tr style="DISPLAY: none">
+          <td class="BlueNoteFieldCaptionTD">{stxtProductCapacity}</td> 
+          <td class="BlueNoteDataTD" colspan="5"><input class="BlueNoteInput" maxlength="12" size="12" value="{prdt_capacity}" name="prdt_capacity">&nbsp;</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductCommissionInPercent}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteinput" type="checkbox" value="1" name="prdt_commission_flag" {prdt_commission_flag}>&nbsp;</td>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductABCFlag}</td> 
+          <td class="BlueNoteDataTD" colspan="2">
+            <select class="BlueNoteSelect" name="{abc_flag_Name}">
+              <option value="" selected>Select Value</option>
+              {abc_flag_Options}
+            </select>
+            &nbsp;&nbsp;{stxtrptMargin} (%) <input class="BlueNoteInput" style="WIDTH: 80px" readonly value="{abc_perc}" name="{abc_perc_Name}"></td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductCommissionValue}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" onkeypress="blockchar(this,event);" style="TEXT-ALIGN: right" maxlength="12" size="12" value="{prdt_commission_value}" name="prdt_commission_value">&nbsp;</td>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductMovementFlag}</td> 
+          <td class="BlueNoteDataTD" colspan="2">
+            <select class="BlueNoteSelect" name="{move_flag_Name}">
+              <option value="" selected>Select Value</option>
+              {move_flag_Options}
+            </select>
+            &nbsp;&nbsp;{stxtInventoryTurnover} <input class="BlueNoteInput" style="WIDTH: 80px" readonly value="{move_perc}" name="{move_perc_Name}"></td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtMenuCRG}</td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2">
+            <select class="BlueNoteSelect" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" name="prdt_commrategroup_no">
+              <option value="" selected>Select Value</option>
+              {prdt_commrategroup_no_Options}
+            </select>
+            <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_commissionrategroupmst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=prdt_commrategroup_no','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;</td>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductTransactionControlFlag}</td> 
+          <td class="BlueNoteDataTD" colspan="2">
+            <select class="BlueNoteSelect" name="{tran_ctrl_flag_Name}">
+              <option value="" selected>Select Value</option>
+              {tran_ctrl_flag_Options}
+            </select>
+          </td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductCollectionType}</td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2">
+            <select class="BlueNoteSelect" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" name="prdt_collection_type">
+              <option value="" selected>Select Value</option>
+              {prdt_collection_type_Options}
+            </select>
+            <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> {nllauthADDLIST_COLLECTTYPEresetstart}<a onclick="window.open('master_collectionmst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=prdt_collection_type','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a>{nllauthADDLIST_COLLECTTYPEresetend}&nbsp;</td>
+          <td class="BlueNoteFieldCaptionTD">{stxtNonWeightItem}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" id="prdt_non_weight_item" type="checkbox" value="1" name="{prdt_non_weight_item_Name}" {prdt_non_weight_item}></td>
+        </tr>		
+
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductShipmentMethod}</td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2">
+            <select class="BlueNoteSelect" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" name="prdt_shippment_method">
+              <option value="" selected>Select Value</option>
+              {prdt_shippment_method_Options}
+            </select>
+            <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> <a onclick="window.open('master_shipmentmethodmst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=prdt_shippment_method','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a>&nbsp;</td>
+          <td class="BlueNoteFieldCaptionTD">{stxtExcludeZerolization}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" type="checkbox" value="1" name="{prdt_exclude_zerolization_Name}" {prdt_exclude_zerolization}><input id="updateSubProducts" type="hidden" name="updateSubProducts"></td>	
+        </tr>
+        
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductOrderMethod}</td> 
+          <td class="BlueNoteDataTD" colspan="2">
+            <select class="BlueNoteSelect" style="WIDTH: 300px" name="{prdt_ord_method_Name}">
+              <option value="" selected>Select Value</option>
+              {prdt_ord_method_Options}
+            </select>
+          </td>
+          <td class="BlueNoteFieldCaptionTD" {nllauthINV_ROW_PRDT_PRICE_BYPASS_CHK}>{nllauthINV_ROW_PRDT_PRICE_BYPASS_CHKresetstart}{nllauthINV_ROW_PRDT_PRICE_BYPASS_CHKresetend}{stxtPrdtPriceBypassChk}</td> 
+          <td class="BlueNoteDataTD" colspan="2" {nllauthINV_ROW_PRDT_PRICE_BYPASS_CHK}><input class="BlueNoteInput" type="checkbox" value="1" name="{prdt_price_bypass_chk_Name}" {prdt_price_bypass_chk}></td>
+        </tr>
+        
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductCostingMethod}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" maxlength="1" size="1" value="{prdt_costing_method}" name="prdt_costing_method">&nbsp;</td>
+          <td class="BlueNoteFieldCaptionTD" {nllauthINV_ROW_PRDT_COST_BYPASS_CHK}>{nllauthINV_ROW_PRDT_COST_BYPASS_CHKresetstart}{nllauthINV_ROW_PRDT_COST_BYPASS_CHKresetend}{stxtPrdtCostBypassChk}</td> 
+          <td class="BlueNoteDataTD" colspan="2" {nllauthINV_ROW_PRDT_COST_BYPASS_CHK}><input class="BlueNoteInput" type="checkbox" value="1" name="{prdt_cost_bypass_chk_Name}" {prdt_cost_bypass_chk}></td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD" {nllauthINV_ROW_SERIAL_NO_LENGTH}>{nllauthINV_ROW_SERIAL_NO_LENGTHresetstart}{nllauthINV_ROW_SERIAL_NO_LENGTHresetend}{stxtSerialNoLength}</td> 
+          <td class="BlueNoteDataTD" colspan="2" {nllauthINV_ROW_SERIAL_NO_LENGTH}><input name="{serial_no_length_Name}" value="{serial_no_length}" class="BlueNoteInput" size="12"></td>
+          <td class="BlueNoteFieldCaptionTD" nowrap {nllauthINV_ROW_PRDT_SN_BYPASS_CHK}>{nllauthINV_ROW_PRDT_SN_BYPASS_CHKresetstart}{nllauthINV_ROW_PRDT_SN_BYPASS_CHKresetend}{stxtPrdtSNBypassChk}</td> 
+          <td class="BlueNoteDataTD" colspan="2" {nllauthINV_ROW_PRDT_SN_BYPASS_CHK}><input class="BlueNoteInput" type="checkbox" value="1" name="{prdt_sn_bypass_chk_Name}" {prdt_sn_bypass_chk}></td>
+        </tr>
+  
+        <tr style="DISPLAY: none">
+          <td class="BlueNoteFieldCaptionTD">{stxtProductInstallPrice}</td> 
+          <td class="BlueNoteDataTD" colspan="5"><input class="BlueNoteInput" onblur="this.value=decimal.price(this.value)" maxlength="12" size="12" value="{prdt_install_price}" name="prdt_install_price">&nbsp;</td>
+        </tr>
+  
+        <tr style="DISPLAY: none">
+          <td class="BlueNoteFieldCaptionTD">{stxtProductzDate}</td> 
+          <td class="BlueNoteDataTD" colspan="5"><input class="BlueNoteInput" readonly maxlength="10" size="10" value="{prdt_zdate}" name="prdt_zdate">&nbsp;<a onclick="window.dateField=document.productmst.prdt_zdate ;Calender=window.open('common/getdate.php','Calendar','WIDTH=230,HEIGHT=280,TOP=220,LEFT=400')" tabindex="-1" href="#"><img src="image/getdate.gif" border="0"></a></td>
+        </tr>
+  
+        <tr style="DISPLAY: none">
+          <td class="BlueNoteFieldCaptionTD">{stxtProductzPrice}</td> 
+          <td class="BlueNoteDataTD" colspan="5"><input class="BlueNoteInput" maxlength="12" size="12" value="{prdt_zprice}" name="prdt_zprice">&nbsp;</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD" nowrap {nllauthINV_ROW_PRDT_LEAD_TIME}>{nllauthINV_ROW_PRDT_LEAD_TIMEresetstart}{nllauthINV_ROW_PRDT_LEAD_TIMEresetend}{stxtProductLeadTimeAdjustment}
+            ({stxtDays})</td> 
+          <td class="BlueNoteDataTD" colspan="2" {nllauthINV_ROW_PRDT_LEAD_TIME}><input class="BlueNoteInput" onkeypress="blockchar(this,event)" style="TEXT-ALIGN: right" maxlength="12" size="12" value="{prdt_lt_time}" name="{prdt_lt_time_Name}" {nllauthinv_textbox_prdt_lead_time}v_errmsg="{stxtProductLeadTimeAdjustment}">{nllauthINV_TEXTBOX_PRDT_LEAD_TIMEresetstart}{nllauthINV_TEXTBOX_PRDT_LEAD_TIMEresetend}</td>
+          <td class="BlueNoteFieldCaptionTD" nowrap {nllauthINV_ROW_PRDT_SA_BYPASS_CHK}>{nllauthINV_ROW_PRDT_SA_BYPASS_CHKresetstart}{nllauthINV_ROW_PRDT_SA_BYPASS_CHKresetend}{stxtPrdtSABypassChk}</td> 
+          <td class="BlueNoteDataTD" colspan="2" {nllauthINV_ROW_PRDT_SA_BYPASS_CHK}><input class="BlueNoteInput" type="checkbox" value="1" name="{prdt_sa_bypass_chk_Name}" {prdt_sa_bypass_chk}></td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD" nowrap>{stxtProductStockHoldingTime}
+            ({stxtDays})</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" onkeypress="blockchar(this,event)" style="TEXT-ALIGN: right" maxlength="12" size="12" value="{prdt_stk_holding_time}" name="{prdt_stk_holding_time_Name}" {nllauthINV_TEXTBOX_PRDT_LEAD_TIME}>{nllauthINV_TEXTBOX_PRDT_LEAD_TIMEresetstart}{nllauthINV_TEXTBOX_PRDT_LEAD_TIMEresetend}</td>
+          <td class="BlueNoteFieldCaptionTD" {nllauthMASTER_ROW_PRDT_BYPASS_POINTS_CAL}>{nllauthMASTER_ROW_PRDT_BYPASS_POINTS_CALresetstart}{nllauthMASTER_ROW_PRDT_BYPASS_POINTS_CALresetend}{stxtPrdtBypassPointsCal}</td> 
+          <td class="BlueNoteDataTD" colspan="2" {nllauthMASTER_ROW_PRDT_BYPASS_POINTS_CAL}><input class="BlueNoteInput" type="checkbox" value="1" name="{prdt_bypass_points_cal_Name}" {prdt_bypass_points_cal}></td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductOrderPackQty}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" onkeypress="blockchar(this,event);" style="TEXT-ALIGN: right" maxlength="10" value="{prdt_ordpackqty}" name="{prdt_ordpackqty_Name}"></td>
+          <td class="BlueNoteFieldCaptionTD" nowrap {nllauthINV_ROW_PRDT_CODE_ENTRY_INVISIBLE}>{nllauthINV_ROW_PRDT_CODE_ENTRY_INVISIBLEresetstart}{nllauthINV_ROW_PRDT_CODE_ENTRY_INVISIBLEresetend}{stxtProductCodeEntryInvisible}&nbsp;</td> 
+          <td class="BlueNoteDataTD" colspan="2" {nllauthINV_ROW_PRDT_CODE_ENTRY_INVISIBLE}><input class="BlueNoteInput" type="checkbox" value="1" name="{ProductCodeEntryInvisible_Name}" {ProductCodeEntryInvisible}></td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductAlternativeBarcode1}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" maxlength="20" value="{prdt_alternative_barcode1}" name="{prdt_alternative_barcode1_Name}" v_errmsg="Invalid Alternative Barcode1" {nllauthINV_TEXTBOX_MST_ALTBARCODE1}>{nllauthINV_TEXTBOX_MST_ALTBARCODE1resetstart}{nllauthINV_TEXTBOX_MST_ALTBARCODE1resetend}</td>
+          <td class="BlueNoteFieldCaptionTD" nowrap {nllauthINV_ROW_PRDT_EXPIRY_FLAG}>{nllauthINV_ROW_PRDT_EXPIRY_FLAGresetstart}{nllauthINV_ROW_PRDT_EXPIRY_FLAGresetend}{stxtPrdtExpireFlag}&nbsp;</td> 
+          <td class="BlueNoteDataTD" colspan="2" {nllauthINV_ROW_PRDT_EXPIRY_FLAG}><input class="BlueNoteInput" type="checkbox" value="1" name="{prdt_expiry_flag_Name}" {prdt_expiry_flag}></td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductAlternativeBarcode2}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" maxlength="20" value="{prdt_alternative_barcode2}" name="{prdt_alternative_barcode2_Name}" v_errmsg="Invalid Alternative Barcode2" {nllauthINV_TEXTBOX_MST_ALTBARCODE2}>{nllauthINV_TEXTBOX_MST_ALTBARCODE2resetstart}{nllauthINV_TEXTBOX_MST_ALTBARCODE2resetend}</td>
+          <td class="BlueNoteFieldCaptionTD" nowrap>{stxtProductExpiryDate}&nbsp;</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" onkeypress="blockdatechar(this,event)" onblur="if(this.value){DateFormat.dateCheck(this);}" maxlength="10" size="10" value="{prdt_expiry_date}" name="prdt_expiry_date">&nbsp;<a onclick="window.dateField=document.productmst.prdt_expiry_date ;Calender=window.open('common/getdate.php','Calendar','WIDTH=230,HEIGHT=280,TOP=220,LEFT=400')" tabindex="-1" href="#prdt_expiry_date"><img src="image/getdate.gif" border="0"></a></td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductAlternativeBarcode3}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" maxlength="20" value="{prdt_alternative_barcode3}" name="{prdt_alternative_barcode3_Name}" v_errmsg="Invalid Alternative Barcode3" {nllauthINV_TEXTBOX_MST_ALTBARCODE3}>{nllauthINV_TEXTBOX_MST_ALTBARCODE3resetstart}{nllauthINV_TEXTBOX_MST_ALTBARCODE3resetend}</td>
+          <td class="BlueNoteFieldCaptionTD" nowrap>{stxtProductAllowAutoSumInPosInventory}&nbsp;
+          <a onmouseover="ol_wrap=1;ol_frame=parent;return overlib(prdt_allow_auto_sum_guide);" onmouseout="ol_wrap=0;return nd();"><img height="16" src="image/help3.gif" width="16" border="0"></a></td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" type="checkbox" value="1" name="{prdt_allow_autosum_Name}" {prdt_allow_autosum} {nllauthMASTER_PRDT_AUTOSUM_FLAG}>{nllauthMASTER_PRDT_AUTOSUM_FLAGresetstart}{nllauthMASTER_PRDT_AUTOSUM_FLAGresetend}</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductAlternativeBarcode4}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" maxlength="20" value="{prdt_alternative_barcode4}" name="{prdt_alternative_barcode4_Name}" v_errmsg="Invalid Alternative Barcode4" {nllauthINV_TEXTBOX_MST_ALTBARCODE4}>{nllauthINV_TEXTBOX_MST_ALTBARCODE4resetstart}{nllauthINV_TEXTBOX_MST_ALTBARCODE4resetend}</td>
+          <td class="BlueNoteFieldCaptionTD" nowrap {nllauthINV_ROW_MIN_MAX_ALLOW_QTY}>{nllauthINV_ROW_MIN_MAX_ALLOW_QTYresetstart}{nllauthINV_ROW_MIN_MAX_ALLOW_QTYresetend}{stxtProductMinAllowQty}&nbsp;
+          <a onmouseover="ol_wrap=1;ol_frame=parent;return overlib(prdt_min_allow_qty_guide);" onmouseout="ol_wrap=0;return nd();"><img height="16" src="image/help3.gif" width="16" border="0"></a></td>  
+          <td class="BlueNoteDataTD" colspan="2" {nllauthINV_ROW_MIN_MAX_ALLOW_QTY}><input type="text" name="{prdt_min_allow_qty_Name}" value="{prdt_min_allow_qty}" class="BlueNoteInput"></td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductAlternativeBarcode5}</td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2"><input class="BlueNoteInput" maxlength="20" value="{prdt_alternative_barcode5}" name="{prdt_alternative_barcode5_Name}"  v_errmsg="Invalid Alternative Barcode5" {nllauthINV_TEXTBOX_MST_ALTBARCODE5}>{nllauthINV_TEXTBOX_MST_ALTBARCODE5resetstart}{nllauthINV_TEXTBOX_MST_ALTBARCODE5resetend}&nbsp;<a onclick="window.open('master_sourcemarkmst_maint.php?addlistflag=true&addlistform=productmst&addlistelement=prdt_barcode&srcm_product_no={prdt_no}','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><font color="#0000ff">{nllauthINV_PRDT_ADD_BARCODEresetstart}{stxtAddBarcode}{nllauthINV_PRDT_ADD_BARCODEresetend}</font></a>&nbsp;&nbsp; <a onclick="window.open('master_sourcemarkmst_list.php?s_product_no={prdt_no}','_blank','WIDTH=700,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes,resizable=yes');" tabindex="-1" href="#"><font color="#0000ff">{nllauthINV_PRDT_VIEW_BARCODEresetstart}{stxtViewBarcode}{nllauthINV_PRDT_VIEW_BARCODEresetend}</font></a> </td>
+          <td class="BlueNoteFieldCaptionTD" nowrap {nllauthINV_ROW_MIN_MAX_ALLOW_QTY}>{stxtProductMaxAllowQty}&nbsp;
+          <a onmouseover="ol_wrap=1;ol_frame=parent;return overlib(prdt_max_allow_qty_guide);" onmouseout="ol_wrap=0;return nd();"><img height="16" src="image/help3.gif" width="16" border="0"></a></td>  
+          <td class="BlueNoteDataTD" colspan="2" {nllauthINV_ROW_MIN_MAX_ALLOW_QTY}><input type="text" name="{prdt_max_allow_qty_Name}" value="{prdt_max_allow_qty}" class="BlueNoteInput"></td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductDeviceLinkCode}&nbsp;</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" maxlength="20" value="{prdt_device_linkcode}" name="{prdt_device_linkcode_Name}">&nbsp;</td>
+          <td class="BlueNoteFieldCaptionTD" nowrap {nllauthINV_ROW_PRD_MASTER_TRF_MARGIN_PERC}>{nllauthINV_ROW_PRD_MASTER_TRF_MARGIN_PERCresetstart}{nllauthINV_ROW_PRD_MASTER_TRF_MARGIN_PERCresetend}{stxtProductTransferMarginPercentage}&nbsp;</td> 
+          <td class="BlueNoteDataTD" colspan="2" {nllauthINV_ROW_PRD_MASTER_TRF_MARGIN_PERC}><input class="BlueNoteInput" onblur="if(this.value!=''){this.value=decimal.price(this.value);}else{this.value=decimal.price(0);}" maxlength="12" size="12" value="{prdt_trf_margin_perc}" name="prdt_trf_margin_perc"></td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtWeightMachineKey}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" id="prdt_weight_mechine_key" value="{prdt_weight_mechine_key}" name="{prdt_weight_mechine_key_Name}"></td>
+          <td class="BlueNoteFieldCaptionTD" nowrap {nllauthINV_ROW_PRD_MASTER_TRF_MARGIN_AMT}>{nllauthINV_ROW_PRD_MASTER_TRF_MARGIN_AMTresetstart}{nllauthINV_ROW_PRD_MASTER_TRF_MARGIN_AMTresetend}{stxtProductTransferMarginFixedAmount}&nbsp;</td> 
+          <td class="BlueNoteDataTD" colspan="2" {nllauthINV_ROW_PRD_MASTER_TRF_MARGIN_AMT}><input class="BlueNoteInput" onblur="if(this.value!=''){this.value=decimal.price(this.value);}else{this.value=decimal.price(0);}" maxlength="12" size="12" value="{prdt_trf_margin_amt}" name="prdt_trf_margin_amt"></td>
+        </tr>
+        
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductSorting}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteInput" maxlength="5" size="5" value="{prdt_sorting}" name="prdt_sorting">&nbsp;</td>
+          <td class="BlueNoteFieldCaptionTD" nowrap {nllauthINV_ROW_MASTER_PRDT_PV_COUNT}>{nllauthINV_ROW_MASTER_PRDT_PV_COUNTresetstart}{nllauthINV_ROW_MASTER_PRDT_PV_COUNTresetend}{stxtProduct} {stxtPVCount}</td> 
+          <td class="BlueNoteDataTD" colspan="2" {nllauthINV_ROW_MASTER_PRDT_PV_COUNT}><input class="BlueNoteInput" type="checkbox" value="1" name="{prdt_pv_count_Name}" {prdt_pv_count}></td>
+        </tr>
+        </tr>
+        
+        <tr id="principal" {nllauthINV_ROW_PRDT_PRINCIPAL}>
+          <td class="BlueNoteFieldCaptionTD">{nllauthINV_ROW_PRDT_PRINCIPALresetstart}{nllauthINV_ROW_PRDT_PRINCIPALresetend}{stxtPrincipal}</td> 
+          <td class="BlueNoteDataTD" nowrap colspan="5">
+            <select class="BlueNoteSelect" name="{prdt_principal_no_Name}" id="prdt_principal_no" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px">
+              <option value="" selected>Select Value</option>
+              {prdt_principal_no_Options}
+            </select><a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a> 
+          </td>
+        </tr>
+                
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductRemark}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><textarea name="{prdt_remark_Name}" class="BlueNoteTextarea" id="prdt_remark" cols="48" rows="3">{prdt_remark}</textarea></td>
+          <td class="BlueNoteFieldCaptionTD" colspan="3"></td> 
+        </tr>
+        
+        <tr {nllauthINV_PRD_MASTER_STORE_CATEGORY}>
+          <td class="BlueNoteFieldCaptionTD">{nllauthINV_PRD_MASTER_STORE_CATEGORYresetstart}{nllauthINV_PRD_MASTER_STORE_CATEGORYresetend}{stxtStoreCategory}<br>
+            <input id="st_category_list" type="hidden" value="{st_category_list}" name="{st_category_list_Name}" {nllauthinv_multiselect_prdt_store_category}v_errmsg="{stxtStoreCategory}"><input id="st_category_list1" type="hidden" value="{st_category_list1}" name="{st_category_list1_Name}"></td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2">
+            <select class="BlueNoteSelect" id="store_category" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" multiple size="5" name="{store_category_Name}">
+              {store_category_Options}
+            </select>
+            <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img src="image/search.gif" border="0"></a></td> 
+          <td class="BlueNoteDataTD" align="center"><input class="BlueNoteButton" title="move to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt1.transferRight()" type="button" size="50" value="&gt;" name="right"><br>
+            <input class="BlueNoteButton" title="move all to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt1.transferAllRight()" type="button" value=" &gt;&gt;" name="right"><br>
+            <input class="BlueNoteButton" title="move to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt1.transferLeft()" type="button" value="&lt;" name="left"><br>
+            <input class="BlueNoteButton" title="move all to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt1.transferAllLeft()" type="button" value="&lt;&lt;" name="left"></td> 
+          <td class="BlueNoteDataTD" colspan="2" align="left">
+            <select class="BlueNoteSelect" id="store_category1" style="WIDTH: 250px" multiple size="5" name="{store_category1_Name}">
+              {store_category1_Options}
+            </select>
+            {nllauthINV_MULTISELECT_PRDT_STORE_CATEGORYresetstart}{nllauthINV_MULTISELECT_PRDT_STORE_CATEGORYresetend} </td>
+        </tr>
+  
+        <tr {nllauthINV_ROW_PRD_STORE_CONCEPT}>
+          <td class="BlueNoteFieldCaptionTD">{nllauthINV_ROW_PRD_STORE_CONCEPTresetstart}{nllauthINV_ROW_PRD_STORE_CONCEPTresetend}{stxtProductStoreConcept}<br>
+            <input id="st_concept_list" type="hidden" value="{st_concept_list}" name="{st_concept_list_Name}" {nllauthinv_multiselect_prdt_store_concept}v_errmsg="{stxtProductStoreConcept}"><input id="st_concept_list1" type="hidden" value="{st_concept_list1}" name="{st_concept_list1_Name}"></td> 
+          <td class="BlueNoteDataTD" nowrap colspan="2">
+            <select class="BlueNoteSelect" id="store_concept" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" multiple size="5" name="{store_concept_Name}">
+              {store_concept_Options}
+            </select>
+            <a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img src="image/search.gif" border="0"></a></td> 
+          <td class="BlueNoteDataTD" align="center"><input class="BlueNoteButton" title="move to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt2.transferRight()" type="button" size="50" value="&gt;" name="right"><br>
+            <input class="BlueNoteButton" title="move all to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt2.transferAllRight()" type="button" value=" &gt;&gt;" name="right"><br>
+            <input class="BlueNoteButton" title="move to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt2.transferLeft()" type="button" value="&lt;" name="left"><br>
+            <input class="BlueNoteButton" title="move all to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt2.transferAllLeft()" type="button" value="&lt;&lt;" name="left"></td> 
+          <td class="BlueNoteDataTD" colspan="2" align="left">
+            <select class="BlueNoteSelect" id="store_concept1" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" multiple size="5" name="{store_concept1_Name}">
+              {store_concept1_Options}
+            </select>
+            {nllauthINV_MULTISELECT_PRDT_STORE_CONCEPTresetstart}{nllauthINV_MULTISELECT_PRDT_STORE_CONCEPTresetend} </td>
+        </tr>
+
+        <tr {nllauthMASTER_ROW_PRDT_PRESCRIBED}>
+          <td class="BlueNoteFieldCaptionTD">{stxtPrescribedGoods}{nllauthMASTER_ROW_PRDT_PRESCRIBEDresetstart}{nllauthMASTER_ROW_PRDT_PRESCRIBEDresetend}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input class="BlueNoteinput" type="checkbox" value="1" name="prdt_prescribed" {prdt_prescribed}>&nbsp;</td> 
+          <td class="BlueNoteFieldCaptionTD" colspan="3"></td> 
+        </tr>
+        
+        <tr {nllauthINV_ROW_PRDT_NOT}>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductNOT}{nllauthINV_ROW_PRDT_NOTresetstart}{nllauthINV_ROW_PRDT_NOTresetend}</td>
+          <td class="BlueNoteDataTD" colspan="2"><input type="text" name="{prdt_not_Name}" value="{prdt_not}" class="BlueNoteInput"></td>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductNOTDueDate}</td> 
+          <td class="BlueNoteDataTD" colspan="2"><input type="text" name="{prdt_not_expiry_date_Name}" onkeypress="blockdatechar(this,event)" onblur="if(this.value){DateFormat.dateCheck(this);}" maxlength="10" size="10" value="{prdt_not_expiry_date}" class="BlueNoteInput">&nbsp;<a tabindex="-1" onclick="window.dateField=document.productmst.prdt_not_expiry_date ;Calender=window.open('common/getdate.php','Calendar','WIDTH=230,HEIGHT=280,TOP=220,LEFT=400')" href="#"><img border="0" src="image/getdate.gif"></a></td> 
+        </tr>
+
+        <tr>
+          <td class="BlueNoteFieldCaptionTD" {nllauthINV_COLUMN_PRDT_BATCH_FLAG}>{stxtProductBatchFlag}{nllauthINV_COLUMN_PRDT_BATCH_FLAGresetstart}{nllauthINV_COLUMN_PRDT_BATCH_FLAGresetend}</td>
+          <td class="BlueNoteDataTD" colspan="2" {nllauthINV_COLUMN_PRDT_BATCH_FLAG}><input type="checkbox" name="{prdt_batch_flag1_Name}" value="1" {prdt_batch_flag1} class="BlueNoteInput">{nllauthINV_COLUMN_PRDT_BATCH_FLAGresetstart}{nllauthINV_COLUMN_PRDT_BATCH_FLAGresetend}</td>
+          <td class="BlueNoteFieldCaptionTD"{nllauthINV_COLUMN_PRDT_COUNTRY}>{stxtProductCountry}{nllauthINV_COLUMN_PRDT_COUNTRYresetstart}{nllauthINV_COLUMN_PRDT_COUNTRYresetend}</td>
+          <td class="BlueNoteDataTD" colspan="2" {nllauthINV_COLUMN_PRDT_COUNTRY}><select name="{prdt_country_Name}" class="BlueNoteSelect">
+          <option value="">Select Value</option>
+          {prdt_country_Options}
+          </select>
+          {nllauthINV_COLUMN_PRDT_COUNTRYresetstart}{nllauthINV_COLUMN_PRDT_COUNTRYresetend}</td>
+        </tr>
+
+        <tr>
+          <td class="BlueNoteFooterTD" nowrap align="right" colspan="6"><a onclick="this.disabled=true" href="{wf_choice1_Src}">{wf_choice1}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice2_Src}">{wf_choice2}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice3_Src}">{wf_choice3}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice4_Src}">{wf_choice4}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice5_Src}">{wf_choice5}</a><input class="BlueNoteButton" id="Reset1" type="reset" value="Reset" name="Reset1" {wf_reset_hide_show}>{nllauthADDMASTERresetstart} 
+            <!-- BEGIN Button Insert1 --><input class="BlueNoteButton" onclick="return (validate_form(0)&& checkMasterSubmit());" type="submit" value="Add" name="Insert1" {nllauthADDMASTER}><!-- END Button Insert1 -->{nllauthADDMASTERresetend}
+            {nllauthUPDATEresetstart} 
+            <!-- BEGIN Button Update1 --><input class="BlueNoteButton" onclick="return func_button_update_onclick();" type="submit" value="Submit" name="Update1" {nllauthUPDATE}><!-- END Button Update1 -->{nllauthUPDATEresetend}
+            {nllauthDELETEMASTERresetstart} 
+            <!-- BEGIN Button Delete1 --><input class="BlueNoteButton" onclick="return  confirm('Delete Record?')" type="submit" value="Delete" name="Delete1" {nllauthDELETEMASTER}><!-- END Button Delete1 -->{nllauthDELETEMASTERresetend} 
+            <!-- BEGIN Button Cancel1 --><input class="BlueNotebutton" onclick="return  confirm('Are you sure to cancel?')" type="submit" value="Cancel" name="Cancel1"><!-- END Button Cancel1 --></td>
+        </tr>
+      </table>
+      </fieldset> 
+    </div>
+    <div class="content" id="content3">
+      <fieldset>
+      <br>
+      <iframe src="master_product_price_categorymst_list.php?s_ppc_product_list={prdt_no}&external_source=master_productmst_maint" frameborder="0" width="100%" height="600" scrolling="auto">></iframe></fieldset> 
+    </div>
+    <div class="content" id="content4" {nllauthMASTER_TAB_MANUFAC}>
+      <fieldset>
+      <br>
+      <table class="BlueNoteFormTABLE" cellpadding="4">
+        <!-- BEGIN Error -->
+        <tr>
+          <td class="BlueNoteErrorDataTD" colspan="2">{Error}</td>
+        </tr>
+        <!-- END Error -->
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductManufacturingProductType}</td> 
+          <td class="BlueNoteDataTD" colspan="3">
+            <select class="BlueNoteSelect" style="WIDTH: 150px" name="{prdt_mf_type_Name}">
+              <option value="" selected>Select Value</option>
+              {prdt_mf_type_Options}
+            </select>
+  </td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductManufacturingProduceMethod}</td> 
+          <td class="BlueNoteDataTD" colspan="3">
+            <select class="BlueNoteSelect" style="WIDTH: 150px" name="{prdt_mf_produce_meth_Name}">
+              <option value="" selected>Select Value</option>
+              {prdt_mf_produce_meth_Options}
+            </select>
+  </td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductManufacturingSupplyMethod}</td> 
+          <td class="BlueNoteDataTD" colspan="3">
+            <select class="BlueNoteSelect" style="WIDTH: 150px" name="{prdt_mf_supply_meth_Name}">
+              <option value="" selected>Select Value</option>
+              {prdt_mf_supply_meth_Options}
+            </select>
+  </td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductManufacturingDensity}
+            (gm)</td> 
+          <td class="BlueNoteDataTD" colspan="3"><input class="BlueNoteInput" onkeypress="blockchar(this,event);" onblur="if(this.value!=''){this.value=decimal.quantity(this.value);}else{this.value=decimal.quantity(0)};" style="TEXT-ALIGN: right" maxlength="10" size="10" value="{prdt_mf_density}" name="{prdt_mf_density_Name}">&nbsp;</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductManufacturingCycleTime}
+            (second)</td> 
+          <td class="BlueNoteDataTD" colspan="3"><input class="BlueNoteInput" onkeypress="blockchar(this,event);" style="TEXT-ALIGN: right" maxlength="10" size="10" value="{prdt_mf_cycletime}" name="{prdt_mf_cycletime_Name}">&nbsp;</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductManufacturingCavity}</td> 
+          <td class="BlueNoteDataTD" colspan="3"><input class="BlueNoteInput" onkeypress="blockchar(this,event);" onblur="if(this.value!=''){this.value=decimal.quantity(this.value);}else{this.value=decimal.quantity(0)};" style="TEXT-ALIGN: right" maxlength="10" size="10" value="{prdt_mf_cavity}" name="{prdt_mf_cavity_Name}">&nbsp;</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductManufacturingStatus}</td> 
+          <td class="BlueNoteDataTD" colspan="3">
+            <select class="BlueNoteSelect" style="WIDTH: 150px" name="{prdt_mf_status_Name}">
+              <option value="" selected>Select Value</option>
+              {prdt_mf_status_Options}
+            </select>
+  </td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductManufacturingCustomerLeadTime}
+            ({stxthours})</td> 
+          <td class="BlueNoteDataTD" colspan="3"><input class="BlueNoteInput" onkeypress="blockchar(this,event);" style="TEXT-ALIGN: right" maxlength="10" size="10" value="{prdt_mf_cust_leadtime}" name="{prdt_mf_cust_leadtime_Name}">&nbsp;</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductManufacturingLeadTime}
+            ({stxthours})</td> 
+          <td class="BlueNoteDataTD" colspan="3"><input class="BlueNoteInput" onkeypress="blockchar(this,event);" style="TEXT-ALIGN: right" maxlength="10" size="10" value="{prdt_mf_leadtime}" name="{prdt_mf_leadtime_Name}">&nbsp;</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductManufacturingWarranty}
+            ({stxtmanu_months})</td> 
+          <td class="BlueNoteDataTD" colspan="3"><input class="BlueNoteInput" onkeypress="blockchar(this,event);" style="TEXT-ALIGN: right" maxlength="10" size="10" value="{prdt_mf_warranty}" name="{prdt_mf_warranty_Name}">&nbsp;</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductManufacturingUnit}</td> 
+          <td class="BlueNoteDataTD" colspan="3"><input class="BlueNoteInput" maxlength="10" size="10" value="{prdt_unitmeasurement}" name="{prdt_unitmeasurement_Name}">&nbsp;eg:
+            gm,kg,litre,ml&nbsp;</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductManufacturingCost}</td> 
+          <td class="BlueNoteDataTD" colspan="3"><input class="BlueNoteInput" onkeypress="blockchar(this,event);" style="TEXT-ALIGN: right" maxlength="12" size="12" value="{prdt_rawcost}" name="{prdt_rawcost_Name}">&nbsp;</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductManufacturingActive}</td> 
+          <td class="BlueNoteDataTD" colspan="3"><input class="BlueNoteinput" onclick="checkduplicate(this);" type="checkbox" value="1" name="{prdt_mnfactive_Name}" {prdt_mnfactive}>&nbsp;</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductManufacturingWIP}</td> 
+          <td class="BlueNoteDataTD" colspan="3"><input class="BlueNoteinput" onclick="checkduplicate(this);" type="checkbox" value="1" name="{prdt_mf_wip_Name}" {prdt_mf_wip}>&nbsp;</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFooterTD" nowrap align="right" colspan="4"><a onclick="this.disabled=true" href="{wf_choice1_Src}">{wf_choice1}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice2_Src}">{wf_choice2}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice3_Src}">{wf_choice3}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice4_Src}">{wf_choice4}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice5_Src}">{wf_choice5}</a><input class="BlueNotebutton" id="Reset" type="reset" value="Reset" name="Reset" {wf_reset_hide_show}>{nllauthADDMASTERresetstart} 
+            <!-- BEGIN Button Insert3 --><input class="BlueNoteButton" onclick="return (validate_form(0)&& checkMasterSubmit());" type="submit" value="Add" name="Insert3" {nllauthADDMASTER}><!-- END Button Insert3 -->{nllauthADDMASTERresetend}
+            {nllauthUPDATEresetstart} 
+            <!-- BEGIN Button Update3 --><input class="BlueNoteButton" onclick="return func_button_update_onclick();" type="submit" value="Submit" name="Update3" {nllauthUPDATE}><!-- END Button Update3 -->{nllauthUPDATEresetend}
+            {nllauthDELETEMASTERresetstart} 
+            <!-- BEGIN Button Delete3 --><input class="BlueNoteButton" onclick="return  confirm('Delete Record?')" type="submit" value="Delete" name="Delete3" {nllauthDELETEMASTER}><!-- END Button Delete3 -->{nllauthDELETEMASTERresetend} 
+            <!-- BEGIN Button Cancel3 --><input class="BlueNotebutton" onclick="return  confirm('Are you sure to cancel?')" type="submit" value="Cancel" name="Cancel3"><!-- END Button Cancel3 --></td>
+        </tr>
+      </table>
+      </fieldset> 
+    </div>
+    <div class="content" id="content5" {nllauthMASTER_TAB_ECOMMERCE}>
+      <div class="card bg-light border-dark">
+        <div class="card-body">
+          <!-- BEGIN Error -->
+          <p class="text-danger" >{Error}</p>
+          <!-- END Error -->
+
+          <div class="col-md-12 px-1">
+            <div class=row>
+              <div class="col-md-4">
+                {stxtProductEcommerceProduct}
+                <input type="checkbox" name="{prdt_ecom_product_Name}" id="prdt_ecom_product" value="1" {prdt_ecom_product}>
+              </div>
+              <div class="col-md-4">
+                {stxtProductEcommerceBestSeller}
+                <input type="checkbox" name="{prdt_ecom_bestseller_Name}" id="prdt_ecom_bestseller" value="1" {prdt_ecom_bestseller}>
+              </div>
+              <div class="col-md-4">
+                {stxtProductEcommerceHomePage}
+                <input type="checkbox" name="{prdt_ecom_homepage_Name}" id="prdt_ecom_homepage" value="1" {prdt_ecom_homepage}>
+              </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+              <div class="col-md-6 px-1">
+                <div class="form-inline">
+                  {stxtProductEcommercePrice}
+                <input class="form-control form-control-sm" onkeypress="blockchar(this,event);" onchange="setTwoNumberDecimal(this)" style="TEXT-ALIGN: right" maxlength="12" size="12" value="{prdt_ecom_price}" name="prdt_ecom_price">
+                </div>
+              </div>
+            </div>
+
+            <div class="row w-50 h-250">
+              {stxtProductEcommerceDescription}
+              <div class="container-fluid">
+                <textarea class="form-control form-control-sm" name="{prdt_ecom_description_Name}" id="prdt_ecom_description" style="WIDTH:550px;HEIGHT:250px" rows="3" cols="50">{prdt_ecom_description}</textarea>
+              </div>
+            </div>
+          </div>      
+        </div>
+
+        <div class="card-footer">
+          <!-- BEGIN Button Insert5 --><input class="btn btn-primary" onclick="return (validate_form(0)&& checkMasterSubmit());" type="submit" value="Add" name="Insert5" {nllauthADDMASTER}><!-- END Button Insert5 -->{nllauthADDMASTERresetend}{nllauthUPDATEresetstart} 
+          <!-- BEGIN Button Update5 --><input class="btn btn-primary" onclick="return func_button_update_onclick();" type="submit" value="Submit" name="Update5" {nllauthUPDATE}><!-- END Button Update5 -->{nllauthUPDATEresetend} {nllauthDELETEMASTERresetstart} 
+          <!-- BEGIN Button Delete5 --><input class="btn btn-primary" onclick="return  confirm('Delete Record?')" type="submit" value="Delete" name="Delete5" {nllauthDELETEMASTER}><!-- END Button Delete5 -->{nllauthDELETEMASTERresetend} 
+          <!-- BEGIN Button Cancel5 --><input class="btn btn-primary" onclick="return  confirm('Are you sure to cancel?')" type="submit" value="Cancel" name="Cancel5"><!-- END Button Cancel5 -->
+        </div>
+      </div> 
+
+    </div>
+    <div class="content" id="content6" {nllauthMASTER_TAB_USERDEFINE}>
+      <fieldset>
+      <br>
+      <table class="BlueNoteFormTABLE" cellpadding="4">
+        <!-- BEGIN Error -->
+        <tr>
+          <td class="BlueNoteErrorDataTD" colspan="2">{Error}</td>
+        </tr>
+        <!-- END Error -->
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductUserdefine1}</td> 
+          <td class="BlueNoteDataTD" colspan="3"><textarea {nllauthINV_TEXTBOX_PRDT_USERDEFINE1} class="BlueNoteTextarea" name="{prdt_userdefine1_Name}" rows="3" cols="50">{prdt_userdefine1}</textarea>&nbsp;{nllauthINV_TEXTBOX_PRDT_USERDEFINE1resetstart}{nllauthINV_TEXTBOX_PRDT_USERDEFINE1resetend}</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductUserdefine2}</td> 
+          <td class="BlueNoteDataTD" colspan="3"><textarea {nllauthINV_TEXTBOX_PRDT_USERDEFINE2} class="BlueNoteTextarea" name="{prdt_userdefine2_Name}" rows="3" cols="50">{prdt_userdefine2}</textarea>&nbsp;{nllauthINV_TEXTBOX_PRDT_USERDEFINE2resetstart}{nllauthINV_TEXTBOX_PRDT_USERDEFINE2resetend}</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductUserdefine3}</td>  
+          <td class="BlueNoteDataTD" colspan="3"><textarea {nllauthINV_TEXTBOX_PRDT_USERDEFINE3} class="BlueNoteTextarea" name="{prdt_userdefine3_Name}" rows="3" cols="50">{prdt_userdefine3}</textarea>&nbsp;{nllauthINV_TEXTBOX_PRDT_USERDEFINE3resetstart}{nllauthINV_TEXTBOX_PRDT_USERDEFINE3resetend}</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductUserdefine4}</td> 
+          <td class="BlueNoteDataTD" colspan="3"><input {nllauthINV_CHECKBOX_PRDT_USERDEFINE4} class="BlueNoteinput" type="checkbox" value="1" name="prdt_userdefine4" {prdt_userdefine4}>&nbsp;{nllauthINV_CHECKBOX_PRDT_USERDEFINE4resetstart}{nllauthINV_CHECKBOX_PRDT_USERDEFINE4resetend}</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductUserdefine5}</td>  
+          <td class="BlueNoteDataTD" colspan="3"><input {nllauthINV_TEXTBOX_PRDT_USERDEFINE5} class="BlueNoteInput" maxlength="12" size="12" value="{prdt_userdefine5}" name="prdt_userdefine5" onkeypress="blockchar(this,event);" onblur="blockpastechar(this)">&nbsp;{nllauthINV_TEXTBOX_PRDT_USERDEFINE5resetstart}{nllauthINV_TEXTBOX_PRDT_USERDEFINE5resetend}</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductUserdefine6}</td>  
+          <td class="BlueNoteDataTD" colspan="3"><input {nllauthINV_TEXTBOX_PRDT_USERDEFINE6} class="BlueNoteInput" maxlength="12" size="12" value="{prdt_userdefine6}" name="prdt_userdefine6" onkeypress="blockchar(this,event);" onblur="blockpastechar(this)">&nbsp;{nllauthINV_TEXTBOX_PRDT_USERDEFINE6resetstart}{nllauthINV_TEXTBOX_PRDT_USERDEFINE6resetend}</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">	{stxtProductUserdefine7}</td>  
+          <td class="BlueNoteDataTD" colspan="3"><input {nllauthINV_TEXTBOX_PRDT_USERDEFINE7} class="BlueNoteInput" maxlength="10" size="10" value="{prdt_userdefine7}" name="prdt_userdefine7" onkeypress="blockchar(this,event);" onblur="blockpastechar(this)">&nbsp;{nllauthINV_TEXTBOX_PRDT_USERDEFINE7resetstart}{nllauthINV_TEXTBOX_PRDT_USERDEFINE7resetend}</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductUserdefine8}</td>  
+          <td class="BlueNoteDataTD" colspan="3"><input {nllauthINV_TEXTBOX_PRDT_USERDEFINE8} class="BlueNoteInput" maxlength="10" size="10" value="{prdt_userdefine8}" name="prdt_userdefine8" onkeypress="blockchar(this,event);" onblur="blockpastechar(this)">&nbsp;{nllauthINV_TEXTBOX_PRDT_USERDEFINE8resetstart}{nllauthINV_TEXTBOX_PRDT_USERDEFINE8resetend}</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtProductUserdefine9}</td> 
+          <td class="BlueNoteDataTD" colspan="3"><input {nllauthINV_TEXTBOX_PRDT_USERDEFINE9} class="BlueNoteInput" onkeypress="blockdatechar(this,event)" onblur="if(this.value){DateFormat.dateCheck(this);}" maxlength="10" size="10" value="{prdt_userdefine9}" name="prdt_userdefine9">&nbsp;{nllauthINV_TEXTBOX_PRDT_USERDEFINE9resetstart}{nllauthINV_TEXTBOX_PRDT_USERDEFINE9resetend}<a onclick="window.dateField=document.productmst.prdt_userdefine9 ;Calender=window.open('common/getdate.php','Calendar','WIDTH=230,HEIGHT=280,TOP=220,LEFT=400')" tabindex="-1" href="#prdt_userdefine9"><img src="image/getdate.gif" border="0"></a></td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD" nowrap>{stxtProductUserdefine10}</td>
+          <td class="BlueNoteDataTD" colspan="3"><input {nllauthINV_TEXTBOX_PRDT_USERDEFINE10} class="BlueNoteInput" onkeypress="blockdatechar(this,event)" onblur="if(this.value){DateFormat.dateCheck(this);}" maxlength="10" size="10" value="{prdt_userdefine10}" name="prdt_userdefine10">&nbsp;{nllauthINV_TEXTBOX_PRDT_USERDEFINE10resetstart}{nllauthINV_TEXTBOX_PRDT_USERDEFINE10resetend}<a onclick="window.dateField=document.productmst.prdt_userdefine10 ;Calender=window.open('common/getdate.php','Calendar','WIDTH=230,HEIGHT=280,TOP=220,LEFT=400')" tabindex="-1" href="#prdt_userdefine10"><img src="image/getdate.gif" border="0"></a></td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFooterTD" nowrap align="right" colspan="4"><a onclick="this.disabled=true" href="{wf_choice1_Src}">{wf_choice1}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice2_Src}">{wf_choice2}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice3_Src}">{wf_choice3}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice4_Src}">{wf_choice4}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice5_Src}">{wf_choice5}</a><input class="BlueNoteButton" id="Reset1" type="reset" value="Reset" name="Reset1" {wf_reset_hide_show}>{nllauthADDMASTERresetstart} 
+            <!-- BEGIN Button Insert2 --><input class="BlueNoteButton" onclick="return (validate_form(0)&& checkMasterSubmit());" type="submit" value="Add" name="Insert2" {nllauthADDMASTER}><!-- END Button Insert2 -->{nllauthADDMASTERresetend}
+            {nllauthUPDATEresetstart} 
+            <!-- BEGIN Button Update2 --><input class="BlueNoteButton" onclick="return func_button_update_onclick();" type="submit" value="Submit" name="Update2" {nllauthUPDATE}><!-- END Button Update2 -->{nllauthUPDATEresetend}
+            {nllauthDELETEMASTERresetstart} 
+            <!-- BEGIN Button Delete2 --><input class="BlueNoteButton" onclick="return  confirm('Delete Record?')" type="submit" value="Delete" name="Delete2" {nllauthDELETEMASTER}><!-- END Button Delete2 -->{nllauthDELETEMASTERresetend} 
+            <!-- BEGIN Button Cancel2 --><input class="BlueNotebutton" onclick="return  confirm('Are you sure to cancel?')" type="submit" value="Cancel" name="Cancel2"><!-- END Button Cancel2 --></td>
+        </tr>
+      </table>
+      </fieldset> 
+    </div>
+    <div class="content" id="content7" {nllauthMASTER_TAB_FNB}>
+      <fieldset>
+      <br>
+      <table class="BlueNoteFormTABLE" cellpadding="4">
+        <!-- BEGIN Error -->
+        <tr>
+          <td class="BlueNoteErrorDataTD" colspan="2">{Error}</td>
+        </tr>
+        <!-- END Error -->
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtprdtfnbmodgroup}</td> 
+          <td class="BlueNoteDataTD" colspan="3">
+            <select class="BlueNoteSelect" name="{prdt_fnb_modgroup_Name}">
+              <option value="" selected>Select Value</option>
+              {prdt_fnb_modgroup_Options}
+            </select>
+  </td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtprdtopenitem}</td> 
+          <td class="BlueNoteDataTD" colspan="3"><input class="BlueNoteInput" type="checkbox" value="1" name="{prdt_fnb_openitem_Name}" {prdt_fnb_openitem}>&nbsp;</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtprdtfnbmoddiscgroup}</td> 
+          <td class="BlueNoteDataTD" colspan="3">
+            <select class="BlueNoteSelect" name="{prdt_fnb_moddiscgroup_Name}">
+              <option value="" selected>Select Value</option>
+              {prdt_fnb_moddiscgroup_Options}
+            </select>
+  &nbsp;</td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFieldCaptionTD">{stxtprdtfnbactive}</td> 
+          <td class="BlueNoteDataTD" colspan="3"><input class="BlueNoteInput" id="prdt_fnb_active" type="checkbox" value="1" name="{prdt_fnb_active_Name}" {prdt_fnb_active}></td>
+        </tr>
+  
+        <tr>
+          <td class="BlueNoteFooterTD" nowrap align="right" colspan="4"><a onclick="this.disabled=true" href="{wf_choice1_Src}">{wf_choice1}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice2_Src}">{wf_choice2}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice3_Src}">{wf_choice3}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice4_Src}">{wf_choice4}</a>&nbsp;<a onclick="this.disabled=true" href="{wf_choice5_Src}">{wf_choice5}</a><input class="BlueNotebutton" id="Reset" type="reset" value="Reset" name="Reset" {wf_reset_hide_show}>{nllauthADDMASTERresetstart} 
+            <!-- BEGIN Button Insert4 --><input class="BlueNoteButton" onclick="return (validate_form(0)&& checkMasterSubmit());" type="submit" value="Add" name="Insert4" {nllauthADDMASTER}><!-- END Button Insert4 -->{nllauthADDMASTERresetend}
+            {nllauthUPDATEresetstart} 
+            <!-- BEGIN Button Update4 --><input class="BlueNoteButton" onclick="return func_button_update_onclick();" type="submit" value="Submit" name="Update4" {nllauthUPDATE}><!-- END Button Update4 -->{nllauthUPDATEresetend}
+            {nllauthDELETEMASTERresetstart} 
+            <!-- BEGIN Button Delete4 --><input class="BlueNoteButton" onclick="return  confirm('Delete Record?')" type="submit" value="Delete" name="Delete4" {nllauthDELETEMASTER}><!-- END Button Delete4 -->{nllauthDELETEMASTERresetend} 
+            <!-- BEGIN Button Cancel4 --><input class="BlueNotebutton" onclick="return  confirm('Are you sure to cancel?')" type="submit" value="Cancel" name="Cancel4"><!-- END Button Cancel4 --></td>
+        </tr>
+      </table>
+      </fieldset> 
+    </div>
+    <div class="content" id="content8" {nllauthMASTER_TAB_NOTES}>
+    <fieldset>
+      <iframe src="./modules/notes/master_notes_value.php?notes_link_no={prdt_no}&notes_no=1&lastpage=self&AdvanceMode=1" frameborder="0" width="100%" height="600"></iframe>
+    </fieldset>
+    </div>
+    </iframe></iframe></iframe></iframe>
+  </form>
+</div>
+<!-- END Record productmst -->
+<script language="Javascript" src="common/form_validation.js" type="text/javascript"></script>
+<script language="Javascript" src="common/check_changes.js" type="text/javascript"></script>
+</body>
+<script language="JavaScript">
+  _editor_url = "editor_v3";
+  _editor_lang = "en";
+</script>
+<script language="JavaScript" src="editor_v3/editor.js"></script>
+<script language="JavaScript">
+  HTMLArea.init();
+  HTMLArea.onload = initEditor;
+</script>
+</html>

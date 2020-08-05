@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="GENERATOR" content="CodeCharge Studio 3.0.1.6">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>areamst_list</title>
+<!-- <link href="Themes/BlueNote/Style.css" type="text/css" rel="stylesheet"> -->
+<script language="javascript" src="common/jsrs/jsrsClient.js"></script>
+<script language="javascript" src="common/jsrs/nll_global_jsrs.js"></script>
+<script language="javascript" src="javascript/validatePageSize.js"></script>
+<link rel="stylesheet" href="lib/bootstrap_v4.5/css/bootstrap.css">
+<link rel="stylesheet" href="Themes/Custom/themes.css">
+<style>
+  .BlueNoteSorterLink{
+    color: white;
+    text-decoration: underline;
+  }
+  
+  a:hover{
+    color: #FFA558;
+  }
+  </style>
+</head>
+<body id="blueNote" class="container-fluid" text="#000000" vlink="#000000" alink="#000000" link="#000000" bgcolor="#ffffff">
+  
+<!-- BEGIN Record areamstSearch -->
+<br>
+<div class="card-header pb-1 bg-primary text-white setColor">{stxtSearchArea}</div> 
+  <form name="areamstSearch" action="{Action}" method="post">
+    <div class="card bg-light border-dark setBorder">
+      <div class="card-body">     
+          <div class="col-md-12">
+            <br>
+            <div class=row>
+              <div class="col-md-2 px-1">
+                <input class="form-control form-control-sm" maxlength="15" size="15" value="{s_area_code}" name="s_area_code" placeholder="{stxtCode}">
+              </div>
+              <div class="col-md-2 px-1">  
+                <input class="form-control form-control-sm" value="{s_area_name1}" name="s_area_name1" placeholder="{stxtName1}">
+              </div>
+              <div class="col-md-2 px-1">
+                <input class="form-control form-control-sm" maxlength="50" value="{s_area_userdefine1}" name="s_area_userdefine1" placeholder="{stxtUserdefine1}">
+              </div>
+              <div class="col-md-2 px-1">
+                <select class="form-control form-control-sm" name="{s_area_state_Name}">
+                  <option value="" selected>Select State</option>
+                  {s_area_state_Options}
+                </select>
+              </div>
+              <div class="col-md-2 px-1">
+                <input type="text" placeholder="{stxtPageSize}" name="{pageSize_Name}" value="{pageSize}" class="form-control form-control-sm" maxlength="3" size="3" onblur="(isNumber(this))">
+              </div>
+              <div class="col-md-2 px-1">
+                {stxtReportInExcel} 
+                <input type="checkbox" value="1" name="printToExcel">
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="text-right">
+            <input class="btn btn-primary btn-sm" id="Reset" type="reset" value="Reset" name="Reset">
+            <input class= "btn btn-primary btn-sm" type="submit" value="Search" name="DoSearch">
+          </div>
+
+        </div>
+      </div>
+    </form>
+    <br>
+    <!-- END Record areamstSearch -->
+    <!-- BEGIN Grid areamst --> <div class="card-header pb-1 bg-primary text-white setColor"><font class="BlueNoteFormHeaderFont">{stxtListofArea}</font> </div> 
+    <div class="table-responsive">
+      <table class="table-sm table-bordered">
+      <tr>
+        <td></td>
+        <td class="BlueNoteFooterTDNav" nowrap colspan="8">{nllauthADDMASTERLINKresetstart}<a class="BlueNoteNavigatorLink" href="{areamst_Insert_Src}">{stxtAddNew}</a>{nllauthADDMASTERLINKresetend}&nbsp; 
+          <!-- BEGIN Navigator Navigator -->
+          <!-- BEGIN First_On --><a class="BlueNoteNavigatorLink" href="{First_URL}">|&lt;</a><!-- END First_On -->
+          <!-- BEGIN Prev_On --><a class="BlueNoteNavigatorLink" href="{Prev_URL}">&lt;&lt;</a><!-- END Prev_On -->&nbsp;{Page_Number}
+          of {Total_Pages}&nbsp; 
+          <!-- BEGIN Next_On --><a class="BlueNoteNavigatorLink" href="{Next_URL}">&gt;&gt;</a><!-- END Next_On -->
+          <!-- BEGIN Last_On --><a class="BlueNoteNavigatorLink" href="{Last_URL}">&gt;|</a><!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;
+        &nbsp;&nbsp;<a href="{middleware_import_data_Src}" class="BlueNoteNavigatorLink" {nllauthHYPERLINK_IMPORT_DATA}>{stxtXsretailDataImport}</a> {nllauthHYPERLINK_IMPORT_DATAresetstart}{nllauthHYPERLINK_IMPORT_DATAresetend}  
+        </td>
+      </tr>
+      <tr class="bg-primary text-white setColor">
+        <td class="BlueNoteColumnTD" nowrap></td> 
+        <td class="BlueNoteColumnTD" nowrap>
+          <!-- BEGIN Sorter Sorter_area_code --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtCode}</a> 
+          <!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_area_code -->&nbsp;</td> 
+        <td class="BlueNoteColumnTD" nowrap>
+          <!-- BEGIN Sorter Sorter_area_name1 --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtName1}</a> 
+          <!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_area_name1 -->&nbsp;</td> 
+        <td class="BlueNoteColumnTD" nowrap>
+          <!-- BEGIN Sorter Sorter_area_name2 --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtName2}</a> 
+          <!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_area_name2 -->&nbsp;</td> 
+        <td class="BlueNoteColumnTD" nowrap>
+          <!-- BEGIN Sorter Sorter_area_start_date --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtStartDate}</a> 
+          <!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_area_start_date -->&nbsp;</td> 
+        <td class="BlueNoteColumnTD" nowrap>{stxtState}</td> 
+        <td class="BlueNoteColumnTD" nowrap>
+          <!-- BEGIN Sorter Sorter_area_flag --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtActive}</a> 
+          <!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_area_flag -->&nbsp;</td> 
+        <td class="BlueNoteColumnTD" nowrap>
+          <!-- BEGIN Sorter Sorter_area_status --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtStatus}</a> 
+          <!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_area_status -->&nbsp;</td> 
+        <td class="BlueNoteColumnTD" nowrap>
+          <!-- BEGIN Sorter Sorter_area_userdefine1 --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtUserdefine1}</a> 
+          <!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_area_userdefine1 -->&nbsp;</td> 
+        <td class="BlueNoteColumnTD" nowrap>
+          <!-- BEGIN Sorter Sorter_area_sorting --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtSorting}</a> 
+          <!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_area_sorting -->&nbsp;</td>
+        <td class="BlueNoteColumnTD" nowrap {nllauthMASTER_HYPERLINK_AUDIT}>{stxtAudit}</td>
+      </tr>
+    
+      <!-- BEGIN Row -->
+      <tr>
+        <td class="BlueNoteDataTD" nowrap>{nllauthDELETEMASTERLINKresetstart}<a onclick="return jsrsChkActiveCode('areamst'+'|'+'{area_no}', event)" href="{ImageLink1}&ccsForm=areamst&Delete=Delete"><img src="image/trash.gif" border="0"></a>{nllauthDELETEMASTERLINKresetend}</td>
+        <td class="BlueNoteDataTD" nowrap><a class="BlueNoteDataLink" href="{area_code_Src}">{area_code}</a>&nbsp;</td> 
+        <td class="BlueNoteDataTD" style="DISPLAY: none" nowrap>{area_no}&nbsp;</td> 
+        <td class="BlueNoteDataTD" nowrap>{area_name1}&nbsp;</td> 
+        <td class="BlueNoteDataTD" nowrap>{area_name2}&nbsp;</td> 
+        <td class="BlueNoteDataTD" nowrap>{area_start_date}&nbsp;</td> 
+        <td class="BlueNoteDataTD" nowrap>{area_state}</td> 
+        <td class="BlueNoteDataTD" nowrap><input class="BlueNoteInput" disabled type="checkbox" value="1" name="{area_flag_Name}" {area_flag}>&nbsp;</td> 
+        <td class="BlueNoteDataTD" nowrap><input class="BlueNoteInput" disabled readonly type="checkbox" value="1" name="{area_status_Name}" {area_status}>&nbsp;</td> 
+        <td class="BlueNoteDataTD" nowrap>{area_userdefine1}&nbsp;</td> 
+        <td class="BlueNoteDataTD" nowrap>{area_sorting}&nbsp;</td>
+        <td class="BlueNoteDataTD" align="center" {nllauthMASTER_HYPERLINK_AUDIT}><a onclick="window.open('modules/audit_log/rpt_audit_master.php?s_module=ACCT-MST&s_refno1=area_no+%3D+%27{area_no}%27','_blank','WIDTH=1000,HEIGHT=650,LEFT=200,scrollbars=yes,resizable=yes');return false;" tabindex="-1" href="">{nllauthMASTER_HYPERLINK_AUDITresetstart}{nllauthMASTER_HYPERLINK_AUDITresetend}<img src="image/audit_trail.jpg" border="0" alt="{stxtAuditLog}"></a></td>
+      </tr>
+    <!-- END Row -->
+      <!-- BEGIN NoRecords  -->
+      <tr>
+        <td class="BlueNoteDataTD"></td> 
+        <td class="BlueNoteDataTD" colspan="10">{stxtNorecords}&nbsp;</td>
+      </tr>
+      <!-- END NoRecords -->
+      <tr class="bg-primary text-white setColor" >
+        <td colspan="11">&nbsp;</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="BlueNoteFooterTDNav" nowrap colspan="8">{nllauthADDMASTERLINKresetstart}<a class="BlueNoteNavigatorLink" href="{areamst_Insert_Src}">{stxtAddNew}</a>{nllauthADDMASTERLINKresetend}&nbsp; 
+          <!-- BEGIN Navigator Navigator -->
+          <!-- BEGIN First_On --><a class="BlueNoteNavigatorLink" href="{First_URL}">|&lt;</a><!-- END First_On -->
+          <!-- BEGIN Prev_On --><a class="BlueNoteNavigatorLink" href="{Prev_URL}">&lt;&lt;</a><!-- END Prev_On -->&nbsp;{Page_Number}
+          of {Total_Pages}&nbsp; 
+          <!-- BEGIN Next_On --><a class="BlueNoteNavigatorLink" href="{Next_URL}">&gt;&gt;</a><!-- END Next_On -->
+          <!-- BEGIN Last_On --><a class="BlueNoteNavigatorLink" href="{Last_URL}">&gt;|</a><!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;
+        &nbsp;&nbsp;<a href="{middleware_import_data1_Src}" class="BlueNoteNavigatorLink" {nllauthHYPERLINK_IMPORT_DATA}>{stxtXsretailDataImport}</a> {nllauthHYPERLINK_IMPORT_DATAresetstart}{nllauthHYPERLINK_IMPORT_DATAresetend}  
+        </td>
+      </tr>
+      </table>
+    </div>
+
+<!-- END Grid areamst -->
+</body>
+</html>

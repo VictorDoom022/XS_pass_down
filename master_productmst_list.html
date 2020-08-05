@@ -1,0 +1,1189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta name="GENERATOR" content="CodeCharge Studio 3.0.1.6">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>productmst_list</title>
+<meta content="CodeCharge Studio 3.0.1.5" name="GENERATOR">
+<link rel="stylesheet" href="lib/bootstrap_v4.5/css/bootstrap.css">
+<link rel="stylesheet" href="Themes/Custom/themes.css">
+<script type="text/javascript" src="javascript/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="javascript/jquery/jquery-no-conflict.js"></script>
+<script language="javascript" src="common/jsrs/jsrsClient.js"></script>
+<script language="javascript" src="common/jsrs/filterProduct.js"></script>
+<script language="javascript" src="common/jsrs/nll_global_jsrs.js"></script>
+<script language="javascript" src="common/jsrs/jsrs_writeDynamic.js"></script>
+<script language="javascript" src="common/jsrs/jsrs_saveStoreItemPrice.js"></script>
+<script language="javascript" src="javascript/validatePageSize.js"></script>
+<script language="javascript" src="common/entry_rule_inventory.js"></script>
+<script language="JavaScript" src="common/OptionTransfer.js"></script>
+<script language="javascript" src="common/nll_common_search.js"></script>
+<script language="JavaScript">
+
+var opt = new OptionTransfer("s_category1[]","s_category2[]");
+opt.setAutoSort(true);
+opt.setDelimiter(",");
+opt.saveRemovedLeftOptions("removedLeft");
+opt.saveRemovedRightOptions("removedRight");
+opt.saveAddedLeftOptions("addedLeft");
+opt.saveAddedRightOptions("addedRight");
+opt.saveNewLeftOptions("newLeft");
+opt.saveNewRightOptions("prdtcate_list");
+
+var opt1 = new OptionTransfer("s_group1[]","s_group2[]");
+opt1.setAutoSort(true);
+opt1.setDelimiter(",");
+opt1.saveRemovedLeftOptions("removedLeft");
+opt1.saveRemovedRightOptions("removedRight");
+opt1.saveAddedLeftOptions("addedLeft");
+opt1.saveAddedRightOptions("addedRight");
+opt1.saveNewLeftOptions("newLeft");
+opt1.saveNewRightOptions("prdtgrp_list");
+
+var opt2 = new OptionTransfer("s_model1[]","s_model2[]");
+opt2.setAutoSort(true);
+opt2.setDelimiter(",");
+opt2.saveRemovedLeftOptions("removedLeft");
+opt2.saveRemovedRightOptions("removedRight");
+opt2.saveAddedLeftOptions("addedLeft");
+opt2.saveAddedRightOptions("addedRight");
+opt2.saveNewLeftOptions("newLeft");
+opt2.saveNewRightOptions("prdtmdl_list");
+
+var opt3 = new OptionTransfer("s_brand1[]","s_brand2[]");
+opt3.setAutoSort(true);
+opt3.setDelimiter(",");
+opt3.saveRemovedLeftOptions("removedLeft");
+opt3.saveRemovedRightOptions("removedRight");
+opt3.saveAddedLeftOptions("addedLeft");
+opt3.saveAddedRightOptions("addedRight");
+opt3.saveNewLeftOptions("newLeft");
+opt3.saveNewRightOptions("prdtbrn_list");
+
+var opt4 = new OptionTransfer("s_source1[]","s_source2[]");
+opt4.setAutoSort(true);
+opt4.setDelimiter(",");
+opt4.saveRemovedLeftOptions("removedLeft");
+opt4.saveRemovedRightOptions("removedRight");
+opt4.saveAddedLeftOptions("addedLeft");
+opt4.saveAddedRightOptions("addedRight");
+opt4.saveNewLeftOptions("newLeft");
+opt4.saveNewRightOptions("prdtsrc_list");
+
+</script>
+<script>
+function initValue(txt_1,txt_2,lst_1,lst_2)
+{
+        var val = document.getElementById(txt_2).value; 
+        document.getElementById(txt_1).value = val;
+        var list_array = val.split(',');
+
+        var j=0;
+        if(val != '')
+        {
+                do
+                {
+                        var from_options = document.getElementById(lst_1).options;
+                        var     length = from_options.length;   
+                        var to_options = document.getElementById(lst_2).options
+
+                        var i=0;
+                        do
+                        {
+                                var o = from_options[i];
+                                if (o.value==list_array[j]) {
+                                        to_options[to_options.length] = new Option( o.text, o.value, false, false);                     
+                                        }
+                                i++;
+                        }while( i<length);
+                
+                        i=length-1;
+                        do
+                        {
+                                var o = from_options[i];
+                                if (o.value==list_array[j]) {
+                                        from_options[i] = null;
+                                }
+                                i--;
+                        }while( i>=0);
+        
+                        j++;
+                }while(j<list_array.length);
+
+        }
+//      alert(document.getElementById('tutor_list_1').value);
+        
+
+}
+</script>
+<script>
+var showADV = false;
+
+</script>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+
+
+//Include JSFunctions @1-252A7665
+</script>
+<script language="JavaScript" src="Functions.js" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include JSFunctions
+
+//searchTypeListboxOptions = document.getElementById('searchTypeListbox').options;
+
+//page_OnLoad @1-D0F4E1D3
+function page_OnLoad()
+{
+    var result;
+//End page_OnLoad
+
+//Custom Code @749-2A29BDB7
+    // -------------------------
+    // Write your own code here.
+  
+    
+      /*
+          arrayHiddenID = new Array();
+          arrayHiddenID.push('searchStatus');
+          arrayHiddenID.push('searchBarcode');
+          arrayHiddenID.push('searchNotes');
+          arrayHiddenID.push('searchSelected');
+          arrayHiddenID.push('searchMovement');
+          arrayHiddenID.push('searchABC');
+
+        if(document.getElementById('show_flag').value==''){
+                        var ccount=arrayHiddenID.length-1;
+                        while (ccount>=0){
+                                document.getElementById(arrayHiddenID[ccount]).style.display = 'none';
+                                ccount--;
+                        }
+        }
+        else
+        showADV = true; 
+        
+        */
+        showAdvance_v2_start();
+        
+        opt.init(document.forms[0]);
+        initValue('prdtcate_list','prdtcate_list1','s_category1','s_category2');
+        opt1.init(document.forms[0]);
+        initValue('prdtgrp_list','prdtgrp_list1','s_group1','s_group2');
+		opt2.init(document.forms[0]);
+        initValue('prdtmdl_list','prdtmdl_list1','s_model1','s_model2');
+		opt3.init(document.forms[0]);
+        initValue('prdtbrn_list','prdtbrn_list1','s_brand1','s_brand2');
+		opt4.init(document.forms[0]);
+        initValue('prdtsrc_list','prdtsrc_list1','s_source1','s_source2');
+    // -------------------------
+//End Custom Code
+
+		if(document.getElementById("searchSupplier").style.visibility!="hidden")
+				{nllauthINV_ROW_SupplierCodeSearch}
+
+//Close page_OnLoad @1-BC33A33A
+    return result;
+}
+//End Close page_OnLoad
+
+//bind_events @1-B716D3FC
+function bind_events() {
+    page_OnLoad();
+    forms_onload();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+isBootstrap = true;
+
+//End CCS script
+</script>
+<style>
+.BlueNoteSorterLink{
+	text-decoration: underline;
+	color: white;
+}
+
+a:hover{
+	color: #FFA558;
+}
+
+ /* THIS */
+</style>
+</head>
+<body id="blueNote" class="BlueNotePageBODY" text="#000000" vlink="#000000" alink="#000000" link="#000000" bgcolor="#ffffff" >
+<div class="container-fluid">
+	<br>
+	<div class="col-md-12 px-1">
+		<div class="row">
+			<div class="col-md-8 px-1">
+				<!-- BEGIN Record productmstSearch -->
+				<form name="productmstSearch" action="{Action}" method="post">
+					<div class="card bg-light setBorder" id="card">
+						<div class="card-header pb-1 bg-primary text-white setColor" id="card">{stxtSearchProduct}</div> 
+						<div class="card-body">
+						
+							<!-- BEGIN Error -->
+							<p class="text-danger">{Error}</p>
+							<!-- END Error -->
+
+							<div class="col-md-12 px-1">
+								<div class=row>
+								  <div class="col-md-6 px-1">
+									<select class="form-control form-control-sm"  name="searchTypeListbox" id="searchTypeListbox" onChange="showAdvance_v2_add(this.value);"></select>
+								  </div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-6 px-1">
+										{stxtCode}&nbsp;
+										<input class="form-control form-control-sm" maxlength="30" size="30" value="{s_prdt_code}" name="s_prdt_code">
+									</div>
+									<div class="col-md-6 px-1">
+										{stxtName1}&nbsp;
+										<input class="form-control form-control-sm" style="{stxtStyleMasterName1}" {stxtMasterName1HTMLProperties} size="50" value="{s_prdt_name1}" name="s_prdt_name1">
+									</div>
+								
+									<div class="col-md-6 px-1" {nllauthINV_ROW_PRD_MASTER_VAT_SALES}>
+										{stxtProductVAT_AR}&nbsp;<a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a>
+										{nllauthINV_ROW_PRD_MASTER_VAT_SALESresetstart}{nllauthINV_ROW_PRD_MASTER_VAT_SALESresetend} 
+										<select class="form-control form-control-sm" id="s_prdt_VAT_AR" onkeydown="linkSearchBox(this, 0, event)" name="{s_prdt_VAT_AR_Name}">
+											<option value="" selected>Follow Product Group</option>
+											{s_prdt_VAT_AR_Options} 
+										</select>
+									</div>
+
+									<div class="col-md-6 px-1" {nllauthINV_ROW_PRD_MASTER_VAT_PURCHASE}>
+										{stxtProductVAT_AP}&nbsp;&nbsp;
+										<a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" firstsearch="1" identity="searchFunction"><img tabindex="-1" src="image/search.gif" border="0"></a>
+										{nllauthINV_ROW_PRD_MASTER_VAT_PURCHASEresetstart}{nllauthINV_ROW_PRD_MASTER_VAT_PURCHASEresetend} 
+										<select class="form-control form-control-sm" id="s_prdt_VAT_AP" onkeydown="linkSearchBox(this, 0, event)" name="{s_prdt_VAT_AP_Name}">
+											<option value="" selected>Follow Product Group</option>
+												{s_prdt_VAT_AP_Options} 
+										</select>
+										
+									</div>
+									
+									<div class="col-md-3 px-1" id='searchUserdefine11'>
+										<div>
+											<img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('textbox','s_prdt_userdefine1');">{stxtUserdefine1}&nbsp;
+											<input class="form-control form-control-sm" maxlength="50" value="{s_prdt_userdefine1}" name="s_prdt_userdefine1">	
+										</div>	
+									</div>
+
+									<div class="col-md-3 px-1" id='searchUserdefine2'{nllauthProductMaster_Search_Userdefine2ROW}>
+											<img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('textbox','{s_userdefine2_Name}');">{nllauthProductMaster_Search_Userdefine2ROWresetstart}{nllauthProductMaster_Search_Userdefine2ROWresetend}{stxtUserdefine2}
+											<input class="form-control form-control-sm" maxlength="50" value="{s_userdefine2}" name="{s_userdefine2_Name}">
+									</div>	
+								
+									<div class="col-md-3 px-1" id='searchUserdefine3'>
+										<div {nllauthProductMaster_Search_Userdefine3ROW}>
+											<img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('textbox','{s_userdefine3_Name}');">{nllauthProductMaster_Search_Userdefine3ROWresetstart}{nllauthProductMaster_Search_Userdefine3ROWresetend}{stxtUserdefine3}
+											<input class="form-control form-control-sm" maxlength="50" size="50" value="{s_userdefine3}" name="{s_userdefine3_Name}">
+										</div>
+									</div>
+									
+									<div class="col-md-3 px-1" id='searchProductGroup' >
+										<div {nllauthINV_ROW_PRODUCT_GROUP}>
+											<img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('listbox','{s_prdt_grp_Name}');">{nllauthINV_ROW_PRODUCT_GROUPresetstart}{nllauthINV_ROW_PRODUCT_GROUPresetend}{stxtProductGroup}
+											<a onclick="showSearchBox(this);" firstsearch="1" identity="searchFunction" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a>
+											<select class="form-control form-control-sm" onkeydown="linkSearchBox(this, 0, event)" name="{s_prdt_grp_Name}" type_flag="p_group">
+												<option value="" selected>Select Value</option>
+												{s_prdt_grp_Options}
+											</select>
+										</div>
+									</div>
+								
+									<div class="col-md-12 px-1"  id='searchGroupMulti' {nllauthINV_ROW_MULTI_PROGROUP}>
+										<div class="table-responsive">
+											<table class="table-sm">
+												<tr>
+													<td>
+														<img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove('searchGroupMulti');showAdvance_v2_reset('multiplelistbox',opt1);">{nllauthINV_ROW_MULTI_PROGROUPresetstart}{nllauthINV_ROW_MULTI_PROGROUPresetend}{stxtProductGroup}<br><input type="hidden" name="{prdtgrp_list_Name}" value="{prdtgrp_list}" id="prdtgrp_list"><input type="hidden" name="{prdtgrp_list1_Name}" value="{prdtgrp_list1}" id="prdtgrp_list1"><input type="hidden" name="{parameter1_Name}" value="{parameter1}">
+													</td>
+													<td>
+														<select onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" multiple size="5" name="{s_group1_Name}" class="BlueNoteSelect" id="s_group1">
+															{s_group1_Options}</select>
+															<a onclick="showSearchBox(this);" firstsearch="1" identity="searchFunction" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a>
+													</td>
+													<td>
+														<input title="move to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt1.transferRight()" type="button" size="50" value="&gt;" name="right"><br>
+														<input title="move all to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt1.transferAllRight()" type="button" value=" &gt;&gt;" name="right"><br>
+														<input title="move to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt1.transferLeft()" type="button" value="&lt;" name="left"><br>
+														<input title="move all to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt1.transferAllLeft()" type="button" value="&lt;&lt;" name="left">
+													</td>
+													<td>
+														<select onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" multiple size="5" name="{s_group2_Name}" class="BlueNoteSelect" id="s_group2">
+															{s_group2_Options}</select>
+													</td>
+												</tr>
+											</table>
+										</div>	
+									</div>
+								
+									<div class="col-md-6 px-1" id='searchSupplier' >
+										<div {nllauthProductMaster_Search_SupplierROW} {nllauthINV_ROW_SupplierSearch}>
+											<img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('listbox','{s_supplier_Name}');">{nllauthProductMaster_Search_SupplierROWresetstart}{nllauthProductMaster_Search_SupplierROWresetend}{stxtSupplier}{nllauthINV_ROW_SupplierSearchresetstart}{nllauthINV_ROW_SupplierSearchresetend}
+											<a onclick="showSearchBox(this);" firstsearch="1" identity="searchFunction" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> 
+											<select class="form-control form-control-sm" onkeydown="linkSearchBox(this, 0, event)" name="{s_supplier_Name}" type_flag="c">
+												<option value="" selected>Select Value</option>
+												{s_supplier_Options}
+												</select>
+										</div>
+									</div>
+									<div class="col-md-6 px-1" id='searchModel'>
+										<div {nllauthProductMaster_Search_ModelROW}>
+											<img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('listbox','{s_model_Name}');">{nllauthProductMaster_Search_ModelROWresetstart}{nllauthProductMaster_Search_ModelROWresetend}{stxtProductModel}
+											<a onclick="showSearchBox(this);" firstsearch="1" identity="searchFunction" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> 
+											<select class="form-control form-control-sm" onkeydown="linkSearchBox(this, 0, event)" name="{s_model_Name}">
+												<option value="" selected>Select Value</option>
+												{s_model_Options}
+												</select>
+										</div>
+									</div>
+								
+									<div class="col-md-12 px-1" id='searchModelMulti'>
+										<div class="table-responsive" {nllauthINV_ROW_MULTI_PROMODEL}>
+											<table class="table-sm">
+												<tr>
+													<td>
+														<img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove('searchModelMulti');showAdvance_v2_reset('multiplelistbox',opt2);">{nllauthINV_ROW_MULTI_PROMODELresetstart}{nllauthINV_ROW_MULTI_PROMODELresetend}{stxtProductModel}<br><input type="hidden" name="{prdtmdl_list_Name}" value="{prdtmdl_list}" id="prdtmdl_list"><input type="hidden" name="{prdtmdl_list1_Name}" value="{prdtmdl_list1}" id="prdtmdl_list1"><input type="hidden" name="{parameter2_Name}" value="{parameter2}">
+													</td>
+													<td>
+														<select onkeydown="linkSearchBox(this, 0, event)" name="{s_model1_Name}" style="WIDTH: 250px" multiple size="5" id="s_model1">
+														{s_model1_Options}</select>
+														<a onclick="showSearchBox(this);" firstsearch="1" identity="searchFunction" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a>
+													</td>
+													<td>
+														<input class="BlueNoteButton" title="move to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt2.transferRight()" type="button" size="50" value="&gt;" name="right"><br>
+														<input class="BlueNoteButton" title="move all to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt2.transferAllRight()" type="button" value=" &gt;&gt;" name="right"><br>
+														<input class="BlueNoteButton" title="move to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt2.transferLeft()" type="button" value="&lt;" name="left"><br>
+														<input class="BlueNoteButton" title="move all to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt2.transferAllLeft()" type="button" value="&lt;&lt;" name="left">
+													</td>
+													<td>
+														<select onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" multiple size="5" name="{s_model2_Name}" class="form-control form-control-sm" id="s_model2">
+															{s_model2_Options}
+														</select>
+													</td>
+												</tr>				
+											</table>
+										</div>
+									</div>
+							
+									<div class="col-md-6 px-1" id='searchBrand'>
+										<div {nllauthProductMaster_Search_BrandROW}>
+											<img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('listbox','{s_brand_Name}');">{nllauthProductMaster_Search_BrandROWresetstart}{nllauthProductMaster_Search_BrandROWresetend}{stxtProductBrand}
+											<a onclick="showSearchBox(this);" firstsearch="1" identity="searchFunction" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> 
+											<select class="form-control form-control-sm" onkeydown="linkSearchBox(this, 0, event)" name="{s_brand_Name}">
+												<option value="" selected>Select Value</option>
+												{s_brand_Options}
+												</select>
+										</div>
+									</div>
+								
+									<div class="col-md-12 px-1" id='searchBrandMulti'>
+										<div class="table-responsive" {nllauthINV_ROW_MULTI_PROBRAND}>
+											<table class="table-sm">
+												<tr>
+													<td>
+														<img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove('searchBrandMulti');showAdvance_v2_reset('multiplelistbox',opt3);">{nllauthINV_ROW_MULTI_PROBRANDresetstart}{nllauthINV_ROW_MULTI_PROBRANDresetend}{stxtProductBrand}<br><input type="hidden" name="{prdtbrn_list_Name}" value="{prdtbrn_list}" id="prdtbrn_list"><input type="hidden" name="{prdtbrn_list1_Name}" value="{prdtbrn_list1}" id="prdtbrn_list1"><input type="hidden" name="{parameter3_Name}" value="{parameter3}">
+													</td>
+													<td>		
+														<select onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" name="{s_brand1_Name}" multiple size="5" id="s_brand1">
+															{s_brand1_Options}</select>
+														<a onclick="showSearchBox(this);" firstsearch="1" identity="searchFunction" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a>
+													</td>
+													<td>
+														<input class="BlueNoteButton" title="move to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt3.transferRight()" type="button" size="50" value="&gt;" name="right"><br>
+														<input class="BlueNoteButton" title="move all to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt3.transferAllRight()" type="button" value=" &gt;&gt;" name="right"><br>
+														<input class="BlueNoteButton" title="move to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt3.transferLeft()" type="button" value="&lt;" name="left"><br>
+														<input class="BlueNoteButton" title="move all to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt3.transferAllLeft()" type="button" value="&lt;&lt;" name="left">
+													</td>
+													<td>
+														<select onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" multiple size="5" name="{s_brand2_Name}" class="form-control form-control-sm" id="s_brand2">
+															{s_brand2_Options}</select>
+													</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+								
+									<div class="col-md-12 px-1" id='searchCategory'>
+										<div {nllauthProductMaster_Search_CategoryROW}>
+											<img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('listbox','{s_category_Name}');">{nllauthProductMaster_Search_CategoryROWresetstart}{nllauthProductMaster_Search_CategoryROWresetend}{stxtProductCategory}
+											<a onclick="showSearchBox(this);" firstsearch="1" identity="searchFunction" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> 
+											<select class="form-control form-control-sm" onkeydown="linkSearchBox(this, 0, event)" name="{s_category_Name}">
+												<option value="" selected>Select Value</option>
+												{s_category_Options}
+												</select>
+										</div>
+									</div>
+								
+									<div class="col-md-12 px-1" id='searchCategoryMulti'>
+										<div class="table-responsive">
+											<table class="table-sm" {nllauthINV_ROW_PROCATE}>
+												<tr>
+													<td>
+														<img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove('searchCategoryMulti');showAdvance_v2_reset('multiplelistbox',opt);">{nllauthINV_ROW_PROCATEresetstart}{nllauthINV_ROW_PROCATEresetend}{stxtProductCategory}
+													</td>
+													<td>
+														<input type="hidden" name="{prdtcate_list_Name}" value="{prdtcate_list}" id="prdtcate_list"><input type="hidden" name="{prdtcate_list1_Name}" value="{prdtcate_list1}" id="prdtcate_list1"> <input type="hidden" name="{parameter_Name}" value="{parameter}">
+														<select onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" multiple size="5" name="{s_category1_Name}" id="s_category1">
+															{s_category1_Options}
+																</select>
+														<a onclick="showSearchBox(this);" firstsearch="1" identity="searchFunction" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> 		
+													</td>
+													<td>
+														<input class="BlueNoteButton" title="move to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt.transferRight()" type="button" size="50" value="&gt;" name="right"><br>
+														<input class="BlueNoteButton" title="move all to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt.transferAllRight()" type="button" value=" &gt;&gt;" name="right"><br>
+														<input class="BlueNoteButton" title="move to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt.transferLeft()" type="button" value="&lt;" name="left"><br>
+														<input class="BlueNoteButton" title="move all to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt.transferAllLeft()" type="button" value="&lt;&lt;" name="left">
+													</td>
+													<td>
+														<select onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" multiple size="5" name="{s_category2_Name}" id="s_category2" class="form-control form-control-sm">
+															{s_category2_Options}
+														</select>
+													</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+								
+									<div class="col-md-6 px-1" id="searchSource">
+										<div {nllauthINV_ROW_SOURCE}>
+											<img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('listbox','{s_source_Name}');">{nllauthINV_ROW_SOURCEresetstart}{nllauthINV_ROW_SOURCEresetend}{stxtSource}
+											<a onclick="showSearchBox(this);" identity="searchFunction" firstsearch="1" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a> 
+											<select class="form-control form-control-sm" onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 366px" name="{s_source_Name}">
+												<option value="" selected>Select Value</option>
+												{s_source_Options} 
+												</select>
+										</div>
+									</div>
+								
+									<div class="col-md-6 px-1" id='searchSourceMulti'>
+										<div div="table-responsive">
+											<table class="table-sm" {nllauthINV_ROW_MULTI_SOURCE}>
+												<tr>
+													<td>
+														<img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove('searchSourceMulti');showAdvance_v2_reset('multiplelistbox',opt4);">{nllauthINV_ROW_MULTI_SOURCEresetstart}{nllauthINV_ROW_MULTI_SOURCEresetend}{stxtSource}
+													</td>
+													<td>
+														<input type="hidden" name="{prdtsrc_list_Name}" value="{prdtsrc_list}" id="prdtsrc_list"><input type="hidden" name="{prdtsrc_list1_Name}" value="{prdtsrc_list1}" id="prdtsrc_list1"><input type="hidden" name="{parameter4_Name}" value="{parameter4}">
+														<select onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" name="{s_source1_Name}" class="BlueNoteSelect" multiple size="5" id="s_source1">
+															{s_source1_Options}
+														</select>
+														<a onclick="showSearchBox(this);" firstsearch="1" identity="searchFunction" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a>	
+													</td>
+													<td>
+														<input class="BlueNoteButton" title="move to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt4.transferRight()" type="button" size="50" value="&gt;" name="right"><br>
+														<input class="BlueNoteButton" title="move all to right" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt4.transferAllRight()" type="button" value=" &gt;&gt;" name="right"><br>
+														<input class="BlueNoteButton" title="move to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt4.transferLeft()" type="button" value="&lt;" name="left"><br>
+														<input class="BlueNoteButton" title="move all to left" style="WIDTH: 39px; HEIGHT: 22px" onclick="opt4.transferAllLeft()" type="button" value="&lt;&lt;" name="left">
+													</td>
+													<td>
+														<select onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 250px" multiple size="5" name="{s_source2_Name}" class="BlueNoteSelect" id="s_source2">
+															{s_source2_Options}
+														</select>
+													</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+								
+									<div class="col-md-6 px-1" id='searchUOM1'>
+										<div {nllauthINV_ROW_MEASUREMENT_UOM1}>
+											<img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('textbox','{s_uom1_Name}');">{nllauthINV_ROW_MEASUREMENT_UOM1resetstart}{nllauthINV_ROW_MEASUREMENT_UOM1resetend}{stxtProductMeasurement1Uom}
+											<input class="form-control form-control-sm" maxlength="50" size="50" value="{s_uom1}" name="{s_uom1_Name}">
+										</div>
+									</div>
+									<div class="col-md-6 px-1" id='searchApprovalStatus'>
+										<div {nllauthMASTER_ROW_APPROVAL_STATUS}>
+											<img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('listbox','approval_status');">{nllauthMASTER_ROW_APPROVAL_STATUSresetstart}{nllauthMASTER_ROW_APPROVAL_STATUSresetend}{stxtApprovalStatus}&nbsp;
+											<a onclick="showSearchBox(this);" firstsearch="1" identity="searchFunction" nllact="nllActListBoxSearch"><img tabindex="-1" src="image/search.gif" border="0"></a>
+											<select onkeydown="linkSearchBox(this, 0, event)" style="WIDTH: 366px" class="form-control form-control-sm" name="approval_status">
+												<option value="" selected>Select Value</option>
+												{approval_status_Options}
+												</select>
+										</div>
+									</div>
+								
+									<div class="col-md-6 px-1" id="searchPrdtHierarchy">
+										<div {nllauthINV_ROW_PRDT_HIERARCHY}>
+											<img onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('listbox','Product_Hierarchy');" tabindex="-1" src="image/doc_cancel.gif" width="14" border="0">{nllauthINV_ROW_PRDT_HIERARCHYresetstart}{nllauthINV_ROW_PRDT_HIERARCHYresetend}{stxtProductHierarchyCode}
+											<a onclick="showSearchBox(this);" nllact="nllActListBoxSearch" identity="searchFunction" firstsearch="1"><img tabindex="-1" src="image/search.gif" border="0"></a>
+											<select onkeydown="linkSearchBox(this, 0, event)" class="form-control form-control-sm" style="WIDTH: 366px" name="Product_Hierarchy">
+												<option value="" selected>Select Value</option>
+													{Product_Hierarchy_Options} 
+												</select>
+										</div>
+									</div>
+									<div class="col-md-6 px-1" id='searchPageSize'>
+										<div>
+											<img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('textbox','pageSize');">{stxtPageSize}
+											<input type="text" name="{pageSize_Name}" value="{pageSize}" class="form-control form-control-sm" onblur="(isNumber(this))" style="TEXT-ALIGN: right" maxlength="3" size="3"><input id="show_flag" style="WIDTH: 72px; HEIGHT: 22px" type="hidden" size="10" value="{show_flag}" name="{show_flag_Name}">
+										</div>
+									</div>
+								
+									<div class="col-md-6 px-1" id="searchStatus">
+										 <div>
+											<img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('listbox','{s_status_Name}');">{stxtProductActive}
+											<select class="form-control form-control-sm" style="WIDTH: 100px" name="{s_status_Name}">
+												{s_status_Options}
+											</select>
+										 </div>
+									</div>
+									<div class="col-md-6 px-1" id="searchMovement">
+										<div {nllauthMASTER_ROW_PrdtMovementFlagSearch}>
+											<img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('listbox','{s_movement_Name}');">{stxtProductMovementFlag}{nllauthMASTER_ROW_PrdtMovementFlagSearchresetstart}{nllauthMASTER_ROW_PrdtMovementFlagSearchresetend}
+											<select class="form-control form-control-sm" name="{s_movement_Name}">
+												<option value="" selected>Select Value</option>
+												{s_movement_Options}
+											</select>
+										</div>
+									</div>
+								
+									<div class="col-md-6 px-1" id="searchABC">
+										<div {nllauthMASTER_ROW_PrdtABCFlagSearch}>
+											<img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('listbox','{s_abc_Name}');">{stxtProductABCFlag}{nllauthMASTER_ROW_PrdtABCFlagSearchresetstart}{nllauthMASTER_ROW_PrdtABCFlagSearchresetend}
+											<select class="form-control form-control-sm" name="{s_abc_Name}">
+												<option value="" selected>Select Value</option>
+												{s_abc_Options}
+											</select>
+										</div>
+									</div>
+								
+									<div class="col-md-6 px-1" id="searchPrdtRegDateFrom">
+										<div {nllauthMASTER_ROW_PrdtRegDateSearch}>
+											<img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('textbox','prdtreg_from_date');showAdvance_v2_reset('textbox','txtByMonth2');showAdvance_v2_reset('textbox','prdtreg_to_date');">{stxtProductRegisterDateFrom} {nllauthMASTER_ROW_PrdtRegDateSearchresetstart}{nllauthMASTER_ROW_PrdtRegDateSearchresetend}
+											<a onclick="window.dateField=document.productmstSearch.prdtreg_from_date ;Calender=window.open('common/getdate.php','Calendar','WIDTH=260,HEIGHT=300,TOP=220,LEFT=400')" tabindex="-1"><img src="image/getdate.gif" align="absMiddle" border="0"></a>
+											<input saveselection="no" class="form-control form-control-sm" onkeypress="clearByMth();blockdatechar(this,event);" id="prdtreg_from_date" onblur="if(this.value!='')DateFormat.dateCheck(this)" onfocus="store_value(this.value,'prdtreg_from_date');" maxlength="10" onchange="if(this.value!='')DateFormat.dateCheck(this);DateFormat.chk_from_date_allowBlank(this, document.forms.productmstSearch.prdtreg_to_date);" size="10" value="{prdtreg_from_date}" name="{prdtreg_from_date_Name}">
+										</div>
+									</div>
+									<div class="col-md-6 px-1" id="searchPrdtRegDateTo" groupsearchid="searchPrdtRegDateFrom">
+										<div {nllauthMASTER_ROW_PrdtRegDateSearch}>
+											{stxtTo}
+											<a style="CURSOR: pointer" onclick="window.dateField=document.productmstSearch.prdtreg_to_date ;Calender=window.open('common/getdate.php','Calendar','WIDTH=260,HEIGHT=300,TOP=220,LEFT=400')" tabindex="-1"><img src="image/getdate.gif" align="absMiddle" border="0"></a>
+										<input saveselection="no" class="form-control form-control-sm" onkeypress="clearByMth();blockdatechar(this,event);" id="prdtreg_to_date" onblur="if(this.value!='')DateFormat.dateCheck(this)" onfocus="store_value(this.value,'to_date');" maxlength="10" onchange="if(this.value!='')DateFormat.dateCheck(this);DateFormat.chk_to_date_allowBlank(this, document.forms.productmstSearch.prdtreg_from_date);" size="10" value="{prdtreg_to_date}" name="{prdtreg_to_date_Name}">
+										</div>
+									</div>
+								
+									<div class="col-md-6 px-1" id="searchBarcode">
+										<div {nllauthMASTER_ROW_BarcodeSearch}>
+											<img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('textbox','{s_prdt_barcode_Name}');">{stxtSearchBarcode}&nbsp;{nllauthMASTER_ROW_BarcodeSearchresetstart}{nllauthMASTER_ROW_BarcodeSearchresetend}
+											<input class="form-control form-control-sm" maxlength="15" size="15" value="{s_prdt_barcode}" name="{s_prdt_barcode_Name}">
+										</div>
+									</div>
+							
+									<div class="col-md-6 px-1" id="searchSelected">
+										
+											<img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('checkbox','{onlySelected_Name}');">{stxtOnlySelected}&nbsp;</td> 
+											<div><input type="checkbox" value="1" name="{onlySelected_Name}" {onlySelected}></div>
+											{stxtClearSelected}
+											<div><input id="clear_selection" type="checkbox" value="1" name="{clearSelection_Name}" {clearSelection}></div>
+										
+									</div>
+								
+									<div class="col-md-6 px-1" id="searchNotes"> 
+										<div {nllauthMASTER_ROW_NoteSearch}>
+											<img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('textbox','{notes_search_Name}');">{stxtSearchNotes}&nbsp;{nllauthMASTER_ROW_NoteSearchresetstart}{nllauthMASTER_ROW_NoteSearchresetend}
+											<a onclick="window.open('modules/notes/notes_search_popup.php?notes_no=1','_blank','WIDTH=560,HEIGHT=500,TOP=20,LEFT=100,scrollbars=yes');return false;" tabindex="-1" href="#"><img src="image/addlist.gif" width="20" border="0"></a>{nllauthADDLIST_NOTEresetend}
+											<input class="form-control" value="{notes_search_display}" name="{notes_search_display_Name}"><input type="hidden" value="{notes_search}" name="{notes_search_Name}">&nbsp;{nllauthADDLIST_NOTEresetstart}
+										</div>
+									</div>
+									<div class="col-md-6 px-1" id='searchExcel'>
+										<div {nllauthPRINTTOEXCEL}>
+											<img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('checkbox','printToExcel');">{nllauthPRINTTOEXCELresetstart}{nllauthPRINTTOEXCELresetend}{stxtReportInExcel}
+											<input type="checkbox" value="1" name="printToExcel" {printToExcel}>
+										</div>
+									</div>
+								</div>
+							</div>
+							&nbsp;	
+							<div class="text-right">
+								<div class="BlueNoteFooterTD" style="DISPLAY: none">
+									<!-- BEGIN Button Main --><input class="btn btn-primary btn-sm" type="submit" value="Main" name="Main"><!-- END Button Main --></div> 
+								<input class="btn btn-primary btn-sm" id="Reset1" type="reset" value="Reset" name="Reset1">
+									<!-- BEGIN Button DoSearch --><input class="btn btn-primary btn-sm" onclick="if(document.getElementById('clear_selection').checked){if(confirm('Confirm clear all selected?')){jsrsWriteDynamic('checkboxMultiSelectMaster','checkbox_Productmst','00000','false')}};" type="submit" value="Search" name="DoSearch"><!-- END Button DoSearch -->
+							</div>	
+						</div>	  
+					
+					</div>
+				</form>
+				<!-- END Record productmstSearch -->
+			</div>
+			
+			<div class="col-md-4 px-1">
+				<div class="card bg-light border-dark setBorder">
+					<div class="card-header pb-1 bg-secondary text-white setColor" id="listHeader">Listing</div>
+					<div class="card-body">
+						<div class="list-group">
+							<ul class="list-group list-group-flush">
+								<div {nllauthMASTER_HYPERLINK_PRDT_VIEW_REPACK}>
+									<a class="list-group-item py-0 list-group-item-action list-group-item-secondary" href="{Link1_Src}"><img tabindex="-1" src="image/page.gif" border="0">Repacking
+										Item Price Listing</a>{nllauthMASTER_HYPERLINK_PRDT_VIEW_REPACKresetstart}{nllauthMASTER_HYPERLINK_PRDT_VIEW_REPACKresetend}
+								</div>
+								<div {nllauthMASTER_HYPERLINK_PRDT_CATALOG}>
+									<a class="list-group-item py-0 list-group-item-action list-group-item-secondary" href="report/rpt_product_catalog.php"><img tabindex="-1" src="image/page.gif" border="0">Product
+										Catalog</a>{nllauthMASTER_HYPERLINK_PRDT_CATALOGresetstart}{nllauthMASTER_HYPERLINK_PRDT_CATALOGresetend}
+								</div>
+								<div {nllauthMASTER_HYPERLINK_ASSEMBLY}>
+									<a class="list-group-item py-0 list-group-item-action list-group-item-secondary" href="modules/xeersoft_dynamic/xeersoft_inv_report_qr.php?qrID=25"><img tabindex="-1" src="image/page.gif" border="0">Assembly
+										Listing</a>{nllauthMASTER_HYPERLINK_ASSEMBLYresetstart}{nllauthMASTER_HYPERLINK_ASSEMBLYresetend}
+								</div>
+								<div {nllauthMASTER_IMG_ASBLY}>
+									<a class="list-group-item py-0 list-group-item-action list-group-item-secondary" style="assembly_display: " href="modules/xeersoft_dynamic/xeersoft_inv_report_qr.php?qrID=108"><img tabindex="-1" src="image/page.gif" border="0">AP
+										Assembly Listing</a>{nllauthMASTER_IMG_ASBLYresetstart}{nllauthMASTER_IMG_ASBLYresetend}
+								</div>
+								<div {nllauthMASTER_HYPERLINK_PRDT_EFFECTIVE}>
+									<a class="list-group-item py-0 list-group-item-action list-group-item-secondary" href="product_history_listing.php"><img tabindex="-1" src="image/page.gif" border="0">Product
+										Effective Listing</a>{nllauthMASTER_HYPERLINK_PRDT_EFFECTIVEresetstart}{nllauthMASTER_HYPERLINK_PRDT_EFFECTIVEresetend}
+								</div>
+								<div {nllauthINV_HYPERLINK_REPACKING_ITEM_BARCODE_LISTING}>
+									<a href="modules/xeersoft_dynamic/xeersoft_inv_report_qr.php?qrID=805" class="list-group-item py-0 list-group-item-action list-group-item-secondary"><img tabindex="-1" src="image/page.gif" border="0">Repacking
+										Item Barcode Listing</a>{nllauthINV_HYPERLINK_REPACKING_ITEM_BARCODE_LISTINGresetstart}{nllauthINV_HYPERLINK_REPACKING_ITEM_BARCODE_LISTINGresetend}
+								</div>
+							</ul>
+						</div>
+					</div>
+				</div>		
+			</div>
+		</div>	
+	</div>	
+
+<div class="table-responsive">
+	<table class="table-info-sm table-bordered">
+		<tr>
+			<td>
+				<form  action="{Action}" method="post" style="display: none;">
+					<font class="BlueNoteFormHeaderFont"><br><br>
+					<table id='searchTable' class="BlueNoteFormTABLE" cellpadding="4">
+					<!-- BEGIN Error -->
+					<tr>
+					<td class="BlueNoteErrorDataTD" colspan="5">{Error}</td>
+					</tr>
+					<!-- END Error -->
+					<tr >
+					<td class="BlueNoteFieldCaptionTD">{stxtCode}&nbsp;</td> 
+					<td class="BlueNoteDataTD" colspan="4"></td>
+					</tr>
+
+					<tr>
+					<td class="BlueNoteFieldCaptionTD">{stxtName1}&nbsp;</td> 
+					<td class="BlueNoteDataTD" colspan="4">&nbsp;</td>
+					</tr>
+
+						<tr {nllauthINV_ROW_PRD_MASTER_VAT_SALES}>
+						<td class="BlueNoteFieldCaptionTD">{stxtProductVAT_AR}&nbsp;</td> 
+						<td class="BlueNoteDataTD" colspan="4" nowrap>{nllauthINV_ROW_PRD_MASTER_VAT_SALESresetstart}{nllauthINV_ROW_PRD_MASTER_VAT_SALESresetend} 
+						</td> 
+						</tr>
+						<tr {nllauthINV_ROW_PRD_MASTER_VAT_PURCHASE}>
+						<td class="BlueNoteFieldCaptionTD">{stxtProductVAT_AP}&nbsp;&nbsp;</td> 
+						<td class="BlueNoteDataTD" colspan="4" nowrap>{nllauthINV_ROW_PRD_MASTER_VAT_PURCHASEresetstart}{nllauthINV_ROW_PRD_MASTER_VAT_PURCHASEresetend} 	
+						</td> 
+						</tr>
+
+					<tr id='searchUserdefine11'>
+					<td class="BlueNoteFieldCaptionTD" nowrap>{stxtUserdefine1}&nbsp;</td> 
+					<td class="BlueNoteDataTD" colspan="4">&nbsp;</td>
+					</tr>
+
+					<tr id='searchUserdefine2' {nllauthProductMaster_Search_Userdefine2ROW}>
+					<td class="BlueNoteFieldCaptionTD" nowrap>{nllauthProductMaster_Search_Userdefine2ROWresetstart}{nllauthProductMaster_Search_Userdefine2ROWresetend}{stxtUserdefine2}</td> 
+					<td class="BlueNoteDataTD" colspan="4"></td>
+					</tr>
+
+					<tr id='searchUserdefine3' {nllauthProductMaster_Search_Userdefine3ROW}>
+					<td class="BlueNoteFieldCaptionTD" nowrap>{nllauthProductMaster_Search_Userdefine3ROWresetstart}{nllauthProductMaster_Search_Userdefine3ROWresetend}{stxtUserdefine3}</td> 
+					<td class="BlueNoteDataTD" colspan="4"></td>
+					</tr>
+
+					<tr id='searchProductGroup' class="BlueNoteFieldCaptionTD" {nllauthINV_ROW_PRODUCT_GROUP}>
+					<td class="BlueNoteFieldCaptionTD" nowrap>{nllauthINV_ROW_PRODUCT_GROUPresetstart}{nllauthINV_ROW_PRODUCT_GROUPresetend}{stxtProductGroup}</td> 
+					<td class="BlueNoteDataTD" colspan="4">	
+					</td>
+					</tr>
+
+						<tr id='searchGroupMulti' {nllauthINV_ROW_MULTI_PROGROUP}>
+							<td class="BlueNoteFieldCaptionTD" nowrap>{nllauthINV_ROW_MULTI_PROGROUPresetstart}{nllauthINV_ROW_MULTI_PROGROUPresetend}{stxtProductGroup}</td>
+							<td class="BlueNoteDataTD" nowrap>
+							</td>
+							<td class="BlueNoteDataTD" colspan="1">
+								</td>
+							<td class="BlueNoteDataTD" nowrap></td>
+						</tr>
+
+					<tr id='searchSupplier' {nllauthProductMaster_Search_SupplierROW} {nllauthINV_ROW_SupplierSearch}>
+					<td class="BlueNoteFieldCaptionTD" nowrap>{nllauthProductMaster_Search_SupplierROWresetstart}{nllauthProductMaster_Search_SupplierROWresetend}{stxtSupplier}{nllauthINV_ROW_SupplierSearchresetstart}{nllauthINV_ROW_SupplierSearchresetend}</td> 
+					<td class="BlueNoteDataTD" colspan="4">
+					</td>
+					</tr>
+
+					<tr id='searchModel' {nllauthProductMaster_Search_ModelROW}>
+					<td class="BlueNoteFieldCaptionTD" nowrap>{nllauthProductMaster_Search_ModelROWresetstart}{nllauthProductMaster_Search_ModelROWresetend}{stxtProductModel}</td> 
+					<td class="BlueNoteDataTD" colspan="4">
+						</td>
+					</tr>
+
+						<tr id='searchModelMulti' {nllauthINV_ROW_MULTI_PROMODEL}>
+							<td class="BlueNoteFieldCaptionTD" nowrap>{nllauthINV_ROW_MULTI_PROMODELresetstart}{nllauthINV_ROW_MULTI_PROMODELresetend}{stxtProductModel}</td>
+							<td class="BlueNoteDataTD" nowrap>
+							</td>
+							<td class="BlueNoteDataTD" colspan="1">
+								</td>
+							<td class="BlueNoteDataTD" nowrap></td>
+						</tr>
+
+					<tr id='searchBrand' {nllauthProductMaster_Search_BrandROW}>
+					<td class="BlueNoteFieldCaptionTD" nowrap>{nllauthProductMaster_Search_BrandROWresetstart}{nllauthProductMaster_Search_BrandROWresetend}{stxtProductBrand}</td> 
+					<td class="BlueNoteDataTD" colspan="4">
+					</td>
+					</tr>
+
+						<tr id='searchBrandMulti' {nllauthINV_ROW_MULTI_PROBRAND}>
+							<td class="BlueNoteFieldCaptionTD" nowrap>{nllauthINV_ROW_MULTI_PROBRANDresetstart}{nllauthINV_ROW_MULTI_PROBRANDresetend}{stxtProductBrand}</td>
+							<td class="BlueNoteDataTD" nowrap>
+							</td>
+							<td class="BlueNoteDataTD" colspan="1">
+								</td>
+							<td class="BlueNoteDataTD" nowrap></td>
+						</tr>
+
+					<tr id='searchCategory' {nllauthProductMaster_Search_CategoryROW}>
+					<td class="BlueNoteFieldCaptionTD" nowrap>{nllauthProductMaster_Search_CategoryROWresetstart}{nllauthProductMaster_Search_CategoryROWresetend}{stxtProductCategory}</td> 
+					<td class="BlueNoteDataTD" colspan="4">		
+					</td>
+					</tr>
+						<tr id='searchCategoryMulti' {nllauthINV_ROW_PROCATE}>
+						<td class="BlueNoteFieldCaptionTD" nowrap>{nllauthINV_ROW_PROCATEresetstart}{nllauthINV_ROW_PROCATEresetend}{stxtProductCategory}
+							<input type="hidden" name="{prdtcate_list_Name}" value="{prdtcate_list}" id="prdtcate_list"><input type="hidden" name="{prdtcate_list1_Name}" value="{prdtcate_list1}" id="prdtcate_list1"> <input type="hidden" name="{parameter_Name}" value="{parameter}"></td> 
+							<td class="BlueNoteDataTD" nowrap>
+							 </td>
+
+							<td class="BlueNoteDataTD" colspan="1">
+							</td>
+
+
+							<td class="BlueNoteDataTD" nowrap>
+							</td> 
+						</tr>
+
+						<tr id="searchSource" {nllauthINV_ROW_SOURCE}>
+					<td class="BlueNoteFieldCaptionTD" nowrap>{nllauthINV_ROW_SOURCEresetstart}{nllauthINV_ROW_SOURCEresetend}{stxtSource}</td> 
+					<td class="BlueNoteDataTD" colspan="4">
+					</td>
+					</tr>
+
+						<tr id='searchSourceMulti' {nllauthINV_ROW_MULTI_SOURCE}>
+						<td class="BlueNoteFieldCaptionTD" nowrap><img tabindex="-1" src="image/doc_cancel.gif" width="14" border="0" onclick="showAdvance_v2_remove(this.parentNode.parentNode.id);showAdvance_v2_reset('multiplelistbox',opt4);">{nllauthINV_ROW_MULTI_SOURCEresetstart}{nllauthINV_ROW_MULTI_SOURCEresetend}{stxtSource}<br>
+						</td>
+						<td class="BlueNoteDataTD" nowrap>	
+						</td>
+							<td class="BlueNoteDataTD" colspan="1">
+							</td>
+							<td class="BlueNoteDataTD" nowrap>
+							</td>
+							</tr>
+
+							<tr id='searchUOM1' {nllauthINV_ROW_MEASUREMENT_UOM1}>
+							<td class="BlueNoteFieldCaptionTD" nowrap>{nllauthINV_ROW_MEASUREMENT_UOM1resetstart}{nllauthINV_ROW_MEASUREMENT_UOM1resetend}{stxtProductMeasurement1Uom}</td> 
+							<td class="BlueNoteDataTD" colspan="4"></td> 
+							</tr>
+
+							<tr id='searchApprovalStatus' {nllauthMASTER_ROW_APPROVAL_STATUS}>
+						<td class="BlueNoteFieldCaptionTD">{nllauthMASTER_ROW_APPROVAL_STATUSresetstart}{nllauthMASTER_ROW_APPROVAL_STATUSresetend}{stxtApprovalStatus}&nbsp;</td> 
+						<td class="BlueNoteDataTD" colspan="5">
+								</td>
+						</tr>
+
+							<tr id="searchPrdtHierarchy" {nllauthINV_ROW_PRDT_HIERARCHY}>
+								<td class="BlueNoteFieldCaptionTD">{nllauthINV_ROW_PRDT_HIERARCHYresetstart}{nllauthINV_ROW_PRDT_HIERARCHYresetend}{stxtProductHierarchyCode}</td> 
+								<td class="BlueNoteDataTD" colspan="5">	
+								</td> 
+							</tr>
+
+
+						<tr id='searchPageSize'>
+						<td class="BlueNoteFieldCaptionTD" nowrap>{stxtPageSize}&nbsp;</td> 
+						<td class="BlueNoteDataTD" colspan="4"></td> 
+	
+						</tr>
+
+						<tr id="searchStatus">
+						<td class="BlueNoteFieldCaptionTD" nowrap>{stxtProductActive}</td> 
+						<td class="BlueNoteDataTD" colspan="4">
+								</td>
+						</tr>
+
+					<tr id="searchMovement" {nllauthMASTER_ROW_PrdtMovementFlagSearch}>
+					<td class="BlueNoteFieldCaptionTD" nowrap>{stxtProductMovementFlag}{nllauthMASTER_ROW_PrdtMovementFlagSearchresetstart}{nllauthMASTER_ROW_PrdtMovementFlagSearchresetend}</td> 
+					<td class="BlueNoteDataTD" colspan="4">
+							</td>
+					</tr>
+
+					<tr id="searchABC" {nllauthMASTER_ROW_PrdtABCFlagSearch}>
+					<td class="BlueNoteFieldCaptionTD" nowrap>{stxtProductABCFlag}{nllauthMASTER_ROW_PrdtABCFlagSearchresetstart}{nllauthMASTER_ROW_PrdtABCFlagSearchresetend}</td> 
+					<td class="BlueNoteDataTD" colspan="4">
+							</td>
+					</tr>
+
+						<tr id="searchPrdtRegDateFrom" {nllauthMASTER_ROW_PrdtRegDateSearch}>
+						<td class="BlueNoteFieldCaptionTD">{stxtProductRegisterDateFrom} {nllauthMASTER_ROW_PrdtRegDateSearchresetstart}{nllauthMASTER_ROW_PrdtRegDateSearchresetend}</td> 
+						<td class="BlueNoteDataTD"></td> 
+						<td class="BlueNoteFieldCaptionTD"></td> 
+						<td class="BlueNoteDataTD" colspan="2"></td> 
+						</tr>
+
+						<tr id="searchPrdtRegDateTo" groupsearchid="searchPrdtRegDateFrom" {nllauthMASTER_ROW_PrdtRegDateSearch}>
+						<td class="BlueNoteFieldCaptionTD" nowrap>{stxtTo}</td> 
+						<td class="BlueNoteDataTD" colspan="4"></td> 
+						</tr>
+
+					<tr class="BlueNoteFieldCaptionTD" id="searchBarcode" {nllauthMASTER_ROW_BarcodeSearch}>
+					<td class="BlueNoteFieldCaptionTD" nowrap>{stxtSearchBarcode} {nllauthMASTER_ROW_BarcodeSearchresetstart}{nllauthMASTER_ROW_BarcodeSearchresetend}</td> 
+					<td class="BlueNoteDataTD" colspan="4"></td>
+					</tr>
+
+					<tr id="searchSelected">
+					<td class="BlueNoteFieldCaptionTD" nowrap>{stxtOnlySelected}&nbsp;</td> 
+					<td class="BlueNoteDataTD"></td> 
+					<td class="BlueNoteFieldCaptionTD" nowrap></td> 
+					<td class="BlueNoteDataTD" colspan="2" nowrap></td>
+					</tr>
+
+					<tr class="BlueNoteFieldCaptionTD" id="searchNotes" {nllauthMASTER_ROW_NoteSearch}>
+					<td class="BlueNoteFieldCaptionTD" nowrap>{stxtSearchNotes}&nbsp;{nllauthMASTER_ROW_NoteSearchresetstart}{nllauthMASTER_ROW_NoteSearchresetend}</td> 
+					<td class="BlueNoteDataTD" colspan="4">{nllauthADDLIST_NOTEresetend}</td>
+					</tr>
+
+					<tr id='searchExcel' class="BlueNoteFieldCaptionTD" {nllauthPRINTTOEXCEL}>
+						<td class="BlueNoteFieldCaptionTD" nowrap>{nllauthPRINTTOEXCELresetstart}{nllauthPRINTTOEXCELresetend}{stxtReportInExcel}</td>
+					<td class="BlueNoteDataTD" colspan="4"></td>
+					</tr>
+
+					<tr>
+					<td class="BlueNoteFooterTD" style="DISPLAY: none" nowrap>
+						<!-- BEGIN Button Main --><input class="BlueNoteButton" type="submit" value="Main" name="Main"><!-- END Button Main --></td> 
+					<td class="BlueNoteFooterTD"></td> 
+					<td class="BlueNoteFooterTD" nowrap align="right" colspan="4"><input class="BlueNoteButton" id="Reset1" type="reset" value="Reset" name="Reset1">
+						<!-- BEGIN Button DoSearch --><input class="BlueNoteButton" onclick="if(document.getElementById('clear_selection').checked){if(confirm('Confirm clear all selected?')){jsrsWriteDynamic('checkboxMultiSelectMaster','checkbox_Productmst','00000','false')}};" type="submit" value="Search" name="DoSearch"><!-- END Button DoSearch --></td>
+					</tr>
+				</table>
+				</form>
+				
+			</td>
+			
+		</tr>
+		<tr>
+			<!-- BEGIN Grid productmst -->
+			
+				<table class="table-sm table-bordered"  id="Productmst">
+				<div class="card-header pb-1 bg-primary text-white setColor" id="card"><font class="BlueNoteFormHeaderFont">{stxtListofProduct}</font></div>
+			<tr>
+				<td></td> 
+				<td class="BlueNoteFooterTDNav" nowrap colspan="4">{nllauthADDMASTERLINKresetstart}<a class="BlueNoteNavigatorLink" href="{productmst_Insert_Src}">{stxtAddNew}{nllauthMASTER_HYPERLINK_CODE}</a>{nllauthADDMASTERLINKresetend}&nbsp;{nllauthUPDATEresetstart}<a class="BlueNoteNavigatorLink" onclick="return confirm('Confirm to Update All Records Above?')" href="{Link2_Src}">{stxtUpdateSelection}</a>{nllauthUPDATEresetend}&nbsp; 
+				<!-- BEGIN Navigator Navigator -->
+				<!-- BEGIN First_On --><a class="BlueNoteNavigatorLink" href="{First_URL}">|&lt;</a><!-- END First_On -->
+				<!-- BEGIN Prev_On --><a class="BlueNoteNavigatorLink" href="{Prev_URL}">&lt;&lt;</a><!-- END Prev_On -->&nbsp;{Page_Number}
+				of {Total_Pages}&nbsp; 
+				<!-- BEGIN Next_On --><a class="BlueNoteNavigatorLink" href="{Next_URL}">&gt;&gt;</a><!-- END Next_On -->
+				<!-- BEGIN Last_On --><a class="BlueNoteNavigatorLink" href="{Last_URL}">&gt;|</a><!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;&nbsp;&nbsp; <a href="{middleware_import_data_Src}" class="BlueNoteNavigatorLink"  {nllauthHYPERLINK_IMPORT_DATA}> {stxtXsretailDataImport}</a> {nllauthHYPERLINK_IMPORT_DATAresetstart}{nllauthHYPERLINK_IMPORT_DATAresetend} </td> 
+				<td class="BlueNoteFooterTD" nowrap colspan="38"></td> 
+			</tr>
+	
+			<tr class="bg-secondary text-white setColor" id="tableHead">
+				<td class="BlueNoteColumnTD" nowrap></td> 
+				<td class="BlueNoteColumnTD" nowrap>
+				<!-- BEGIN Sorter Sorter_prdt_code --><a style="text-decoration: none;color:white;" class="BlueNoteSorterLink" href="{Sort_URL}">{stxtCode}</a> 
+				<!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+				<!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_prdt_code -->&nbsp;</td> 
+				<td class="BlueNoteColumnTD" nowrap>
+				<!-- BEGIN Sorter Sorter_prdt_name1 --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtName1}</a> 
+				<!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+				<!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_prdt_name1 -->&nbsp;</td> 
+				<td class="BlueNoteColumnTD" nowrap>
+				<!-- BEGIN Sorter Sorter_prdt_name2 -->{nllauthCOLLIST_Productmst_ProductName2resetstart}<a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtName2}{nllauthCOLLIST_Productmst_ProductName2}</a>{nllauthCOLLIST_Productmst_ProductName2resetend} 
+				<!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+				<!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_prdt_name2 -->&nbsp;</td> 
+				<td class="BlueNoteColumnTD" nowrap>
+				<!-- BEGIN Sorter Sorter_prdt_unit --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtUnit}</a> 
+				<!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+				<!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_prdt_unit -->&nbsp;</td> 
+				<td class="BlueNoteColumnTD" nowrap>
+				<!-- BEGIN Sorter Sorter_prdt_group --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtGroup}</a> 
+				<!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+				<!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_prdt_group -->&nbsp;</td> 
+				<td class="BlueNoteColumnTD" nowrap>
+				<!-- BEGIN Sorter Sorter_prdt_category -->{nllauthINV_MASTER_COLLIST_ProductCategoryresetstart}<a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtCategory}{nllauthINV_MASTER_COLLIST_ProductCategory}</a>{nllauthINV_MASTER_COLLIST_ProductCategoryresetend} 
+				<!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+				<!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_prdt_category -->&nbsp;</td> 
+				<td class="BlueNoteColumnTD" nowrap>
+				<!-- BEGIN Sorter Sorter_prdt_brand -->{nllauthCOLLIST_Brandresetstart}<a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtBrand}{nllauthCOLLIST_Brand}</a>{nllauthCOLLIST_Brandresetend} 
+				<!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+				<!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_prdt_brand -->&nbsp;</td> 
+				<td class="BlueNoteColumnTD" nowrap>
+				<!-- BEGIN Sorter Sorter_prdt_model -->{nllauthCOLLIST_Modelresetstart}<a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtModel}{nllauthCOLLIST_Model}</a>{nllauthCOLLIST_Modelresetend} 
+				<!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+				<!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_prdt_model -->&nbsp;</td> 
+				<td class="BlueNoteColumnTD" nowrap {nllauthPRODUCT_COST}>&nbsp; 
+				<!-- BEGIN Sorter Sorter1 --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtUnitCost}</a> 
+				<!-- BEGIN Asc_On --><font color="#0000ff"><img src="Themes/BlueNote/AscOn.gif" border="0"></font><!-- END Asc_On -->
+				<!-- BEGIN Desc_On --><font color="#0000ff"><img src="Themes/BlueNote/DescOn.gif" border="0"></font><!-- END Desc_On --><!-- END Sorter Sorter1 -->{nllauthPRODUCT_COSTresetstart}{nllauthPRODUCT_COSTresetend}</td> 
+				<td class="BlueNoteColumnTD" nowrap>{nllauthCOLLIST_COSTQUICKEDIT}{stxtEditCost}&nbsp;{nllauthCOLLIST_COSTQUICKEDITresetstart}{nllauthCOLLIST_COSTQUICKEDITresetend}&nbsp;</td> 
+				<td class="BlueNoteColumnTD" nowrap {nllauthMASTER_PRDT_COLLIST_ORDER_COST}>
+				<!-- BEGIN Sorter Sorter2 --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtOrderCost}{nllauthMASTER_PRDT_COLLIST_ORDER_COSTresetStart}{nllauthMASTER_PRDT_COLLIST_ORDER_COSTresetend}</a> 
+				<!-- BEGIN Asc_On --><font color="#0000ff"><img src="Themes/BlueNote/AscOn.gif" border="0"></font><!-- END Asc_On -->
+				<!-- BEGIN Desc_On --><font color="#0000ff"><img src="Themes/BlueNote/DescOn.gif" border="0"></font><!-- END Desc_On --><!-- END Sorter Sorter2 --></td>
+				<td class="BlueNoteColumnTD" nowrap {nllauthMASTER_PRDT_COLLIST_EDIT_ORDER_COST}>{stxtEditOrderCost} {nllauthMASTER_PRDT_COLLIST_EDIT_ORDER_COSTresetstart}{nllauthMASTER_PRDT_COLLIST_EDIT_ORDER_COSTresetend}</td>
+				<td class="BlueNoteColumnTD" nowrap {nllauthINV_COLLIST_WAC}>
+					<!-- BEGIN Sorter Sorter_prdt_WAC --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtWAC}</a> 
+					<!-- BEGIN Asc_On --><font color="#0000ff"><img src="Themes/BlueNote/AscOn.gif" border="0"></font><!-- END Asc_On -->
+					<!-- BEGIN Desc_On --><font color="#0000ff"><img src="Themes/BlueNote/DescOn.gif" border="0"></font><!-- END Desc_On --><!-- END Sorter Sorter_prdt_WAC -->{nllauthINV_COLLIST_WACresetstart}{nllauthINV_COLLIST_WACresetend}</td>
+					<td class="BlueNoteColumnTD" nowrap {nllauthPRODUCT_PRICE}>
+				<!-- BEGIN Sorter prdt_priceSorter1 --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtUnitPrice}</a> 
+				<!-- BEGIN Asc_On --><font color="#0000ff"><img src="Themes/BlueNote/AscOn.gif" border="0"></font><!-- END Asc_On -->
+				<!-- BEGIN Desc_On --><font color="#0000ff"><img src="Themes/BlueNote/DescOn.gif" border="0"></font><!-- END Desc_On --><!-- END Sorter prdt_priceSorter1 -->{nllauthPRODUCT_PRICEresetstart}{nllauthPRODUCT_PRICEresetend}</td> 
+				<td class="BlueNoteColumnTD" nowrap {nllauthCOLLIST_PRICEQUICKEDIT}>&nbsp;{stxtEditPrice}&nbsp;{nllauthCOLLIST_PRICEQUICKEDITresetstart}{nllauthCOLLIST_PRICEQUICKEDITresetend}</td> 
+				<td class="BlueNoteColumnTD" nowrap {nllauthINV_COLLIST_PRODUCT_RECOMMENDED_PRICE}>
+					<!-- BEGIN Sorter Sorter_prdt_recommended_price --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtRecommendedPrice}</a> 
+					<!-- BEGIN Asc_On --><font color="#0000ff"><img src="Themes/BlueNote/AscOn.gif" border="0"></font><!-- END Asc_On -->
+					<!-- BEGIN Desc_On --><font color="#0000ff"><img src="Themes/BlueNote/DescOn.gif" border="0"></font><!-- END Desc_On --><!-- END Sorter Sorter_prdt_recommended_price -->{nllauthINV_COLLIST_PRODUCT_RECOMMENDED_PRICEresetstart}{nllauthINV_COLLIST_PRODUCT_RECOMMENDED_PRICEresetend}</td>
+					<td class="BlueNoteColumnTD" nowrap {nllauthINV_COLLIST_PRODUCT_RECOMMENDED_PRICE_QUICKEDIT}>&nbsp;{stxtEditRecommendedPrice}&nbsp;{nllauthINV_COLLIST_PRODUCT_RECOMMENDED_PRICE_QUICKEDITresetstart}{nllauthINV_COLLIST_PRODUCT_RECOMMENDED_PRICE_QUICKEDITresetend}</td>
+					<td class="BlueNoteColumnTD" nowrap>
+				<!-- BEGIN Sorter Sorter_prdt_item_serial_no --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtItemSerialNo}{nllauthMASTER_COLLIST_Serial}</a> {nllauthMASTER_COLLIST_Serialresetstart}{nllauthMASTER_COLLIST_Serialresetend}
+				<!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+				<!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_prdt_item_serial_no -->&nbsp;</td> 
+				<td class="BlueNoteColumnTD" nowrap>
+				<!-- BEGIN Sorter Prdt_Hierarchy -->{nllauthINV_COLLIST_PRDT_HIERARCHYresetstart}<a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtProductHierarchyCode}{nllauthINV_COLLIST_PRDT_HIERARCHY}</a>{nllauthINV_COLLIST_PRDT_HIERARCHYresetend} 
+				<!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+				<!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Prdt_Hierarchy --></td>
+		
+				<td class="BlueNoteColumnTD" nowrap {nllauthMASTER_COLLIST_TAX_GROUP}>
+			<!-- BEGIN Sorter Sorter_prdt_VAT_AR --><a class="BlueNoteSorterLink" href="{Sort_URL}">{nllauthMASTER_COLLIST_TAX_GROUPresetstart}
+			{nllauthMASTER_COLLIST_TAX_GROUPresetend}{stxtProductVAT_AR}</a> 
+			<!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+			<!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_prdt_VAT_AR -->&nbsp;</td> 
+			<td class="BlueNoteColumnTD" nowrap {nllauthMASTER_COLLIST_TAX_GROUP}>
+			<!-- BEGIN Sorter Sorter_prdt_VAT_AP --><a class="BlueNoteSorterLink" href="{Sort_URL}">{nllauthMASTER_COLLIST_TAX_GROUPresetstart}
+			{nllauthMASTER_COLLIST_TAX_GROUPresetend}{stxtProductVAT_AP}</a> 
+			<!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+			<!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_prdt_VAT_AP-->&nbsp;</td>
+		
+		
+		
+		
+				<td class="BlueNoteColumnTD" nowrap>
+				<!-- BEGIN Sorter Sorter_prdt_userdefine1 -->{nllauthINV_MASTER_COLLIST_ProductUserdefine1resetstart}<a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtUserdefine1}{nllauthINV_MASTER_COLLIST_ProductUserdefine1}</a>{nllauthINV_MASTER_COLLIST_ProductUserdefine1resetend} 
+				<!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+				<!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_prdt_userdefine1 -->&nbsp;</td> 
+				<td class="BlueNoteColumnTD" nowrap>{nllauthINV_COLLIST_PRDTMST_ADD_USERresetstart}{nllauthINV_COLLIST_PRDTMST_ADD_USER} 
+				<!-- BEGIN Sorter Sorter_prdt_sys_add_user --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtAddUser}</a> 
+				<!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+				<!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_prdt_sys_add_user -->&nbsp;{nllauthINV_COLLIST_PRDTMST_ADD_USERresetend}</td>
+				<td class="BlueNoteColumnTD" nowrap>{nllauthINV_COLLIST_PRDTMST_ADD_DATEresetstart}{nllauthINV_COLLIST_PRDTMST_ADD_DATE} 
+				<!-- BEGIN Sorter Sorter_prdt_sys_add_date --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtAddDate}</a> 
+				<!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+				<!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_prdt_sys_add_date -->&nbsp;{nllauthINV_COLLIST_PRDTMST_ADD_DATEresetend}</td>
+				<td class="BlueNoteColumnTD" nowrap>{nllauthINV_COLLIST_PRDTMST_LAST_MOD_USERresetstart}{nllauthINV_COLLIST_PRDTMST_LAST_MOD_USER} 
+				<!-- BEGIN Sorter Sorter_prdt_sys_last_mod_user --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtLastModUser}</a> 
+				<!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+				<!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_prdt_sys_last_mod_user -->&nbsp;{nllauthINV_COLLIST_PRDTMST_LAST_MOD_USERresetend}</td>
+				<td class="BlueNoteColumnTD" nowrap>{nllauthINV_COLLIST_PRDTMST_LAST_MOD_DATEresetstart}{nllauthINV_COLLIST_PRDTMST_LAST_MOD_DATE} 
+				<!-- BEGIN Sorter Sorter_prdt_sys_last_mod_date --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtLastModDate}</a> 
+				<!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+				<!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_prdt_sys_last_mod_date -->&nbsp;{nllauthINV_COLLIST_PRDTMST_LAST_MOD_DATEresetend}</td> 
+				<td class="BlueNoteColumnTD" nowrap>{notes_header}{nllauthCOLLIST_NotesView}</td> 
+					<td class="BlueNoteColumnTD" nowrap><!-- BEGIN Sorter Sorter3 -->{nllauthINV_COLLIST_BALresetstart}<a href="{Sort_URL}" class="BlueNoteSorterLink">{stxtBalance}{nllauthINV_COLLIST_BAL}</a>{nllauthINV_COLLIST_BALresetend}<!-- END Sorter Sorter3 --></td>
+				<td class="BlueNoteColumnTD" nowrap>
+				<!-- BEGIN Sorter Sorter_prdt_active --><a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtActive}</a> 
+				<!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+				<!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_prdt_active -->&nbsp;</td> 
+				<td class="BlueNoteColumnTD" nowrap {nllauthINV_COLLIST_ACTIVE_QUICK_EDIT}>&nbsp;{stxtEditActive}&nbsp;{nllauthINV_COLLIST_ACTIVE_QUICK_EDITresetstart}{nllauthINV_COLLIST_ACTIVE_QUICK_EDITresetend}</td> 
+		
+					<td class="BlueNoteColumnTD" nowrap>{nllauthMASTER_COLLIST_APPROVAL_STATUS}&nbsp;{stxtApprovalStatus}&nbsp;{nllauthMASTER_COLLIST_APPROVAL_STATUSresetstart}{nllauthMASTER_COLLIST_APPROVAL_STATUSresetend}</td> 
+				<td class="BlueNoteColumnTD" nowrap>
+				<!-- BEGIN Sorter Sorter_prdt_sorting -->{nllauthINV_MASTER_COLLIST_ProductSortingresetstart}<a class="BlueNoteSorterLink" href="{Sort_URL}">{stxtSorting}{nllauthINV_MASTER_COLLIST_ProductSorting}</a>{nllauthINV_MASTER_COLLIST_ProductSortingresetend} 
+				<!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+				<!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorter_prdt_sorting -->&nbsp;</td> 
+				<td class="BlueNoteColumnTD" nowrap {nllauthMASTER_HYPERLINK_AUDIT}>{stxtAudit}{nllauthMASTER_HYPERLINK_AUDITresetstart}{nllauthMASTER_HYPERLINK_AUDITresetend}</td> 
+				<td class="BlueNoteColumnTD" nowrap {nllauthINV_COLLIST_PRDT_COST_HISTORY}>{nllauthINV_COLLIST_PRDT_COST_HISTORYresetstart}{nllauthINV_COLLIST_PRDT_COST_HISTORYresetend}</td> 
+				<td class="BlueNoteColumnTD" nowrap {nllauthINV_COLLIST_PRDT_PRICE_HISTORY}>{nllauthINV_COLLIST_PRDT_PRICE_HISTORYresetstart}{nllauthINV_COLLIST_PRDT_PRICE_HISTORYresetend}</td>
+					<td class="BlueNoteColumnTD" nowrap>{stxtCopy}</td> 
+				<td class="BlueNoteColumnTD" nowrap>&nbsp;{stxtPriceA}{nllauthCOLLIST_PRICE_A}{nllauthCOLLIST_PRICE_Aresetstart}{nllauthCOLLIST_PRICE_Aresetend}</td> 
+				<td class="BlueNoteColumnTD" nowrap>&nbsp;{nllauthCOLLIST_PRICEAQUICKEDIT}{stxtEditPriceA}{nllauthCOLLIST_PRICEAQUICKEDITresetstart}{nllauthCOLLIST_PRICEAQUICKEDITresetend}&nbsp;</td> 
+				<td class="BlueNoteColumnTD" nowrap>&nbsp;{stxtPriceB}{nllauthCOLLIST_PRICE_B}{nllauthCOLLIST_PRICE_Bresetstart}{nllauthCOLLIST_PRICE_Bresetend}</td> 
+				<td class="BlueNoteColumnTD" nowrap>&nbsp;{nllauthCOLLIST_PRICEBQUICKEDIT}{stxtEditPriceB}{nllauthCOLLIST_PRICEBQUICKEDITresetstart}{nllauthCOLLIST_PRICEBQUICKEDITresetend}&nbsp;</td> 
+				<td class="BlueNoteColumnTD" nowrap>&nbsp;{stxtPriceC}{nllauthCOLLIST_PRICE_C}{nllauthCOLLIST_PRICE_Cresetstart}{nllauthCOLLIST_PRICE_Cresetend}</td> 
+				<td class="BlueNoteColumnTD" nowrap>&nbsp;{nllauthCOLLIST_PRICECQUICKEDIT}{stxtEditPriceC}{nllauthCOLLIST_PRICECQUICKEDITresetstart}{nllauthCOLLIST_PRICECQUICKEDITresetend}</td> 
+				<td class="BlueNoteColumnTD" nowrap>{stxtPriceD}&nbsp;{nllauthCOLLIST_PRICE_D}{nllauthCOLLIST_PRICE_Dresetstart}{nllauthCOLLIST_PRICE_Dresetend}</td> 
+				<td class="BlueNoteColumnTD" nowrap>&nbsp;{nllauthCOLLIST_PRICEDQUICKEDIT}{stxtEditPriceD}{nllauthCOLLIST_PRICEDQUICKEDITresetstart}{nllauthCOLLIST_PRICEDQUICKEDITresetend}</td> 
+				<td class="BlueNoteColumnTD" nowrap>&nbsp;{stxtPriceE}{nllauthCOLLIST_PRICE_E}{nllauthCOLLIST_PRICE_Eresetstart}{nllauthCOLLIST_PRICE_Eresetend}</td> 
+				<td class="BlueNoteColumnTD" nowrap>&nbsp;{nllauthCOLLIST_PRICEEQUICKEDIT}{stxtEditPriceE}{nllauthCOLLIST_PRICEEQUICKEDITresetstart}{nllauthCOLLIST_PRICEEQUICKEDITresetend}</td> 
+				<td class="BlueNoteColumnTD" nowrap>&nbsp;{nllauthINV_COLLIST_PRDTMST_MINPRICE}{stxtProductMinimumPrice}{nllauthINV_COLLIST_PRDTMST_MINPRICEresetstart}{nllauthINV_COLLIST_PRDTMST_MINPRICEresetend}</td> 
+				<td class="BlueNoteColumnTD" nowrap>&nbsp;{nllauthINV_COLLIST_PRDTMST_MINPRICEQUICKEDIT}{stxtEditPrdtMinPrice}{nllauthINV_COLLIST_PRDTMST_MINPRICEQUICKEDIT}{nllauthINV_COLLIST_PRDTMST_MINPRICEQUICKEDITresetend}</td> 
+				<td class="BlueNoteColumnTD" nowrap>&nbsp;{nllauthINV_COLLIST_PRDTMST_MINLEVEL}{stxtProductMinimumLevel}{nllauthINV_COLLIST_PRDTMST_MINLEVELresetstart}{nllauthINV_COLLIST_PRDTMST_MINLEVELresetend}</td> 
+				<td class="BlueNoteColumnTD" nowrap>&nbsp;{nllauthINV_COLLIST_PRDTMST_MINLEVELQUICKEDIT}{stxtEditProductMinimumLevel}{nllauthINV_COLLIST_PRDTMST_MINLEVELQUICKEDIT}{nllauthINV_COLLIST_PRDTMST_MINLEVELQUICKEDITresetend}</td> 
+				<td class="BlueNoteColumnTD" nowrap>&nbsp;{nllauthINV_COLLIST_PRDTMST_MAXLEVEL}{stxtProductMaxLevel}{nllauthINV_COLLIST_PRDTMST_MAXLEVELresetstart}{nllauthINV_COLLIST_PRDTMST_MAXLEVELresetend}</td> 
+				<td class="BlueNoteColumnTD" nowrap>&nbsp;{nllauthINV_COLLIST_PRDTMST_MAXLEVELQUICKEDIT}{stxtEditProductMaxLevel}{nllauthINV_COLLIST_PRDTMST_MAXLEVELQUICKEDIT}{nllauthINV_COLLIST_PRDTMST_MAXLEVELQUICKEDITresetend}</td> 
+				<td class="BlueNoteColumnTD" nowrap>&nbsp;{nllauthINV_COLLIST_PRDTMST_REORDERLEVEL}{stxtProductReorderLevel}{nllauthINV_COLLIST_PRDTMST_REORDERLEVELQTYresetstart}{nllauthINV_COLLIST_PRDTMST_REORDERLEVELresetend}</td> 
+				<td class="BlueNoteColumnTD" nowrap>&nbsp;{nllauthINV_COLLIST_PRDTMST_REORDERLEVELQUICKEDIT}{stxtEditProductReorderLevel}{nllauthINV_COLLIST_PRDTMST_REORDERLEVELQUICKEDIT}{nllauthINV_COLLIST_PRDTMST_REORDERLEVELQUICKEDITresetend}</td>
+				<td class="BlueNoteColumnTD" nowrap>&nbsp;{nllauthINV_COLLIST_PRDTMST_MARGIN}{stxtProductMargin}{nllauthINV_COLLIST_PRDTMST_MARGINresetstart}{nllauthINV_COLLIST_PRDTMST_MARGINresetend}</td>  
+				<td class="BlueNoteColumnTD" nowrap>&nbsp;{nllauthCOLLIST_Notes}{stxtNotes}{nllauthCOLLIST_Notesresetstart}{nllauthCOLLIST_Notesresetend}</td> 
+				<td class="BlueNoteColumnTD" nowrap colspan="3">{stxtSelected}</td> 
+				<td class="BlueNoteColumnTD" nowrap {nllauthINV_COLLIST_PRDTMST_FNPP}><!-- BEGIN Sorter Sorterprdt_fnpp --><a href="{Sort_URL}" class="BlueNoteSorterLink">{stxtFNPP}&nbsp;{nllauthINV_COLLIST_PRDTMST_FNPPresetstart}{nllauthINV_COLLIST_PRDTMST_FNPPresetend}</a>
+				<!-- BEGIN Asc_On --><img src="Themes/BlueNote/AscOn.gif" border="0"><!-- END Asc_On -->
+				<!-- BEGIN Desc_On --><img src="Themes/BlueNote/DescOn.gif" border="0"><!-- END Desc_On --><!-- END Sorter Sorterprdt_fnpp --></td>
+				<td class="BlueNoteColumnTD" nowrap>{stxtRepacking}{nllauthMASTER_COLLIST_Repacking}{nllauthMASTER_COLLIST_Repackingresetstart}{nllauthMASTER_COLLIST_Repackingresetend}</td> 
+				<td class="BlueNoteColumnTD" nowrap>{stxtAssembly}{nllauthMASTER_COLLIST_Assembly}{nllauthMASTER_COLLIST_Assemblyresetstart}{nllauthMASTER_COLLIST_Assemblyresetend}</td> 
+				<td class="BlueNoteColumnTD" nowrap>{stxtProductMatrix}{nllauthMASTER_COLLIST_PrdtMatrix}{nllauthMASTER_COLLIST_PrdtMatrixresetstart}{nllauthMASTER_COLLIST_PrdtMatrixresetend}</td> 
+				</tr>
+	
+			<!-- BEGIN Row -->
+			<tr>
+				<td class="BlueNoteDataTD" nowrap>{nllauthDELETEMASTERLINKresetstart}<a onclick="return jsrsChkActiveCode('productmst'+'|'+'{prdt_no}', event)" href="{ImageLink1}&ccsForm=productmst&Delete=Delete"><img src="image/trash.gif" border="0"></a><a href="{ImageLink1}"></a>{nllauthDELETEMASTERLINKresetend}</td> 
+				<td class="BlueNoteDataTD" align="left" nowrap>
+					<a class="BlueNoteDataLink" onclick="return jsrsChkIsProduct('{prdt_no}')" href="{imgPack}"><img title="Product Repacking" style="repacking_display: " src="image/pack.gif" align="absMiddle" border="0" nllact="NLL_PRD_REPACK"></a>&nbsp; 
+					<a class="BlueNoteDataLink" onclick="return jsrsChkIsDiscTax('{prdt_no}')" href="{imgAssembly}"><img title="Product Assembly" style="assembly_display: " src="image/globe.gif" align="absMiddle" border="0" nllact="NLL_PRD_ASSEMBLY"></a> 
+					{nllauthMASTER_IMG_ASBLYresetstart}<a class="BlueNoteDataLink" onclick="return jsrsChkIsDiscTax('{prdt_no}')" href="{imgAssembly1}"><img title="Product BOM" src="image/list1.jpg" align="absMiddle" border="0" {nllauthMASTER_IMG_ASBLY}></a>{nllauthMASTER_IMG_ASBLYresetend}&nbsp;
+			<a href="modules/marketplace/product_marketplace.php?prdt_no={prdt_no}" target="_blank" {nllauthMASTER_IMG_ECOMMERCE}><img src="image/marketplace.png" border="0"></a>{nllauthMASTER_IMG_ECOMMERCEresetstart}{nllauthMASTER_IMG_ECOMMERCEresetend}
+			<a onclick="window.open('master_productmst_maint.php?actionType=edit_by_batch&prdt_no={prdt_no}','_blank','top=1,left=1,width=4000,height=4000,scrollbars=yes,resizable=yes');" tabindex="-1" href="#prdt_no" {nllauthINV_IMAGELINK_EDIT_BY_BATCH}><img src="image/edit_icon.gif" border="0" alt="Edit By Batch"></a>
+			<a onclick="window.open('master_productmst_maint.php?actionType=add_new_sub_product&prdt_no={prdt_no}','_blank','top=1,left=1,width=4000,height=4000,scrollbars=yes,resizable=yes');"  tabindex="-1" href="#prdt_no"  {nllauthINV_IMAGELINK_EDIT_BY_BATCH}><img src="image/add2.jpg" border="0" alt="Add New By Batch"></a>{nllauthINV_IMAGELINK_EDIT_BY_BATCHresetstart}{nllauthINV_IMAGELINK_EDIT_BY_BATCHresetend}
+				{nllauthMASTER_HYPERLINK_CODEresetstart}<a class="BlueNoteDataLink" href="{prdt_code_Src}">{nllauthMASTER_HYPERLINK_CODE}{prdt_code}</a>{nllauthMASTER_HYPERLINK_CODEresetend}&nbsp; 
+			
+				<input type="hidden" value="{hid_prdt_no}" name="{hid_prdt_no_Name}"></td> 
+				<td class="BlueNoteDataTD" style="DISPLAY: none" nowrap>{prdt_no}&nbsp;</td> 
+				<td class="BlueNoteDataTD" align="left" nowrap>{prdt_name1}&nbsp;</td> 
+				<td class="BlueNoteDataTD" nowrap>{prdt_name2}&nbsp;{nllauthCOLLIST_Productmst_ProductName2}</td> 
+				<td class="BlueNoteDataTD" nowrap>{prdt_unit}&nbsp;</td> 
+				<td class="BlueNoteDataTD" nowrap>{prdt_group}&nbsp;</td> 
+				<td class="BlueNoteDataTD" nowrap>{prdt_category}&nbsp;{nllauthINV_MASTER_COLLIST_ProductCategory}</td> 
+				<td class="BlueNoteDataTD" nowrap>{prdt_brand}&nbsp;{nllauthCOLLIST_Brand}</td> 
+				<td class="BlueNoteDataTD" nowrap>{prdt_model}&nbsp;{nllauthCOLLIST_Model}</td> 
+				<td class="BlueNoteDataTD" nowrap align="right" {nllauthPRODUCT_COST}>&nbsp;{prdt_cost}</td> 
+				<td class="BlueNoteDataTD" nowrap align="right"><input class="BlueNoteInput" onkeypress="blockchar(this,event)" style="WIDTH: 88px; HEIGHT: 20px; TEXT-ALIGN: right" onchange="if(this.value!=''){jsrsProductCost(this,this.value,'{prdt_no}',USER_ID)}" value="{prdt_updatecost}" name="{prdt_updatecost_Name}">&nbsp;{nllauthCOLLIST_COSTQUICKEDIT}</td> 
+				<td class="BlueNoteDataTD" nowrap align="right" {nllauthMASTER_PRDT_COLLIST_ORDER_COST}>{prdt_order_cost}</td>
+				<td class="BlueNoteDataTD" nowrap align="right" {nllauthMASTER_PRDT_COLLIST_EDIT_ORDER_COST}><input class="BlueNoteInput" onkeypress="blockchar(this,event)" style="WIDTH: 88px; HEIGHT: 20px; TEXT-ALIGN: right" onchange="if(this.value!=''){jsrsProductOrderCost(this,this.value,'{prdt_no}',USER_ID)}" value="{prdt_updateordercost}" name="{prdt_updateordercost_Name}"></td>
+				<td class="BlueNoteDataTD" nowrap align="right" {nllauthINV_COLLIST_WAC}>&nbsp;{prdt_stk_cost}</td>
+					<td class="BlueNoteDataTD" nowrap align="right" {nllauthPRODUCT_PRICE}>&nbsp;{prdt_price}</td> 
+				<td class="BlueNoteDataTD" nowrap align="right"><input class="BlueNoteInput" onkeypress="blockchar(this,event)" style="WIDTH: 88px; HEIGHT: 20px; TEXT-ALIGN: right" onchange="if(this.value!=''){jsrsProductPrice(this,this.value,'{prdt_no}',USER_ID)}" value="{prdt_updateprice}" name="{prdt_updateprice_Name}">&nbsp;{nllauthCOLLIST_PRICEQUICKEDIT}</td>
+					<td class="BlueNoteDataTD" nowrap align="right" {nllauthINV_COLLIST_PRODUCT_RECOMMENDED_PRICE}>&nbsp;{prdt_recommended_price}</td>
+					<td class="BlueNoteDataTD" nowrap align="right" {nllauthINV_COLLIST_PRODUCT_RECOMMENDED_PRICE_QUICKEDIT}><input class="BlueNoteInput" onkeypress="blockchar(this,event)" style="WIDTH: 88px; HEIGHT: 20px; TEXT-ALIGN: right" onchange="if(this.value!=''){jsrsRecommendedPrice(this,this.value,'{prdt_no}',USER_ID)}" value="{prdt_recommendedprice}" name="{prdt_recommendedprice_Name}"></td> 
+				<td class="BlueNoteDataTD" nowrap {nllauthMASTER_COLLIST_Serial}><input class="BlueNoteInput" disabled type="checkbox" {prdt_item_serial_no} name="prdt_item_serial_no" value="1" >&nbsp;</td> 
+				<td class="BlueNoteDataTD" nowrap>{prdtHierarchy}{nllauthINV_COLLIST_PRDT_HIERARCHY}</td>
+		
+		
+				<td class="BlueNoteDataTD" nowrap {nllauthMASTER_COLLIST_TAX_GROUP}>{prdt_vattypeAR}&nbsp;{nllauthMASTER_COLLIST_TAX_GROUPresetstart}
+			{nllauthMASTER_COLLIST_TAX_GROUPresetend}</td> 
+				<td class="BlueNoteDataTD" nowrap {nllauthMASTER_COLLIST_TAX_GROUP}>{prdt_vattypeAP}&nbsp;{nllauthMASTER_COLLIST_TAX_GROUPresetstart}
+			{nllauthMASTER_COLLIST_TAX_GROUPresetend}</td>
+		
+		
+		
+				<td class="BlueNoteDataTD" nowrap>{prdt_userdefine1}&nbsp;{nllauthINV_MASTER_COLLIST_ProductUserdefine1}</td>
+				<td class="BlueNoteDataTD" nowrap>{nllauthINV_COLLIST_PRDTMST_ADD_USER}{prdt_sys_add_user}&nbsp;</td>
+				<td class="BlueNoteDataTD" nowrap>{nllauthINV_COLLIST_PRDTMST_ADD_DATE}{prdt_sys_add_date}&nbsp;</td>
+				<td class="BlueNoteDataTD" nowrap>{nllauthINV_COLLIST_PRDTMST_LAST_MOD_USER}<label>{prdt_sys_last_mod_user}</label>&nbsp;<input type="hidden" value="{lastModUser}" name="{lastModUser_Name}"></td>
+				<td class="BlueNoteDataTD" nowrap>{nllauthINV_COLLIST_PRDTMST_LAST_MOD_DATE}<label>{prdt_sys_last_mod_date}</label>&nbsp;<input type="hidden" value="{lastModDate}" name="{lastModDate_Name}"></td> 
+				<td class="BlueNoteDataTD" nowrap>{notes_label}{nllauthCOLLIST_NotesView}</td> 
+					<td class="BlueNoteDataTD" nowrap align="right">{prdt_bal}{nllauthINV_COLLIST_BAL}</td>
+				<td class="BlueNoteDataTD"><input class="BlueNoteInput" disabled type="checkbox" name="prdt_active" {prdt_active}>&nbsp;</td> 
+				<td class="BlueNoteDataTD"><input class="BlueNoteInput" onclick="jsrsEditActive(this,this.checked,'{prdt_no}',USER_ID)" type="checkbox" name="prdt_updateactive" {prdt_updateactive}>&nbsp;{nllauthINV_COLLIST_ACTIVE_QUICK_EDIT}</td>
+			
+					<td class="BlueNoteDataTD" nowrap>{nllauthMASTER_COLLIST_APPROVAL_STATUS}{approval_status}</td> 
+				<td class="BlueNoteDataTD" nowrap>{prdt_sorting}&nbsp;{nllauthINV_MASTER_COLLIST_ProductSorting}</td> 
+				<td class="BlueNoteDataTD" nowrap {nllauthMASTER_HYPERLINK_AUDIT}><a onclick="window.open('modules/audit_log/rpt_audit_master.php?s_module=INV-MST&s_refno1=prdt_no+%3D+%27{prdt_no}%27','_blank','WIDTH=1000,HEIGHT=650,LEFT=200,scrollbars=yes,resizable=yes');return false;" tabindex="-1" href="" {nllauthMASTER_HYPERLINK_AUDIT}><img src="image/audit_trail.jpg" border="0" alt="{stxtAuditLog}"></a></td> 
+				<td class="BlueNoteDataTD" nowrap {nllauthINV_COLLIST_PRDT_COST_HISTORY}><a onclick="window.open('report/rpt_cost_history.php?prdt_no={prdt_no}','_blank','WIDTH=1000,HEIGHT=650,LEFT=200,scrollbars=yes,resizable=yes');return false;" tabindex="-1" href="" {nllauthINV_COLLIST_PRDT_COST_HISTORY}><img src="image/audit_price.png" border="0" height="19" width="20" alt="{stxtCostHistory}"></a></td> 
+					<td class="BlueNoteDataTD" nowrap align="center" {nllauthINV_COLLIST_PRDT_PRICE_HISTORY}><a onclick="window.open('report/rpt_price_history.php?prdt_no={prdt_no}','_blank','WIDTH=1000,HEIGHT=650,LEFT=200,scrollbars=yes,resizable=yes');return false;" tabindex="-1" href="#"><img src="image/audit_price_fresh.png" border="0"  height="19" width="20" alt="{stxtPriceHistory}"></a></td>
+				<td class="BlueNoteDataTD" nowrap align="center"><a class="BlueNoteDataLink" href="{ImageLink2}"><img class="BlueNoteInput" src="image/copy.gif" width="18" border="0"></a>&nbsp;</td> 
+				<td class="BlueNoteDataTD" nowrap align="right">&nbsp;{prdt_price_A}{nllauthCOLLIST_PRICE_A}</td> 
+				<td class="BlueNoteDataTD" nowrap align="right"><input class="BlueNoteInput" onkeypress="blockchar(this,event)" style="WIDTH: 88px; HEIGHT: 20px; TEXT-ALIGN: right" onchange="if(this.value!=''){jsrsProductPriceA(this,this.value,'{prdt_no}',USER_ID)}" value="{prdt_updatepriceA}" name="{prdt_updatepriceA_Name}">&nbsp;{nllauthCOLLIST_PRICEAQUICKEDIT}</td> 
+				<td class="BlueNoteDataTD" nowrap align="right">{prdt_price_B}{nllauthCOLLIST_PRICE_B}&nbsp;</td> 
+				<td class="BlueNoteDataTD" nowrap align="right"><input class="BlueNoteInput" onkeypress="blockchar(this,event)" style="WIDTH: 88px; HEIGHT: 20px; TEXT-ALIGN: right" onchange="if(this.value!=''){jsrsProductPriceB(this,this.value,'{prdt_no}',USER_ID)}" value="{prdt_updatepriceB}" name="{prdt_updatepriceB_Name}">&nbsp;{nllauthCOLLIST_PRICEBQUICKEDIT}</td> 
+				<td class="BlueNoteDataTD" nowrap align="right">{prdt_price_C}&nbsp;{nllauthCOLLIST_PRICE_C}</td> 
+				<td class="BlueNoteDataTD" nowrap align="right"><input class="BlueNoteInput" onkeypress="blockchar(this,event)" style="WIDTH: 88px; HEIGHT: 20px; TEXT-ALIGN: right" onchange="if(this.value!=''){jsrsProductPriceC(this,this.value,'{prdt_no}',USER_ID)}" value="{prdt_updatepriceC}" name="{prdt_updatepriceC_Name}">{nllauthCOLLIST_PRICECQUICKEDIT}&nbsp;</td> 
+				<td class="BlueNoteDataTD" nowrap align="right">{prdt_price_D}&nbsp;{nllauthCOLLIST_PRICE_D}</td> 
+				<td class="BlueNoteDataTD" nowrap align="right"><input class="BlueNoteInput" onkeypress="blockchar(this,event)" style="WIDTH: 88px; HEIGHT: 20px; TEXT-ALIGN: right" onchange="if(this.value!=''){jsrsProductPriceD(this,this.value,'{prdt_no}',USER_ID)}" value="{prdt_updatepriceD}" name="{prdt_updatepriceD_Name}">&nbsp;{nllauthCOLLIST_PRICEDQUICKEDIT}</td> 
+				<td class="BlueNoteDataTD" nowrap align="right">{prdt_price_E}&nbsp;{nllauthCOLLIST_PRICE_E}</td> 
+				<td class="BlueNoteDataTD" nowrap align="right"><input class="BlueNoteInput" onkeypress="blockchar(this,event)" style="WIDTH: 88px; HEIGHT: 20px; TEXT-ALIGN: right" onchange="if(this.value!=''){jsrsProductPriceE(this,this.value,'{prdt_no}',USER_ID)}" value="{prdt_updatepriceE}" name="{prdt_updatepriceE_Name}">&nbsp;{nllauthCOLLIST_PRICEEQUICKEDIT}</td> 
+				<td class="BlueNoteDataTD" nowrap align="right">{prdt_min_price}&nbsp;{nllauthINV_COLLIST_PRDTMST_MINPRICE}</td> 
+				<td class="BlueNoteDataTD" nowrap align="right"><input type="text" name="{prdt_updatepricemin_Name}" value="{prdt_updatepricemin}" class="BlueNoteInput" onkeypress="blockchar(this,event)" style="WIDTH: 88px; HEIGHT: 20px; TEXT-ALIGN: right" onchange="if(this.value!=''){jsrsProductItemDetail(this,'prdt_min_price','{prdt_no}',this.value,USER_ID)}" onblur="if(this.value!=''){this.value=decimal.price(this.value);}else{this.value=decimal.price(0);}" >&nbsp;{nllauthINV_COLLIST_PRDTMST_MINPRICEQUICKEDIT}</td> 
+				<td class="BlueNoteDataTD" nowrap align="right">{prdt_min_level}&nbsp;{nllauthINV_COLLIST_PRDTMST_MINLEVEL}</td> 
+				<td class="BlueNoteDataTD" nowrap align="right"><input type="text" name="{prdt_updateminlevel_Name}" value="{prdt_updateminlevel}" class="BlueNoteInput" onkeypress="blockchar(this,event)" style="WIDTH: 88px; HEIGHT: 20px; TEXT-ALIGN: right" onchange="if(this.value!=''){jsrsProductItemDetail(this,'prdt_min_level','{prdt_no}',this.value,USER_ID)}"  >&nbsp;{nllauthINV_COLLIST_PRDTMST_MINLEVELQUICKEDIT}</td> 
+				<td class="BlueNoteDataTD" nowrap align="right">{prdt_max_level}&nbsp;{nllauthINV_COLLIST_PRDTMST_MAXLEVEL}</td> 
+				<td class="BlueNoteDataTD" nowrap align="right"><input type="text" name="{prdt_updatemaxlevel_Name}" value="{prdt_updatemaxlevel}" class="BlueNoteInput" onkeypress="blockchar(this,event)" style="WIDTH: 88px; HEIGHT: 20px; TEXT-ALIGN: right" onchange="if(this.value!=''){jsrsProductItemDetail(this,'prdt_max_level','{prdt_no}',this.value,USER_ID)}"  >&nbsp;{nllauthINV_COLLIST_PRDTMST_MAXLEVELQUICKEDIT}</td> 
+				<td class="BlueNoteDataTD" nowrap align="right">{prdt_reor_level}&nbsp;{nllauthINV_COLLIST_PRDTMST_REORDERLEVEL}</td> 
+				<td class="BlueNoteDataTD" nowrap align="right"><input type="text" name="{prdt_updatereorderlevel_Name}" value="{prdt_updatereorderlevel}" class="BlueNoteInput" onkeypress="blockchar(this,event)" style="WIDTH: 88px; HEIGHT: 20px; TEXT-ALIGN: right" onchange="if(this.value!=''){jsrsProductItemDetail(this,'prdt_reor_level','{prdt_no}',this.value,USER_ID)}"  >&nbsp;{nllauthINV_COLLIST_PRDTMST_REORDERLEVELQUICKEDIT}</td> 
+				<td class="BlueNoteDataTD" nowrap align="right">{nllauthINV_COLLIST_PRDTMST_MARGIN}<label>{prdt_margin}</label>&nbsp;<input type="hidden" name="{product_margin_Name}" value="{product_margin}">{nllauthINV_COLLIST_PRDTMST_MARGIN}</td>
+				<td class="BlueNoteDataTD" nowrap align="center"><a class="BlueNoteDataLink" href="{Link3_Src}"><img title="Notes" tabindex="-1" src="image/list1.jpg" border="0"></a>{nllauthCOLLIST_Notes}</td> 
+				<td class="BlueNoteDataTD" nowrap colspan="3"><input class="BlueNoteInput" type="checkbox" value="1" name="{CheckBox1_Name}" {CheckBox1} onclick="jsrsWriteDynamic('checkboxMultiSelectMaster','checkbox_Productmst','{prdt_no},'+this.checked);"></td> 
+				<td class="BlueNoteDataTD" nowrap align="right" {nllauthINV_COLLIST_PRDTMST_FNPP}>{prdt_fnpp}</td>
+				<td class="BlueNoteDataTD" nowrap align="center" {nllauthMASTER_COLLIST_Repacking}>
+						<a class="BlueNoteDataLink" onclick="return jsrsChkIsProduct('{prdt_no}')" href="{ImagePack}"><img title="Product Repacking" src="image/pack.gif" border="0" {showImageRepk}></a>
+						{nllauthINV_HYPERLINK_PRDT_COST_HISTORYresetstart}<a onclick="window.open('report/rpt_repack_cost_history.php?prdt_no={prdt_no}','_blank','WIDTH=1000,HEIGHT=650,LEFT=200,scrollbars=yes,resizable=yes');return false;" tabindex="-1" href="#" {nllauthINV_HYPERLINK_PRDT_COST_HISTORY}><img src="image/audit_price.png" border="0" height="19" width="20" alt="{stxtCostHistory}" {showImageRepk}></a>{nllauthINV_HYPERLINK_PRDT_COST_HISTORYresetend}
+						{nllauthINV_HYPERLINK_PRDT_PRICE_HISTORYresetstart}<a class="BlueNoteDataLink" onclick="window.open('report/rpt_repack_price_history.php?prdt_no={prdt_no}','_blank','WIDTH=1000,HEIGHT=650,LEFT=200,scrollbars=yes,resizable=yes');return false;" href="#" {showImageRepk}><img title="Repacking Price History" src="image/audit_price_fresh.png" border="0" height="19" width="20" alt="{stxtPriceHistory}">{nllauthINV_HYPERLINK_PRDT_PRICE_HISTORY}</a>{nllauthINV_HYPERLINK_PRDT_PRICE_HISTORYresetend}			
+					</td> 
+				<td class="BlueNoteDataTD" nowrap align="center" {nllauthMASTER_COLLIST_Assembly}><a class="BlueNoteDataLink" onclick="return jsrsChkIsDiscTax('{prdt_no}')" href="{ImageAssembly}"><img title="Product Assembly" src="image/globe.gif" border="0" {showImageAsbly}></a></td>
+				<td class="BlueNoteDataTD" nowrap align="center" {nllauthMASTER_COLLIST_PrdtMatrix}><a class="BlueNoteDataLink" href="inv_prdt_matrix.php?prdt_no={prdt_no}"><img title="Product Matrix" src="image/colorsize.jpg" border="0" {showImageMatrix}></a></td>
+				<td class="BlueNoteDataTD" {showImageEffective}><a href="{ImageLink3}" class="BlueNoteDataLink"><img src="image/forward.gif" border="0" class="BlueNoteInput"></a></td> 
+				</tr>
+			<!-- END Row -->
+			<!-- BEGIN NoRecords -->
+			<tr>
+				<td class="BlueNoteDataTD"></td> 
+				<td class="BlueNoteDataTD" colspan="36">{stxtNorecords}&nbsp;</td> 
+			</tr>
+			<!-- END NoRecords -->
+			<tr id="card" class="bg-primary text-white setColor">
+				<td colspan="36">&nbsp;</td>
+			  </tr>
+			<tr>
+				<td></td> 
+				<td class="BlueNoteFooterTDNav" nowrap colspan="4">{nllauthADDMASTERLINKresetstart}<a class="BlueNoteNavigatorLink" href="{productmst_Insert_Src}">{stxtAddNew}{nllauthMASTER_HYPERLINK_CODE}</a>{nllauthADDMASTERLINKresetend}&nbsp;{nllauthUPDATEresetstart}<a class="BlueNoteNavigatorLink" onclick="return confirm('Confirm to Update All Records Above?')" href="{Link2_Src}">{stxtUpdateSelection}</a>{nllauthUPDATEresetend}&nbsp; 
+				<!-- BEGIN Navigator Navigator -->
+				<!-- BEGIN First_On --><a class="BlueNoteNavigatorLink" href="{First_URL}">|&lt;</a><!-- END First_On -->
+				<!-- BEGIN Prev_On --><a class="BlueNoteNavigatorLink" href="{Prev_URL}">&lt;&lt;</a><!-- END Prev_On -->&nbsp;{Page_Number}
+				of {Total_Pages}&nbsp; 
+				<!-- BEGIN Next_On --><a class="BlueNoteNavigatorLink" href="{Next_URL}">&gt;&gt;</a><!-- END Next_On -->
+				<!-- BEGIN Last_On --><a class="BlueNoteNavigatorLink" href="{Last_URL}">&gt;|</a><!-- END Last_On --><!-- END Navigator Navigator -->&nbsp;&nbsp;&nbsp;
+				<a href="{middleware_import_data1_Src}" class="BlueNoteNavigatorLink" {nllauthHYPERLINK_IMPORT_DATA}>    {stxtXsretailDataImport}</a> {nllauthHYPERLINK_IMPORT_DATAresetstart}{nllauthHYPERLINK_IMPORT_DATAresetend} 
+				</td> 
+				<td class="BlueNoteFooterTD" nowrap colspan="38"></td> 
+			</tr>
+				</table>
+			
+			<!-- END Grid productmst -->
+		</tr>
+	</table>
+</div>	
+</div>
+<script>
+	// button_warning = document.getElementById('btn-warning');
+	// button_dark = document.getElementById("btn-dark");
+	// var body = document.getElementsByTagName("body")[0];
+
+	// button_warning.onclick = () =>{
+	// 	body.setAttribute("id", "warning");
+	// };
+
+	// button_dark.onclick = () =>{
+	// 	body.setAttribute("id", "dark");
+	// }
+
+	DOMTokenList.prototype.addMany = function(classes) {
+    	var array = classes.split(' ');
+   		for (var i = 0, length = array.length; i < length; i++) {
+      		this.add(array[i]);
+    	}
+	}
+
+	DOMTokenList.prototype.removeMany = function(classes) {
+    	var array = classes.split(' ');
+    	for (var i = 0, length = array.length; i < length; i++) {
+      		this.remove(array[i]);
+    	}
+	}	
+	</script>	
+</body>
+</html>
