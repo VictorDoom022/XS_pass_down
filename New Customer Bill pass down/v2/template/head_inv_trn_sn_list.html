@@ -1,0 +1,231 @@
+<!--link href="../lib/bootstrap/css/bootstrap.css" rel="stylesheet"-->
+<link href="../lib/jqwidgets/styles/jqx.base.css" rel="stylesheet">
+<link href="../lib/jqwidgets/styles/jqx.bootstrap.css" rel="stylesheet">
+<!--script type="text/javascript" src="../javascript/jquery/jquery.min.js"></script-->
+<!--script src="../lib/bootstrap/js/bootstrap.min.js"></script-->
+<script type="text/javascript" src="../lib/jqwidgets/jqxcore.js"></script>
+<script type="text/javascript" src="../lib/jqwidgets/jqxdata.js"></script> 
+<script type="text/javascript" src="../lib/jqwidgets/jqxbuttons.js"></script>
+<script type="text/javascript" src="../lib/jqwidgets/jqxscrollbar.js"></script>
+<script type="text/javascript" src="../lib/jqwidgets/jqxmenu.js"></script>
+<script type="text/javascript" src="../lib/jqwidgets/jqxcheckbox.js"></script>
+<script type="text/javascript" src="../lib/jqwidgets/jqxlistbox.js"></script>
+<script type="text/javascript" src="../lib/jqwidgets/jqxdropdownlist.js"></script>
+<script type="text/javascript" src="../lib/jqwidgets/jqxgrid.js"></script>
+<script type="text/javascript" src="../lib/jqwidgets/jqxgrid.filter.js"></script>
+<script type="text/javascript" src="../lib/jqwidgets/jqxgrid.sort.js"></script> 
+<script type="text/javascript" src="../lib/jqwidgets/jqxgrid.pager.js"></script> 
+<script type="text/javascript" src="../lib/jqwidgets/jqxgrid.selection.js"></script> 
+<script type="text/javascript" src="../lib/jqwidgets/jqxgrid.edit.js"></script>
+<script type="text/javascript" src="../lib/jqwidgets/globalization/globalize.js"></script>
+<script type="text/javascript" src="../lib/jqwidgets/jqxcalendar.js"></script>
+<script type="text/javascript" src="../lib/jqwidgets/jqxdatetimeinput.js"></script>
+
+<script type="text/javascript" src="../lib/jqwidgets/jqxdata.export.js"></script> 
+<script type="text/javascript" src="../lib/jqwidgets/jqxgrid.export.js"></script> 
+<script type="text/javascript" src="../lib/jqwidgets/jqxgrid.columnsresize.js"></script>
+
+<script type="text/javascript" src="../lib/datetimepicker/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../javascript/dateformat.js"></script>
+<script type="text/javascript" src="../common/nll_date_validation.js" charset="UTF-8"></script>
+<link href="../lib/datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+<link rel="stylesheet" type="text/css" href="style/base.css">
+<link rel="stylesheet" type="text/css" href="style/inv_trn_ar_bil_list.css">
+<style> 
+</style>
+      
+<script>
+$(document).ready(function(){
+  default_s_date_from="";
+  s_date_from=$("#s_date_from").val();
+  if(s_date_from!=''){
+    arr_s_date_from=s_date_from.split("/");
+    default_s_date_from=arr_s_date_from[2]+'-'+arr_s_date_from[1]+'-'+arr_s_date_from[0];
+  }
+  
+  var containers=new Array();
+  var source={
+    datatype: "json",
+    datafields: [
+      {name:'hd_id',type:'string'},
+      {name:'debtor_code',type:'string'},
+      {name:'hd_type2',type:'string'},
+      {name:'hd_transno',type:'number'},
+      {name:'hd_refno',type:'string'},
+      {name:'hd_refno2',type:'string'},
+      {name:'hd_refno3',type:'string'},
+      {name:'hd_ourno',type:'string'},
+      {name:'hd_date',type:'date'},
+      {name:'hd_date_display',type:'string'},
+      {name:'hd_amount',type:'number'},
+      {name:'st_name2',type:'string'},
+      {name:'hd_store',type:'number'},
+      {name:'hd_customer',type:'number'},
+      {name:'store_code',type:'string'},
+      {name:'posted_status',type:'string'},
+      {name:'hd_status',type:'string'},
+      {name:'hd_vat_group',type:'string'},
+      {name:'create_user_name',type:'string'},
+      {name:'user_login',type:'string'},
+      {name:'hd_sys_add_date',type:'date'}
+      
+    ],
+    id:'log_id'
+    //url:'ajax/inv_trn_ar_bil_list.php?s_date_from='+default_s_date_from
+  };
+
+  var image_delete=function(row,datafield,value){
+    arr_value=value.split("-");
+    return '<a href="../inv_trn_ap_bil_redirect.php?Delete=Delete&hd_type1='+arr_value[0]+'&hd_type2='+arr_value[1]+'&hd_transno='+arr_value[2]+'"><img style="margin:4px 2px 0px 2px;cursor:pointer;" src="image/icon/delete.png"/></a>';
+  }
+  var link_id=function (row,dataField,cellText,rowData){
+    return 'grid_link';
+  }
+  var image_report=function(row,datafield,value){
+    refno=$("#grid").jqxGrid('getcellvalue', row, 'hd_refno');
+    type2=$("#grid").jqxGrid('getcellvalue', row, 'hd_type2');
+    store=$("#grid").jqxGrid('getcellvalue', row, 'hd_store');
+    customer=$("#grid").jqxGrid('getcellvalue', row, 'hd_customer');
+    bill_date=$("#grid").jqxGrid('getcellvalue', row, 'hd_date_display');
+    return '<a onclick="open_window(\'../report/inv_rpt_ap_bil_bill_qr1.php?s_module=AP-BIL&doc_type='+type2+'&s_refno='+refno+'&st_no='+store+'&s_hd_ctmr='+customer+'&to_date='+bill_date+'&from_date='+bill_date+'\');return false;" tabindex="-1" href=""><img style="margin:4px 2px 0px 2px;cursor:pointer;vertical-align:middle;" src="../image/printsmall.gif"/></a>';
+  }
+  var image_audit=function(row,datafield,value){
+    transno=$("#grid").jqxGrid('getcellvalue', row, 'hd_transno');
+    type2=$("#grid").jqxGrid('getcellvalue', row, 'hd_type2');
+    return '<a onclick="open_window(\'../modules/audit_log/rpt_audit_master.php?s_module=invbill&s_type1=AP&s_type2='+type2+'&s_transno='+transno+'\');return false;" tabindex="-1" href=""><img src="../image/audit_trail.jpg" border="0" alt="{stxtAuditLog}"></a>';
+  }
+
+  var image_related=function(row,datafield,value){
+    transno=$("#grid").jqxGrid('getcellvalue', row, 'hd_transno');
+    type2=$("#grid").jqxGrid('getcellvalue', row, 'hd_type2');
+    return '<a onclick="open_window(\'../modules/audit_log/rpt_audit_master.php?s_module=invbill&s_type1=AP&s_type2='+type2+'&s_transno='+transno+'\');return false;" tabindex="-1" href=""><img src="../image/audit_trail.jpg" border="0" alt="{stxtAuditLog}"></a>';
+  }
+
+  var dataAdapter = new $.jqx.dataAdapter(source);
+  $("#grid").jqxGrid({
+    width: "100%",
+    source: dataAdapter,
+    pageable: true,
+    autorowheight:false,
+    autoheight:false,
+    filterable: true,
+    sortable: true,
+    altrows: true,
+    columnsresize: true,
+    enabletooltips: true,
+    rowsheight:22,
+    columnsheight:22,
+    pagesizeoptions:['20','50','100'],
+    pagesize: 100,
+    columns: [
+      /* jqxList-Start */
+      {text:'',datafield:'dummy_report',width:25,cellsrenderer:image_report},
+      {text:'',datafield:'dummy_audit',width:25,cellsrenderer:image_audit},
+      {text:'{stxtDocType}', datafield: 'hd_type2',filtertype:'checkedlist',width:70},
+      {text:'{stxtRecordNo}', datafield: 'hd_transno',cellsalign:'right',width:80,cellclassname:link_id{nllauthINV_ROW_RcrdnoSearch}},
+      {text:'{stxtReferenceNo}', datafield: 'hd_refno',cellclassname:link_id},
+      {text:'{stxtReferenceNo2}', datafield: 'hd_refno2',width:80{nllauthCOLLIST_INVLIST_Refno2}},
+      {text:'{stxtReferenceNo3}', datafield: 'hd_refno3',width:80{nllauthCOLLIST_INVLIST_Refno3}},
+      {text:'{stxtOurRefNo}', datafield: 'hd_ourno'{nllauthCOLLIST_OurRef}},
+      {text:'{stxtDate}', datafield: 'hd_date', filtertype: 'date', cellsformat: 'dd/MM/yyyy', width:90},
+      {text:'{stxtStore}', datafield: 'st_name2', filtertype: 'checkedlist'{nllauthCOLLIST_Store}},
+      {text:'{stxtAmount}', datafield: 'hd_amount',cellsalign:'right',cellsformat:'f2'},
+      {text:'{stxtStatus}', datafield: 'posted_status',filtertype:'checkedlist',width:60},
+      {text:'{stxtUser}', datafield: 'create_user_name',filtertype:'checkedlist'{nllauthCOLLIST_User}},
+      {text:'{stxtModifiedUser}', datafield: 'user_login',filtertype:'checkedlist'},
+      {text:'{stxtCreatedDate}', datafield: 'hd_sys_add_date',filtertype:'date',cellsformat:'dd/MM/yyyy HH:mm:ss',resizable:false,width:'auto'{nllauthINV_COLLIST_CREATED_TIME}}
+      /* jqxList-End */
+    ],
+    rowdetails: true,
+    //rowdetailstemplate:{rowdetails:"<div style='margin:10px;' class='scroll'><div class='cls_list_detail'></div></div>", rowdetailsheight:100},
+    rowdetailstemplate:{rowdetails:"<div class='cls_list_detail'></div>", rowdetailsheight:100},
+    initrowdetails:function (index, parentElement, gridElement, datarecord){
+      container = $($(parentElement).children()[0]);
+
+      // make the initial Ajax call here and, on "success", append the retrieved data to "container"
+      $.ajax({
+        url: 'ajax/inv_trn_sn_list_detail.php?s_type1=AP&s_type2='+datarecord.hd_type2+'&s_transno='+datarecord.hd_transno,
+        type: "GET",
+        cache: false,
+        async: true,
+        success:function(response){
+          obj_response=$.parseJSON(response);
+          div_last_mod_date='<div class="col-sm-4 cls_list_detail_div"><div class="col-sm-4 cls_list_detail_caption"><strong>Last Mod Date: </strong></div><div class="col-sm-8 cls_list_detail_content">'+obj_response.last_mod_date+'</div></div>';
+          div_last_mod_user='<div class="col-sm-4 cls_list_detail_div"><div class="col-sm-4 cls_list_detail_caption"><strong>Last Mod User: </strong></div><div class="col-sm-8 cls_list_detail_content">'+obj_response.last_mod_user+'</div></div>';
+          div_last_print_date='<div class="col-sm-4 cls_list_detail_div"><div class="col-sm-4 cls_list_detail_caption"><strong>Last Print Date: </strong></div><div class="col-sm-8 cls_list_detail_content">'+obj_response.last_print_date+'</div></div>';
+          div_last_print_user='<div class="col-sm-4 cls_list_detail_div"><div class="col-sm-4 cls_list_detail_caption"><strong>Last Print User: </strong></div><div class="col-sm-8 cls_list_detail_content">'+obj_response.last_print_user+'</div></div>';
+          div_import_status='<div class="col-sm-4 cls_list_detail_div"><div class="col-sm-4 cls_list_detail_caption"><strong>Import Status: </strong></div><div class="col-sm-8 cls_list_detail_content">'+obj_response.import_status+'</div></div>';
+          div_db_consolidate_flag='<div class="col-sm-4 cls_list_detail_div"><div class="col-sm-4 cls_list_detail_caption"><strong>Consolidate Flag: </strong></div><div class="col-sm-8 cls_list_detail_content">'+obj_response.db_consolidate_flag+'</div></div>';
+          
+          div_last_mod_info='<div class="row">'+div_last_mod_date+div_last_mod_user+div_import_status+'</div>';
+          div_last_print_info='<div class="row">'+div_last_print_date+div_last_print_user+div_db_consolidate_flag+'</div>';
+          //div_other_info='<div class="row">'+div_import_status+div_db_consolidate_flag+'</div>';
+          
+          container.append(div_last_mod_info);
+          container.append(div_last_print_info);
+          //container.append(div_other_info);
+          
+          //container.append(div_last_mod_date);
+          //container.append(div_last_mod_user);
+          //container.append(div_last_print_date);
+          //container.append(div_last_print_user);
+          //container.append(div_import_status);
+          //container.append(div_db_consolidate_flag);
+        }
+      });
+    }
+  })
+  .on('cellclick', function(event){
+    if(event.args.datafield=='hd_transno' || event.args.datafield=='hd_refno'){
+      type2=$("#grid").jqxGrid('getcellvalue', event.args.rowindex, 'hd_type2');
+      transno=$("#grid").jqxGrid('getcellvalue', event.args.rowindex, 'hd_transno');
+      if(type2!='' && transno!=''){
+        open_window("../inv_trn_ap_bil_add.php?hd_type1=AP&hd_type2="+type2+"&hd_transno="+transno);
+      }
+    }
+  });
+  
+  $("#refresh").click(function(){
+    $("#frmSearch").submit();
+    //refresh_list();
+  });
+  
+  $("#btn_export_excel").click(function () {
+    var excel_result = $("#grid").jqxGrid('exportdata', 'xls');
+    $('body').append('<form action="plugin/export_excel.php" method="post" target="frameResponse" id="iframe_excel"><textarea name="input" id="input" style="display:none;">'+excel_result+'</textarea></form>');
+    $('#iframe_excel').submit().remove();
+  });
+  
+  $("#btn_add_new").click(function () {
+    open_window("../inv_trn_ap_bil_add.php?hd_type1=AP");
+  });
+  
+  func_autocomplete('s_customer','s_customer_display','get_debtor_list.php');
+  func_autocomplete('s_store','s_store_display','get_store_list.php');
+  func_autocomplete('s_product','s_product_display','get_product_list.php');
+  refresh_list();
+  
+
+  function refresh_list(){
+    s_document_type=$("#s_document_type").val();
+    s_customer=$("#s_customer").val();
+    s_store=$("#s_store").val();
+    s_product=$("#s_product").val();
+    s_description=$("#s_description").val();
+    s_date_from=$("#s_date_from").val();
+    s_date_to=$("#s_date_to").val();
+    if(s_date_from!=''){
+      arr_s_date_from=s_date_from.split("/");
+      s_date_from=arr_s_date_from[2]+'-'+arr_s_date_from[1]+'-'+arr_s_date_from[0];
+    }
+    if(s_date_to!=''){
+      arr_s_date_to=s_date_to.split("/");
+      s_date_to=arr_s_date_to[2]+'-'+arr_s_date_to[1]+'-'+arr_s_date_to[0];
+    }
+    source.url='ajax/inv_trn_sn_list.php?s_document_type='+s_document_type+'&s_customer='+s_customer+'&s_store='+s_store+'&s_product='+s_product+'&s_description='+s_description+'&s_date_from='+s_date_from+'&s_date_to='+s_date_to,
+    $("#grid").jqxGrid('updatebounddata', 'cells');
+  }
+
+  console.error();
+});
+</script>

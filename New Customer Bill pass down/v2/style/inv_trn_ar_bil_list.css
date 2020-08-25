@@ -1,0 +1,27 @@
+.cls_list_detail{
+  margin:5px;
+}
+
+.cls_list_detail_div{
+  /*padding-left:0 !important;
+  margin-left:0 !important;
+  */
+  margin-top:2px;
+}
+
+.cls_list_detail_caption{
+  padding-left:3px !important;
+  padding-right:3px !important;
+  margin-left:0 !important;
+  background-color:#eeeeee;
+  padding-top:1px;
+  padding-bottom:1px;
+  border-style:solid;
+  border-width:1px;
+  border-color:#cccccc;
+}
+
+.cls_list_detail_content{
+  padding-left:3px !important;
+  margin-left:0 !important;
+}

@@ -1,0 +1,101 @@
+<div class="row PageHeader">{stxtMenuListofStoreNote}</div>
+<div class="row SearchArea">
+  <form class="form-horizontal" name="frmSearch" id="frmSearch" method="GET" action="inv_trn_sn_list.php">
+  <div class="row">
+    <div class="col-sm-2">
+      <select id="s_document_type" name="s_document_type" class="form-control input-sm">
+        <option selected value="">All Document</option>
+        {s_document_type_option}
+      </select>
+    </div>
+    <div class="col-sm-2" id="product">
+      <input type="text"  name="s_product_display" value="{s_product_display}" id="s_product_display" class="form-control input-sm" maxlength="255" placeholder="Product">
+      <input type="hidden" id="s_product" name="s_product" value="{s_product}">
+    </div>
+    <div class="col-sm-2">
+      <input type="text" id="s_store_display" name="s_store_display" value="{s_store_display}" class="form-control input-sm" maxlength="255" placeholder="Search Store">
+      <input type="hidden" id="s_store" name="s_store" value="{s_store}">
+    </div>
+    <div class="col-sm-2">
+      <input type="text" id="s_date_from" name="s_date_from" value="{s_date_from}" class="form-control input-sm form_date form_date_from" date_to="s_date_to" maxlength="10" placeholder="Date From" autocomplete="off">
+    </div>
+    <div class="col-sm-2">
+      <input type="text" id="s_date_to" name="s_date_to" value="{s_date_to}" class="form-control input-sm form_date form_date_to" date_from="s_date_from" maxlength="10" placeholder="Date To" autocomplete="off">
+    </div>
+    <div class="col-sm-2">
+      <button type="submit" id="refresh" class="btn btn-sm btn-default">{stxtSearch}</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-2">
+      <select onchange="moreOption(this.value)" id="more_option" name="more_option" class="form-control input-sm">
+        <option selected value="">More Options</option>
+        <option value="description">Description</option>
+      </select>
+    </div>
+    <div class="col-sm-2" id="description" style="display:none" ondblclick="removeOption(this.id)">
+      <input type="text"  name="s_description" value="{s_description}" id="s_description" class="form-control input-sm" maxlength="255" placeholder="Description">
+    </div>
+  </div>
+  </form>
+  <!--
+  <div class="col-sm-3 col-sm-offset-1">
+    <input type="text" id="sCompanyDisplay" name="sCompanyDisplay" value="{sCompanyDisplay}" class="form-control input-sm" maxlength="255" placeholder="Search Company">
+    <input type="hidden" id="sCompany" name="sCompany" value="{sCompany}">
+  </div>
+  <div class="col-sm-3">
+    <input type="text" id="sReference" name="sReference" value="{sReference}" class="form-control input-sm" maxlength="255" placeholder="Search Reference">
+  </div>
+  <div class="col-sm-3">
+    <select id="sDocumentStatus" name="sDocumentStatus" class="form-control input-sm">
+      {sDocumentStatus_option}
+    </select>
+  </div>
+  -->
+  <!--
+  <div class="col-sm-12 text-center">
+    <button type="submit" id="refresh" class="btn btn-sm btn-default">{stxtSearch}</button>
+  </div>
+  -->
+</div>
+
+<div class="row ActionArea">
+  <div class="col-sm-10">
+    <a href="#" {nllauthADDTRANSLINK}><img id="btn_add_new" src="image/icon/addnew.png" title="Add New"></a>
+  </div>
+  <div class="col-sm-2 text-right">
+    <a class="link"><img id="btn_export_excel" src="image/icon/excel.png" title="Export to Excel"></a>
+  </div>
+</div>
+
+<div class="row" id="grid" style="font-size:12px;font-family:Verdana;float:left;">
+</div>
+
+<script>
+  window.onload = function(){
+    var div_ele = document.getElementsByTagName("input");
+    for (var i = 0; i<div_ele.length; i++) {
+      console.log(div_ele[i].value);
+      if(div_ele[i].value!='' && div_ele[i].id!='s_date_from' && div_ele[i].id!='s_date_to'){
+        div_ele[i].value='';
+      }
+    }
+  }
+
+  function moreOption(current_value) {
+  var x = document.getElementById("more_option").value;
+  
+  if(x == current_value){
+    document.getElementById(current_value).style.display ="";
+  }
+}
+  function removeOption(clicked_id){
+    document.getElementById(clicked_id).style.display ="none";
+    document.getElementById(clicked_id).childNodes[0].value='';
+    document.getElementById(clicked_id).childNodes[1].value='';
+   
+}
+</script>
+
+<iframe name="frameResponse" id="frameResponse" style="display:none;"></iframe>

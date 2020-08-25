@@ -1,0 +1,182 @@
+<!--link href="../lib/bootstrap/css/bootstrap.css" rel="stylesheet"-->
+<link href="../lib/jqwidgets/styles/jqx.base.css" rel="stylesheet">
+<link href="../lib/jqwidgets/styles/jqx.bootstrap.css" rel="stylesheet">
+<!--script type="text/javascript" src="../javascript/jquery/jquery.min.js"></script-->
+<!--script src="../lib/bootstrap/js/bootstrap.min.js"></script-->
+<script type="text/javascript" src="../lib/jqwidgets/jqxcore.js"></script>
+<script type="text/javascript" src="../lib/jqwidgets/jqxdata.js"></script> 
+<script type="text/javascript" src="../lib/jqwidgets/jqxbuttons.js"></script>
+<script type="text/javascript" src="../lib/jqwidgets/jqxscrollbar.js"></script>
+<script type="text/javascript" src="../lib/jqwidgets/jqxmenu.js"></script>
+<script type="text/javascript" src="../lib/jqwidgets/jqxcheckbox.js"></script>
+<script type="text/javascript" src="../lib/jqwidgets/jqxlistbox.js"></script>
+<script type="text/javascript" src="../lib/jqwidgets/jqxdropdownlist.js"></script>
+<script type="text/javascript" src="../lib/jqwidgets/jqxgrid.js"></script>
+<script type="text/javascript" src="../lib/jqwidgets/jqxgrid.filter.js"></script>
+<script type="text/javascript" src="../lib/jqwidgets/jqxgrid.sort.js"></script> 
+<script type="text/javascript" src="../lib/jqwidgets/jqxgrid.pager.js"></script> 
+<script type="text/javascript" src="../lib/jqwidgets/jqxgrid.selection.js"></script> 
+<script type="text/javascript" src="../lib/jqwidgets/jqxgrid.edit.js"></script>
+<script type="text/javascript" src="../lib/jqwidgets/globalization/globalize.js"></script>
+<script type="text/javascript" src="../lib/jqwidgets/jqxcalendar.js"></script>
+<script type="text/javascript" src="../lib/jqwidgets/jqxdatetimeinput.js"></script>
+
+<script type="text/javascript" src="../lib/jqwidgets/jqxdata.export.js"></script> 
+<script type="text/javascript" src="../lib/jqwidgets/jqxgrid.export.js"></script> 
+<script type="text/javascript" src="../lib/jqwidgets/jqxgrid.columnsresize.js"></script>
+
+<script type="text/javascript" src="../lib/datetimepicker/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="../javascript/dateformat.js"></script>
+<script type="text/javascript" src="../common/nll_date_validation.js" charset="UTF-8"></script>
+<link href="../lib/datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+<link rel="stylesheet" type="text/css" href="style/base.css">
+<link rel="stylesheet" type="text/css" href="style/inv_trn_ar_bil_list.css">
+<style> 
+</style>
+      
+<script>
+$(document).ready(function(){
+
+  var containers=new Array();
+  var source={
+    datatype: "json",
+    datafields: [
+      {name:'area_no',type:'string'},
+      {name:'area_no',type:'string'},
+      {name:'area_code',type:'string'},
+      {name:'area_name1',type:'string'},
+      {name:'area_name2',type:'string'},
+      {name:'area_start_date',type:'string'},
+      {name:'stte_code',type:'string'},
+      {name:'area_flag',type:'string'},
+      {name:'area_status',type:'string'},
+      {name:'area_userdefine1',type:'string'},
+      {name:'area_sorting',type:'string'}
+      
+    ],
+    id:'log_id'
+    //url:'ajax/inv_trn_ar_bil_list.php?s_date_from='+default_s_date_from
+  };
+
+  var image_delete=function(row,datafield,value){
+    arr_value=value.split("-");
+    return '<a href="../inv_trn_ap_bil_redirect.php?Delete=Delete&hd_type1='+arr_value[0]+'&hd_type2='+arr_value[1]+'&hd_transno='+arr_value[2]+'"><img style="margin:4px 2px 0px 2px;cursor:pointer;" src="image/icon/delete.png"/></a>';
+  }
+  var link_id=function (row,dataField,cellText,rowData){
+    return 'grid_link';
+  }
+  var image_audit=function(row,datafield,value){
+    area_no=$("#grid").jqxGrid('getcellvalue', row, 'area_no');
+    return '<a onclick="open_window(\'../modules/audit_log/rpt_audit_master.php?s_module=ACCT-MST&s_refno1=area_no+%3D+%27'+area_no+'%27'+'\');return false;" tabindex="-1" href=""><img src="../image/audit_trail.jpg" border="0" alt="{stxtAuditLog}"></a>';
+  }
+
+  var dataAdapter = new $.jqx.dataAdapter(source);
+  $("#grid").jqxGrid({
+    width: "100%",
+    source: dataAdapter,
+    pageable: true,
+    autorowheight:false,
+    autoheight:false,
+    filterable: true,
+    sortable: true,
+    altrows: true,
+    columnsresize: true,
+    enabletooltips: true,
+    rowsheight:22,
+    columnsheight:22,
+    pagesizeoptions:['20','50','100'],
+    pagesize: 100,
+    columns: [
+      /* jqxList-Start */
+      {text:'',datafield:'dummy_audit',width:25,cellsrenderer:image_audit},
+      {text:'{stxtCode}', datafield: 'area_code',filtertype:'checkedlist'},
+      {text:'{stxtName1}', datafield: 'area_name1',width:200},
+      {text:'{stxtName2}', datafield: 'area_name2',width:60},
+      {text:'{stxtStartDate}', datafield: 'area_start_date',filtertype:'date',cellsformat:'dd/MM/yyyy HH:mm:ss',width:100},
+      {text:'{stxtState}', datafield: 'stte_code'},
+      {text:'{stxtActive}', datafield: 'area_flag',width:60},
+      {text:'{stxtStatus}', datafield: 'area_status',width:60},
+      {text:'{stxtUserdefine1}', datafield: 'area_userdefine1',width:60},
+      {text:'{stxtSorting}', datafield: 'area_sorting',filtertype:'checkedlist'}
+      /* jqxList-End */
+    ],
+    rowdetails: true,
+    //rowdetailstemplate:{rowdetails:"<div style='margin:10px;' class='scroll'><div class='cls_list_detail'></div></div>", rowdetailsheight:100},
+    rowdetailstemplate:{rowdetails:"<div class='cls_list_detail'></div>", rowdetailsheight:100},
+    initrowdetails:function (index, parentElement, gridElement, datarecord){
+      container = $($(parentElement).children()[0]);
+
+      // make the initial Ajax call here and, on "success", append the retrieved data to "container"
+      $.ajax({
+        url: 'ajax/master_areamst_list_detail.php?s_type1=AP&s_type2='+datarecord.hd_type2+'&s_transno='+datarecord.hd_transno,
+        type: "GET",
+        cache: false,
+        async: true,
+        success:function(response){
+          obj_response=$.parseJSON(response);
+          div_last_mod_date='<div class="col-sm-4 cls_list_detail_div"><div class="col-sm-4 cls_list_detail_caption"><strong>Last Mod Date: </strong></div><div class="col-sm-8 cls_list_detail_content">'+obj_response.last_mod_date+'</div></div>';
+          div_last_mod_user='<div class="col-sm-4 cls_list_detail_div"><div class="col-sm-4 cls_list_detail_caption"><strong>Last Mod User: </strong></div><div class="col-sm-8 cls_list_detail_content">'+obj_response.last_mod_user+'</div></div>';
+          div_last_print_date='<div class="col-sm-4 cls_list_detail_div"><div class="col-sm-4 cls_list_detail_caption"><strong>Last Print Date: </strong></div><div class="col-sm-8 cls_list_detail_content">'+obj_response.last_print_date+'</div></div>';
+          div_last_print_user='<div class="col-sm-4 cls_list_detail_div"><div class="col-sm-4 cls_list_detail_caption"><strong>Last Print User: </strong></div><div class="col-sm-8 cls_list_detail_content">'+obj_response.last_print_user+'</div></div>';
+          div_import_status='<div class="col-sm-4 cls_list_detail_div"><div class="col-sm-4 cls_list_detail_caption"><strong>Import Status: </strong></div><div class="col-sm-8 cls_list_detail_content">'+obj_response.import_status+'</div></div>';
+          div_db_consolidate_flag='<div class="col-sm-4 cls_list_detail_div"><div class="col-sm-4 cls_list_detail_caption"><strong>Consolidate Flag: </strong></div><div class="col-sm-8 cls_list_detail_content">'+obj_response.db_consolidate_flag+'</div></div>';
+          
+          div_last_mod_info='<div class="row">'+div_last_mod_date+div_last_mod_user+div_import_status+'</div>';
+          div_last_print_info='<div class="row">'+div_last_print_date+div_last_print_user+div_db_consolidate_flag+'</div>';
+          //div_other_info='<div class="row">'+div_import_status+div_db_consolidate_flag+'</div>';
+          
+          container.append(div_last_mod_info);
+          container.append(div_last_print_info);
+          //container.append(div_other_info);
+          
+          //container.append(div_last_mod_date);
+          //container.append(div_last_mod_user);
+          //container.append(div_last_print_date);
+          //container.append(div_last_print_user);
+          //container.append(div_import_status);
+          //container.append(div_db_consolidate_flag);
+        }
+      });
+    }
+  })
+  .on('cellclick', function(event){
+    if(event.args.datafield=='area_code'){
+      area_no=$("#grid").jqxGrid('getcellvalue', event.args.rowindex, 'area_no');
+      if(area_no!=''){
+        open_window("../master_areamst_maint.php?area_no="+area_no);
+      }
+    }
+  });
+  
+  $("#refresh").click(function(){
+    $("#frmSearch").submit();
+    //refresh_list();
+  });
+  
+  $("#btn_export_excel").click(function () {
+    var excel_result = $("#grid").jqxGrid('exportdata', 'xls');
+    $('body').append('<form action="plugin/export_excel.php" method="post" target="frameResponse" id="iframe_excel"><textarea name="input" id="input" style="display:none;">'+excel_result+'</textarea></form>');
+    $('#iframe_excel').submit().remove();
+  });
+  
+  $("#btn_add_new").click(function () {
+    open_window("../master_areamst_maint.php");
+  });
+  
+
+  refresh_list();
+  
+
+  function refresh_list(){
+    s_state_list=$("#s_state_list").val();
+    s_area_code=$("#s_area_code").val();
+    s_area_name1=$("#s_area_name1").val();
+    s_area_userdefine1=$("#s_area_userdefine1").val();
+
+    source.url='ajax/master_areamst_list.php?s_state_list='+s_state_list+'&s_area_code='+s_area_code+'&s_area_name1='+s_area_name1+'&s_area_userdefine1='+s_area_userdefine1,
+    $("#grid").jqxGrid('updatebounddata', 'cells');
+  }
+
+  console.error();
+});
+</script>
